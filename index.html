@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US"
 	data-bug-product='WebAppsWG'
 	data-bug-component='DOM3 Events'
 	data-bug-short_desc='[D3E-code]: '
@@ -7,32 +7,27 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>DOM Level 3 KeyboardEvent code Values</title>
-	<link rel="author" href="mailto:www-dom@w3.org" />
-	<link rel="help" href="http://www.w3.org/DOM/" />
-	<link rel="alternate stylesheet" type="text/css" media="screen" title="geek" href="geek.css" />
-	<link rel="stylesheet" type="text/css" href="spec-WD.css" />
-	<link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/w3c-tr.css" />
-	<link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/W3C-WD" />
-	<link rel="stylesheet" type="text/css" href="override.css" />
+	<link rel="stylesheet" type="text/css" href="tables.css" />
 	<script type="text/javascript" src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove' async></script>
-	<script type="text/javascript" src='key-table-builder.js'></script>
-	<script src="bug-assist.js"></script>
+	<script type="text/javascript" src='key-table-builder.js' class='remove'></script>
 	<script type="text/javascript">
 	var respecConfig = {
 		specStatus: "ED",
 		shortName:  "DOM-Level-3-Events-code",
 		editors: [
 			{
-				name: "Gary Kacmarcik", 
+				name: "Gary Kacmarcik",
 				company: "Google, Inc.",
 				url: "mailto:garykac@google.com?subject=%5BD3E-code%5D%20Spec%20Feedback",
 				companyURL: "http://www.google.com",
+				w3cid: "59482"
 			},
 			{
-				name: "Travis Leithead", 
+				name: "Travis Leithead",
 				company: "Microsoft Corp.",
 				url: "mailto:travis.leithead@microsoft.com?subject=%5BD3E-code%5D%20Spec%20Feedback",
 				companyURL: "http://www.microsoft.com",
+				w3cid: "40117"
 			},
 		],
 
@@ -59,27 +54,33 @@
 			}],
 		}],
 
-		publishDate:  "2015-04-22",
 		edDraftURI: "https://w3c.github.io/DOM-Level-3-Events-code/",
-		previousPublishDate: "2014-06-12",
-		//previousMaturity: "WD",
-		noIDLIn:  true,
 		inlineCSS:  true,
 		//noRecTrack:  true,
 		wg: ["Web Applications Working Group"],
 		wgURI: ["http://www.w3.org/2008/webapps/"],
 		wgPublicList: "www-dom",
 		wgPatentURI: ["http://www.w3.org/2004/01/pp-impl/42538/status"],
-		maxTocLevel: 4
+		maxTocLevel: 4,
+		localBiblio: {
+			"ISO9995-2/3": {
+				title: "ISO/IEC 9995, Information technology -- Keyboard layouts for text and office systems -- Part 2: Alphanumeric Section and Part 3: Complementary layouts of the alphanumeric zone of the alphanumeric section",
+				href: "http://www.iso.org/iso/search.htm?qt=9995&published=on"
+			},
+			"ISO9995-8": {
+				title: "ISO/IEC 9995-8:2006, Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad",
+				href: "http://www.iso.org/iso/search.htm?qt=9995&published=on"
+			}
+		}
 	};
 	</script>
 </head>
 <body>
 	<!-- Section: Abstract ========================================================-->
 	<section id="abstract">
-		<p>This specification defines the values for the 
+		<p>This specification defines the values for the
 			<code>KeyboardEvent.code</code> attribute, which is defined as part of the
-			Document Object Model (DOM) Level 3 Events Specification [<a href="#references-D3E">DOM3 Events</a>].
+			UI Events Specification [[!UIEvents]].
 			The <code>code</code> value contains information about the key event that
 			can use used identify the physical key being pressed by the user.
 			</p>
@@ -87,36 +88,6 @@
 
 	<!-- Section: SOTD ========================================================-->
 	<section id="sotd">
-		<p>This document is a Working Draft of the
-			<em>DOM Level 3 KeyboardEvent <code>code</code> Values</em>
-			specification. 
-			It is expected that this specification will progress to
-			<abbr title="World Wide Web Consortium">W3C</abbr> 
-			Recommendation status after review and refinement.
-			</p>
-
-		<p id="this-document-is-produced-by-the-web-app">
-			This document is produced by the
-				<a href="http://www.w3.org/2008/webapps/">Web Applications WG</a>,
-			part of the
-				<a href="http://www.w3.org/2006/rwc/Activity">Rich Web Clients Activity</a>
-			in the W3C
-				<a href="http://www.w3.org/Interaction/">Interaction Domain</a>.
-			It is expected that this document will progress along the W3C's Recommendation track.
-			Publication as a Working Draft does not imply endorsement by the W3C Membership.
-			This is a draft document and MAY be updated, replaced or obsoleted by other
-			documents at any time.
-			It is inappropriate to cite this document as other than work in progress.
-			</p>
-
-		<p id="latest-editors-draft">
-			<strong>You can find the latest
-				<a href="https://w3c.github.io/DOM-Level-3-Events-code/">Editor's Draft</a>
-			of this document in the
-				<a href="https://github.com/w3c/DOM-Level-3-Events-code">W3C's Github repository</a>,
-			which is updated on a regular basis.</strong>
-			</p>
-
 		<p id="unstable">
 			<strong class="redNote">Implementers should be aware that this document is not stable.</strong>
 			Implementers who are not taking part in the discussions are likely to find the
@@ -145,7 +116,7 @@
 
 			<section id="keyboard-sections">
 				<h1>Keyboard Sections</h1>
-			
+
 				<p>When discussing keyboard layouts, it is convenient to divide the standard keyboard into distinct sections
 					and to label each row.
 					</p>
@@ -164,13 +135,13 @@
 						</li>
 					<li>The <em>Control Pad</em> and <em>Arrow Pad</em> sections contain the arrow keys and other editing keys.
 						</li>
-					<li>The <em>Numpad</em> (also known as the "numeric keypad" or "number pad") contains number and math keys to make it 
+					<li>The <em>Numpad</em> (also known as the "numeric keypad" or "number pad") contains number and math keys to make it
 						easier to enter numeric data.
 						</li>
 					<li>And finally, the <em>Function</em> section contains miscellaneous function keys and special keys like Escape.
 						</li>
 				</ul>
-			
+
 				<p>To make it easier to identify keys, the rows on the keyboard are named starting with "A"
 					for the bottom row up to "E" for the top row. The row of keys in the Function section are considered
 					to be in row "K".
@@ -263,7 +234,7 @@
 				<p>The "104" layout used in Brazil adds 4 new keys: the two non-US keys from the "102" layout
 				   (<code class="code">'IntlHash'</code> and <code class="code">'IntlBackslash'</code>)
 				   plus the <code class="code">'IntlRo'</code> key (next to the right shift
-				   key) and an extra key on the numeric keypad. This new keypad key is called 
+				   key) and an extra key on the numeric keypad. This new keypad key is called
 				   <code class="code">'KeypadComma'</code> because it represents the thousands separator. On the
 				   Brazilian key layout, this key has a keycap of <code class="keycap">.</code> and the <code class="code">'KeypadPeriod'</code>
 				   key has a keycap of <code class="keycap">,</code>.
@@ -283,7 +254,7 @@
 			<section id="keyboard-106">
 				<h1>Japanese "106" Keyboard Layout</h1>
 				<p>The Japanese "106" keyboard layout adds 3 new keys:
-				   <code class="code">'IntlYen'</code>, 
+				   <code class="code">'IntlYen'</code>,
 				   <code class="code">'IntlHash'</code> and
 				   <code class="code">'IntlRo'</code>.
 				   It also shrinks the <code class="code">'Space'</code> key to make room for 3 input mode keys:
@@ -354,11 +325,11 @@
 			<h4>Mobile Keypads</h4>
 
 			<p>In the case where a content author wishes to rely on the mechanical layout of a mobile keypad, this specification suggests the keyboard configuration specified
-				in ISO/IEC 9995-8:2006 [<cite><a class="informative" href="#references-ISO-9995-8">ISO-9995-8</a></cite>], which defines a numeric keypad layout and secondary assignment
+				in ISO/IEC 9995-8:2006 [[ISO9995-8]], which defines a numeric keypad layout and secondary assignment
 				of Unicode characters in the range <code class="char">'\u0061'</code>..<code class="char">'\u007A'</code> to the number keys <code>2</code> through <code>9</code>, as a common layout appropriate to some
 				international uses.</p>
 
-			<p class="note"><strong>Note:</strong> This keypad layout, and in particular the distribution of letters is for English devices, and will not match the keypads
+			<p class="note">This keypad layout, and in particular the distribution of letters is for English devices, and will not match the keypads
 				or configurations of many users.  Content authors cannot rely upon any particular configuration, and are expected to create content in an internationalized and
 				localizable manner.</p>
 
@@ -395,8 +366,8 @@
 
 			<p>Virtual keyboards are software-based sets of keys, in a variety of different arrangements, commonly found on touch-screen devices. They are often modal, with the
 				ability to switch between different dynamic sets of keys, such as alphabetic, numeric, or symbolic keys.  Because of the lack of physical constraints, these keyboards
-				MAY present the widest range of characters, including emoticons and other symbols, and MAY have keys not represented by Unicode [<a href="#references-Unicode">Unicode</a>]
-				or by the <a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-value-tables">key values</a>.
+				MAY present the widest range of characters, including emoticons and other symbols, and MAY have keys not represented by Unicode [[!Unicode]]
+				or by the <a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-value-tables">key values</a> [[!DOM-Level-3-Events-key]].
 				Wherever possible, however, virtual keyboards SHOULD produce the normal range
 				of keyboard events and values, for ease of authoring and compatibility with existing content.</p>
 
@@ -420,7 +391,7 @@
 
 	<section id="code-value-tables">
 		<h1>Keyboard Event <code>code</code> Value Tables</h1>
-	
+
 		<p>This section defines a list of <code>code</code> values which implementations MUST support.
 			</p>
 
@@ -435,29 +406,29 @@
 				<p>The Alphanumeric section keys fall into two general categories: "writing system" keys whose meaning changes based on
 					the current keyboard layout, and "functional" keys which are (mostly) the same for all layouts.
 					</p>
-				
+
 				<section id="key-alphanumeric-writing-system">
 					<h1>Writing System Keys</h1>
-					
+
 					<p>The "writing system" keys are those that change meaning based on the current keyboard layout.
 						</p>
-						
+
 					<figure id="figure-keyboard-codes-alphanum1">
 						<img src='images/keyboard-codes-alphanum1.svg' width="653" height="225" alt="The writing system keys" />
 						<figcaption>The writing system keys in the alphanumeric section</figcaption>
 					</figure>
-					
+
 					<p>This figure shows a hypothetical keyboard that combines all the writing system keys (shown in
 						blue and green) found on the various keyboards.
 						Blue keys are present on all standard keyboards while green keys are only available on some keyboards.
 						</p>
-						
+
 					<p>The name shown on each key is the <code>code</code> assigned to that key.
 						Wherever possible, the <code>code</code> names are based on the name for the US key
 						in that position (i.e., they are based on the US keyboard layout). For keys that don't
 						exist on the US keyboard, names from the UK or Japanese layouts are used instead.
 						</p>
-					
+
 					<table id="table-key-code-alphanumeric-writing-system" class="data-table full-width">
 						<caption>List of code values for writing system keys in the Alphanumeric section.</caption>
 						<thead><tr><th>Code Value</th><th>USB Usage ID<br/>Page 0x07<br/>(Informative)</th><th>Notes (Informative)</th></tr></thead>
@@ -625,12 +596,12 @@
 					   mode. Note that even though some of these Japanese and Korean keys occupy the same physical location on the
 					   keyboard, they use different <code>code</code> values.
 					</p>
-					
+
 					<figure id="figure-function-row-a">
 						<img src='images/functional-row-a.svg' width="700" height="160" alt="Comparison of the lower row of functional keys" />
 						<figcaption>Comparison of the lower row of functional keys on different keyboards</figcaption>
 					</figure>
-					
+
 					<table id="table-key-code-alphanumeric-functional-2" class="data-table full-width">
 						<caption>List of code values for functional keys found on Japanese and Korean keyboards.</caption>
 						<thead><tr><th>Code Value</th><th>USB Usage ID<br/>Page 0x07<br/>(Informative)</th><th>Notes (Informative)</th></tr></thead>
@@ -675,12 +646,12 @@
 				<h1>Control Pad Section</h1>
 				<p>The Control Pad contains keys for navigating and editing documents.
 				</p>
-				
+
 				<figure id="figure-control-pad">
 					<img src='images/control-pad.svg' width="495" height="135" alt="Standard Control Pad layouts" />
 					<figcaption>Standard Control Pad layouts</figcaption>
 				</figure>
-				
+
 				<table id="table-key-code-controlpad" class="data-table full-width">
 					<caption>List of code values for keys in the ControlPad section.</caption>
 					<thead><tr><th>Code Value</th><th>USB Usage ID<br/>Page 0x07<br/>(Informative)</th><th>Notes (Informative)</th></tr></thead>
@@ -710,12 +681,12 @@
 				<h1>Arrow Pad Section</h1>
 				<p>The Arrow Pad section contains the 4 arrow keys.
 				</p>
-				
+
 				<figure id="figure-arrow-pad">
 					<img src='images/arrow-pad.svg' width="160" height="115" alt="Standard Arrow Pad layout" />
 					<figcaption>Standard Arrow Pad layout</figcaption>
 				</figure>
-				
+
 				<table id="table-key-code-arrowpad" class="data-table full-width">
 					<caption>List of code values for keys in the ArrowPad section.</caption>
 					<thead><tr><th>Code Value</th><th>USB Usage ID<br/>Page 0x07<br/>(Informative)</th><th>Notes (Informative)</th></tr></thead>
@@ -738,12 +709,12 @@
 				   to facilitate numeric data entry. This section also covers phone keypads and remote control devices
 				   that arrange number keys in a grid.
 				</p>
-				
+
 				<figure id="figure-numpad">
 					<img src='images/numpad.svg' width="606" height="247" alt="Standard Numpad layouts" />
 					<figcaption>Standard Numpad layouts</figcaption>
 				</figure>
-				
+
 				<p>The standard Numpad is sometimes extended with additional keys for parentheses, operators,
 				   hexadecimal symbols, or calculator functions (like backspace). Some of the commonly added keys are
 				   listed in the table below.
@@ -1035,7 +1006,7 @@
 							<td></td></tr>
 					</tbody>
 				</table>
-				
+
 				<p></p>
 
 				<table id="table-key-code-legacy-editing" class="data-table full-width">
@@ -1080,11 +1051,11 @@
 			</section>
 
 		</section><!-- keyboard-key-codes -->
-	
+
 	</section>  <!-- code-value-tables -->
-		
+
 	<!-- Appendix G: Acknowledgements ========================================================-->
-	<section id="acknowledgements-contributors">
+	<section id="acknowledgements-contributors" class='appendix'>
 		<h1>Acknowledgements</h1>
 
 		<p class="1st">Considerable thanks are due to the following participants of the
@@ -1096,51 +1067,6 @@
 			</p>
 
 	</section>  <!-- acknowledgements-contributors -->
-
-	<!-- Appendix H: References ========================================================-->
-	<section id="references">
-		<h1>References</h1>
-
-		<p>For the latest version of any W3C specification please consult the list of
-			<a class="normative" href="http://www.w3.org/TR/">W3C Technical Reports</a>
-			available at http://www.w3.org/TR/.
-			</p>
-
-		<section id="references-References-Normative">
-			<h2>Normative References</h2>
-
-			<dl>
-				<dt id="references-D3E"><strong>[DOM3 Events]</strong></dt>
-				<dd><cite><a href="https://dvcs.w3.org/hg/dom3events/raw-file/tip/html/DOM3-Events.html">Document Object Model (DOM) Level 3 Events Specification</a></cite>,<br/>
-					G. Kacmarcik, T. Leithead, Editors.<br/>
-					World Wide Web Consortium, April 2014.<br/>
-					This version of the Document Object Model Level 3 Events Specification is https://dvcs.w3.org/hg/dom3events/raw-file/tip/html/DOM3-Events.html.<br/>
-					The <a class="normative" href="http://www.w3.org/TR/DOM-Level-3-Events/">latest version of Document Object Model Level 3 Events</a>
-					is available at http://www.w3.org/TR/DOM-Level-3-Events/.
-					</dd>
-
-				<dt id="references-ISO-9995-2-3"><strong>[ISO9995-2/3]</strong></dt>
-				<dd><cite><a href="http://www.iso.org/iso/search.htm?qt=9995&amp;published=on">ISO/IEC 9995, Information technology
-					-- Keyboard layouts for text and office systems
-					-- Part 2: Alphanumeric Section and Part 3: Complementary layouts of the alphanumeric zone of the alphanumeric section.</a></cite>
-					</dd>
-
-				<dt id="references-ISO-9995-8"><strong>[ISO9995-8]</strong></dt>
-				<dd><cite><a href="http://www.iso.org/iso/search.htm?qt=9995&amp;published=on">ISO/IEC 9995-8:2006, Information technology
-					-- Keyboard layouts for text and office systems
-					-- Part 8: Allocation of letters to the keys of a numeric keypad.</a></cite>
-					</dd>
-
-				<dt id="references-Unicode"><strong>[Unicode]</strong></dt>
-				<dd><cite>The Unicode Standard, Version 5.0</cite>,<br/>
-					ISBN 0-321-48091-0, as updated periodically by the publication of new versions.<br/>
-					See also <a class="normative" href="http://www.unicode.org/standard/versions/">Versions of the Unicode Standard</a>,
-					available at http://www.unicode.org/standard/versions/ for
-					latest version and additional information on versions of the standard and of the Unicode Character Database.
-					</dd>
-			</dl>
-		</section>
-	</section>  <!-- references -->
 
   </body>
 </html>
