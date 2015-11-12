@@ -1,3 +1,3 @@
-# DOM-Level-3-Events-code
+# uievents-code
 
-This repository is for the [DOM Level 3 Events code specification](https://w3c.github.io/DOM-Level-3-Events-code/).
+This repository is for the [UI Events code specification](https://w3c.github.io/uievents-code/).
