@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US" xml:lang="en-US"
 	data-bug-product='WebAppsWG'
-	data-bug-component='DOM3 Events'
-	data-bug-short_desc='[D3E-code]: '
+	data-bug-component='uievents-code'
+	data-bug-short_desc='[uievents-code]: '
 	>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>DOM Level 3 KeyboardEvent code Values</title>
+	<title>UI Events KeyboardEvent code Values</title>
 	<link rel="stylesheet" type="text/css" href="tables.css" />
 	<script type="text/javascript" src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove' async></script>
 	<script type="text/javascript" src='key-table-builder.js' class='remove'></script>
 	<script type="text/javascript">
 	var respecConfig = {
 		specStatus: "ED",
-		shortName:  "DOM-Level-3-Events-code",
+		shortName:  "uievents-code",
 		editors: [
 			{
 				name: "Gary Kacmarcik",
@@ -35,13 +35,13 @@
 			key: 'Participate',
 			data: [{
 				value: 'Github repository',
-				href: 'https://github.com/w3c/DOM-Level-3-Events-code',
+				href: 'https://github.com/w3c/uievents-code',
 			}, {
 				value: 'Issues list',
-				href: 'https://github.com/w3c/DOM-Level-3-Events-code/issues',
+				href: 'https://github.com/w3c/uievents-code/issues',
 			}, {
 				value: 'Commit history',
-				href: 'https://github.com/w3c/DOM-Level-3-Events-code/commits',
+				href: 'https://github.com/w3c/uievents-code/commits',
 			}, {
 				value: 'Mailing list archive (www-dom)',
 				href: 'http://lists.w3.org/Archives/Public/www-dom/',
@@ -51,7 +51,7 @@
 			}],
 		}],
 
-		edDraftURI: "https://w3c.github.io/DOM-Level-3-Events-code/",
+		edDraftURI: "https://w3c.github.io/uievents-code/",
 		inlineCSS:  true,
 		//noRecTrack:  true,
 		wg: ["Web Platform Working Group"],
@@ -94,6 +94,10 @@
 			the Candidate Recommendation stage should join the aforementioned mailing lists
 			and take part in the discussions.
 			</p>
+		<p>
+			This specification was formerly titled <em>DOM Level 3 KeyboardEvent code Values</em>.
+		<p>
+			
 	</section>  <!-- sotd -->
 
 	<!-- Section 6: Keyboard and key values ========================================================-->
@@ -365,7 +369,7 @@
 			<p>Virtual keyboards are software-based sets of keys, in a variety of different arrangements, commonly found on touch-screen devices. They are often modal, with the
 				ability to switch between different dynamic sets of keys, such as alphabetic, numeric, or symbolic keys.  Because of the lack of physical constraints, these keyboards
 				MAY present the widest range of characters, including emoticons and other symbols, and MAY have keys not represented by Unicode [[!Unicode]]
-				or by the <a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-value-tables">key values</a> [[!DOM-Level-3-Events-key]].
+				or by the <a href="http://www.w3.org/TR/uievents-key/#key-value-tables">key values</a> [[!uievents-key]].
 				Wherever possible, however, virtual keyboards SHOULD produce the normal range
 				of keyboard events and values, for ease of authoring and compatibility with existing content.</p>
 
@@ -375,11 +379,11 @@
 				SHOULD match the range of key values described in this specification.</p>
 
 			<p>For these and other alternative modal keyboards, the key values
-					<a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-Alphanumeric"><code class="key">'Alphanumeric'</code></a>,
-					<a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-CapsLock"><code class="key">'CapsLock'</code></a>,
-					<a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-NumLock"><code class="key">'NumLock'</code></a>,
+					<a href="http://www.w3.org/TR/uievents-key/#key-Alphanumeric"><code class="key">'Alphanumeric'</code></a>,
+					<a href="http://www.w3.org/TR/uievents-key/#key-CapsLock"><code class="key">'CapsLock'</code></a>,
+					<a href="http://www.w3.org/TR/uievents-key/#key-NumLock"><code class="key">'NumLock'</code></a>,
 				and
-					<a href="http://www.w3.org/TR/DOM-Level-3-Events-key/#key-SymbolLock"><code class="key">'SymbolLock'</code></a>
+					<a href="http://www.w3.org/TR/uievents-key/#key-SymbolLock"><code class="key">'SymbolLock'</code></a>
 				are RECOMMENDED for the keys which switch between different modes.
 				</p>
 
