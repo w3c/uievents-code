@@ -1,0 +1,655 @@
+<h1>UI Events KeyboardEvent code Values</h1>
+
+<pre class="metadata">
+Shortname: uievents-code
+Level:
+Group: html
+Status: WD
+TR: http://www.w3.org/TR/uievents-code/
+ED: https://github.com/w3c/uievents-code/
+Repository: w3c/uievents-code
+Previous Version:
+	http://www.w3.org/TR/2015/WD-uievents-code-20151215/
+Editor: Gary Kacmarcik, Google, garykac@google.com
+Editor: Travis Leithead, Microsoft, travil@microsoft.com
+Abstract:
+	This specification defines the values for the KeyboardEvent.code attribute,
+	which is defined as part of the UI Events Specification [[!UIEvents]].
+	The code value contains information about the key event that can use used
+	identify the physical key being pressed by the user.
+</pre>
+
+<pre class="biblio">
+{
+	"ISO9995-1": {
+		"href": "http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645",
+		"title": "ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts",
+		"publisher": "ISO"
+	},
+	"ISO9995-8": {
+		"href": "http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641",
+		"title": "ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad",
+		"publisher": "ISO"
+	}
+}
+</pre>
+
+<h2 id="keyboard-layout">Keyboard Layout</h2>
+
+	<em>This section is non-normative.</em>
+
+	Alphanumeric keyboards are the most common way for users to generate keyboard events.
+	This section provides an overview of standard keyboards and their physical layouts.
+
+	<h3 id="keyboard-common-layouts">Standard Keyboard Layouts</h3>
+
+		This section describes the physical layouts found on commonly available keyboards.
+
+		<h4 id="keyboard-sections">Keyboard Sections</h4>
+
+			When discussing keyboard layouts, it is convenient to divide the standard
+			keyboard into distinct sections and to label each row.
+
+			<figure id="figure-keyboard-sections">
+				<img src="images/keyboard-sections.svg" width="684" height="225"
+					alt="The five general sections of a standard keyboard" />
+				<figcaption>The five general sections of a standard keyboard</figcaption>
+			</figure>
+
+			These keyboard sections are:
+
+			*	The <em>Alphanumeric</em> section is the main part of the keyboard and
+				is where most of the keyboard variation occurs.
+				When a user selects a keyboard layout, it is the keys in this sections
+				that are most affected.
+			*	The <em>Control Pad</em> and <em>Arrow Pad</em> sections contain the arrow
+				keys and other editing keys.
+			*	The <em>Numpad</em> (also known as the "numeric keypad" or "number pad")
+				contains number and math keys to make it easier to enter numeric data.
+			*	And finally, the <em>Function</em> section contains miscellaneous function
+				keys and special keys like Escape.
+
+			To make it easier to identify keys, the rows on the keyboard are named starting with "A"
+			for the bottom row up to "E" for the top row. The row of keys in the Function section are considered
+			to be in row "K".
+			These row names are consistent with those given in [[ISO9995-1]].
+
+			Note that many keyboards (both modern and legacy) have extra keys that do not fit neatly into the above sections.
+			Some of these keys are covered in the <a href="#key-media">Media Keys</a> section.
+
+		<h4 id="keyboard-101">Standard "101" Keyboard Layout</h4>
+
+			The standard "101" keyboard (commonly referred to as the "US layout") is the only layout that uses the CODE<Backslash> code (for the KEYCAP<\|> key).
+			All the other layouts omit this key and expand the KEYCAP<Enter> key to occupy
+			two-rows.
+
+			<figure id="figure-keyboard-101-us">
+				<img src="images/keyboard-101-us.svg" width="684" height="225" alt="Standard '101' keyboard layout" />
+				<figcaption>Standard "101" keyboard layout showing unmodified US key values</figcaption>
+			</figure>
+
+			Modern standard "101"-layout keyboards actually contain 104 keys: 61 keys in the alphanumeric section
+			and 43 keys in the numpad, control pad, arrow pad and function sections.
+			The "101" name for this keyboard layout dates to the time when this standard keyboard did in fact contain
+			101 keys. The two KEYCAP<OS> keys,
+			and the KEYCAP<Menu> key were
+			added later to bring the total to 104 keys.
+
+		<h4 id="keyboard-101alt">Alternate "101" Keyboard Layout</h4>
+
+			The alternate "101" keyboard has a large
+			KEYCAP<Enter> key and shrinks the KEYCAP<Backspace>
+			key to make room for the CODE<IntlYen> key
+			(which replaces the CODE<Backslash> key found in the standard 101 layout).
+			The CODE<IntlYen> name comes from the
+			Japanese layout where this is the KEYCAP<¥> (<span class="phonetic">yen</span>) key — in the Russian layout shown below this key maps to a KEYCAP<\/>.
+
+			<figure id="figure-keyboard-101-russian">
+				<img src="images/keyboard-101-russian.svg" width="684" height="225" alt="Alternate '101' keyboard layout" />
+				<figcaption>Alternate "101" keyboard layout showing unmodified Russian key values</figcaption>
+			</figure>
+
+			Modern alternate "101"-layout keyboards contain 104 keys: 61 keys in the alphanumeric section and 43 keys in the numpad,
+			control pad, arrow pad and function sections.
+
+		<h4 id="keyboard-102">Standard "102" Keyboard Layout</h4>
+
+			The standard "102" keyboard is common throughout Europe and adds two keys that don't exist on the
+			"101" layouts:
+			The CODE<IntlBackslash> key (labelled KEYCAP<\|> on a UK keyboard) next to the left shift key,
+			and the CODE<IntlHash> key (labelled KEYCAP<#~> on a UK keyboard) which is partially tucked under the
+			KEYCAP<Enter> key.
+
+			<figure id="figure-keyboard-102-uk">
+				<img src="images/keyboard-102-uk.svg" width="684" height="225" alt="Standard '102' keyboard layout" />
+				<figcaption>Standard "102" keyboard layout showing unmodified UK key values</figcaption>
+			</figure>
+
+			Modern "102"-layout keyboards contain 105 keys: 62 keys in the alphanumeric section and 43 keys in the numpad,
+			control pad, arrow pad and function sections.
+
+		<h4 id="keyboard-103">Korean "103" Keyboard Layout</h4>
+
+			The Korean "103" keyboard is based on the alternate 101 layout and adds two additional keys
+			(one on each side of the spacebar) to handle Korean-specific input modes.
+			These keys are
+			CODE<Lang2> ("Hanja", labelled KEYCAP<한자> <span class="phonetic">hanja</span>) and
+			CODE<Lang1> ("HangulMode", labelled KEYCAP<한/영> <span class="phonetic">han/yeong</span>).
+
+			<figure id="figure-keyboard-103-korean">
+				<img src="images/keyboard-103-korean.svg" width="684" height="225" alt="Korean '103' keyboard layout" />
+				<figcaption>Korean "103" keyboard layout showing unmodified Korean key values</figcaption>
+			</figure>
+
+			Modern "103"-layout keyboards contain 106 keys: 63 keys in the alphanumeric section and 43 keys in the numpad,
+			control pad, arrow pad and function sections.
+
+		<h4 id="keyboard-104">Brazilian "104" Keyboard Layout</h4>
+
+			The "104" layout used in Brazil adds 4 new keys: the two non-US keys from the "102" layout
+			(CODE<IntlHash> and CODE<IntlBackslash>) plus the CODE<IntlRo> key (next to the right shift
+			key) and an extra key on the numeric keypad. This new keypad key is called
+			CODE<NumpadComma> because it represents the thousands separator. On the
+			Brazilian key layout, this key is labelled KEYCAP<.> and the CODE<NumpadDecimal>
+			key is labelled KEYCAP<,>.
+
+			<figure id="figure-keyboard-104-brazilian">
+				<img src="images/keyboard-104-brazilian.svg" width="684" height="225" alt="Standard '104' keyboard layout" />
+				<figcaption>Standard "104" keyboard layout showing unmodified Brazilian key values</figcaption>
+			</figure>
+
+			Modern "104"-layout keyboards contain 107 keys: 63 keys in the alphanumeric section and 44 keys in the numpad,
+			control pad, arrow pad and function sections. Some Brazilian keyboards lack the extra keypad
+			key and have only 106 keys.
+
+		<h4 id="keyboard-106">Japanese "106" Keyboard Layout</h4>
+
+			The Japanese "106" keyboard layout adds 3 new keys:
+				CODE<IntlYen> (labelled KEYCAP<¥_>),
+				CODE<IntlHash> (labelled KEYCAP<]む>) and
+				CODE<IntlRo> (labelled KEYCAP<\ろ>).
+			It also shrinks the spacebar to make room for 3 input mode keys:
+				CODE<NonConvert> (labelled KEYCAP<無変換> <span class="phonetic">muhenkan</span>),
+				CODE<Convert> (labelled KEYCAP<変換> <span class="phonetic">henkan</span>) and
+				CODE<KanaMode> (labelled KEYCAP<カタカナ/ひらがな/ローマ字> <span class="phonetic">katakana/hiragana/romaji</span>).
+
+			<figure id="figure-keyboard-106-japanese">
+				<img src="images/keyboard-106-japanese.svg" width="684" height="225" alt="Standard '106' keyboard layout" />
+				<figcaption>Standard "106" keyboard layout showing unmodified Japanese key values</figcaption>
+			</figure>
+
+			Modern "106"-layout keyboards contain 109 keys: 66 keys in the alphanumeric section and 43 keys in the numpad,
+			control pad, arrow pad and function sections.
+
+		<h4 id="keyboard-mac">Apple Keyboard Layout</h4>
+
+			In general, Apple keyboards follow the same layout as PC keyboards, but there are some differences as
+			noted in the following figure.
+
+			<figure id="figure-keyboard-mac">
+				<img src="images/keyboard-mac.svg" width="684" height="225" alt="Apple extended keyboard layout" />
+				<figcaption>Apple extended keyboard layout showing unmodified English key values</figcaption>
+			</figure>
+
+			In this figure, the green keys are those
+			that have been moved to a new location while the blue keys indicate keys that have been added.
+
+		<h4 id="keyboard-laptops">Laptop Keyboard Layouts</h4>
+
+			The limited space available on laptop keyboards often means that the physical key layout needs
+			to be adjusted to fit all the required keys. The writing system keys in the Alphanumeric section tend
+			to remain intact, but the other keyboard sections are usually combined with other keys or
+			removed altogether.
+
+			<figure id="figure-keyboard-laptop-mac">
+				<img src="images/keyboard-laptop-mac.svg" width="420" height="180" alt="Apple laptop keyboard layout" />
+				<figcaption>Apple laptop keyboard layout</figcaption>
+			</figure>
+
+			In this Apple laptop keyboard, the right control key has been removed to make room for half-height
+			arrow keys and a KEYCAP<Fn> key is added on the left.
+
+			<figure id="figure-keyboard-laptop">
+				<img src="images/keyboard-laptop.svg" width="460" height="180" alt="Sample PC laptop keyboard layout" />
+				<figcaption>Sample PC laptop keyboard layout</figcaption>
+			</figure>
+
+			PC laptop keyboards vary considerably, but this sample keyboard demonstrates some commonly found aspects.
+			The control pad keys are added along the right-hand side with the arrow keys tucked in along the bottom.
+			The right shift key is often shrunk to make room for the up arrow key and the right OS key
+			is typically removed altogether.
+
+	<h3 id="keyboard-mobile">Mobile Keypads</h3>
+
+		In the case where a content author wishes to rely on the mechanical layout of a mobile keypad, this specification suggests the keyboard configuration specified
+		in [[ISO9995-8]], which defines a numeric keypad layout and secondary assignment
+		of Unicode characters in the range <code class="unicode">\u0061</code> ... <code class="unicode">\u007A</code>
+		(GLYPH<a> - GLYPH<z>)
+		to the number keys KEYCAP<2> through KEYCAP<9>, as a common layout appropriate to some
+		international uses.</p>
+
+		<p class="note">This keypad layout, and in particular the distribution of letters is for English devices, and will not match the keypads
+		or configurations of many users.  Content authors cannot rely upon any particular configuration, and are expected to create content in an internationalized and
+		localizable manner.</p>
+
+		<figure id="figure-numeric-keypad">
+			<img src="images/ISOIEC-9995-8-2006.svg" width="180" height="240" alt="ISO/IEC 9995-8:2006 keypad layout" />
+			<figcaption>A graphical depiction of an ISO standard defining layouts of numeric keypads, with distribution of letters on the keys, ISO/IEC 9995-8:2006.</figcaption>
+		</figure>
+
+	<h3 id="remote-control">Media Remote Controls</h3>
+
+		Many keyboards contain special keys to control media functions.  Increasingly, many media devices, especially televisions, are Web-enabled.  Hybrid keyboard/remote-control
+		devices are becoming more common.  To meet the needs of these hybrid Web/media devices, this specification defines keys that are common as remote control buttons,
+		in addition to traditional keyboard keys.
+
+		Because of the smaller form factor, keys (or buttons) on a remote control will often be modal,
+		with one key performing different functions based on the context of the on-screen content.
+		Additionally, many keys serve as toggles, to change back and forth between two or more states
+		(see toggling keys).
+		These remote control buttons typically do not have modifier states so each button is assigned a
+		single function (like KEYCAP<Play>, KEYCAP<Pause>,
+		KEYCAP<Up>, KEYCAP<Menu> or KEYCAP<Exit>).
+
+		<figure id="figure-media-remote-control">
+			<img src="images/remote-control.svg" width="102" height="422" alt="A sample media remote control" />
+			<figcaption>A graphical depiction of a media remote control, with buttons mapped to specific keys values.</figcaption>
+		</figure>
+
+	<h3 id="keyboard-chording-virtual">Virtual Keyboards and Chording Keyboards</h3>
+
+		Virtual keyboards are software-based sets of keys, in a variety of different
+		arrangements, commonly found on touch-screen devices. They are often modal, with
+		the ability to switch between different dynamic sets of keys, such as alphabetic,
+		numeric, or symbolic keys.  Because of the lack of physical constraints, these
+		keyboards MAY present the widest range of characters, including emoticons and
+		other symbols, and MAY have keys not represented by Unicode [[!Unicode]] or by the
+		<a href="http://www.w3.org/TR/uievents-key/#key-value-tables">key values</a>
+		[[!uievents-key]].
+		Wherever possible, however, virtual keyboards SHOULD produce the normal range
+		of keyboard events and values, for ease of authoring and compatibility with existing
+		content.
+
+		Chording keyboards, also know as chorded keysets or chord keyboards, are key input
+		devices which produce values by pressing several keys in combination or sequence,
+		normally to simulate a full range of characters or commands on a reduced set of
+		keys, often for single-handed use.  A chording keyboard MAY have additional mode
+		keys to switch between key values, and the number and type of keys pressed to
+		produce a key value will vary, but the final key values produced by such keyboards
+		SHOULD match the range of key values described in this specification.
+
+		For these and other alternative modal keyboards, the key values
+			KEY<Alphanumeric>,
+			KEY<CapsLock>,
+			KEY<NumLock>,
+		and
+			KEY<SymbolLock>
+		are RECOMMENDED for the keys which switch between different modes.
+
+<h2 id="code-value-tables">Keyboard Event <code>code</code> Value Tables</h2>
+
+	This section defines a list of <code>code</code> values which implementations MUST support.
+
+	<h3 id="keyboard-key-codes">Key Codes for Standard Keyboards</h3>
+
+		This section describes the various keyboard sections in more detail and defines the <code>code</code>
+		values that should be used for each key.
+
+		<h4 id="key-alphanumeric-section">Alphanumeric Section</h4>
+
+			The Alphanumeric section keys fall into two general categories: "writing system" keys whose meaning changes based on
+			the current keyboard layout, and "functional" keys which are (mostly) the same for all layouts.
+
+			<h5 id="key-alphanumeric-writing-system">Writing System Keys</h5>
+
+				The "writing system" keys are those that change meaning based on the current keyboard layout.
+
+				<figure id="figure-keyboard-codes-alphanum1">
+					<img src="images/keyboard-codes-alphanum1.svg" width="653" height="225" alt="The writing system keys" />
+					<figcaption>The writing system keys in the alphanumeric section</figcaption>
+				</figure>
+
+				This figure shows a hypothetical keyboard that combines all the writing system keys (shown in
+				blue and green) found on the various keyboards.
+				Blue keys are present on all standard keyboards while green keys are only available on some keyboards.
+
+				The name shown on each key is the <code>code</code> assigned to that key.
+				Wherever possible, the <code>code</code> names are based on the name for the US key
+				in that position (i.e., they are based on the US keyboard layout). For keys that don't
+				exist on the US keyboard, names from the UK or Japanese layouts are used instead.
+
+				BEGIN_CODE_TABLE alphanumeric-writing-system "List of code values for writing system keys in the Alphanumeric section."
+					CODE Backquote		KEYCAP<`~> on a US keyboard. This is the KEYCAP<半角/全角/漢字> (<span class="phonetic">hankaku/zenkaku/kanji</span>) key on Japanese keyboards
+					CODE Backslash		KEYCAP<\|> on a US keyboard. Found only on standard 101-key layouts.
+					CODE Backspace		KEYCAP<Backspace> or KEYCAP<&#9003;>. Labelled KEYCAP<Delete> on Apple keyboards.
+					CODE BracketLeft	KEYCAP<[{> on a US keyboard.
+					CODE BracketRight	KEYCAP<]}> on a US keyboard.
+					CODE Comma			KEYCAP<,&lt;> on a US keyboard.
+
+					CODE Digit0			KEYCAP<0)> on a US keyboard.
+					CODE Digit1			KEYCAP<1!> on a US keyboard.
+					CODE Digit2			KEYCAP<2@> on a US keyboard.
+					CODE Digit3			KEYCAP<3#> on a US keyboard.
+					CODE Digit4			KEYCAP<4$> on a US keyboard.
+					CODE Digit5			KEYCAP<5%> on a US keyboard.
+					CODE Digit6			KEYCAP<6^> on a US keyboard.
+					CODE Digit7			KEYCAP<7&> on a US keyboard.
+					CODE Digit8			KEYCAP<8*> on a US keyboard.
+					CODE Digit9			KEYCAP<9(> on a US keyboard.
+
+					CODE Equal			KEYCAP<=+> on a US keyboard.
+					CODE IntlBackslash	Located between the left KEYCAP<Shift> and KEYCAP<Z> keys. The KEYCAP<\|> key on a UK keyboard.
+					CODE IntlHash		Located between the KEYCAP<"> and KEYCAP<Enter> keys on row E of the keyboard. The KEYCAP<#~> key on a UK keyboard.
+					CODE IntlRo			Located between the KEYCAP</> and right KEYCAP<Shift> keys. The KEYCAP<\ろ> (<span class="phonetic">ro</span>) key on a Japanese keyboard.
+					CODE IntlYen		Located between the KEYCAP<=> and KEYCAP<Backspace> keys. The KEYCAP<¥> (<span class="phonetic">yen</span>) key on a Japanese keyboard. The KEYCAP<\/> key on a Russian keyboard.
+
+					CODE KeyA			KEYCAP<a> on a US keyboard. Labelled KEYCAP<q> on an AZERTY (e.g., French) keyboard.
+					CODE KeyB			KEYCAP<b> on a US keyboard.
+					CODE KeyC			KEYCAP<c> on a US keyboard.
+					CODE KeyD			KEYCAP<d> on a US keyboard.
+					CODE KeyE			KEYCAP<e> on a US keyboard.
+					CODE KeyF			KEYCAP<f> on a US keyboard.
+					CODE KeyG			KEYCAP<g> on a US keyboard.
+					CODE KeyH			KEYCAP<h> on a US keyboard.
+					CODE KeyI			KEYCAP<i> on a US keyboard.
+					CODE KeyJ			KEYCAP<j> on a US keyboard.
+					CODE KeyK			KEYCAP<k> on a US keyboard.
+					CODE KeyL			KEYCAP<l> on a US keyboard.
+					CODE KeyM			KEYCAP<m> on a US keyboard.
+					CODE KeyN			KEYCAP<n> on a US keyboard.
+					CODE KeyO			KEYCAP<o> on a US keyboard.
+					CODE KeyP			KEYCAP<p> on a US keyboard.
+					CODE KeyQ			KEYCAP<q> on a US keyboard. Labelled KEYCAP<a> on an AZERTY (e.g., French) keyboard.
+					CODE KeyR			KEYCAP<r> on a US keyboard.
+					CODE KeyS			KEYCAP<s> on a US keyboard.
+					CODE KeyT			KEYCAP<t> on a US keyboard.
+					CODE KeyU			KEYCAP<u> on a US keyboard.
+					CODE KeyV			KEYCAP<v> on a US keyboard.
+					CODE KeyW			KEYCAP<w> on a US keyboard. Labelled KEYCAP<z> on an AZERTY (e.g., French) keyboard.
+					CODE KeyX			KEYCAP<x> on a US keyboard.
+					CODE KeyY			KEYCAP<y> on a US keyboard. Labelled KEYCAP<z> on a QWERTZ (e.g., German) keyboard.
+					CODE KeyZ			KEYCAP<z> on a US keyboard. Labelled KEYCAP<w> on an AZERTY (e.g., French) keyboard, and KEYCAP<y> on a QWERTZ (e.g., German) keyboard.
+
+					CODE Minus			KEYCAP<-_> on a US keyboard.
+					CODE Period			KEYCAP<.&gt;> on a US keyboard.
+					CODE Quote			KEYCAP<'"> on a US keyboard.
+					CODE Semicolon		KEYCAP<;:> on a US keyboard.
+					CODE Slash			KEYCAP</?> on a US keyboard.
+				END_CODE_TABLE
+
+			<h5 id="key-alphanumeric-functional">Functional Keys</h5>
+
+				The Functional keys (<em>not to be confused with the
+				<a href="#key-function-section">Function keys</a> described later</em>) are those
+				keys in the Alphanumeric section that provide general editing functions that are common to all locales
+				(like KEYCAP<Shift>, KEYCAP<Tab>, KEYCAP<Enter> and KEYCAP<Backspace>).
+				With a few exceptions, these keys do not change meaning based on the current keyboard layout.
+
+				<figure id="figure-keyboard-codes-alphanum2">
+					<img src="images/keyboard-codes-alphanum2.svg" width="653" height="225" alt="The standard set of functional keys" />
+					<figcaption>The standard set of functional keys in the alphanumeric section</figcaption>
+				</figure>
+
+				BEGIN_CODE_TABLE alphanumeric-functional-1 "List of code values for functional keys in the Alphanumeric section."
+					CODE AltLeft		KEYCAP<Alt>, KEYCAP<Option> or KEYCAP<&#8997;>.
+					CODE AltRight		KEYCAP<Alt>, KEYCAP<Option> or KEYCAP<&#8997;>. This is labelled KEYCAP<AltGr> key on many keyboard layouts.
+					CODE CapsLock		KEYCAP<CapsLock> or KEYCAP<&#8682;>
+					CODE ContextMenu	The application context menu key, which is typically found between the right OS key and the right Control key.
+					CODE ControlLeft	KEYCAP<Control> or KEYCAP<&#8963;>
+					CODE ControlRight	KEYCAP<Control> or KEYCAP<&#8963;>
+					CODE Enter			KEYCAP<Enter> or KEYCAP<&crarr;>. Labelled KEYCAP<Return> on Apple keyboards.
+					CODE OSLeft			The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
+					CODE OSRight		The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
+					CODE ShiftLeft		KEYCAP<Shift> or KEYCAP<&#8679;>
+					CODE ShiftRight		KEYCAP<Shift> or KEYCAP<&#8679;>
+					CODE Space			KEYCAP<&nbsp;> (space)
+					CODE Tab			KEYCAP<Insert> or KEYCAP<&#8677;>
+				END_CODE_TABLE
+
+				On some keyboards (notably Japanese and Korean) the spacebar is reduced in size to make room
+				for extra keys on the bottom row. These keys typically allow the users to change the current input
+				mode. Note that even though some of these Japanese and Korean keys occupy the same physical location on the
+				keyboard, they use different <code>code</code> values.
+
+				<figure id="figure-function-row-a">
+					<img src="images/functional-row-a.svg" width="700" height="160" alt="Comparison of the lower row of functional keys" />
+					<figcaption>Comparison of the lower row of functional keys on different keyboards</figcaption>
+				</figure>
+
+				BEGIN_CODE_TABLE alphanumeric-functional-2 "List of code values for functional keys found on Japanese and Korean keyboards."
+					CODE Convert	Japanese: KEYCAP<変換> (<span class="phonetic">henkan</span>)
+					CODE KanaMode	Japanese: KEYCAP<カタカナ/ひらがな/ローマ字> (<span class="phonetic">katakana/hiragana/romaji</span>)
+					CODE Lang1		Korean: HangulMode KEYCAP<한/영> (<span class="phonetic">han/yeong</span>)<br/>Japanese (Mac keyboard): KEYCAP<かな> (<span class="phonetic">kana</span>)
+					CODE Lang2		Korean: Hanja KEYCAP<한자> (<span class="phonetic">hanja</span>)<br/>Japanese (Mac keyboard): KEYCAP<英数> (<span class="phonetic">eisu</span>)
+					CODE Lang3		Japanese (word-processing keyboard): Katakana
+					CODE Lang4		Japanese (word-processing keyboard): Hiragana
+					CODE Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
+					CODE NonConvert	Japanese: KEYCAP<無変換> (<span class="phonetic">muhenkan</span>)
+				END_CODE_TABLE
+
+				On Apple keyboards, some keys on the bottom row are omitted and others are arranged in
+				a different order.
+
+		<h4 id="key-controlpad-section">Control Pad Section</h4>
+
+			The Control Pad contains keys for navigating and editing documents.
+
+			<figure id="figure-control-pad">
+				<img src="images/control-pad.svg" width="495" height="135" alt="Standard Control Pad layouts" />
+				<figcaption>Standard Control Pad layouts</figcaption>
+			</figure>
+
+			BEGIN_CODE_TABLE controlpad "List of code values for keys in the ControlPad section."
+				CODE Delete		KEYCAP<&#8998;>. The forward delete key. Note that on Apple keyboards, the key labelled KEYCAP<Delete> on the main part of the keyboard should be encoded as CODE<Backspace>.
+				CODE End		KEYCAP<Page Down>KEYCAP<End> or KEYCAP<&#8600;>
+				CODE Help		KEYCAP<Help>. Not present on standard PC keyboards.
+				CODE Home		KEYCAP<Home> or KEYCAP<&#8598;>
+				CODE Insert		KEYCAP<Insert> or KEYCAP<Ins>. Not present on Apple keyboards.
+				CODE PageDown	KEYCAP<Page Down>, KEYCAP<PgDn> or KEYCAP<&#8671;>
+				CODE PageUp		KEYCAP<Page Up>, KEYCAP<PgUp> or KEYCAP<&#8670;>
+			END_CODE_TABLE
+
+			<p class="note">The <code>code</code> for the KEYCAP<Fn> key (found on
+			some Apple keyboards) is defined below in the Function Section.</p>
+
+		<h4 id="key-arrowpad-section">Arrow Pad Section</h4>
+
+			The Arrow Pad section contains the 4 arrow keys.
+
+			<figure id="figure-arrow-pad">
+				<img src="images/arrow-pad.svg" width="160" height="115" alt="Standard Arrow Pad layout" />
+				<figcaption>Standard Arrow Pad layout</figcaption>
+			</figure>
+
+			BEGIN_CODE_TABLE arrowpad "List of code values for keys in the ArrowPad section."
+				CODE ArrowDown	KEYCAP<&darr;>
+				CODE ArrowLeft	KEYCAP<&larr;>
+				CODE ArrowRight	KEYCAP<&rarr;>
+				CODE ArrowUp	KEYCAP<&uarr;>
+			END_CODE_TABLE
+
+		<h4 id="key-numpad-section">Numpad Section</h4>
+
+			The Numpad Section contains numeric and mathematical operator keys arranged in a calculator-grid
+			to facilitate numeric data entry. This section also covers phone keypads and remote control devices
+			that arrange number keys in a grid.
+
+			<figure id="figure-numpad">
+				<img src="images/numpad.svg" width="606" height="247" alt="Standard Numpad layouts" />
+				<figcaption>Standard Numpad layouts</figcaption>
+			</figure>
+
+			The standard Numpad is sometimes extended with additional keys for parentheses, operators,
+			hexadecimal symbols, or calculator functions (like backspace). Some of the commonly added keys are
+			listed in the table below.
+
+			BEGIN_CODE_TABLE numpad "List of code values for keys in the Numpad section."
+				CODE NumLock			On the Mac, the CODE<NumLock> code should be used for the numpad KEYCAP<Clear> key.
+				CODE Numpad0			KEYCAP<0 Ins> on a keyboard<br/>KEYCAP<0> on a phone or remote control
+				CODE Numpad1			KEYCAP<1 End> on a keyboard<br/>KEYCAP<1> or KEYCAP<1 QZ> on a phone or remote control
+				CODE Numpad2			KEYCAP<2 &darr;> on a keyboard<br/>KEYCAP<2 ABC> on a phone or remote control
+				CODE Numpad3			KEYCAP<3 PgDn> on a keyboard<br/>KEYCAP<3 DEF> on a phone or remote control
+				CODE Numpad4			KEYCAP<4 &larr;> on a keyboard<br/>KEYCAP<4 GHI> on a phone or remote control
+				CODE Numpad5			KEYCAP<5> on a keyboard<br/>KEYCAP<5 JKL> on a phone or remote control
+				CODE Numpad6			KEYCAP<6 &rarr;> on a keyboard<br/>KEYCAP<6 MNO> on a phone or remote control
+				CODE Numpad7			KEYCAP<7 Home> on a keyboard<br/>KEYCAP<7 PQRS> or KEYCAP<7 PRS> on a phone or remote control
+				CODE Numpad8			KEYCAP<8 &uarr;> on a keyboard<br/>KEYCAP<8 TUV> on a phone or remote control
+				CODE Numpad9			KEYCAP<9 PgUp> on a keyboard<br/>KEYCAP<9 WXYZ> or KEYCAP<9 WXY> on a phone or remote control
+				CODE NumpadAdd			KEYCAP<+>
+				CODE NumpadBackspace	Found on the Microsoft Natural Keyboard.
+				CODE NumpadClear		For use with numpads that have a KEYCAP<Clear> key that is separate from the KEYCAP<NumLock> key. On the Mac, the numpad KEYCAP<Clear> key should always be encoded as CODE<NumLock>.
+				CODE NumpadClearEntry
+				CODE NumpadComma		KEYCAP<,> (thousands separator). For locales where the thousands separator is a "." (e.g., Brazil), this key may generate a KEYCAP<.>.
+				CODE NumpadDecimal		KEYCAP<. Del>. For locales where the decimal separator is "," (e.g., Brazil), this key may generate a KEYCAP<,>.
+				CODE NumpadDivide		KEYCAP</>
+				CODE NumpadEnter
+				CODE NumpadEqual		KEYCAP<=>
+				CODE NumpadHash			KEYCAP<#> on a phone or remote control device. This key is typically found below the KEYCAP<9> key and to the right of the KEYCAP<0> key.
+				CODE NumpadMemoryAdd
+				CODE NumpadMemoryClear
+				CODE NumpadMemoryRecall
+				CODE NumpadMemoryStore
+				CODE NumpadMemorySubtract
+				CODE NumpadMultiply		KEYCAP<*> on a keyboard. For use with numpads that provide mathematical operations (KEYCAP<+>, KEYCAP<->, KEYCAP<*> and KEYCAP</>).<br/>Use CODE<NumpadStar> for the KEYCAP<*> key on phones and remote controls.
+				CODE NumpadParenLeft	KEYCAP<(> Found on the Microsoft Natural Keyboard.
+				CODE NumpadParenRight	KEYCAP<)> Found on the Microsoft Natural Keyboard.
+				CODE NumpadStar			KEYCAP<*> on a phone or remote control device. This key is typically found below the KEYCAP<7> key and to the left of the KEYCAP<0> key.<br/>Use CODE<NumpadMultiply> for the KEYCAP<*> key on numeric keypads.
+				CODE NumpadSubtract		KEYCAP<->
+			END_CODE_TABLE
+
+			For Numpads that provide keys not listed here, a <code>code</code> value string should be created by
+			starting with "Numpad" and appending an appropriate description of the key.
+
+		<h4 id="key-function-section">Function Section</h4>
+
+			The Function section runs along the top of the keyboard and contains the function keys and
+			a few additional special keys (for example, KEYCAP<Esc> and
+			KEYCAP<Print Screen>).
+
+			On some keyboards (especially those found on laptops or other portable computers), the function keys
+			(KEYCAP<F1> ... KEYCAP<F12>)
+			are defined to have other primary functions (like controlling display brightness or
+			audio volume) and require that a separate KEYCAP<Fn> key
+			be pressed to make them act as function keys.
+			Unfortunately, the primary functions assigned to these keys varies widely from one manufacturer to the next.
+			Because of this, the <code>code</code> is always set to the function key name.
+
+			BEGIN_CODE_TABLE function "List of code values for keys in the Function section."
+				CODE Escape		KEYCAP<Esc> or KEYCAP<⎋>
+				CODE F1			KEYCAP<F1>
+				CODE F2			KEYCAP<F2>
+				CODE F3			KEYCAP<F3>
+				CODE F4			KEYCAP<F4>
+				CODE F5			KEYCAP<F5>
+				CODE F6			KEYCAP<F6>
+				CODE F7			KEYCAP<F7>
+				CODE F8			KEYCAP<F8>
+				CODE F9			KEYCAP<F9>
+				CODE F10		KEYCAP<F10>
+				CODE F11		KEYCAP<F11>
+				CODE F12		KEYCAP<F12>
+				CODE Fn			KEYCAP<Fn> This is typically a hardware key that does not generate a separate code. Most keyboards do not place this key in the Function section, but it is included here to keep it with related keys.
+				CODE FnLock		KEYCAP<FLock> or KEYCAP<FnLock>. Function Lock key. Found on the Microsoft Natural Keyboard.
+				CODE PrintScreen	KEYCAP<PrtScr SysRq> or KEYCAP<Print Screen>
+				CODE ScrollLock		KEYCAP<Scroll Lock>
+				CODE Pause		KEYCAP<Pause Break>
+			END_CODE_TABLE
+
+			For keyboards that provide more than 12 function keys, the <code>code</code> value follows the pattern
+			shown above with "F" followed by the function key number - CODE_NOREF<F13>, CODE_NOREF<F14>,
+			CODE_NOREF<F15>, and so on.
+
+			<p class="note">Apple keyboards may have KEYCAP<Eject> or KEYCAP<Power>
+			keys in the Function section. The <code>code</code> values
+			for these keys are defined in the Media Keys section.</p>
+
+		<h4 id="key-media">Media Keys</h4>
+
+			Keys that fall outside the sections listed above are referred to as "media keys" since
+			they commonly provide "media" functions like play, pause or volume control.
+
+			These are extra keys that many keyboard manufacturers add, but do not have a consistent location.
+			These keys are often distinct from normal typing keys in appearance and may be recessed in the
+			keyboard.
+
+			On laptop keyboards, these keys are often merged with the Function keys, with the "media" interpretation
+			being the primary function of the key and the "function key" interpretation requiring the
+			KEYCAP<Fn> key to be pressed at the same time. In this configuration the
+			<code>code</code> should be set to match the function key (CODE<F1> ...
+			CODE<F12>). When the keys are merged in this fashion, the <code>code</code>
+			values are taken from the function key value because the "media" value is not consistent across
+			keyboards.
+
+			BEGIN_CODE_TABLE media "List of code values for media keys."
+				CODE BrowserBack		Some laptops place this key to the left of the KEYCAP<&uarr;> key.
+				CODE BrowserFavorites
+				CODE BrowserForward		Some laptops place this key to the right of the KEYCAP<&uarr;> key.
+				CODE BrowserHome
+				CODE BrowserRefresh
+				CODE BrowserSearch
+				CODE BrowserStop
+				CODE Eject				KEYCAP<Eject> or KEYCAP<&#9167;>. This key is placed in the Function section on some Apple keyboards.
+				CODE LaunchApp1			Sometimes labelled KEYCAP<My Computer> on the keyboard
+				CODE LaunchApp2			Sometimes labelled KEYCAP<Calculator> on the keyboard
+				CODE LaunchMail
+				CODE MediaPlayPause
+				CODE MediaSelect
+				CODE MediaStop
+				CODE MediaTrackNext
+				CODE MediaTrackPrevious
+				CODE Power				This key is placed in the Function section on some Apple keyboards, replacing the KEYCAP<Eject> key.
+				CODE Sleep
+				CODE VolumeDown
+				CODE VolumeMute
+				CODE VolumeUp
+				CODE WakeUp
+			END_CODE_TABLE
+
+		<h4 id="key-legacy">Legacy Keys and Non-Standard Keys</h4>
+
+			These keys are not found on modern standard keyboards.
+			They are listed here for reference purposes.
+
+			BEGIN_CODE_TABLE legacy-modifier "List of code values for legacy modifier keys."
+				CODE Hyper
+				CODE Super
+				CODE Turbo
+			END_CODE_TABLE
+
+			&nbsp;
+
+			BEGIN_CODE_TABLE legacy-process "List of code values for legacy process control keys."
+				CODE Abort
+				CODE Resume
+				CODE Suspend
+			END_CODE_TABLE
+
+			&nbsp;
+
+			BEGIN_CODE_TABLE legacy-editing "List of code values for legacy editing keys."
+				CODE Again	Found on Sun's USB keyboard.
+				CODE Copy	Found on Sun's USB keyboard.
+				CODE Cut	Found on Sun's USB keyboard.
+				CODE Find	Found on Sun's USB keyboard.
+				CODE Open	Found on Sun's USB keyboard.
+				CODE Paste	Found on Sun's USB keyboard.
+				CODE Props	Found on Sun's USB keyboard.
+				CODE Select	Found on Sun's USB keyboard.
+				CODE Undo	Found on Sun's USB keyboard.
+			END_CODE_TABLE
+
+			The following keys may be found on non-standard international keyboards.
+
+			BEGIN_CODE_TABLE international "List of code values for keys found on international keyboards."
+				CODE Hiragana	Use for dedicated KEYCAP<ひらがな> key found on some Japanese word processing keyboards.
+				CODE Katakana	Use for dedicated KEYCAP<カタカナ> key found on some Japanese word processing keyboards.
+			END_CODE_TABLE
+
+<h2 id="acknowledgements-contributors">Acknowledgements</h2>
+
+	Considerable thanks are due to the following participants of the
+	WebApps Working Group for providing substantial material contributions
+	in the process of developing this specification.
+
+	Gary Kacmarcik (Google),
+	Masayuki Nakano (Mozilla)
