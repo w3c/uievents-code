@@ -3,7 +3,7 @@
 <pre class="metadata">
 Shortname: uievents-code
 Level:
-Group: html
+Group: uievents
 Status: WD
 TR: http://www.w3.org/TR/uievents-code/
 ED: https://github.com/w3c/uievents-code/
@@ -338,10 +338,10 @@ Abstract:
 					CODE Digit9			KEYCAP<9(> on a US keyboard.
 
 					CODE Equal			KEYCAP<=+> on a US keyboard.
-					CODE IntlBackslash	Located between the left KEYCAP<Shift> and KEYCAP<Z> keys. The KEYCAP<\|> key on a UK keyboard.
-					CODE IntlHash		Located between the KEYCAP<"> and KEYCAP<Enter> keys on row E of the keyboard. The KEYCAP<#~> key on a UK keyboard.
-					CODE IntlRo			Located between the KEYCAP</> and right KEYCAP<Shift> keys. The KEYCAP<\ろ> (<span class="phonetic">ro</span>) key on a Japanese keyboard.
-					CODE IntlYen		Located between the KEYCAP<=> and KEYCAP<Backspace> keys. The KEYCAP<¥> (<span class="phonetic">yen</span>) key on a Japanese keyboard. The KEYCAP<\/> key on a Russian keyboard.
+					CODE IntlBackslash	Located between the left KEYCAP<Shift> and KEYCAP<Z> keys. Labelled KEYCAP<\|> on a UK keyboard.
+					CODE IntlHash		Located between the KEYCAP<"> and KEYCAP<Enter> keys on row E of the keyboard. Labelled KEYCAP<#~> on a UK keyboard.
+					CODE IntlRo			Located between the KEYCAP</> and right KEYCAP<Shift> keys. Labelled KEYCAP<\ろ> (<span class="phonetic">ro</span>) on a Japanese keyboard.
+					CODE IntlYen		Located between the KEYCAP<=> and KEYCAP<Backspace> keys. Labelled KEYCAP<¥> (<span class="phonetic">yen</span>) on a Japanese keyboard. KEYCAP<\/> on a Russian keyboard.
 
 					CODE KeyA			KEYCAP<a> on a US keyboard. Labelled KEYCAP<q> on an AZERTY (e.g., French) keyboard.
 					CODE KeyB			KEYCAP<b> on a US keyboard.
@@ -441,7 +441,7 @@ Abstract:
 
 			BEGIN_CODE_TABLE controlpad "List of code values for keys in the ControlPad section."
 				CODE Delete		KEYCAP<&#8998;>. The forward delete key. Note that on Apple keyboards, the key labelled KEYCAP<Delete> on the main part of the keyboard should be encoded as CODE<Backspace>.
-				CODE End		KEYCAP<Page Down>KEYCAP<End> or KEYCAP<&#8600;>
+				CODE End		KEYCAP<Page Down>, KEYCAP<End> or KEYCAP<&#8600;>
 				CODE Help		KEYCAP<Help>. Not present on standard PC keyboards.
 				CODE Home		KEYCAP<Home> or KEYCAP<&#8598;>
 				CODE Insert		KEYCAP<Insert> or KEYCAP<Ins>. Not present on Apple keyboards.
