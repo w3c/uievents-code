@@ -398,8 +398,8 @@ Abstract:
 					CODE ControlLeft	KEYCAP<Control> or KEYCAP<&#8963;>
 					CODE ControlRight	KEYCAP<Control> or KEYCAP<&#8963;>
 					CODE Enter			KEYCAP<Enter> or KEYCAP<&crarr;>. Labelled KEYCAP<Return> on Apple keyboards.
-					CODE OSLeft			The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
-					CODE OSRight		The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
+					CODE MetaLeft		The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
+					CODE MetaRight		The Windows, KEYCAP<&#x2318;>, KEYCAP<Command> or other OS symbol key.
 					CODE ShiftLeft		KEYCAP<Shift> or KEYCAP<&#8679;>
 					CODE ShiftRight		KEYCAP<Shift> or KEYCAP<&#8679;>
 					CODE Space			KEYCAP<&nbsp;> (space)
