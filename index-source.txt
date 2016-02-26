@@ -599,9 +599,9 @@ Abstract:
 				CODE MediaTrackPrevious
 				CODE Power				This key is placed in the Function section on some Apple keyboards, replacing the KEYCAP<Eject> key.
 				CODE Sleep
-				CODE VolumeDown
-				CODE VolumeMute
-				CODE VolumeUp
+				CODE AudioVolumeDown
+				CODE AudioVolumeMute
+				CODE AudioVolumeUp
 				CODE WakeUp
 			END_CODE_TABLE
 
