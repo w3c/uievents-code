@@ -46,6 +46,13 @@ class Parser():
 			post = self.process_text(m.group(3))
 			desc = '%s<code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-%s">%s</a>"</code>%s' % (pre, name, name, post)
 
+		m = re.match(r'^(.*)KEY_NOLINK{(.+?)}(.*)$', desc)
+		if m:
+			pre = self.process_text(m.group(1))
+			name = m.group(2)
+			post = self.process_text(m.group(3))
+			desc = '%s<code class="key">"%s"</code>%s' % (pre, name, post)
+
 		m = re.match(r'^(.*)KEYCAP{(.+?)}(.*)$', desc)
 		if m:
 			pre = self.process_text(m.group(1))
@@ -59,6 +66,20 @@ class Parser():
 			name = m.group(2)
 			post = self.process_text(m.group(3))
 			desc = pre + '<code class="glyph">"' + name + '"</code>' + post
+
+		m = re.match(r'^(.*)UNI{(.+?)}(.*)$', desc)
+		if m:
+			pre = self.process_text(m.group(1))
+			name = m.group(2)
+			post = self.process_text(m.group(3))
+			desc = pre + '<code class="unicode">' + name + '</code>' + post
+
+		m = re.match(r'^(.*)PHONETIC{(.+?)}(.*)$', desc)
+		if m:
+			pre = self.process_text(m.group(1))
+			name = m.group(2)
+			post = self.process_text(m.group(3))
+			desc = pre + '<span class="unicode">' + name + '</span>' + post
 
 		return desc
 

@@ -9,6 +9,41 @@
   <link href="styles.css" rel="stylesheet" type="text/css">
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet" type="text/css">
   <meta content="Bikeshed 1.0.0" name="generator">
+<style>
+        .dfn-panel {
+            display: inline-block;
+            position: absolute;
+            z-index: 35;
+            height: auto;
+            width: -webkit-fit-content;
+            max-width: 300px;
+            max-height: 500px;
+            overflow: auto;
+            padding: 0.5em 0.75em;
+            font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+            background: #DDDDDD;
+            color: black;
+            border: outset 0.2em;
+        }
+        .dfn-panel:not(.on) { display: none; }
+        .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+        .dfn-panel > b { display: block; }
+        .dfn-panel a { color: black; }
+        .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+        .dfn-panel > b + b { margin-top: 0.25em; }
+        .dfn-panel > span { display: list-item; list-style: inside; }
+        .dfn-panel.activated {
+            display: inline-block;
+            position: fixed;
+            left: .5em;
+            bottom: .5em;
+            margin: 0 auto;
+            max-width: calc(100vw - 1.5em - .4em - .5em);
+            max-height: 30vh;
+        }
+
+        .dfn-paneled { cursor: pointer; }
+        </style>
  <body class="h-entry">
   <div class="head">
    <header>
@@ -93,7 +128,7 @@ identify the physical key being pressed by the user.</p>
       <li><a href="#keyboard-chording-virtual"><span class="secno">1.4</span> <span class="content">Virtual Keyboards and Chording Keyboards</span></a>
      </ol>
     <li>
-     <a href="#code-value-tables"><span class="secno">2</span> <span class="content">Keyboard Event <code>code</code> Value Tables</span></a>
+     <a href="#code-value-tables"><span class="secno">2</span> <span class="content">Keyboard Event <code class="idl"><span>code</span></code> Value Tables</span></a>
      <ol class="toc">
       <li>
        <a href="#keyboard-key-codes"><span class="secno">2.1</span> <span class="content">Key Codes for Standard Keyboards</span></a>
@@ -113,6 +148,13 @@ identify the physical key being pressed by the user.</p>
        </ol>
      </ol>
     <li><a href="#acknowledgements-contributors"><span class="secno">3</span> <span class="content">Acknowledgements</span></a>
+    <li><a href="#glossary"><span class="secno">4</span> <span class="content">Glossary</span></a>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
@@ -124,13 +166,15 @@ identify the physical key being pressed by the user.</p>
   <main>
    <h2 class="heading settled" data-level="1" id="keyboard-layout"><span class="secno">1. </span><span class="content">Keyboard Layout</span><a class="self-link" href="#keyboard-layout"></a></h2>
    <p><em>This section is non-normative.</em></p>
-   <p>Alphanumeric keyboards are the most common way for users to generate keyboard events.
-	This section provides an overview of standard keyboards and their physical layouts.</p>
+   <p>Alphanumeric keyboards are the most common way for users to generate
+	keyboard events. This section provides an overview of standard keyboards and
+	their physical layouts.</p>
    <h3 class="heading settled" data-level="1.1" id="keyboard-common-layouts"><span class="secno">1.1. </span><span class="content">Standard Keyboard Layouts</span><a class="self-link" href="#keyboard-common-layouts"></a></h3>
-   <p>This section describes the physical layouts found on commonly available keyboards.</p>
+   <p>This section describes the physical layouts found on commonly available
+		keyboards.</p>
    <h4 class="heading settled" data-level="1.1.1" id="keyboard-sections"><span class="secno">1.1.1. </span><span class="content">Keyboard Sections</span><a class="self-link" href="#keyboard-sections"></a></h4>
-   <p>When discussing keyboard layouts, it is convenient to divide the standard
-			keyboard into distinct sections and to label each row.</p>
+   <p>When discussing keyboard layouts, it is convenient to divide the
+			standard keyboard into distinct sections and to label each row.</p>
    <figure id="figure-keyboard-sections">
      <img alt="The five general sections of a standard keyboard" height="225" src="images/keyboard-sections.svg" width="684"> 
     <figcaption>The five general sections of a standard keyboard</figcaption>
@@ -138,174 +182,188 @@ identify the physical key being pressed by the user.</p>
    <p>These keyboard sections are:</p>
    <ul>
     <li data-md="">
-     <p>The <em>Alphanumeric</em> section is the main part of the keyboard and
-is where most of the keyboard variation occurs.
-When a user selects a keyboard layout, it is the keys in this sections
-that are most affected.</p>
+     <p>The <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-1"><em>Alphanumeric</em> section</a> is the main part of the
+keyboard and is where most of the keyboard variation occurs.
+When a user selects a keyboard layout, it is the keys in this
+sections that are most affected.</p>
     <li data-md="">
-     <p>The <em>Control Pad</em> and <em>Arrow Pad</em> sections contain the arrow
-keys and other editing keys.</p>
+     <p>The <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-1"><em>Control Pad</em></a> and <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-1"><em>Arrow Pad</em></a> sections contain the arrow keys and other editing keys.</p>
     <li data-md="">
-     <p>The <em>Numpad</em> (also known as the "numeric keypad" or "number pad")
-contains number and math keys to make it easier to enter numeric data.</p>
+     <p>The <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-1"><em>Numpad</em></a> (also known as the "numeric keypad"
+or "number pad") contains number and math keys to make it easier
+to enter numeric data.</p>
     <li data-md="">
-     <p>And finally, the <em>Function</em> section contains miscellaneous function
-keys and special keys like Escape.</p>
+     <p>And finally, the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-1"><em>Function</em> section</a> contains
+miscellaneous function keys and special keys like <code class="keycap">Escape</code>.</p>
    </ul>
-   <p>To make it easier to identify keys, the rows on the keyboard are named starting with "A"
-			for the bottom row up to "E" for the top row. The row of keys in the Function section are considered
-			to be in row "K".
-			These row names are consistent with those given in <a data-link-type="biblio" href="#biblio-iso9995-1">[ISO9995-1]</a>.</p>
-   <p>Note that many keyboards (both modern and legacy) have extra keys that do not fit neatly into the above sections.
-			Some of these keys are covered in the <a href="#key-media">Media Keys</a> section.</p>
+   <p>To make it easier to identify keys, the rows on the keyboard are
+			named starting with "A" for the bottom row up to "E" for the top
+			row. The row of keys in the Function section are considered to be in
+			row "K". These row names are consistent with those given in <a data-link-type="biblio" href="#biblio-iso9995-1">[ISO9995-1]</a>.</p>
+   <p>Note that many keyboards (both modern and legacy) have extra keys
+			that do not fit neatly into the above sections. Some of these keys
+			are covered in <a href="#key-media">§2.1.6 Media Keys</a>.</p>
    <h4 class="heading settled" data-level="1.1.2" id="keyboard-101"><span class="secno">1.1.2. </span><span class="content">Standard "101" Keyboard Layout</span><a class="self-link" href="#keyboard-101"></a></h4>
-   <p>The standard "101" keyboard (commonly referred to as the "US layout") is the only layout that uses the <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> code (for the <code class="keycap">\|</code> key).			All the other layouts omit this key and expand the <code class="keycap">Enter</code> key to occupy			two-rows.</p>
+   <p>The standard "101" keyboard (commonly referred to as the "US
+			layout") is the only layout that uses the <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> code (for			the <code class="keycap">\|</code> key). All the other layouts omit this key and expand			the <code class="keycap">Enter</code> key to occupy two-rows.</p>
    <figure id="figure-keyboard-101-us">
      <img alt="Standard &apos;101&apos; keyboard layout" height="225" src="images/keyboard-101-us.svg" width="684"> 
     <figcaption>Standard "101" keyboard layout showing unmodified US key values</figcaption>
    </figure>
-   <p>Modern standard "101"-layout keyboards actually contain 104 keys: 61 keys in the alphanumeric section
-			and 43 keys in the numpad, control pad, arrow pad and function sections.
-			The "101" name for this keyboard layout dates to the time when this standard keyboard did in fact contain
-			101 keys. The two <code class="keycap">OS</code> keys,			and the <code class="keycap">Menu</code> key were			added later to bring the total to 104 keys.</p>
+   <p>Modern standard "101"-layout keyboards actually contain 104 keys: 61
+			keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-2">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-2">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-2">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-2">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-2">function
+			sections</a>. The "101" name for this keyboard layout dates to the
+			time when this standard keyboard did in fact contain 101 keys. The
+			two <code class="keycap">OS</code> keys, and the <code class="keycap">Menu</code> key were added later to			bring the total to 104 keys.</p>
    <h4 class="heading settled" data-level="1.1.3" id="keyboard-101alt"><span class="secno">1.1.3. </span><span class="content">Alternate "101" Keyboard Layout</span><a class="self-link" href="#keyboard-101alt"></a></h4>
-   <p>The alternate "101" keyboard has a large <code class="keycap">Enter</code> key and shrinks the <code class="keycap">Backspace</code> key to make room for the <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> key			(which replaces the <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key found in the standard 101 layout).			The <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> name comes from the			Japanese layout where this is the <code class="keycap">¥</code> (<span class="phonetic">yen</span>) key — in the Russian layout shown below this key maps to a <code class="keycap">\/</code>.</p>
+   <p>The alternate "101" keyboard has a large <code class="keycap">Enter</code> key and			shrinks the <code class="keycap">Backspace</code> key to make room for the <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> key (which replaces the <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key found in the standard			101 layout). The <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> name comes from the Japanese layout			where this is the <code class="keycap">¥</code> (<span class="unicode">yen</span>) key — in the Russian			layout shown below this key maps to a <code class="keycap">\/</code>.</p>
    <figure id="figure-keyboard-101-russian">
      <img alt="Alternate &apos;101&apos; keyboard layout" height="225" src="images/keyboard-101-russian.svg" width="684"> 
     <figcaption>Alternate "101" keyboard layout showing unmodified Russian key values</figcaption>
    </figure>
-   <p>Modern alternate "101"-layout keyboards contain 104 keys: 61 keys in the alphanumeric section and 43 keys in the numpad,
-			control pad, arrow pad and function sections.</p>
+   <p>Modern alternate "101"-layout keyboards contain 104 keys: 61 keys in
+			the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-3">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-3">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-3">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-3">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-3">function sections</a>.</p>
    <h4 class="heading settled" data-level="1.1.4" id="keyboard-102"><span class="secno">1.1.4. </span><span class="content">Standard "102" Keyboard Layout</span><a class="self-link" href="#keyboard-102"></a></h4>
-   <p>The standard "102" keyboard is common throughout Europe and adds two keys that don’t exist on the
-			"101" layouts:
-			The <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code> key (labelled <code class="keycap">\|</code> on a UK keyboard) next to the left shift key,			and the <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> key (labelled <code class="keycap">#~</code> on a UK keyboard) which is partially tucked under the <code class="keycap">Enter</code> key.</p>
+   <p>The standard "102" keyboard is common throughout Europe and adds two
+			keys that don’t exist on the "101" layouts: The <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code> key (labelled <code class="keycap">\|</code> on a UK keyboard) next to the left shift			key, and the <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> key (labelled <code class="keycap">#~</code> on a UK			keyboard) which is partially tucked under the <code class="keycap">Enter</code> key.</p>
    <figure id="figure-keyboard-102-uk">
      <img alt="Standard &apos;102&apos; keyboard layout" height="225" src="images/keyboard-102-uk.svg" width="684"> 
     <figcaption>Standard "102" keyboard layout showing unmodified UK key values</figcaption>
    </figure>
-   <p>Modern "102"-layout keyboards contain 105 keys: 62 keys in the alphanumeric section and 43 keys in the numpad,
-			control pad, arrow pad and function sections.</p>
+   <p>Modern "102"-layout keyboards contain 105 keys: 62 keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-4">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-4">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-4">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-4">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-4">function sections</a>.</p>
    <h4 class="heading settled" data-level="1.1.5" id="keyboard-103"><span class="secno">1.1.5. </span><span class="content">Korean "103" Keyboard Layout</span><a class="self-link" href="#keyboard-103"></a></h4>
-   <p>The Korean "103" keyboard is based on the alternate 101 layout and adds two additional keys
-			(one on each side of the spacebar) to handle Korean-specific input modes.
-			These keys are <code class="code">"<a href="#code-Lang2">Lang2</a>"</code> ("Hanja", labelled <code class="keycap">한자</code> <span class="phonetic">hanja</span>) and <code class="code">"<a href="#code-Lang1">Lang1</a>"</code> ("HangulMode", labelled <code class="keycap">한/영</code> <span class="phonetic">han/yeong</span>).</p>
+   <p>The Korean "103" keyboard is based on the alternate 101 layout and
+			adds two additional keys (one on each side of the spacebar) to
+			handle Korean-specific input modes. These keys are <code class="code">"<a href="#code-Lang2">Lang2</a>"</code> ("Hanja", labelled <code class="keycap">한자</code> <span class="unicode">hanja</span>)			and <code class="code">"<a href="#code-Lang1">Lang1</a>"</code> ("HangulMode", labelled <code class="keycap">한/영</code> <span class="unicode">han/yeong</span>).</p>
    <figure id="figure-keyboard-103-korean">
      <img alt="Korean &apos;103&apos; keyboard layout" height="225" src="images/keyboard-103-korean.svg" width="684"> 
     <figcaption>Korean "103" keyboard layout showing unmodified Korean key values</figcaption>
    </figure>
-   <p>Modern "103"-layout keyboards contain 106 keys: 63 keys in the alphanumeric section and 43 keys in the numpad,
-			control pad, arrow pad and function sections.</p>
+   <p>Modern "103"-layout keyboards contain 106 keys: 63 keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-5">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-5">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-5">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-5">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-5">function sections</a>.</p>
    <h4 class="heading settled" data-level="1.1.6" id="keyboard-104"><span class="secno">1.1.6. </span><span class="content">Brazilian "104" Keyboard Layout</span><a class="self-link" href="#keyboard-104"></a></h4>
-   <p>The "104" layout used in Brazil adds 4 new keys: the two non-US keys from the "102" layout
-			(<code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> and <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code>) plus the <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> key (next to the right shift			key) and an extra key on the numeric keypad. This new keypad key is called <code class="code">"<a href="#code-NumpadComma">NumpadComma</a>"</code> because it represents the thousands separator. On the			Brazilian key layout, this key is labelled <code class="keycap">.</code> and the <code class="code">"<a href="#code-NumpadDecimal">NumpadDecimal</a>"</code> key is labelled <code class="keycap">,</code>.</p>
+   <p>The "104" layout used in Brazil adds 4 new keys: the two non-US keys
+			from the "102" layout (<code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> and <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code>) plus			the <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> key (next to the right shift key) and an extra key			on the numeric keypad. This new keypad key is called <code class="code">"<a href="#code-NumpadComma">NumpadComma</a>"</code> because it represents the thousands separator. On			the Brazilian key layout, this key is labelled <code class="keycap">.</code> and the <code class="code">"<a href="#code-NumpadDecimal">NumpadDecimal</a>"</code> key is labelled <code class="keycap">,</code>.</p>
    <figure id="figure-keyboard-104-brazilian">
      <img alt="Standard &apos;104&apos; keyboard layout" height="225" src="images/keyboard-104-brazilian.svg" width="684"> 
     <figcaption>Standard "104" keyboard layout showing unmodified Brazilian key values</figcaption>
    </figure>
-   <p>Modern "104"-layout keyboards contain 107 keys: 63 keys in the alphanumeric section and 44 keys in the numpad,
-			control pad, arrow pad and function sections. Some Brazilian keyboards lack the extra keypad
-			key and have only 106 keys.</p>
+   <p>Modern "104"-layout keyboards contain 107 keys: 63 keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-6">alphanumeric section</a> and 44 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-6">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-6">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-6">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-6">function sections</a>.
+			Some Brazilian keyboards lack the extra <a data-link-type="dfn" href="#keypad" id="ref-for-keypad-1">keypad</a> key and have
+			only 106 keys.</p>
    <h4 class="heading settled" data-level="1.1.7" id="keyboard-106"><span class="secno">1.1.7. </span><span class="content">Japanese "106" Keyboard Layout</span><a class="self-link" href="#keyboard-106"></a></h4>
-   <p>The Japanese "106" keyboard layout adds 3 new keys: <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> (labelled <code class="keycap">¥_</code>), <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> (labelled <code class="keycap">]む</code>) and <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> (labelled <code class="keycap">\ろ</code>).			It also shrinks the spacebar to make room for 3 input mode keys: <code class="code">"<a href="#code-NonConvert">NonConvert</a>"</code> (labelled <code class="keycap">無変換</code> <span class="phonetic">muhenkan</span>), <code class="code">"<a href="#code-Convert">Convert</a>"</code> (labelled <code class="keycap">変換</code> <span class="phonetic">henkan</span>) and <code class="code">"<a href="#code-KanaMode">KanaMode</a>"</code> (labelled <code class="keycap">カタカナ/ひらがな/ローマ字</code> <span class="phonetic">katakana/hiragana/romaji</span>).</p>
+   <p>The Japanese "106" keyboard layout adds 3 new keys: <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> (labelled <code class="keycap">¥_</code>), <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> (labelled <code class="keycap">]む</code>)			and <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> (labelled <code class="keycap">\ろ</code>).			It also shrinks the spacebar to make room for 3 input mode keys: <code class="code">"<a href="#code-NonConvert">NonConvert</a>"</code> (labelled <code class="keycap">無変換</code> <span class="unicode">muhenkan</span>), <code class="code">"<a href="#code-Convert">Convert</a>"</code> (labelled <code class="keycap">変換</code> <span class="unicode">henkan</span>)			and <code class="code">"<a href="#code-KanaMode">KanaMode</a>"</code> (labelled <code class="keycap">カタカナ/ひらがな/ローマ字</code> <span class="unicode">katakana/hiragana/romaji</span>).</p>
    <figure id="figure-keyboard-106-japanese">
      <img alt="Standard &apos;106&apos; keyboard layout" height="225" src="images/keyboard-106-japanese.svg" width="684"> 
     <figcaption>Standard "106" keyboard layout showing unmodified Japanese key values</figcaption>
    </figure>
-   <p>Modern "106"-layout keyboards contain 109 keys: 66 keys in the alphanumeric section and 43 keys in the numpad,
-			control pad, arrow pad and function sections.</p>
+   <p>Modern "106"-layout keyboards contain 109 keys: 66 keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-7">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-7">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-7">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-7">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-7">function sections</a>.</p>
    <h4 class="heading settled" data-level="1.1.8" id="keyboard-mac"><span class="secno">1.1.8. </span><span class="content">Apple Keyboard Layout</span><a class="self-link" href="#keyboard-mac"></a></h4>
-   <p>In general, Apple keyboards follow the same layout as PC keyboards, but there are some differences as
-			noted in the following figure.</p>
+   <p>In general, Apple keyboards follow the same layout as PC keyboards,
+			but there are some differences as noted in the following figure.</p>
    <figure id="figure-keyboard-mac">
      <img alt="Apple extended keyboard layout" height="225" src="images/keyboard-mac.svg" width="684"> 
     <figcaption>Apple extended keyboard layout showing unmodified English key values</figcaption>
    </figure>
-   <p>In this figure, the green keys are those
-			that have been moved to a new location while the blue keys indicate keys that have been added.</p>
+   <p>In this figure, the green keys are those that have been moved to a
+			new location while the blue keys indicate keys that have been added.</p>
    <h4 class="heading settled" data-level="1.1.9" id="keyboard-laptops"><span class="secno">1.1.9. </span><span class="content">Laptop Keyboard Layouts</span><a class="self-link" href="#keyboard-laptops"></a></h4>
-   <p>The limited space available on laptop keyboards often means that the physical key layout needs
-			to be adjusted to fit all the required keys. The writing system keys in the Alphanumeric section tend
-			to remain intact, but the other keyboard sections are usually combined with other keys or
-			removed altogether.</p>
+   <p>The limited space available on laptop keyboards often means that the
+			physical key layout needs to be adjusted to fit all the required
+			keys. The <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-1">writing system keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-8">alphanumeric
+			section</a> tend to remain intact, but the other keyboard sections
+			are usually combined with other keys or removed altogether.</p>
    <figure id="figure-keyboard-laptop-mac">
      <img alt="Apple laptop keyboard layout" height="180" src="images/keyboard-laptop-mac.svg" width="420"> 
     <figcaption>Apple laptop keyboard layout</figcaption>
    </figure>
-   <p>In this Apple laptop keyboard, the right control key has been removed to make room for half-height
-			arrow keys and a <code class="keycap">Fn</code> key is added on the left.</p>
+   <p>In this Apple laptop keyboard, the right control key has been
+			removed to make room for half-height arrow keys and a <code class="keycap">Fn</code> key			is added on the left.</p>
    <figure id="figure-keyboard-laptop">
      <img alt="Sample PC laptop keyboard layout" height="180" src="images/keyboard-laptop.svg" width="460"> 
     <figcaption>Sample PC laptop keyboard layout</figcaption>
    </figure>
-   <p>PC laptop keyboards vary considerably, but this sample keyboard demonstrates some commonly found aspects.
-			The control pad keys are added along the right-hand side with the arrow keys tucked in along the bottom.
-			The right shift key is often shrunk to make room for the up arrow key and the right OS key
-			is typically removed altogether.</p>
+   <p>PC laptop keyboards vary considerably, but this sample keyboard
+			demonstrates some commonly found aspects. The control pad keys are
+			added along the right-hand side with the arrow keys tucked in along
+			the bottom. The right shift key is often shrunk to make room for the
+			up arrow key and the right OS key is typically removed altogether.</p>
    <h3 class="heading settled" data-level="1.2" id="keyboard-mobile"><span class="secno">1.2. </span><span class="content">Mobile Keypads</span><a class="self-link" href="#keyboard-mobile"></a></h3>
-   <p>In the case where a content author wishes to rely on the mechanical layout of a mobile keypad, this specification suggests the keyboard configuration specified
-		in <a data-link-type="biblio" href="#biblio-iso9995-8">[ISO9995-8]</a>, which defines a numeric keypad layout and secondary assignment
-		of Unicode characters in the range <code class="unicode">\u0061</code> ... <code class="unicode">\u007A</code> (<code class="glyph">"a"</code> - <code class="glyph">"z"</code>)		to the number keys <code class="keycap">2</code> through <code class="keycap">9</code>, as a common layout appropriate to some		international uses.</p>
-   <p></p>
-   <p class="note" role="note">This keypad layout, and in particular the distribution of letters is for English devices, and will not match the keypads
-		or configurations of many users.  Content authors cannot rely upon any particular configuration, and are expected to create content in an internationalized and
-		localizable manner.</p>
+   <p>In the case where a content author wishes to rely on the mechanical
+		layout of a mobile keypad, this specification suggests the keyboard
+		configuration specified in <a data-link-type="biblio" href="#biblio-iso9995-8">[ISO9995-8]</a>, which defines a numeric keypad
+		layout and secondary assignment of Unicode characters in the range <code class="unicode">\u0061</code> ... <code class="unicode">\u007A</code> (<code class="glyph">"a"</code> - <code class="glyph">"z"</code>) to the number keys <code class="keycap">2</code> through <code class="keycap">9</code>, as a common layout appropriate to some		international uses.</p>
+   <p class="note" role="note"> This keypad layout, and in particular the distribution of letters is for
+		English devices, and will not match the keypads or configurations of
+		many users.	 Content authors cannot rely upon any particular
+		configuration, and are expected to create content in an
+		internationalized and localizable manner. </p>
    <figure id="figure-numeric-keypad">
      <img alt="ISO/IEC 9995-8:2006 keypad layout" height="240" src="images/ISOIEC-9995-8-2006.svg" width="180"> 
     <figcaption>A graphical depiction of an ISO standard defining layouts of numeric keypads, with distribution of letters on the keys, ISO/IEC 9995-8:2006.</figcaption>
    </figure>
    <h3 class="heading settled" data-level="1.3" id="remote-control"><span class="secno">1.3. </span><span class="content">Media Remote Controls</span><a class="self-link" href="#remote-control"></a></h3>
-   <p>Many keyboards contain special keys to control media functions.  Increasingly, many media devices, especially televisions, are Web-enabled.  Hybrid keyboard/remote-control
-		devices are becoming more common.  To meet the needs of these hybrid Web/media devices, this specification defines keys that are common as remote control buttons,
-		in addition to traditional keyboard keys.</p>
-   <p>Because of the smaller form factor, keys (or buttons) on a remote control will often be modal,
-		with one key performing different functions based on the context of the on-screen content.
-		Additionally, many keys serve as toggles, to change back and forth between two or more states
-		(see toggling keys).
-		These remote control buttons typically do not have modifier states so each button is assigned a
-		single function (like <code class="keycap">Play</code>, <code class="keycap">Pause</code>, <code class="keycap">Up</code>, <code class="keycap">Menu</code> or <code class="keycap">Exit</code>).</p>
+   <p>Many keyboards contain special keys to control media functions.
+		Increasingly, many media devices, especially televisions, are
+		Web-enabled.  Hybrid keyboard/remote-control devices are becoming more
+		common.	 To meet the needs of these hybrid Web/media devices, this
+		specification defines keys that are common as remote control buttons, in
+		addition to traditional keyboard keys.</p>
+   <p>Because of the smaller form factor, keys (or buttons) on a remote
+		control will often be modal, with one key performing different functions
+		based on the context of the on-screen content. Additionally, many keys
+		serve as toggles, to change back and forth between two or more states
+		(see toggling keys). These remote control buttons typically do not have
+		modifier states so each button is assigned a single function (like <code class="keycap">Play</code>, <code class="keycap">Pause</code>, <code class="keycap">Up</code>, <code class="keycap">Menu</code> or <code class="keycap">Exit</code>).</p>
    <figure id="figure-media-remote-control">
      <img alt="A sample media remote control" height="422" src="images/remote-control.svg" width="102"> 
     <figcaption>A graphical depiction of a media remote control, with buttons mapped to specific keys values.</figcaption>
    </figure>
    <h3 class="heading settled" data-level="1.4" id="keyboard-chording-virtual"><span class="secno">1.4. </span><span class="content">Virtual Keyboards and Chording Keyboards</span><a class="self-link" href="#keyboard-chording-virtual"></a></h3>
-   <p>Virtual keyboards are software-based sets of keys, in a variety of different
-		arrangements, commonly found on touch-screen devices. They are often modal, with
-		the ability to switch between different dynamic sets of keys, such as alphabetic,
-		numeric, or symbolic keys.  Because of the lack of physical constraints, these
-		keyboards MAY present the widest range of characters, including emoticons and
-		other symbols, and MAY have keys not represented by Unicode <a data-link-type="biblio" href="#biblio-unicode">[Unicode]</a> or by the <a href="http://www.w3.org/TR/uievents-key/#key-value-tables">key values</a> <a data-link-type="biblio" href="#biblio-uievents-key">[uievents-key]</a>.
-		Wherever possible, however, virtual keyboards SHOULD produce the normal range
-		of keyboard events and values, for ease of authoring and compatibility with existing
-		content.</p>
-   <p>Chording keyboards, also know as chorded keysets or chord keyboards, are key input
-		devices which produce values by pressing several keys in combination or sequence,
-		normally to simulate a full range of characters or commands on a reduced set of
-		keys, often for single-handed use.  A chording keyboard MAY have additional mode
-		keys to switch between key values, and the number and type of keys pressed to
-		produce a key value will vary, but the final key values produced by such keyboards
-		SHOULD match the range of key values described in this specification.</p>
+   <p>Virtual keyboards are software-based sets of keys, in a variety of
+		different arrangements, commonly found on touch-screen devices. They are
+		often modal, with the ability to switch between different dynamic sets
+		of keys, such as alphabetic, numeric, or symbolic keys.	 Because of the
+		lack of physical constraints, these keyboards MAY present the widest
+		range of characters, including emoticons and other symbols, and MAY have
+		keys not represented by Unicode <a data-link-type="biblio" href="#biblio-unicode">[Unicode]</a> or by the <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#key-value-tables">key value
+		tables</a> <a data-link-type="biblio" href="#biblio-uievents-key">[uievents-key]</a>. Wherever possible, however, virtual
+		keyboards SHOULD produce the normal range of keyboard events and values,
+		for ease of authoring and compatibility with existing content.</p>
+   <p>Chording keyboards, also know as chorded keysets or chord keyboards, are
+		key input devices which produce values by pressing several keys in
+		combination or sequence, normally to simulate a full range of characters
+		or commands on a reduced set of keys, often for single-handed use.	A
+		chording keyboard MAY have additional mode keys to switch between key
+		values, and the number and type of keys pressed to produce a key value
+		will vary, but the final key values produced by such keyboards SHOULD
+		match the range of key values described in this specification.</p>
    <p>For these and other alternative modal keyboards, the key values <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-Alphanumeric">Alphanumeric</a>"</code>, <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-CapsLock">CapsLock</a>"</code>, <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-NumLock">NumLock</a>"</code>,		and <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-SymbolLock">SymbolLock</a>"</code> are RECOMMENDED for the keys which switch between different modes.</p>
-   <h2 class="heading settled" data-level="2" id="code-value-tables"><span class="secno">2. </span><span class="content">Keyboard Event <code>code</code> Value Tables</span><a class="self-link" href="#code-value-tables"></a></h2>
-   <p>This section defines a list of <code>code</code> values which implementations MUST support.</p>
+   <h2 class="heading settled" data-level="2" id="code-value-tables"><span class="secno">2. </span><span class="content">Keyboard Event <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> Value Tables</span><a class="self-link" href="#code-value-tables"></a></h2>
+   <p>This section defines a list of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values which
+	implementations MUST support.</p>
    <h3 class="heading settled" data-level="2.1" id="keyboard-key-codes"><span class="secno">2.1. </span><span class="content">Key Codes for Standard Keyboards</span><a class="self-link" href="#keyboard-key-codes"></a></h3>
-   <p>This section describes the various keyboard sections in more detail and defines the <code>code</code> values that should be used for each key.</p>
+   <p>This section describes the various keyboard sections in more detail and
+		defines the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values that should be used for each
+		key.</p>
    <h4 class="heading settled" data-level="2.1.1" id="key-alphanumeric-section"><span class="secno">2.1.1. </span><span class="content">Alphanumeric Section</span><a class="self-link" href="#key-alphanumeric-section"></a></h4>
-   <p>The Alphanumeric section keys fall into two general categories: "writing system" keys whose meaning changes based on
-			the current keyboard layout, and "functional" keys which are (mostly) the same for all layouts.</p>
+   <p>The <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-9">alphanumeric section</a> keys fall into two general
+			categories: <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-2"><em>writing system</em> keys</a> whose meaning
+			changes based on the current keyboard layout, and <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-1"><em>functional</em> keys</a> which are (mostly) the same for all
+			layouts.</p>
    <h5 class="heading settled" data-level="2.1.1.1" id="key-alphanumeric-writing-system"><span class="secno">2.1.1.1. </span><span class="content">Writing System Keys</span><a class="self-link" href="#key-alphanumeric-writing-system"></a></h5>
-   <p>The "writing system" keys are those that change meaning based on the current keyboard layout.</p>
+   <p>The <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-3"><em>writing system</em> keys</a> are those that change
+				meaning based on the current keyboard layout.</p>
    <figure id="figure-keyboard-codes-alphanum1">
      <img alt="The writing system keys" height="225" src="images/keyboard-codes-alphanum1.svg" width="653"> 
-    <figcaption>The writing system keys in the alphanumeric section</figcaption>
+    <figcaption>The <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-4">writing system keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-10">alphanumeric section</a></figcaption>
    </figure>
-   <p>This figure shows a hypothetical keyboard that combines all the writing system keys (shown in
-				blue and green) found on the various keyboards.
-				Blue keys are present on all standard keyboards while green keys are only available on some keyboards.</p>
-   <p>The name shown on each key is the <code>code</code> assigned to that key.
-				Wherever possible, the <code>code</code> names are based on the name for the US key
-				in that position (i.e., they are based on the US keyboard layout). For keys that don’t
-				exist on the US keyboard, names from the UK or Japanese layouts are used instead.</p>
+   <p>This figure shows a hypothetical keyboard that combines all the <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-5">writing system keys</a> (shown in blue and green) found on the
+				various keyboards. Blue keys are present on all standard
+				keyboards while green keys are only available on some keyboards.</p>
+   <p>The name shown on each key is the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> assigned to that key. Wherever possible, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> names are based on the name for the US
+				key in that position (i.e., they are based on the US keyboard
+				layout). For keys that don’t exist on the US keyboard, names
+				from the UK or Japanese layouts are used instead.</p>
    <table class="data-table full-width" id="table-key-code-alphanumeric-writing-system">
     <caption>List of code values for writing system keys in the Alphanumeric section.</caption>
     <thead>
@@ -315,7 +373,7 @@ keys and special keys like Escape.</p>
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backquote">"Backquote"</code>
-      <td><code class="keycap">`~</code> on a US keyboard. This is the <code class="keycap">半角/全角/漢字</code> (<span class="phonetic">hankaku/zenkaku/kanji</span>) key on Japanese keyboards
+      <td><code class="keycap">`~</code> on a US keyboard. This is the <code class="keycap">半角/全角/漢字</code> (<span class="unicode">hankaku/zenkaku/kanji</span>) key on Japanese keyboards
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backslash">"Backslash"</code>
       <td><code class="keycap">\|</code> on a US keyboard. Found only on standard 101-key layouts.
@@ -372,10 +430,10 @@ keys and special keys like Escape.</p>
       <td>Located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row E of the keyboard. Labelled <code class="keycap">#~</code> on a UK keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlRo">"IntlRo"</code>
-      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys. Labelled <code class="keycap">\ろ</code> (<span class="phonetic">ro</span>) on a Japanese keyboard.
+      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys. Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlYen">"IntlYen"</code>
-      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys. Labelled <code class="keycap">¥</code> (<span class="phonetic">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a Russian keyboard. 
+      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys. Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a Russian keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyA">"KeyA"</code>
       <td><code class="keycap">a</code> on a US keyboard. Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard.
@@ -471,12 +529,12 @@ keys and special keys like Escape.</p>
       <td><code class="keycap">/?</code> on a US keyboard.
    </table>
    <h5 class="heading settled" data-level="2.1.1.2" id="key-alphanumeric-functional"><span class="secno">2.1.1.2. </span><span class="content">Functional Keys</span><a class="self-link" href="#key-alphanumeric-functional"></a></h5>
-   <p>The Functional keys (<em>not to be confused with the <a href="#key-function-section">Function keys</a> described later</em>) are those
-				keys in the Alphanumeric section that provide general editing functions that are common to all locales
-				(like <code class="keycap">Shift</code>, <code class="keycap">Tab</code>, <code class="keycap">Enter</code> and <code class="keycap">Backspace</code>).				With a few exceptions, these keys do not change meaning based on the current keyboard layout.</p>
+   <p>The <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-2">functional keys</a> (<em>not to be confused with the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-1">function keys</a> described later</em>) are those keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-11">alphanumeric section</a> that provide general editing
+				functions that are common to all locales (like <code class="keycap">Shift</code>, <code class="keycap">Tab</code>, <code class="keycap">Enter</code> and <code class="keycap">Backspace</code>). With a few				exceptions, these keys do not change meaning based on the
+				current keyboard layout.</p>
    <figure id="figure-keyboard-codes-alphanum2">
      <img alt="The standard set of functional keys" height="225" src="images/keyboard-codes-alphanum2.svg" width="653"> 
-    <figcaption>The standard set of functional keys in the alphanumeric section</figcaption>
+    <figcaption>The standard set of <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-3">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-12">alphanumeric section</a></figcaption>
    </figure>
    <table class="data-table full-width" id="table-key-code-alphanumeric-functional-1">
     <caption>List of code values for functional keys in the Alphanumeric section.</caption>
@@ -525,13 +583,15 @@ keys and special keys like Escape.</p>
       <td class="code-table-code"><code class="code" id="code-Tab">"Tab"</code>
       <td><code class="keycap">Insert</code> or <code class="keycap">⇥</code>
    </table>
-   <p>On some keyboards (notably Japanese and Korean) the spacebar is reduced in size to make room
-				for extra keys on the bottom row. These keys typically allow the users to change the current input
-				mode. Note that even though some of these Japanese and Korean keys occupy the same physical location on the
-				keyboard, they use different <code>code</code> values.</p>
+   <p>On some keyboards (notably Japanese and Korean) the spacebar is
+				reduced in size to make room for extra keys on the bottom row.
+				These keys typically allow the users to change the current input
+				mode. Note that even though some of these Japanese and Korean
+				keys occupy the same physical location on the keyboard, they use
+				different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values.</p>
    <figure id="figure-function-row-a">
      <img alt="Comparison of the lower row of functional keys" height="160" src="images/functional-row-a.svg" width="700"> 
-    <figcaption>Comparison of the lower row of functional keys on different keyboards</figcaption>
+    <figcaption>Comparison of the lower row of <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-4">functional keys</a> on different keyboards</figcaption>
    </figure>
    <table class="data-table full-width" id="table-key-code-alphanumeric-functional-2">
     <caption>List of code values for functional keys found on Japanese and Korean keyboards.</caption>
@@ -542,16 +602,16 @@ keys and special keys like Escape.</p>
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Convert">"Convert"</code>
-      <td>Japanese: <code class="keycap">変換</code> (<span class="phonetic">henkan</span>)
+      <td>Japanese: <code class="keycap">変換</code> (<span class="unicode">henkan</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-KanaMode">"KanaMode"</code>
-      <td>Japanese: <code class="keycap">カタカナ/ひらがな/ローマ字</code> (<span class="phonetic">katakana/hiragana/romaji</span>)
+      <td>Japanese: <code class="keycap">カタカナ/ひらがな/ローマ字</code> (<span class="unicode">katakana/hiragana/romaji</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang1">"Lang1"</code>
-      <td>Korean: HangulMode <code class="keycap">한/영</code> (<span class="phonetic">han/yeong</span>)<br>Japanese (Mac keyboard): <code class="keycap">かな</code> (<span class="phonetic">kana</span>)
+      <td>Korean: HangulMode <code class="keycap">한/영</code> (<span class="unicode">han/yeong</span>)<br>Japanese (Mac keyboard): <code class="keycap">かな</code> (<span class="unicode">kana</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang2">"Lang2"</code>
-      <td>Korean: Hanja <code class="keycap">한자</code> (<span class="phonetic">hanja</span>)<br>Japanese (Mac keyboard): <code class="keycap">英数</code> (<span class="phonetic">eisu</span>)
+      <td>Korean: Hanja <code class="keycap">한자</code> (<span class="unicode">hanja</span>)<br>Japanese (Mac keyboard): <code class="keycap">英数</code> (<span class="unicode">eisu</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang3">"Lang3"</code>
       <td>Japanese (word-processing keyboard): Katakana
@@ -563,15 +623,16 @@ keys and special keys like Escape.</p>
       <td>Japanese (word-processing keyboard): Zenkaku/Hankaku
      <tr>
       <td class="code-table-code"><code class="code" id="code-NonConvert">"NonConvert"</code>
-      <td>Japanese: <code class="keycap">無変換</code> (<span class="phonetic">muhenkan</span>)
+      <td>Japanese: <code class="keycap">無変換</code> (<span class="unicode">muhenkan</span>)
    </table>
-   <p>On Apple keyboards, some keys on the bottom row are omitted and others are arranged in
-				a different order.</p>
+   <p>On Apple keyboards, some keys on the bottom row are omitted and
+				others are arranged in a different order.</p>
    <h4 class="heading settled" data-level="2.1.2" id="key-controlpad-section"><span class="secno">2.1.2. </span><span class="content">Control Pad Section</span><a class="self-link" href="#key-controlpad-section"></a></h4>
-   <p>The Control Pad contains keys for navigating and editing documents.</p>
+   <p>The <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-8">control pad section</a> contains keys for navigating and
+			editing documents.</p>
    <figure id="figure-control-pad">
      <img alt="Standard Control Pad layouts" height="135" src="images/control-pad.svg" width="495"> 
-    <figcaption>Standard Control Pad layouts</figcaption>
+    <figcaption>Standard <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-9">Control Pad</a> layouts</figcaption>
    </figure>
    <table class="data-table full-width" id="table-key-code-controlpad">
     <caption>List of code values for keys in the ControlPad section.</caption>
@@ -602,12 +663,12 @@ keys and special keys like Escape.</p>
       <td class="code-table-code"><code class="code" id="code-PageUp">"PageUp"</code>
       <td><code class="keycap">Page Up</code>, <code class="keycap">PgUp</code> or <code class="keycap">⇞</code>
    </table>
-   <p class="note" role="note">The <code>code</code> for the <code class="keycap">Fn</code> key (found on			some Apple keyboards) is defined below in the Function Section.</p>
+   <p class="note" role="note"> The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> for the <code class="keycap">Fn</code> key (found on some			Apple keyboards) is defined below in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-8">function section</a>. </p>
    <h4 class="heading settled" data-level="2.1.3" id="key-arrowpad-section"><span class="secno">2.1.3. </span><span class="content">Arrow Pad Section</span><a class="self-link" href="#key-arrowpad-section"></a></h4>
-   <p>The Arrow Pad section contains the 4 arrow keys.</p>
+   <p>The <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-8">arrow pad section</a> contains the 4 arrow keys.</p>
    <figure id="figure-arrow-pad">
      <img alt="Standard Arrow Pad layout" height="115" src="images/arrow-pad.svg" width="160"> 
-    <figcaption>Standard Arrow Pad layout</figcaption>
+    <figcaption>Standard <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-9">Arrow Pad</a> layout</figcaption>
    </figure>
    <table class="data-table full-width" id="table-key-code-arrowpad">
     <caption>List of code values for keys in the ArrowPad section.</caption>
@@ -630,16 +691,17 @@ keys and special keys like Escape.</p>
       <td><code class="keycap">↑</code>
    </table>
    <h4 class="heading settled" data-level="2.1.4" id="key-numpad-section"><span class="secno">2.1.4. </span><span class="content">Numpad Section</span><a class="self-link" href="#key-numpad-section"></a></h4>
-   <p>The Numpad Section contains numeric and mathematical operator keys arranged in a calculator-grid
-			to facilitate numeric data entry. This section also covers phone keypads and remote control devices
-			that arrange number keys in a grid.</p>
+   <p>The <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-8">numpad section</a> contains numeric and mathematical operator keys
+			arranged in a calculator-grid to facilitate numeric data entry. This
+			section also covers phone keypads and remote control devices that
+			arrange number keys in a grid.</p>
    <figure id="figure-numpad">
      <img alt="Standard Numpad layouts" height="247" src="images/numpad.svg" width="606"> 
-    <figcaption>Standard Numpad layouts</figcaption>
+    <figcaption>Standard <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-9">Numpad</a> layouts</figcaption>
    </figure>
-   <p>The standard Numpad is sometimes extended with additional keys for parentheses, operators,
-			hexadecimal symbols, or calculator functions (like backspace). Some of the commonly added keys are
-			listed in the table below.</p>
+   <p>The standard numpad is sometimes extended with additional keys for
+			parentheses, operators, hexadecimal symbols, or calculator functions
+			(like <code class="keycap">Backspace</code>). Some of the commonly added keys are listed			in the table below.</p>
    <table class="data-table full-width" id="table-key-code-numpad">
     <caption>List of code values for keys in the Numpad section.</caption>
     <thead>
@@ -741,16 +803,17 @@ keys and special keys like Escape.</p>
       <td class="code-table-code"><code class="code" id="code-NumpadSubtract">"NumpadSubtract"</code>
       <td><code class="keycap">-</code>
    </table>
-   <p>For Numpads that provide keys not listed here, a <code>code</code> value string should be created by
-			starting with "Numpad" and appending an appropriate description of the key.</p>
+   <p>For Numpads that provide keys not listed here, a <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> value string should be created by starting
+			with "Numpad" and appending an appropriate description of the key.</p>
    <h4 class="heading settled" data-level="2.1.5" id="key-function-section"><span class="secno">2.1.5. </span><span class="content">Function Section</span><a class="self-link" href="#key-function-section"></a></h4>
-   <p>The Function section runs along the top of the keyboard and contains the function keys and
-			a few additional special keys (for example, <code class="keycap">Esc</code> and <code class="keycap">Print Screen</code>).
-			On some keyboards (especially those found on laptops or other portable computers), the function keys
-			(<code class="keycap">F1</code> ... <code class="keycap">F12</code>)			are defined to have other primary functions (like controlling display brightness or
-			audio volume) and require that a separate <code class="keycap">Fn</code> key			be pressed to make them act as function keys.
-			Unfortunately, the primary functions assigned to these keys varies widely from one manufacturer to the next.
-			Because of this, the <code>code</code> is always set to the function key name.</p>
+   <p>The <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-9">function section</a> runs along the top of the keyboard and
+			contains the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-2">function keys</a> and a few additional special keys
+			(for example, <code class="keycap">Esc</code> and <code class="keycap">Print Screen</code>).
+			On some keyboards (especially those found on laptops or other
+			portable computers), the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-3">function keys</a> (<code class="keycap">F1</code> ... <code class="keycap">F12</code>) are defined to have other primary functions (like			controlling display brightness or audio volume) and require that a
+			separate <code class="keycap">Fn</code> key be pressed to make them act as function			keys. Unfortunately, the primary functions assigned to these keys
+			varies widely from one manufacturer to the next. Because of this,
+			the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> is always set to the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-4">function key</a> name.</p>
    <table class="data-table full-width" id="table-key-code-function">
     <caption>List of code values for keys in the Function section.</caption>
     <thead>
@@ -813,19 +876,20 @@ keys and special keys like Escape.</p>
       <td class="code-table-code"><code class="code" id="code-Pause">"Pause"</code>
       <td><code class="keycap">Pause Break</code>
    </table>
-   <p>For keyboards that provide more than 12 function keys, the <code>code</code> value follows the pattern
-			shown above with "F" followed by the function key number - <code class="code">"F13"</code>, <code class="code">"F14"</code>, <code class="code">"F15"</code>, and so on.</p>
-   <p class="note" role="note">Apple keyboards may have <code class="keycap">Eject</code> or <code class="keycap">Power</code> keys in the Function section. The <code>code</code> values
-			for these keys are defined in the Media Keys section.</p>
+   <p>For keyboards that provide more than 12 <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-5">function keys</a>, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> value follows the pattern shown above with
+			"F" followed by the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-6">function key</a> number - <code class="code">"F13"</code>, <code class="code">"F14"</code>, <code class="code">"F15"</code>, and so on.</p>
+   <p class="note" role="note"> Apple keyboards may have <code class="keycap">Eject</code> or <code class="keycap">Power</code> keys in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-10">function section</a>. The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values for these
+			keys are defined in <a href="#key-media">§2.1.6 Media Keys</a>. </p>
    <h4 class="heading settled" data-level="2.1.6" id="key-media"><span class="secno">2.1.6. </span><span class="content">Media Keys</span><a class="self-link" href="#key-media"></a></h4>
-   <p>Keys that fall outside the sections listed above are referred to as "media keys" since
-			they commonly provide "media" functions like play, pause or volume control.</p>
-   <p>These are extra keys that many keyboard manufacturers add, but do not have a consistent location.
-			These keys are often distinct from normal typing keys in appearance and may be recessed in the
+   <p>Keys that fall outside the sections listed above are referred to as <a data-link-type="dfn" href="#media-key" id="ref-for-media-key-1">media keys</a> since they commonly provide "media" functions like
+			play, pause or volume control.</p>
+   <p>These are extra keys that many keyboard manufacturers add, but do
+			not have a consistent location. These keys are often distinct from
+			normal typing keys in appearance and may be recessed in the
 			keyboard.</p>
-   <p>On laptop keyboards, these keys are often merged with the Function keys, with the "media" interpretation
-			being the primary function of the key and the "function key" interpretation requiring the <code class="keycap">Fn</code> key to be pressed at the same time. In this configuration the <code>code</code> should be set to match the function key (<code class="code">"<a href="#code-F1">F1</a>"</code> ... <code class="code">"<a href="#code-F12">F12</a>"</code>). When the keys are merged in this fashion, the <code>code</code> values are taken from the function key value because the "media" value is not consistent across
-			keyboards.</p>
+   <p>On laptop keyboards, these keys are often merged with the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-7">function keys</a>, with the <a data-link-type="dfn" href="#media-key" id="ref-for-media-key-2">media key</a> interpretation being
+			the primary function of the key and the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-8">function key</a> interpretation requiring the <code class="keycap">Fn</code> key to be pressed at the			same time. In this configuration the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> should
+			be set to match the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-9">function key</a> (<code class="code">"<a href="#code-F1">F1</a>"</code> ... <code class="code">"<a href="#code-F12">F12</a>"</code>).			When the keys are merged in this fashion, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values are taken from the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-10">function key</a> value because the <a data-link-type="dfn" href="#media-key" id="ref-for-media-key-3">media key</a> value is not consistent across keyboards.</p>
    <table class="data-table full-width" id="table-key-code-media">
     <caption>List of code values for media keys.</caption>
     <thead>
@@ -856,7 +920,7 @@ keys and special keys like Escape.</p>
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Eject">"Eject"</code>
-      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the Function section on some Apple keyboards.
+      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-11">function section</a> on some Apple keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchApp1">"LaunchApp1"</code>
       <td>Sometimes labelled <code class="keycap">My Computer</code> on the keyboard
@@ -883,7 +947,7 @@ keys and special keys like Escape.</p>
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Power">"Power"</code>
-      <td>This key is placed in the Function section on some Apple keyboards, replacing the <code class="keycap">Eject</code> key.
+      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-12">function section</a> on some Apple keyboards, replacing the <code class="keycap">Eject</code> key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Sleep">"Sleep"</code>
       <td>
@@ -901,8 +965,8 @@ keys and special keys like Escape.</p>
       <td>
    </table>
    <h4 class="heading settled" data-level="2.1.7" id="key-legacy"><span class="secno">2.1.7. </span><span class="content">Legacy Keys and Non-Standard Keys</span><a class="self-link" href="#key-legacy"></a></h4>
-   <p>These keys are not found on modern standard keyboards.
-			They are listed here for reference purposes.</p>
+   <p>These keys are not found on modern standard keyboards. They are
+			listed here for reference purposes.</p>
    <table class="data-table full-width" id="table-key-code-legacy-modifier">
     <caption>List of code values for legacy modifier keys.</caption>
     <thead>
@@ -990,13 +1054,102 @@ keys and special keys like Escape.</p>
       <td>Use for dedicated <code class="keycap">カタカナ</code> key found on some Japanese word processing keyboards.
    </table>
    <h2 class="heading settled" data-level="3" id="acknowledgements-contributors"><span class="secno">3. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
-   <p>Considerable thanks are due to the following participants of the
-	WebApps Working Group for providing substantial material contributions
-	in the process of developing this specification.</p>
+   <p>Considerable thanks are due to the following participants of the WebApps
+	Working Group for providing substantial material contributions in the
+	process of developing this specification.</p>
    <p>Gary Kacmarcik (Google),
 	Masayuki Nakano (Mozilla)</p>
+   <h2 class="heading settled" data-level="4" id="glossary"><span class="secno">4. </span><span class="content">Glossary</span><a class="self-link" href="#glossary"></a></h2>
+   <dl>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="alphanumeric-section">alphanumeric section<span class="dfn-panel"><b><a href="#alphanumeric-section">#alphanumeric-section</a></b><b>Referenced in:</b><span><a href="#ref-for-alphanumeric-section-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-alphanumeric-section-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-8">1.1.9. Laptop Keyboard Layouts</a></span><span><a href="#ref-for-alphanumeric-section-9">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-alphanumeric-section-10">2.1.1.1. Writing System Keys</a></span><span><a href="#ref-for-alphanumeric-section-11">2.1.1.2. Functional Keys</a> <a href="#ref-for-alphanumeric-section-12">(2)</a></span><span><a href="#ref-for-alphanumeric-section-13">4. Glossary</a> <a href="#ref-for-alphanumeric-section-14">(2)</a> <a href="#ref-for-alphanumeric-section-15">(3)</a> <a href="#ref-for-alphanumeric-section-16">(4)</a> <a href="#ref-for-alphanumeric-section-17">(5)</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The main section of the keyboard that contains both the <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-6">writing system
+keys</a> and the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-5">functional keys</a>. See <a href="#key-alphanumeric-section">§2.1.1 Alphanumeric Section</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="arrow pad|arrow pad section" data-noexport="" id="arrow-pad">arrow pad section<span class="dfn-panel"><b><a href="#arrow-pad">#arrow-pad</a></b><b>Referenced in:</b><span><a href="#ref-for-arrow-pad-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-arrow-pad-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-8">2.1.3. Arrow Pad Section</a> <a href="#ref-for-arrow-pad-9">(2)</a></span><span><a href="#ref-for-arrow-pad-10">4. Glossary</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The section of the keyboard that contains the 4 arrow keys (<code class="keycap">↑</code>, <code class="keycap">↓</code>, <code class="keycap">←</code>, <code class="keycap">→</code>). The keys are commonly	arranged in an "upside-down T" configuration. See <a href="#key-arrowpad-section">§2.1.3 Arrow Pad Section</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="control pad|control pad section" data-noexport="" id="control-pad">control pad section<span class="dfn-panel"><b><a href="#control-pad">#control-pad</a></b><b>Referenced in:</b><span><a href="#ref-for-control-pad-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-control-pad-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-control-pad-8">2.1.2. Control Pad Section</a> <a href="#ref-for-control-pad-9">(2)</a></span><span><a href="#ref-for-control-pad-10">4. Glossary</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The control pad section of a keyboard is the set of (usually 6) keys that
+perform navigating and editing operations, for example, <code class="keycap">Home</code>, <code class="keycap">PageUp</code> and <code class="keycap">Insert</code>. See <a href="#key-controlpad-section">§2.1.2 Control Pad Section</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="function-key">function key<span class="dfn-panel"><b><a href="#function-key">#function-key</a></b><b>Referenced in:</b><span><a href="#ref-for-function-key-1">2.1.1.2. Functional Keys</a></span><span><a href="#ref-for-function-key-2">2.1.5. Function Section</a> <a href="#ref-for-function-key-3">(2)</a> <a href="#ref-for-function-key-4">(3)</a> <a href="#ref-for-function-key-5">(4)</a> <a href="#ref-for-function-key-6">(5)</a></span><span><a href="#ref-for-function-key-7">2.1.6. Media Keys</a> <a href="#ref-for-function-key-8">(2)</a> <a href="#ref-for-function-key-9">(3)</a> <a href="#ref-for-function-key-10">(4)</a></span><span><a href="#ref-for-function-key-11">4. Glossary</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>Any of the keys labelled <code class="keycap">F1</code> ... <code class="keycap">F12</code> that an application or	operating system can associate with a custom function or action.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="function-section">function section<span class="dfn-panel"><b><a href="#function-section">#function-section</a></b><b>Referenced in:</b><span><a href="#ref-for-function-section-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-function-section-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-function-section-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-function-section-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-function-section-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-function-section-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-function-section-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-function-section-8">2.1.2. Control Pad Section</a></span><span><a href="#ref-for-function-section-9">2.1.5. Function Section</a> <a href="#ref-for-function-section-10">(2)</a></span><span><a href="#ref-for-function-section-11">2.1.6. Media Keys</a> <a href="#ref-for-function-section-12">(2)</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The row of keys typically found along the top of the keyboard above the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-13">alphanumeric section</a>. The function section contains the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-11">function
+keys</a> and a few other keys like <code class="keycap">Escape</code> and <code class="keycap">Print Screen</code>.	See <a href="#key-function-section">§2.1.5 Function Section</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="functional-key">functional key<span class="dfn-panel"><b><a href="#functional-key">#functional-key</a></b><b>Referenced in:</b><span><a href="#ref-for-functional-key-1">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-functional-key-2">2.1.1.2. Functional Keys</a> <a href="#ref-for-functional-key-3">(2)</a> <a href="#ref-for-functional-key-4">(3)</a></span><span><a href="#ref-for-functional-key-5">4. Glossary</a> <a href="#ref-for-functional-key-6">(2)</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>Any of the keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-14">alphanumeric section</a> that perform a particular
+function that is typically the same for all locales. These keys are in
+contrast to the <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-7">writing system keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-15">alphanumeric section</a> that tend to change drastically between locales. Some common functional keys
+are the <code class="keycap">   </code> (spacebar), <code class="keycap">Tab</code> and the modifier	keys (like <code class="keycap">Shift</code> and <code class="keycap">Control</code>). See <a href="#key-alphanumeric-functional">§2.1.1.2 Functional Keys</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="keypad">keypad<span class="dfn-panel"><b><a href="#keypad">#keypad</a></b><b>Referenced in:</b><span><a href="#ref-for-keypad-1">1.1.6. Brazilian "104" Keyboard Layout</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>An alternate term for <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-10">numpad</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="media-key">media key<span class="dfn-panel"><b><a href="#media-key">#media-key</a></b><b>Referenced in:</b><span><a href="#ref-for-media-key-1">2.1.6. Media Keys</a> <a href="#ref-for-media-key-2">(2)</a> <a href="#ref-for-media-key-3">(3)</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>Media keys are extra keys added to a keyboard that provide <em>media</em> related functionality like play, pause or volume control. These keys do not
+have a standard location on the keyboard so keyboards from different
+manufacturers are likely to have a different arrangement of keys or a
+completely different sets of keys.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="numpad|numpad section" data-noexport="" id="numpad">numpad section<span class="dfn-panel"><b><a href="#numpad">#numpad</a></b><b>Referenced in:</b><span><a href="#ref-for-numpad-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-numpad-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-numpad-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-numpad-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-numpad-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-numpad-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-numpad-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-numpad-8">2.1.4. Numpad Section</a> <a href="#ref-for-numpad-9">(2)</a></span><span><a href="#ref-for-numpad-10">4. Glossary</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The numpad section is the set of keys on the keyboard arranged in a grid
+like a calculator or mobile phone. This section contains numeric and
+mathematical operator keys. Often this section will contain a <code class="keycap">NumLock</code> key which causes the keys to switch between the standard numeric functions
+and mimicking the keys of the <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-10">control pad section</a> and <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-10">arrow pad
+section</a>. Laptop computers and compact keyboards will commonly omit these
+keys to save space. See <a href="#key-numpad-section">§2.1.4 Numpad Section</a>.</p>
+    <dt data-md="">
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="writing-system-key">writing system key<span class="dfn-panel"><b><a href="#writing-system-key">#writing-system-key</a></b><b>Referenced in:</b><span><a href="#ref-for-writing-system-key-1">1.1.9. Laptop Keyboard Layouts</a></span><span><a href="#ref-for-writing-system-key-2">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-writing-system-key-3">2.1.1.1. Writing System Keys</a> <a href="#ref-for-writing-system-key-4">(2)</a> <a href="#ref-for-writing-system-key-5">(3)</a></span><span><a href="#ref-for-writing-system-key-6">4. Glossary</a> <a href="#ref-for-writing-system-key-7">(2)</a></span></span></dfn></p>
+    <dd data-md="">
+     <p>The keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-16">alphanumeric section</a> that vary depending on which
+locale is currently active. For example, the <code class="code">"<a href="#code-Digit2">Digit2</a>"</code> and <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code> keys which generate <code class="key">"2"</code> and <code class="key">"q"</code> when the US locale is	active and <code class="key">"é"</code> and <code class="key">"a"</code> when the French locale is active.	These keys are in contrast to the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-6">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-17">alphanumeric section</a> that perform a consistent function across
+locales. See <a href="#key-alphanumeric-writing-system">§2.1.1.1 Writing System Keys</a>.</p>
+   </dl>
   </main>
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#alphanumeric-section">alphanumeric section</a><span>, in §4</span>
+   <li><a href="#arrow-pad">arrow pad</a><span>, in §4</span>
+   <li><a href="#arrow-pad">arrow pad section</a><span>, in §4</span>
+   <li><a href="#control-pad">control pad</a><span>, in §4</span>
+   <li><a href="#control-pad">control pad section</a><span>, in §4</span>
+   <li><a href="#functional-key">functional key</a><span>, in §4</span>
+   <li><a href="#function-key">function key</a><span>, in §4</span>
+   <li><a href="#function-section">function section</a><span>, in §4</span>
+   <li><a href="#keypad">keypad</a><span>, in §4</span>
+   <li><a href="#media-key">media key</a><span>, in §4</span>
+   <li><a href="#numpad">numpad</a><span>, in §4</span>
+   <li><a href="#numpad">numpad section</a><span>, in §4</span>
+   <li><a href="#writing-system-key">writing system key</a><span>, in §4</span>
+  </ul>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio" href="#biblio-uievents">[uievents]</a> defines the following terms:
+    <ul>
+     <li><a href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a>
+    </ul>
+   <li>
+    <a data-link-type="biblio" href="#biblio-uievents-key">[uievents-key]</a> defines the following terms:
+    <ul>
+     <li><a href="http://www.w3.org/TR/uievents-key/#key-value-tables">key value tables</a>
+    </ul>
+  </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
@@ -1014,3 +1167,44 @@ keys and special keys like Escape.</p>
    <dt id="biblio-iso9995-8"><a class="self-link" href="#biblio-iso9995-8"></a>[ISO9995-8]
    <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad</a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641</a>
   </dl>
+<script>
+        document.body.addEventListener("click", function(e) {
+            var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+            // Find the dfn element or panel, if any, that was clicked on.
+            var el = e.target;
+            var target;
+            while(el.parentElement) {
+                if(el.tagName == "DFN") {
+                    target = "dfn";
+                    break;
+                }
+                if(/H\d/.test(el.tagName) && el.getAttribute('data-dfn-type') != null) {
+                    target = "dfn";
+                    break;
+                }
+                if(el.classList.contains("dfn-panel")) {
+                    target = "dfn-panel";
+                    break;
+                }
+                el = el.parentElement;
+            }
+            if(target != "dfn-panel") {
+                // Turn off any currently "on" or "activated" panels.
+                queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+                    el.classList.remove("on");
+                    el.classList.remove("activated");
+                });
+            }
+            if(target == "dfn") {
+                // open the panel
+                var dfnPanel = el.querySelector(".dfn-panel");
+                if(dfnPanel) {
+                    dfnPanel.classList.add("on");
+                }
+            } else if(target == "dfn-panel") {
+                // Switch it to "activated" state, which pins it.
+                el.classList.add("activated");
+            }
+
+        });
+        </script>
