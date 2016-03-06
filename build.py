@@ -101,7 +101,7 @@ class Parser():
 			return (
 				'<table id="table-key-code-%s" class="data-table full-width">\n'
 				'<caption>%s</caption>\n'
-				'<thead><tr><th style="width:20%%">Code Value</th><th style="width:80%%">Notes (Non-normative)</th></tr></thead>\n'
+				'<thead><tr><th style="width:20%%">{{KeyboardEvent}}.{{KeyboardEvent/code}}</th><th style="width:80%%">Notes (Non-normative)</th></tr></thead>\n'
 				'<tbody>\n') % (name, caption)
 
 		m = re.match(r'^.*END_CODE_TABLE', line)
