@@ -270,7 +270,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 		</p>
 
 		<figure id="figure-numeric-keypad">
-			<img src="images/mobile-keypad.svg" width="135" height="110" alt="Mobile keypad layout" />
+			<img src="images/mobile-keypad.svg" width="140" height="305" alt="Mobile keypad layout" />
 			<figcaption>A graphical depiction of a typical mobile keypad.</figcaption>
 		</figure>
 
