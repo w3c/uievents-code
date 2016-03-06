@@ -270,8 +270,8 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 		</p>
 
 		<figure id="figure-numeric-keypad">
-			<img src="images/ISOIEC-9995-8-2006.svg" width="180" height="240" alt="ISO/IEC 9995-8:2006 keypad layout" />
-			<figcaption>A graphical depiction of an ISO standard defining layouts of numeric keypads, with distribution of letters on the keys, ISO/IEC 9995-8:2006.</figcaption>
+			<img src="images/mobile-keypad.svg" width="135" height="110" alt="Mobile keypad layout" />
+			<figcaption>A graphical depiction of a typical mobile keypad.</figcaption>
 		</figure>
 
 	<h3 id="remote-control">Media Remote Controls</h3>
@@ -526,14 +526,21 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 		<h4 id="key-numpad-section">Numpad Section</h4>
 
-			The <a>numpad section</a> contains numeric and mathematical operator keys
-			arranged in a calculator-grid to facilitate numeric data entry. This
-			section also covers phone keypads and remote control devices that
-			arrange number keys in a grid.
+			The <a>numpad section</a> contains numeric and mathematical operator
+			keys arranged in a calculator-grid to facilitate numeric data entry.
 
 			<figure id="figure-numpad">
 				<img src="images/numpad.svg" width="606" height="247" alt="Standard Numpad layouts" />
-				<figcaption>Standard <a>Numpad</a> layouts</figcaption>
+				<figcaption>Standard <a>Numpad</a> Layouts</figcaption>
+			</figure>
+
+			The {{KeyboardEvent/code}} values in this section should also be
+			used for phone keypads and remote control devices that
+			arrange number keys in a grid.
+
+			<figure id="figure-numpad-mobile">
+				<img src="images/numpad-mobile.svg" width="135" height="180" alt="Standard mobile keypad layout" />
+				<figcaption>Standard Mobile Keypad Layout</figcaption>
 			</figure>
 
 			The standard numpad is sometimes extended with additional keys for
