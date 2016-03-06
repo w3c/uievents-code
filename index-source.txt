@@ -738,6 +738,12 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 								value given in this specification is appropriate.
 			END_CODE_TABLE
 
+			<p class="warning">
+			Conforming implementations MUST only use CODE{Unidentified} as a key code
+			when there is no way for the implementation to determine the key code.
+			Exposing only this value MUST NOT indicate a conforming implementation.
+			</p>
+
 <h2 id="acknowledgements-contributors">Acknowledgements</h2>
 
 	Considerable thanks are due to the following participants of the WebApps
