@@ -144,7 +144,7 @@ identify the physical key being pressed by the user.</p>
         <li><a href="#key-numpad-section"><span class="secno">2.1.4</span> <span class="content">Numpad Section</span></a>
         <li><a href="#key-function-section"><span class="secno">2.1.5</span> <span class="content">Function Section</span></a>
         <li><a href="#key-media"><span class="secno">2.1.6</span> <span class="content">Media Keys</span></a>
-        <li><a href="#key-legacy"><span class="secno">2.1.7</span> <span class="content">Legacy Keys and Non-Standard Keys</span></a>
+        <li><a href="#key-legacy"><span class="secno">2.1.7</span> <span class="content">Legacy, Non-Standard and Special Keys</span></a>
        </ol>
      </ol>
     <li><a href="#acknowledgements-contributors"><span class="secno">3</span> <span class="content">Acknowledgements</span></a>
@@ -969,7 +969,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td class="code-table-code"><code class="code" id="code-WakeUp">"WakeUp"</code>
       <td>
    </table>
-   <h4 class="heading settled" data-level="2.1.7" id="key-legacy"><span class="secno">2.1.7. </span><span class="content">Legacy Keys and Non-Standard Keys</span><a class="self-link" href="#key-legacy"></a></h4>
+   <h4 class="heading settled" data-level="2.1.7" id="key-legacy"><span class="secno">2.1.7. </span><span class="content">Legacy, Non-Standard and Special Keys</span><a class="self-link" href="#key-legacy"></a></h4>
    <p>These keys are not found on modern standard keyboards. They are
 			listed here for reference purposes.</p>
    <table class="data-table full-width" id="table-key-code-legacy-modifier">
@@ -1057,6 +1057,22 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
      <tr>
       <td class="code-table-code"><code class="code" id="code-Katakana">"Katakana"</code>
       <td>Use for dedicated <code class="keycap">カタカナ</code> key found on some Japanese word processing keyboards.
+   </table>
+   <p>And finally, the following <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> value should only
+			be used when the corresponding key does not correspond to any of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values given elsewhere in this specification.
+			This value is appropriate for use with virtual keyboards that do not
+			have their keys arranged in a way that corresponds to those on a
+			physical keyboard.</p>
+   <table class="data-table full-width" id="table-key-code-special">
+    <caption>List of special code values.</caption>
+    <thead>
+     <tr>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code>
+      <th style="width:80%">Notes (Non-normative)
+    <tbody>
+     <tr>
+      <td class="code-table-code"><code class="code" id="code-Unidentified">"Unidentified"</code>
+      <td>This value code should be used when no other								value given in this specification is appropriate. 
    </table>
    <h2 class="heading settled" data-level="3" id="acknowledgements-contributors"><span class="secno">3. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
    <p>Considerable thanks are due to the following participants of the WebApps

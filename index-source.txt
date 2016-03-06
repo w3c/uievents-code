@@ -680,7 +680,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				CODE WakeUp
 			END_CODE_TABLE
 
-		<h4 id="key-legacy">Legacy Keys and Non-Standard Keys</h4>
+		<h4 id="key-legacy">Legacy, Non-Standard and Special Keys</h4>
 
 			These keys are not found on modern standard keyboards. They are
 			listed here for reference purposes.
@@ -718,6 +718,18 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 			BEGIN_CODE_TABLE international "List of code values for keys found on international keyboards."
 				CODE Hiragana	Use for dedicated KEYCAP{ひらがな} key found on some Japanese word processing keyboards.
 				CODE Katakana	Use for dedicated KEYCAP{カタカナ} key found on some Japanese word processing keyboards.
+			END_CODE_TABLE
+
+			And finally, the following {{KeyboardEvent/code}} value should only
+			be used when the corresponding key does not correspond to any of the
+			{{KeyboardEvent/code}} values given elsewhere in this specification.
+			This value is appropriate for use with virtual keyboards that do not
+			have their keys arranged in a way that corresponds to those on a
+			physical keyboard.
+
+			BEGIN_CODE_TABLE special "List of special code values."
+			CODE Unidentified	This value code should be used when no other
+								value given in this specification is appropriate.
 			END_CODE_TABLE
 
 <h2 id="acknowledgements-contributors">Acknowledgements</h2>
