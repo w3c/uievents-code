@@ -348,7 +348,8 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 			<h5 id="key-alphanumeric-writing-system">Writing System Keys</h5>
 
 				The <a><em>writing system</em> keys</a> are those that change
-				meaning based on the current keyboard layout.
+				meaning (i.e., they produce different {{KeyboardEvent/key}}
+				values) based on the current keyboard layout.
 
 				<figure id="figure-keyboard-codes-alphanum1">
 					<img src="images/keyboard-codes-alphanum1.svg" width="653" height="225" alt="The writing system keys" />
@@ -440,6 +441,11 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 					<img src="images/keyboard-codes-alphanum2.svg" width="653" height="225" alt="The standard set of functional keys" />
 					<figcaption>The standard set of <a>functional keys</a> in the <a>alphanumeric section</a></figcaption>
 				</figure>
+
+				The CODE{AltRight} key (highlighted in green) is the only
+				<a>functional key</a> that does not generate the same
+				{{KeyboardEvent/key}} value for every locale. In some locales it
+				produces KEY{Alt} while in others it produces KEY{AltGraph}.
 
 				BEGIN_CODE_TABLE alphanumeric-functional-1 "List of code values for functional keys in the Alphanumeric section."
 					CODE AltLeft		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.

@@ -352,7 +352,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
 			layouts.</p>
    <h5 class="heading settled" data-level="2.1.1.1" id="key-alphanumeric-writing-system"><span class="secno">2.1.1.1. </span><span class="content">Writing System Keys</span><a class="self-link" href="#key-alphanumeric-writing-system"></a></h5>
    <p>The <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-3"><em>writing system</em> keys</a> are those that change
-				meaning based on the current keyboard layout.</p>
+				meaning (i.e., they produce different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key">key</a></code> values) based on the current keyboard layout.</p>
    <figure id="figure-keyboard-codes-alphanum1">
      <img alt="The writing system keys" height="225" src="images/keyboard-codes-alphanum1.svg" width="653"> 
     <figcaption>The <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-4">writing system keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-10">alphanumeric section</a></figcaption>
@@ -536,6 +536,8 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
      <img alt="The standard set of functional keys" height="225" src="images/keyboard-codes-alphanum2.svg" width="653"> 
     <figcaption>The standard set of <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-3">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-12">alphanumeric section</a></figcaption>
    </figure>
+   <p>The <code class="code">"<a href="#code-AltRight">AltRight</a>"</code> key (highlighted in green) is the only <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-4">functional key</a> that does not generate the same <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key">key</a></code> value for every locale. In some locales it
+				produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-Alt">Alt</a>"</code> while in others it produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-AltGraph">AltGraph</a>"</code>.</p>
    <table class="data-table full-width" id="table-key-code-alphanumeric-functional-1">
     <caption>List of code values for functional keys in the Alphanumeric section.</caption>
     <thead>
@@ -591,7 +593,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
 				different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values.</p>
    <figure id="figure-function-row-a">
      <img alt="Comparison of the lower row of functional keys" height="160" src="images/functional-row-a.svg" width="700"> 
-    <figcaption>Comparison of the lower row of <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-4">functional keys</a> on different keyboards</figcaption>
+    <figcaption>Comparison of the lower row of <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-5">functional keys</a> on different keyboards</figcaption>
    </figure>
    <table class="data-table full-width" id="table-key-code-alphanumeric-functional-2">
     <caption>List of code values for functional keys found on Japanese and Korean keyboards.</caption>
@@ -1086,7 +1088,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
      <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="alphanumeric-section">alphanumeric section<span class="dfn-panel"><b><a href="#alphanumeric-section">#alphanumeric-section</a></b><b>Referenced in:</b><span><a href="#ref-for-alphanumeric-section-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-alphanumeric-section-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-alphanumeric-section-8">1.1.9. Laptop Keyboard Layouts</a></span><span><a href="#ref-for-alphanumeric-section-9">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-alphanumeric-section-10">2.1.1.1. Writing System Keys</a></span><span><a href="#ref-for-alphanumeric-section-11">2.1.1.2. Functional Keys</a> <a href="#ref-for-alphanumeric-section-12">(2)</a></span><span><a href="#ref-for-alphanumeric-section-13">4. Glossary</a> <a href="#ref-for-alphanumeric-section-14">(2)</a> <a href="#ref-for-alphanumeric-section-15">(3)</a> <a href="#ref-for-alphanumeric-section-16">(4)</a> <a href="#ref-for-alphanumeric-section-17">(5)</a></span></span></dfn></p>
     <dd data-md="">
      <p>The main section of the keyboard that contains both the <a data-link-type="dfn" href="#writing-system-key" id="ref-for-writing-system-key-6">writing system
-keys</a> and the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-5">functional keys</a>. See <a href="#key-alphanumeric-section">§2.1.1 Alphanumeric Section</a>.</p>
+keys</a> and the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-6">functional keys</a>. See <a href="#key-alphanumeric-section">§2.1.1 Alphanumeric Section</a>.</p>
     <dt data-md="">
      <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="arrow pad|arrow pad section" data-noexport="" id="arrow-pad">arrow pad section<span class="dfn-panel"><b><a href="#arrow-pad">#arrow-pad</a></b><b>Referenced in:</b><span><a href="#ref-for-arrow-pad-1">1.1.1. Keyboard Sections</a></span><span><a href="#ref-for-arrow-pad-2">1.1.2. Standard "101" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-3">1.1.3. Alternate "101" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-4">1.1.4. Standard "102" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-5">1.1.5. Korean "103" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-6">1.1.6. Brazilian "104" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-7">1.1.7. Japanese "106" Keyboard Layout</a></span><span><a href="#ref-for-arrow-pad-8">2.1.3. Arrow Pad Section</a> <a href="#ref-for-arrow-pad-9">(2)</a></span><span><a href="#ref-for-arrow-pad-10">4. Glossary</a></span></span></dfn></p>
     <dd data-md="">
@@ -1106,7 +1108,7 @@ perform navigating and editing operations, for example, <code class="keycap">Hom
      <p>The row of keys typically found along the top of the keyboard above the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-13">alphanumeric section</a>. The function section contains the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key-11">function
 keys</a> and a few other keys like <code class="keycap">Escape</code> and <code class="keycap">Print Screen</code>.	See <a href="#key-function-section">§2.1.5 Function Section</a>.</p>
     <dt data-md="">
-     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="functional-key">functional key<span class="dfn-panel"><b><a href="#functional-key">#functional-key</a></b><b>Referenced in:</b><span><a href="#ref-for-functional-key-1">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-functional-key-2">2.1.1.2. Functional Keys</a> <a href="#ref-for-functional-key-3">(2)</a> <a href="#ref-for-functional-key-4">(3)</a></span><span><a href="#ref-for-functional-key-5">4. Glossary</a> <a href="#ref-for-functional-key-6">(2)</a></span></span></dfn></p>
+     <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="functional-key">functional key<span class="dfn-panel"><b><a href="#functional-key">#functional-key</a></b><b>Referenced in:</b><span><a href="#ref-for-functional-key-1">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-functional-key-2">2.1.1.2. Functional Keys</a> <a href="#ref-for-functional-key-3">(2)</a> <a href="#ref-for-functional-key-4">(3)</a> <a href="#ref-for-functional-key-5">(4)</a></span><span><a href="#ref-for-functional-key-6">4. Glossary</a> <a href="#ref-for-functional-key-7">(2)</a></span></span></dfn></p>
     <dd data-md="">
      <p>Any of the keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-14">alphanumeric section</a> that perform a particular
 function that is typically the same for all locales. These keys are in
@@ -1136,7 +1138,7 @@ keys to save space. See <a href="#key-numpad-section">§2.1.4 Numpad Section</a>
      <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="writing-system-key">writing system key<span class="dfn-panel"><b><a href="#writing-system-key">#writing-system-key</a></b><b>Referenced in:</b><span><a href="#ref-for-writing-system-key-1">1.1.9. Laptop Keyboard Layouts</a></span><span><a href="#ref-for-writing-system-key-2">2.1.1. Alphanumeric Section</a></span><span><a href="#ref-for-writing-system-key-3">2.1.1.1. Writing System Keys</a> <a href="#ref-for-writing-system-key-4">(2)</a> <a href="#ref-for-writing-system-key-5">(3)</a></span><span><a href="#ref-for-writing-system-key-6">4. Glossary</a> <a href="#ref-for-writing-system-key-7">(2)</a></span></span></dfn></p>
     <dd data-md="">
      <p>The keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-16">alphanumeric section</a> that vary depending on which
-locale is currently active. For example, the <code class="code">"<a href="#code-Digit2">Digit2</a>"</code> and <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code> keys which generate <code class="key">"2"</code> and <code class="key">"q"</code> when the US locale is	active and <code class="key">"é"</code> and <code class="key">"a"</code> when the French locale is active.	These keys are in contrast to the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-6">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-17">alphanumeric section</a> that perform a consistent function across
+locale is currently active. For example, the <code class="code">"<a href="#code-Digit2">Digit2</a>"</code> and <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code> keys which generate <code class="key">"2"</code> and <code class="key">"q"</code> when the US locale is	active and <code class="key">"é"</code> and <code class="key">"a"</code> when the French locale is active.	These keys are in contrast to the <a data-link-type="dfn" href="#functional-key" id="ref-for-functional-key-7">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-17">alphanumeric section</a> that perform a consistent function across
 locales. See <a href="#key-alphanumeric-writing-system">§2.1.1.1 Writing System Keys</a>.</p>
    </dl>
   </main>
@@ -1165,6 +1167,7 @@ locales. See <a href="#key-alphanumeric-writing-system">§2.1.1.1 Writing System
     <ul>
      <li><a href="http://www.w3.org/TR/uievents/#interface-keyboardevent">KeyboardEvent</a>
      <li><a href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a>
+     <li><a href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key">key</a>
     </ul>
    <li>
     <a data-link-type="biblio" href="#biblio-uievents-key">[uievents-key]</a> defines the following terms:
