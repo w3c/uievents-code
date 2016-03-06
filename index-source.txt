@@ -293,7 +293,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 		<figure id="figure-media-remote-control">
 			<img src="images/remote-control.svg" width="102" height="422" alt="A sample media remote control" />
-			<figcaption>A graphical depiction of a media remote control, with buttons mapped to specific keys values.</figcaption>
+			<figcaption>A graphical depiction of a media remote control.</figcaption>
 		</figure>
 
 	<h3 id="keyboard-chording-virtual">Virtual Keyboards and Chording Keyboards</h3>
