@@ -498,7 +498,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 					CODE ShiftLeft		KEYCAP{Shift} or KEYCAP{&#8679;}
 					CODE ShiftRight		KEYCAP{Shift} or KEYCAP{&#8679;}
 					CODE Space			KEYCAP{&nbsp;} (space)
-					CODE Tab			KEYCAP{Insert} or KEYCAP{&#8677;}
+					CODE Tab			KEYCAP{Tab} or KEYCAP{&#8677;}
 				END_CODE_TABLE
 
 				On some keyboards (notably Japanese and Korean) the spacebar is
