@@ -49,12 +49,12 @@
    <header>
     <p data-fill-with="logo"><a href="http://www.w3.org/"><img alt="W3C" height="48" src="https://www.w3.org/Icons/w3c_home" width="72"></a></p>
     <h1 class="p-name no-ref" id="title">UI Events KeyboardEvent code Values </h1>
-    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2016-03-30">30 March 2016</time></span></h2>
+    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2016-04-05">5 April 2016</time></span></h2>
    </header>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://www.w3.org/TR/2016/WD-uievents-code--20160330/">http://www.w3.org/TR/2016/WD-uievents-code--20160330/</a>
+     <dd><a class="u-url" href="http://www.w3.org/TR/2016/WD-uievents-code--20160405/">http://www.w3.org/TR/2016/WD-uievents-code--20160405/</a>
      <dt>Latest version:
      <dd><a href="http://www.w3.org/TR/uievents-code/">http://www.w3.org/TR/uievents-code/</a>
      <dt>Editor's Draft:
@@ -234,7 +234,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
 			are covered in <a href="#key-media">§3.1.6 Media Keys</a>.</p>
    <h4 class="heading settled" data-level="2.1.2" id="keyboard-101"><span class="secno">2.1.2. </span><span class="content">Standard "101" Keyboard Layout</span><a class="self-link" href="#keyboard-101"></a></h4>
    <p>The standard "101" keyboard (commonly referred to as the "US
-			layout") is the only layout that uses the <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> code (for			the <code class="keycap">\|</code> key). All the other layouts omit this key and expand			the <code class="keycap">Enter</code> key to occupy two-rows.</p>
+			layout") is the only layout that has a <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key (labeled <code class="keycap">\|</code>) above a single-row <code class="keycap">Enter</code> key. All the other			layouts omit this key and expand the <code class="keycap">Enter</code> key to			occupy two-rows.</p>
    <figure id="figure-keyboard-101-us">
      <img alt="Standard &apos;101&apos; keyboard layout" height="225" src="images/keyboard-101-us.svg" width="684"> 
     <figcaption>Standard "101" keyboard layout showing unmodified US key values</figcaption>
@@ -253,8 +253,13 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
    <p>Modern alternate "101"-layout keyboards contain 104 keys: 61 keys in
 			the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-3">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-3">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-3">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-3">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-3">function sections</a>.</p>
    <h4 class="heading settled" data-level="2.1.4" id="keyboard-102"><span class="secno">2.1.4. </span><span class="content">Standard "102" Keyboard Layout</span><a class="self-link" href="#keyboard-102"></a></h4>
-   <p>The standard "102" keyboard is common throughout Europe and adds two
-			keys that don’t exist on the "101" layouts: The <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code> key (labelled <code class="keycap">\|</code> on a UK keyboard) next to the left shift			key, and the <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> key (labelled <code class="keycap">#~</code> on a UK			keyboard) which is partially tucked under the <code class="keycap">Enter</code> key.</p>
+   <p>The standard "102" keyboard is common throughout Europe and adds a
+			key that doesn’t exist on the "101" layouts: The <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code> key (labelled <code class="keycap">\|</code> on a UK keyboard) next to the left shift			key.</p>
+   <p>A second key is also added (labelled <code class="keycap">#~</code> on a UK			keyboard) which is partially tucked under the <code class="keycap">Enter</code> key.			This key is encoded as <code class="code">"<a href="#code-Backslash">Backslash</a>"</code>, using the same code as the <code class="keycap">\|</code> key found on the "101" keyboard layout.			According to <a data-link-type="biblio" href="#biblio-usb-hid">[USB-HID]</a>, the US <code class="keycap">\|</code> and UK <code class="keycap">#~</code> are			actually two separate keys (named "Keyboard \ and |" and "Keyboard
+			Non-US # and ~"), but since these two keys never co-occur on the
+			same keyboard most platforms use the same scancode for both keys,
+			making them difficult to distinguish. It is for this reason that the
+			code <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> is used for both of these keys.</p>
    <figure id="figure-keyboard-102-uk">
      <img alt="Standard &apos;102&apos; keyboard layout" height="225" src="images/keyboard-102-uk.svg" width="684"> 
     <figcaption>Standard "102" keyboard layout showing unmodified UK key values</figcaption>
@@ -270,8 +275,8 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
    </figure>
    <p>Modern "103"-layout keyboards contain 106 keys: 63 keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section-5">alphanumeric section</a> and 43 keys in the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad-5">numpad</a>, <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad-5">control pad</a>, <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad-5">arrow pad</a> and <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-5">function sections</a>.</p>
    <h4 class="heading settled" data-level="2.1.6" id="keyboard-104"><span class="secno">2.1.6. </span><span class="content">Brazilian "104" Keyboard Layout</span><a class="self-link" href="#keyboard-104"></a></h4>
-   <p>The "104" layout used in Brazil adds 4 new keys: the two non-US keys
-			from the "102" layout (<code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> and <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code>) plus			the <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> key (next to the right shift key) and an extra key			on the numeric keypad. This new keypad key is called <code class="code">"<a href="#code-NumpadComma">NumpadComma</a>"</code> because it represents the thousands separator. On			the Brazilian key layout, this key is labelled <code class="keycap">.</code> and the <code class="code">"<a href="#code-NumpadDecimal">NumpadDecimal</a>"</code> key is labelled <code class="keycap">,</code>.</p>
+   <p>The "104" layout used in Brazil adds 4 new keys: two keys
+			from the "102" layout (<code class="code">"<a href="#code-Backslash">Backslash</a>"</code> and <code class="code">"<a href="#code-IntlBackslash">IntlBackslash</a>"</code>) plus			the <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> key (next to the right shift key) and an extra key			on the numeric keypad. This new keypad key is called <code class="code">"<a href="#code-NumpadComma">NumpadComma</a>"</code> because it represents the thousands separator. On			the Brazilian key layout, this key is labelled <code class="keycap">.</code> and the <code class="code">"<a href="#code-NumpadDecimal">NumpadDecimal</a>"</code> key is labelled <code class="keycap">,</code>.</p>
    <figure id="figure-keyboard-104-brazilian">
      <img alt="Standard &apos;104&apos; keyboard layout" height="225" src="images/keyboard-104-brazilian.svg" width="684"> 
     <figcaption>Standard "104" keyboard layout showing unmodified Brazilian key values</figcaption>
@@ -280,7 +285,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
 			Some Brazilian keyboards lack the extra <a data-link-type="dfn" href="#keypad" id="ref-for-keypad-1">keypad</a> key and have
 			only 106 keys.</p>
    <h4 class="heading settled" data-level="2.1.7" id="keyboard-106"><span class="secno">2.1.7. </span><span class="content">Japanese "106" Keyboard Layout</span><a class="self-link" href="#keyboard-106"></a></h4>
-   <p>The Japanese "106" keyboard layout adds 3 new keys: <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> (labelled <code class="keycap">¥_</code>), <code class="code">"<a href="#code-IntlHash">IntlHash</a>"</code> (labelled <code class="keycap">]む</code>)			and <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> (labelled <code class="keycap">\ろ</code>).			It also shrinks the spacebar to make room for 3 input mode keys: <code class="code">"<a href="#code-NonConvert">NonConvert</a>"</code> (labelled <code class="keycap">無変換</code> <span class="unicode">muhenkan</span>), <code class="code">"<a href="#code-Convert">Convert</a>"</code> (labelled <code class="keycap">変換</code> <span class="unicode">henkan</span>)			and <code class="code">"<a href="#code-KanaMode">KanaMode</a>"</code> (labelled <code class="keycap">カタカナ/ひらがな/ローマ字</code> <span class="unicode">katakana/hiragana/romaji</span>).</p>
+   <p>The Japanese "106" keyboard layout adds 3 new keys: <code class="code">"<a href="#code-IntlYen">IntlYen</a>"</code> (labelled <code class="keycap">¥_</code>), <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> (labelled <code class="keycap">]む</code>)			and <code class="code">"<a href="#code-IntlRo">IntlRo</a>"</code> (labelled <code class="keycap">\ろ</code>).			It also shrinks the spacebar to make room for 3 input mode keys: <code class="code">"<a href="#code-NonConvert">NonConvert</a>"</code> (labelled <code class="keycap">無変換</code> <span class="unicode">muhenkan</span>), <code class="code">"<a href="#code-Convert">Convert</a>"</code> (labelled <code class="keycap">変換</code> <span class="unicode">henkan</span>)			and <code class="code">"<a href="#code-KanaMode">KanaMode</a>"</code> (labelled <code class="keycap">カタカナ/ひらがな/ローマ字</code> <span class="unicode">katakana/hiragana/romaji</span>).</p>
    <figure id="figure-keyboard-106-japanese">
      <img alt="Standard &apos;106&apos; keyboard layout" height="225" src="images/keyboard-106-japanese.svg" width="684"> 
     <figcaption>Standard "106" keyboard layout showing unmodified Japanese key values</figcaption>
@@ -390,6 +395,8 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
 				key in that position (i.e., they are based on the US keyboard
 				layout). For keys that don’t exist on the US keyboard, names
 				from the UK or Japanese layouts are used instead.</p>
+   <p>Note that there are two <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> keys in this figure: a				large one at the end of Row D on the 101-key layout, and a
+				smaller one between <code class="code">"<a href="#code-Quote">Quote</a>"</code> and <code class="code">"<a href="#code-Enter">Enter</a>"</code> on Row C of the				102-, 104- and 106-key layouts. Only one <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key				may be present on a keyboard layout.</p>
    <table class="data-table full-width" id="table-key-code-alphanumeric-writing-system">
     <caption>List of code values for writing system keys in the Alphanumeric section.</caption>
     <thead>
@@ -402,10 +409,11 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">`~</code> on a US keyboard. This is the <code class="keycap">半角/全角/漢字</code> (<span class="unicode">hankaku/zenkaku/kanji</span>) key on Japanese keyboards
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backslash">"Backslash"</code>
-      <td><code class="keycap">\|</code> on a US keyboard. Found only on standard 101-key layouts.
+      <td>Used for both the US <code class="keycap">\|</code> (on the 101-key layout) and also for the key										located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row C of the 102-,										104- and 106-key layouts.
+										Labelled <code class="keycap">#~</code> on a UK (102) keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backspace">"Backspace"</code>
-      <td><code class="keycap">Backspace</code> or <code class="keycap">⌫</code>. Labelled <code class="keycap">Delete</code> on Apple keyboards.
+      <td><code class="keycap">Backspace</code> or <code class="keycap">⌫</code>.										Labelled <code class="keycap">Delete</code> on Apple keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-BracketLeft">"BracketLeft"</code>
       <td><code class="keycap">[{</code> on a US keyboard.
@@ -450,19 +458,16 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">=+</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlBackslash">"IntlBackslash"</code>
-      <td>Located between the left <code class="keycap">Shift</code> and <code class="keycap">Z</code> keys. Labelled <code class="keycap">\|</code> on a UK keyboard.
-     <tr>
-      <td class="code-table-code"><code class="code" id="code-IntlHash">"IntlHash"</code>
-      <td>Located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row E of the keyboard. Labelled <code class="keycap">#~</code> on a UK keyboard.
+      <td>Located between the left <code class="keycap">Shift</code> and <code class="keycap">Z</code> keys.										Labelled <code class="keycap">\|</code> on a UK keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlRo">"IntlRo"</code>
-      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys. Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard.
+      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys.										Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlYen">"IntlYen"</code>
-      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys. Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a Russian keyboard. 
+      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys.										Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a										Russian keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyA">"KeyA"</code>
-      <td><code class="keycap">a</code> on a US keyboard. Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard.
+      <td><code class="keycap">a</code> on a US keyboard.										Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyB">"KeyB"</code>
       <td><code class="keycap">b</code> on a US keyboard.
@@ -510,7 +515,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">p</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyQ">"KeyQ"</code>
-      <td><code class="keycap">q</code> on a US keyboard. Labelled <code class="keycap">a</code> on an AZERTY (e.g., French) keyboard.
+      <td><code class="keycap">q</code> on a US keyboard.										Labelled <code class="keycap">a</code> on an AZERTY (e.g., French) keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyR">"KeyR"</code>
       <td><code class="keycap">r</code> on a US keyboard.
@@ -528,16 +533,16 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">v</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyW">"KeyW"</code>
-      <td><code class="keycap">w</code> on a US keyboard. Labelled <code class="keycap">z</code> on an AZERTY (e.g., French) keyboard.
+      <td><code class="keycap">w</code> on a US keyboard.										Labelled <code class="keycap">z</code> on an AZERTY (e.g., French) keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyX">"KeyX"</code>
       <td><code class="keycap">x</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyY">"KeyY"</code>
-      <td><code class="keycap">y</code> on a US keyboard. Labelled <code class="keycap">z</code> on a QWERTZ (e.g., German) keyboard.
+      <td><code class="keycap">y</code> on a US keyboard.										Labelled <code class="keycap">z</code> on a QWERTZ (e.g., German) keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyZ">"KeyZ"</code>
-      <td><code class="keycap">z</code> on a US keyboard. Labelled <code class="keycap">w</code> on an AZERTY (e.g., French) keyboard, and <code class="keycap">y</code> on a QWERTZ (e.g., German) keyboard. 
+      <td><code class="keycap">z</code> on a US keyboard.										Labelled <code class="keycap">w</code> on an AZERTY (e.g., French) keyboard, and <code class="keycap">y</code> on a										QWERTZ (e.g., German) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Minus">"Minus"</code>
       <td><code class="keycap">-_</code> on a US keyboard.
@@ -576,7 +581,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-AltRight">"AltRight"</code>
-      <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>. This is labelled <code class="keycap">AltGr</code> key on many keyboard layouts.
+      <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.										This is labelled <code class="keycap">AltGr</code> key on many keyboard layouts.
      <tr>
       <td class="code-table-code"><code class="code" id="code-CapsLock">"CapsLock"</code>
       <td><code class="keycap">CapsLock</code> or <code class="keycap">⇪</code>
@@ -612,7 +617,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">Tab</code> or <code class="keycap">⇥</code>
    </table>
    <p>On some keyboards (notably Japanese and Korean) the spacebar is
-				reduced in size to make room for extra keys on the bottom row.
+				reduced in size to make room for extra keys on the bottom row (Row A).
 				These keys typically allow the users to change the current input
 				mode. Note that even though some of these Japanese and Korean
 				keys occupy the same physical location on the keyboard, they use
@@ -671,7 +676,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Delete">"Delete"</code>
-      <td><code class="keycap">⌦</code>. The forward delete key. Note that on Apple keyboards, the key labelled <code class="keycap">Delete</code> on the main part of the keyboard should be encoded as <code class="code">"<a href="#code-Backspace">Backspace</a>"</code>.
+      <td><code class="keycap">⌦</code>. The forward delete key.								Note that on Apple keyboards, the key labelled <code class="keycap">Delete</code> on the main part of								the keyboard should be encoded as <code class="code">"<a href="#code-Backspace">Backspace</a>"</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-End">"End"</code>
       <td><code class="keycap">Page Down</code>, <code class="keycap">End</code> or <code class="keycap">↘</code>
@@ -750,7 +755,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">0 Ins</code> on a keyboard<br><code class="keycap">0</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad1">"Numpad1"</code>
-      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or remote control
+      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or										remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad2">"Numpad2"</code>
       <td><code class="keycap">2 ↓</code> on a keyboard<br><code class="keycap">2 ABC</code> on a phone or remote control
@@ -768,13 +773,13 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">6 →</code> on a keyboard<br><code class="keycap">6 MNO</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad7">"Numpad7"</code>
-      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone or remote control
+      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone										or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad8">"Numpad8"</code>
       <td><code class="keycap">8 ↑</code> on a keyboard<br><code class="keycap">8 TUV</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad9">"Numpad9"</code>
-      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone or remote control
+      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone										or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadAdd">"NumpadAdd"</code>
       <td><code class="keycap">+</code>
@@ -783,16 +788,16 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td>Found on the Microsoft Natural Keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadClear">"NumpadClear"</code>
-      <td>For use with numpads that have a <code class="keycap">Clear</code> key that is separate from the <code class="keycap">NumLock</code> key. On the Mac, the numpad <code class="keycap">Clear</code> key should always be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>.
+      <td>For use with numpads that have a <code class="keycap">Clear</code> key that is separate from the <code class="keycap">NumLock</code> key. On the Mac, the numpad <code class="keycap">Clear</code> key should always										be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadClearEntry">"NumpadClearEntry"</code>
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadComma">"NumpadComma"</code>
-      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>.
+      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator										is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDecimal">"NumpadDecimal"</code>
-      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g., Brazil), this key may generate a <code class="keycap">,</code>.
+      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g.,										Brazil), this key may generate a <code class="keycap">,</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDivide">"NumpadDivide"</code>
       <td><code class="keycap">/</code>
@@ -804,7 +809,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">=</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadHash">"NumpadHash"</code>
-      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key.
+      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found										below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryAdd">"NumpadMemoryAdd"</code>
       <td>
@@ -822,7 +827,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMultiply">"NumpadMultiply"</code>
-      <td><code class="keycap">*</code> on a keyboard. For use with numpads that provide mathematical operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls.
+      <td><code class="keycap">*</code> on a keyboard. For use with numpads that provide mathematical										operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadParenLeft">"NumpadParenLeft"</code>
       <td><code class="keycap">(</code> Found on the Microsoft Natural Keyboard.
@@ -831,7 +836,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">)</code> Found on the Microsoft Natural Keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadStar">"NumpadStar"</code>
-      <td><code class="keycap">*</code> on a phone or remote control device. This key is typically found below the <code class="keycap">7</code> key and to the left of the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on numeric keypads.
+      <td><code class="keycap">*</code> on a phone or remote control device.										This key is typically found below the <code class="keycap">7</code> key and to the left of										the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on										numeric keypads. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadSubtract">"NumpadSubtract"</code>
       <td><code class="keycap">-</code>
@@ -895,10 +900,11 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td><code class="keycap">F12</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Fn">"Fn"</code>
-      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate code. Most keyboards do not place this key in the Function section, but it is included here to keep it with related keys.
+      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate								code. Most keyboards do not place this key in the Function section, but it is
+								included here to keep it with related keys. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-FnLock">"FnLock"</code>
-      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft Natural Keyboard.
+      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft								Natural Keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-PrintScreen">"PrintScreen"</code>
       <td><code class="keycap">PrtScr SysRq</code> or <code class="keycap">Print Screen</code>
@@ -953,7 +959,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Eject">"Eject"</code>
-      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-11">function section</a> on some Apple keyboards.
+      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-11">function										section</a> on some Apple keyboards. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchApp1">"LaunchApp1"</code>
       <td>Sometimes labelled <code class="keycap">My Computer</code> on the keyboard
@@ -980,7 +986,7 @@ miscellaneous function keys and special keys like <code class="keycap">Escape</c
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Power">"Power"</code>
-      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-12">function section</a> on some Apple keyboards, replacing the <code class="keycap">Eject</code> key.
+      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section-12">function section</a> on some Apple keyboards,										replacing the <code class="keycap">Eject</code> key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Sleep">"Sleep"</code>
       <td>
@@ -1220,6 +1226,8 @@ locales. See <a href="#key-alphanumeric-writing-system">§3.1.1.1 Writing System
    <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645">ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts</a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645</a>
    <dt id="biblio-iso9995-8"><a class="self-link" href="#biblio-iso9995-8"></a>[ISO9995-8]
    <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad</a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641</a>
+   <dt id="biblio-usb-hid"><a class="self-link" href="#biblio-usb-hid"></a>[USB-HID]
+   <dd><a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">USB HID Usage Tables 1.12</a>. URL: <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">http://www.usb.org/developers/hidpage/Hut1_12v2.pdf</a>
   </dl>
 <script>
         document.body.addEventListener("click", function(e) {

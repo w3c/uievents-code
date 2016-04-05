@@ -30,6 +30,11 @@ Abstract:
 		"href": "http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641",
 		"title": "ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad",
 		"publisher": "ISO"
+	},
+	"USB-HID": {
+		"href": "http://www.usb.org/developers/hidpage/Hut1_12v2.pdf",
+		"title": "USB HID Usage Tables 1.12",
+		"publisher": "USB Implementers' Forum"
 	}
 }
 </pre>
@@ -133,9 +138,10 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 		<h4 id="keyboard-101">Standard "101" Keyboard Layout</h4>
 
 			The standard "101" keyboard (commonly referred to as the "US
-			layout") is the only layout that uses the CODE{Backslash} code (for
-			the KEYCAP{\|} key). All the other layouts omit this key and expand
-			the KEYCAP{Enter} key to occupy two-rows.
+			layout") is the only layout that has a CODE{Backslash} key (labeled
+			KEYCAP{\|}) above a single-row KEYCAP{Enter} key. All the other
+			layouts omit this key and expand the KEYCAP{Enter} key to
+			occupy two-rows.
 
 			<figure id="figure-keyboard-101-us">
 				<img src="images/keyboard-101-us.svg" width="684" height="225" alt="Standard '101' keyboard layout" />
@@ -170,11 +176,21 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 		<h4 id="keyboard-102">Standard "102" Keyboard Layout</h4>
 
-			The standard "102" keyboard is common throughout Europe and adds two
-			keys that don't exist on the "101" layouts: The CODE{IntlBackslash}
+			The standard "102" keyboard is common throughout Europe and adds a
+			key that doesn't exist on the "101" layouts: The CODE{IntlBackslash}
 			key (labelled KEYCAP{\|} on a UK keyboard) next to the left shift
-			key, and the CODE{IntlHash} key (labelled KEYCAP{#~} on a UK
+			key.
+
+			A second key is also added (labelled KEYCAP{#~} on a UK
 			keyboard) which is partially tucked under the KEYCAP{Enter} key.
+			This key is encoded as CODE{Backslash}, using the same code as the
+			KEYCAP{\|} key found on the "101" keyboard layout.
+			According to [[USB-HID]], the US KEYCAP{\|} and UK KEYCAP{#~} are
+			actually two separate keys (named "Keyboard \ and |" and "Keyboard
+			Non-US # and ~"), but since these two keys never co-occur on the
+			same keyboard most platforms use the same scancode for both keys,
+			making them difficult to distinguish. It is for this reason that the
+			code CODE{Backslash} is used for both of these keys.
 
 			<figure id="figure-keyboard-102-uk">
 				<img src="images/keyboard-102-uk.svg" width="684" height="225" alt="Standard '102' keyboard layout" />
@@ -205,8 +221,8 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 		<h4 id="keyboard-104">Brazilian "104" Keyboard Layout</h4>
 
-			The "104" layout used in Brazil adds 4 new keys: the two non-US keys
-			from the "102" layout (CODE{IntlHash} and CODE{IntlBackslash}) plus
+			The "104" layout used in Brazil adds 4 new keys: two keys
+			from the "102" layout (CODE{Backslash} and CODE{IntlBackslash}) plus
 			the CODE{IntlRo} key (next to the right shift key) and an extra key
 			on the numeric keypad. This new keypad key is called
 			CODE{NumpadComma} because it represents the thousands separator. On
@@ -228,7 +244,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 			The Japanese "106" keyboard layout adds 3 new keys:
 				CODE{IntlYen} (labelled KEYCAP{¥_}),
-				CODE{IntlHash} (labelled KEYCAP{]む})
+				CODE{Backslash} (labelled KEYCAP{]む})
 			and
 				CODE{IntlRo} (labelled KEYCAP{\ろ}).
 			It also shrinks the spacebar to make room for 3 input mode keys:
@@ -406,10 +422,21 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				layout). For keys that don't exist on the US keyboard, names
 				from the UK or Japanese layouts are used instead.
 
+				Note that there are two CODE{Backslash} keys in this figure: a
+				large one at the end of Row D on the 101-key layout, and a
+				smaller one between CODE{Quote} and CODE{Enter} on Row C of the
+				102-, 104- and 106-key layouts. Only one CODE{Backslash} key
+				may be present on a keyboard layout.
+
 				BEGIN_CODE_TABLE alphanumeric-writing-system "List of code values for writing system keys in the Alphanumeric section."
-					CODE Backquote		KEYCAP{`~} on a US keyboard. This is the KEYCAP{半角/全角/漢字} (PHONETIC{hankaku/zenkaku/kanji}) key on Japanese keyboards
-					CODE Backslash		KEYCAP{\|} on a US keyboard. Found only on standard 101-key layouts.
-					CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}. Labelled KEYCAP{Delete} on Apple keyboards.
+					CODE Backquote		KEYCAP{`~} on a US keyboard. This is the KEYCAP{半角/全角/漢字}
+										(PHONETIC{hankaku/zenkaku/kanji}) key on Japanese keyboards
+					CODE Backslash		Used for both the US KEYCAP{\|} (on the 101-key layout) and also for the key
+										located between the KEYCAP{"} and KEYCAP{Enter} keys on row C of the 102-,
+										104- and 106-key layouts.
+										Labelled KEYCAP{#~} on a UK (102) keyboard.
+					CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}.
+										Labelled KEYCAP{Delete} on Apple keyboards.
 					CODE BracketLeft	KEYCAP{[{} on a US keyboard.
 					CODE BracketRight	KEYCAP{]&rcub;} on a US keyboard.
 					CODE Comma			KEYCAP{,&lt;} on a US keyboard.
@@ -426,12 +453,16 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 					CODE Digit9			KEYCAP{9(} on a US keyboard.
 
 					CODE Equal			KEYCAP{=+} on a US keyboard.
-					CODE IntlBackslash	Located between the left KEYCAP{Shift} and KEYCAP{Z} keys. Labelled KEYCAP{\|} on a UK keyboard.
-					CODE IntlHash		Located between the KEYCAP{"} and KEYCAP{Enter} keys on row E of the keyboard. Labelled KEYCAP{#~} on a UK keyboard.
-					CODE IntlRo			Located between the KEYCAP{/} and right KEYCAP{Shift} keys. Labelled KEYCAP{\ろ} (PHONETIC{ro}) on a Japanese keyboard.
-					CODE IntlYen		Located between the KEYCAP{=} and KEYCAP{Backspace} keys. Labelled KEYCAP{¥} (PHONETIC{yen}) on a Japanese keyboard. KEYCAP{\/} on a Russian keyboard.
+					CODE IntlBackslash	Located between the left KEYCAP{Shift} and KEYCAP{Z} keys.
+										Labelled KEYCAP{\|} on a UK keyboard.
+					CODE IntlRo			Located between the KEYCAP{/} and right KEYCAP{Shift} keys.
+										Labelled KEYCAP{\ろ} (PHONETIC{ro}) on a Japanese keyboard.
+					CODE IntlYen		Located between the KEYCAP{=} and KEYCAP{Backspace} keys.
+										Labelled KEYCAP{¥} (PHONETIC{yen}) on a Japanese keyboard. KEYCAP{\/} on a
+										Russian keyboard.
 
-					CODE KeyA			KEYCAP{a} on a US keyboard. Labelled KEYCAP{q} on an AZERTY (e.g., French) keyboard.
+					CODE KeyA			KEYCAP{a} on a US keyboard.
+										Labelled KEYCAP{q} on an AZERTY (e.g., French) keyboard.
 					CODE KeyB			KEYCAP{b} on a US keyboard.
 					CODE KeyC			KEYCAP{c} on a US keyboard.
 					CODE KeyD			KEYCAP{d} on a US keyboard.
@@ -447,16 +478,21 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 					CODE KeyN			KEYCAP{n} on a US keyboard.
 					CODE KeyO			KEYCAP{o} on a US keyboard.
 					CODE KeyP			KEYCAP{p} on a US keyboard.
-					CODE KeyQ			KEYCAP{q} on a US keyboard. Labelled KEYCAP{a} on an AZERTY (e.g., French) keyboard.
+					CODE KeyQ			KEYCAP{q} on a US keyboard.
+										Labelled KEYCAP{a} on an AZERTY (e.g., French) keyboard.
 					CODE KeyR			KEYCAP{r} on a US keyboard.
 					CODE KeyS			KEYCAP{s} on a US keyboard.
 					CODE KeyT			KEYCAP{t} on a US keyboard.
 					CODE KeyU			KEYCAP{u} on a US keyboard.
 					CODE KeyV			KEYCAP{v} on a US keyboard.
-					CODE KeyW			KEYCAP{w} on a US keyboard. Labelled KEYCAP{z} on an AZERTY (e.g., French) keyboard.
+					CODE KeyW			KEYCAP{w} on a US keyboard.
+										Labelled KEYCAP{z} on an AZERTY (e.g., French) keyboard.
 					CODE KeyX			KEYCAP{x} on a US keyboard.
-					CODE KeyY			KEYCAP{y} on a US keyboard. Labelled KEYCAP{z} on a QWERTZ (e.g., German) keyboard.
-					CODE KeyZ			KEYCAP{z} on a US keyboard. Labelled KEYCAP{w} on an AZERTY (e.g., French) keyboard, and KEYCAP{y} on a QWERTZ (e.g., German) keyboard.
+					CODE KeyY			KEYCAP{y} on a US keyboard.
+										Labelled KEYCAP{z} on a QWERTZ (e.g., German) keyboard.
+					CODE KeyZ			KEYCAP{z} on a US keyboard.
+										Labelled KEYCAP{w} on an AZERTY (e.g., French) keyboard, and KEYCAP{y} on a
+										QWERTZ (e.g., German) keyboard.
 
 					CODE Minus			KEYCAP{-_} on a US keyboard.
 					CODE Period			KEYCAP{.&gt;} on a US keyboard.
@@ -487,9 +523,11 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 				BEGIN_CODE_TABLE alphanumeric-functional-1 "List of code values for functional keys in the Alphanumeric section."
 					CODE AltLeft		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
-					CODE AltRight		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}. This is labelled KEYCAP{AltGr} key on many keyboard layouts.
+					CODE AltRight		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
+										This is labelled KEYCAP{AltGr} key on many keyboard layouts.
 					CODE CapsLock		KEYCAP{CapsLock} or KEYCAP{&#8682;}
-					CODE ContextMenu	The application context menu key, which is typically found between the right KEYCAP{Meta} key and the right KEYCAP{Control} key.
+					CODE ContextMenu	The application context menu key, which is typically found between the right
+										KEYCAP{Meta} key and the right KEYCAP{Control} key.
 					CODE ControlLeft	KEYCAP{Control} or KEYCAP{&#8963;}
 					CODE ControlRight	KEYCAP{Control} or KEYCAP{&#8963;}
 					CODE Enter			KEYCAP{Enter} or KEYCAP{&crarr;}. Labelled KEYCAP{Return} on Apple keyboards.
@@ -502,7 +540,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				END_CODE_TABLE
 
 				On some keyboards (notably Japanese and Korean) the spacebar is
-				reduced in size to make room for extra keys on the bottom row.
+				reduced in size to make room for extra keys on the bottom row (Row A).
 				These keys typically allow the users to change the current input
 				mode. Note that even though some of these Japanese and Korean
 				keys occupy the same physical location on the keyboard, they use
@@ -516,8 +554,10 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				BEGIN_CODE_TABLE alphanumeric-functional-2 "List of code values for functional keys found on Japanese and Korean keyboards."
 					CODE Convert	Japanese: KEYCAP{変換} (PHONETIC{henkan})
 					CODE KanaMode	Japanese: KEYCAP{カタカナ/ひらがな/ローマ字} (PHONETIC{katakana/hiragana/romaji})
-					CODE Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard): KEYCAP{かな} (PHONETIC{kana})
-					CODE Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard): KEYCAP{英数} (PHONETIC{eisu})
+					CODE Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard):
+									KEYCAP{かな} (PHONETIC{kana})
+					CODE Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard):
+									KEYCAP{英数} (PHONETIC{eisu})
 					CODE Lang3		Japanese (word-processing keyboard): Katakana
 					CODE Lang4		Japanese (word-processing keyboard): Hiragana
 					CODE Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
@@ -538,7 +578,9 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 			</figure>
 
 			BEGIN_CODE_TABLE controlpad "List of code values for keys in the ControlPad section."
-				CODE Delete		KEYCAP{&#8998;}. The forward delete key. Note that on Apple keyboards, the key labelled KEYCAP{Delete} on the main part of the keyboard should be encoded as CODE{Backspace}.
+				CODE Delete		KEYCAP{&#8998;}. The forward delete key.
+								Note that on Apple keyboards, the key labelled KEYCAP{Delete} on the main part of
+								the keyboard should be encoded as CODE{Backspace}.
 				CODE End		KEYCAP{Page Down}, KEYCAP{End} or KEYCAP{&#8600;}
 				CODE Help		KEYCAP{Help}. Not present on standard PC keyboards.
 				CODE Home		KEYCAP{Home} or KEYCAP{&#8598;}
@@ -593,36 +635,50 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 			in the table below.
 
 			BEGIN_CODE_TABLE numpad "List of code values for keys in the Numpad section."
-				CODE NumLock			On the Mac, the CODE{NumLock} code should be used for the numpad KEYCAP{Clear} key.
+				CODE NumLock			On the Mac, the CODE{NumLock} code should be used for the numpad
+										KEYCAP{Clear} key.
 				CODE Numpad0			KEYCAP{0 Ins} on a keyboard<br/>KEYCAP{0} on a phone or remote control
-				CODE Numpad1			KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or remote control
+				CODE Numpad1			KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or
+										remote control
 				CODE Numpad2			KEYCAP{2 &darr;} on a keyboard<br/>KEYCAP{2 ABC} on a phone or remote control
 				CODE Numpad3			KEYCAP{3 PgDn} on a keyboard<br/>KEYCAP{3 DEF} on a phone or remote control
 				CODE Numpad4			KEYCAP{4 &larr;} on a keyboard<br/>KEYCAP{4 GHI} on a phone or remote control
 				CODE Numpad5			KEYCAP{5} on a keyboard<br/>KEYCAP{5 JKL} on a phone or remote control
 				CODE Numpad6			KEYCAP{6 &rarr;} on a keyboard<br/>KEYCAP{6 MNO} on a phone or remote control
-				CODE Numpad7			KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone or remote control
+				CODE Numpad7			KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone
+										or remote control
 				CODE Numpad8			KEYCAP{8 &uarr;} on a keyboard<br/>KEYCAP{8 TUV} on a phone or remote control
-				CODE Numpad9			KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone or remote control
+				CODE Numpad9			KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone
+										or remote control
 				CODE NumpadAdd			KEYCAP{+}
 				CODE NumpadBackspace	Found on the Microsoft Natural Keyboard.
-				CODE NumpadClear		For use with numpads that have a KEYCAP{Clear} key that is separate from the KEYCAP{NumLock} key. On the Mac, the numpad KEYCAP{Clear} key should always be encoded as CODE{NumLock}.
+				CODE NumpadClear		For use with numpads that have a KEYCAP{Clear} key that is separate from the
+										KEYCAP{NumLock} key. On the Mac, the numpad KEYCAP{Clear} key should always
+										be encoded as CODE{NumLock}.
 				CODE NumpadClearEntry
-				CODE NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
-				CODE NumpadDecimal		KEYCAP{. Del}. For locales where the decimal separator is "," (e.g., Brazil), this key may generate a KEYCAP{,}.
+				CODE NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
+										is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
+				CODE NumpadDecimal		KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
+										Brazil), this key may generate a KEYCAP{,}.
 				CODE NumpadDivide		KEYCAP{/}
 				CODE NumpadEnter
 				CODE NumpadEqual		KEYCAP{=}
-				CODE NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
+				CODE NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
+										below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
 				CODE NumpadMemoryAdd
 				CODE NumpadMemoryClear
 				CODE NumpadMemoryRecall
 				CODE NumpadMemoryStore
 				CODE NumpadMemorySubtract
-				CODE NumpadMultiply		KEYCAP{*} on a keyboard. For use with numpads that provide mathematical operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
+				CODE NumpadMultiply		KEYCAP{*} on a keyboard. For use with numpads that provide mathematical
+										operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
+										CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
 				CODE NumpadParenLeft	KEYCAP{(} Found on the Microsoft Natural Keyboard.
 				CODE NumpadParenRight	KEYCAP{)} Found on the Microsoft Natural Keyboard.
-				CODE NumpadStar			KEYCAP{*} on a phone or remote control device. This key is typically found below the KEYCAP{7} key and to the left of the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on numeric keypads.
+				CODE NumpadStar			KEYCAP{*} on a phone or remote control device.
+										This key is typically found below the KEYCAP{7} key and to the left of
+										the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on
+										numeric keypads.
 				CODE NumpadSubtract		KEYCAP{-}
 			END_CODE_TABLE
 
@@ -660,8 +716,11 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				CODE F10		KEYCAP{F10}
 				CODE F11		KEYCAP{F11}
 				CODE F12		KEYCAP{F12}
-				CODE Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate code. Most keyboards do not place this key in the Function section, but it is included here to keep it with related keys.
-				CODE FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft Natural Keyboard.
+				CODE Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate
+								code. Most keyboards do not place this key in the Function section, but it is
+								included here to keep it with related keys.
+				CODE FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft
+								Natural Keyboard.
 				CODE PrintScreen	KEYCAP{PrtScr SysRq} or KEYCAP{Print Screen}
 				CODE ScrollLock		KEYCAP{Scroll Lock}
 				CODE Pause		KEYCAP{Pause Break}
@@ -707,7 +766,8 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				CODE BrowserRefresh
 				CODE BrowserSearch
 				CODE BrowserStop
-				CODE Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the <a>function section</a> on some Apple keyboards.
+				CODE Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the <a>function
+										section</a> on some Apple keyboards.
 				CODE LaunchApp1			Sometimes labelled KEYCAP{My Computer} on the keyboard
 				CODE LaunchApp2			Sometimes labelled KEYCAP{Calculator} on the keyboard
 				CODE LaunchMail
@@ -716,7 +776,8 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				CODE MediaStop
 				CODE MediaTrackNext
 				CODE MediaTrackPrevious
-				CODE Power				This key is placed in the <a>function section</a> on some Apple keyboards, replacing the KEYCAP{Eject} key.
+				CODE Power				This key is placed in the <a>function section</a> on some Apple keyboards,
+										replacing the KEYCAP{Eject} key.
 				CODE Sleep
 				CODE AudioVolumeDown
 				CODE AudioVolumeMute
