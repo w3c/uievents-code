@@ -56,7 +56,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 	This document provides an overview of the various keyboard layouts and
 	specifies the {{KeyboardEvent}}.{{KeyboardEvent/code}} values that should be
-	used for each of the keys. Unlike the {KeyboardEvent/key}} values described
+	used for each of the keys. Unlike the {{KeyboardEvent/key}} values described
 	in [[UIEvents-Key]], the {{KeyboardEvent/code}} values are based only on the
 	key's physical location on the keyboard and do not vary based on the user's
 	current locale.
