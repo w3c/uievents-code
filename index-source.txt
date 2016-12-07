@@ -57,7 +57,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 	This document provides an overview of the various keyboard layouts and
 	specifies the {{KeyboardEvent}}.{{KeyboardEvent/code}} values that should be
 	used for each of the keys. Unlike the {{KeyboardEvent/key}} values described
-	in [[UIEvents-Key]], the {{KeyboardEvent/code}} values are based only on the
+	in [[UIEvents-key]], the {{KeyboardEvent/code}} values are based only on the
 	key's physical location on the keyboard and do not vary based on the user's
 	current locale.
 
@@ -358,7 +358,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 		lack of physical constraints, these keyboards MAY present the widest
 		range of characters, including emoticons and other symbols, and MAY have
 		keys not represented by Unicode [[!Unicode]] or by the <a>key value
-		tables</a> [[!uievents-key]]. Wherever possible, however, virtual
+		tables</a> [[!!UIEvents-key]]. Wherever possible, however, virtual
 		keyboards SHOULD produce the normal range of keyboard events and values,
 		for ease of authoring and compatibility with existing content.
 
@@ -384,6 +384,10 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 	This section defines a list of {{KeyboardEvent/code}} values which
 	implementations MUST support.
+
+	A <dfn>valid {{KeyboardEvent}} {{KeyboardEvent/code}}</dfn> is any of the
+	strings given in the first column of the tables (highlighted in
+	<code class="code">lavender</code>) in this section.
 
 	<h3 id="keyboard-key-codes">Key Codes for Standard Keyboards</h3>
 
