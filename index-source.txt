@@ -68,7 +68,7 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 
 		This specification uses the following conventions:
 
-		*   The <a><em>key cap</em></a> printed on a key is shown as
+		*   The <a><em>key cap</em></a> or label printed on a key is shown as
 			KEYCAP{&darr;}, KEYCAP{=} or KEYCAP{Q}. This is used to refer to a
 			key from the user's perspective without regard for the
 			{{KeyboardEvent/key}} and {{KeyboardEvent/code}} values in the
