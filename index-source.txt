@@ -656,10 +656,11 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 										or remote control
 				CODE NumpadAdd			KEYCAP{+}
 				CODE NumpadBackspace	Found on the Microsoft Natural Keyboard.
-				CODE NumpadClear		For use with numpads that have a KEYCAP{Clear} key that is separate from the
+				CODE NumpadClear		KEYCAP{C} or KEYCAP{AC} (All Clear). Also for use with numpads that have a
+										KEYCAP{Clear} key that is separate from the
 										KEYCAP{NumLock} key. On the Mac, the numpad KEYCAP{Clear} key should always
 										be encoded as CODE{NumLock}.
-				CODE NumpadClearEntry
+				CODE NumpadClearEntry	KEYCAP{CE} (Clear Entry)
 				CODE NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
 										is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
 				CODE NumpadDecimal		KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
@@ -669,11 +670,11 @@ url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uieve
 				CODE NumpadEqual		KEYCAP{=}
 				CODE NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
 										below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
-				CODE NumpadMemoryAdd
-				CODE NumpadMemoryClear
-				CODE NumpadMemoryRecall
-				CODE NumpadMemoryStore
-				CODE NumpadMemorySubtract
+				CODE NumpadMemoryAdd	KEYCAP{M+} Add current entry to the value stored in memory.
+				CODE NumpadMemoryClear	KEYCAP{MC} Clear the value stored in memory.
+				CODE NumpadMemoryRecall	KEYCAP{MR} Replace the current entry with the value stored in memory.
+				CODE NumpadMemoryStore	KEYCAP{MS} Replace the value stored in memory with the current entry.
+				CODE NumpadMemorySubtract	KEYCAP{M-} Subtract current entry from the value stored in memory.
 				CODE NumpadMultiply		KEYCAP{*} on a keyboard. For use with numpads that provide mathematical
 										operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
 										CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
