@@ -3,10 +3,10 @@
 <pre class="metadata">
 Shortname: uievents-code
 Level:
-Group: uievents
+Group: webplatform
 Status: WD
 TR: http://www.w3.org/TR/uievents-code/
-ED: https://github.com/w3c/uievents-code/
+ED: https://w3c.github.io/uievents-code/
 Repository: w3c/uievents-code
 Previous Version:
 	http://www.w3.org/TR/2015/WD-uievents-code-20151215/
@@ -50,6 +50,10 @@ url: http://www.w3.org/TR/uievents/#key-legends; type: dfn; spec: uievents-key;
 	text: key cap
 url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uievents-key;
 	text: key value tables
+</pre>
+
+<pre class="include">
+path: stylesheet-extra.include
 </pre>
 
 <h2 id="introduction">Introduction</h2>

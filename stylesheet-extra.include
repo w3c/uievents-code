@@ -1,15 +1,4 @@
-﻿.note { border-left-style: solid; border-left-width: 0.25em; background: none repeat scroll 0 0 #E9FBE9; border-color: #52E052; }
-.warning { background-color: #F9F0D4; border: medium double #FF0000; margin: 1em; padding: 1em; }
-.note em, .warning em, .note i, .warning i { font-style: normal; }
-p.note, div.note { padding: 0.5em 2em; }
-span.note { padding: 0 2em; }
-.note p:first-child, .warning p:first-child { margin-top: 0; }
-.note p:last-child, .warning p:last-child { margin-bottom: 0; }
-.warning:before { font-style: normal; }
-p.note:before { content: 'Note: '; font-weight: bolder;}
-p.warning:before { content: '\26A0 Warning! '; font-weight:bolder;}
-.critical {margin:1em; border:double red; padding:1em; background-color:#F9F0D4;}
-
+<style>
 
 /* Used when spelling out words or symbols phonetically. */
 span.phonetic {
@@ -108,3 +97,5 @@ code.glyph {
 .code-table-code {
 	vertical-align: top;
 }
+
+</style>
