@@ -25,6 +25,10 @@ class Parser():
 			'<td>%s</td></tr>\n') % (self.code, self.code, self.desc)
 
 	def process_text(self, desc):
+		has_newline = False
+		if desc[-1:] == '\n':
+			has_newline = True
+		
 		m = re.match(r'^(.*)CODE{(.+?)}(.*)$', desc)
 		if m:
 			pre = self.process_text(m.group(1))
@@ -83,6 +87,8 @@ class Parser():
 			post = self.process_text(m.group(3))
 			desc = pre + '<span class="unicode">' + name + '</span>' + post
 
+		if has_newline and desc[-1:] != '\n':
+			desc += '\n'
 		return desc
 
 	def process_line(self, line):
