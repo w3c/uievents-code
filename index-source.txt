@@ -596,10 +596,7 @@ path: stylesheet-extra.include
 
 		<h4 id="key-controlpad-section">Control Pad Section</h4>
 
-
-: <dfn lt="control pad|control pad section">control pad section</dfn>
-
-			The [=control pad=] section of the keyboard is the set of (usually 6) keys
+			The <dfn>control pad</dfn> section of the keyboard is the set of (usually 6) keys
 			that perform navigating and editing operations, for example, KEYCAP{Home},
 			KEYCAP{PageUp} and KEYCAP{Insert}.
 
