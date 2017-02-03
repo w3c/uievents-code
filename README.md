@@ -28,6 +28,5 @@ file.
 ## Frequently Read Together
 
 * <b>This spec:</b> [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/)
-* [UI Events KeyboardEvent key Values](https://w3c.github.io/uievents-key/)
-* [UI Events](https://w3c.github.io/uievents/)
-
+* UI Events KeyboardEvent key Values : [Github project](https://github.com/w3c/uievents-key/), [Link to spec](https://w3c.github.io/uievents-key/)
+* UI Events : [Github project](https://github.com/w3c/uievents/), [Link to spec](https://w3c.github.io/uievents/)
