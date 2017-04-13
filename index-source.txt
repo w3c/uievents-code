@@ -363,7 +363,7 @@ path: stylesheet-extra.include
 		however, virtual keyboards SHOULD produce the normal range of keyboard events
 		and values, for ease of authoring and compatibility with existing content.
 
-		Chording keyboards, also know as chorded keysets or chord keyboards, are
+		Chording keyboards, also known as chorded keysets or chord keyboards, are
 		key input devices which produce values by pressing several keys in
 		combination or sequence, normally to simulate a full range of characters
 		or commands on a reduced set of keys, often for single-handed use.	A
