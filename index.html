@@ -1467,11 +1467,11 @@ code.glyph {
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Values</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2017-02-03">3 February 2017</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2017-09-05">5 September 2017</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-uievents-code-20170203/">https://www.w3.org/TR/2017/WD-uievents-code-20170203/</a>
+     <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-uievents-code-20170905/">https://www.w3.org/TR/2017/WD-uievents-code-20170905/</a>
      <dt>Latest published version:
      <dd><a href="http://www.w3.org/TR/uievents-code/">http://www.w3.org/TR/uievents-code/</a>
      <dt>Editor's Draft:
@@ -1799,7 +1799,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
 		range of characters, including emoticons and other symbols. Wherever possible,
 		however, virtual keyboards SHOULD produce the normal range of keyboard events
 		and values, for ease of authoring and compatibility with existing content.</p>
-   <p>Chording keyboards, also know as chorded keysets or chord keyboards, are
+   <p>Chording keyboards, also known as chorded keysets or chord keyboards, are
 		key input devices which produce values by pressing several keys in
 		combination or sequence, normally to simulate a full range of characters
 		or commands on a reduced set of keys, often for single-handed use.	A
@@ -1810,14 +1810,14 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
    <p>For these and other alternative modal keyboards, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key">key</a></code> values <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-Alphanumeric">Alphanumeric</a>"</code>, <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-CapsLock">CapsLock</a>"</code>, <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-NumLock">NumLock</a>"</code>,
 		and <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-SymbolLock">SymbolLock</a>"</code> are RECOMMENDED for the keys which switch between different modes.</p>
    <h2 class="heading settled" data-level="3" id="code-value-tables"><span class="secno">3. </span><span class="content">Keyboard Event <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> Value Tables</span><a class="self-link" href="#code-value-tables"></a></h2>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="key-code-attribute-value">key code attribute value</dfn> is any of the values given in the
-	=KeyboardEvent.code= column of any of the tables in this section of the
-	specification.</p>
+   <p>This section defines a list of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values which
+	implementations MUST support.</p>
    <p>A conforming implementation of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent">KeyboardEvent</a></code> interface MUST support
 	this set of values for use in the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> attributes,
 	although not all values MAY be available on all platforms or devices.</p>
-   <p>This section defines a list of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values which
-	implementations MUST support.</p>
+   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="key-code-attribute-value">key code attribute value</dfn> is any of the values given in the
+	"<code>KeyboardEvent.code</code>" column of any of the tables in this section of the
+	specification.</p>
    <p>Future versions of this specification MAY include <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code">code</a></code> values not included
 	here, which have become common since the publication of this specification.</p>
    <p class="note" role="note"> Note: While every attempt has been made to make this list of values as complete as possible,

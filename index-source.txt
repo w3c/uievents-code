@@ -383,16 +383,16 @@ path: stylesheet-extra.include
 
 <h2 id="code-value-tables">Keyboard Event {{KeyboardEvent/code}} Value Tables</h2>
 
-	A <dfn>key code attribute value</dfn> is any of the values given in the
-	=KeyboardEvent.code= column of any of the tables in this section of the
-	specification.
+	This section defines a list of {{KeyboardEvent/code}} values which
+	implementations MUST support.
 
 	A conforming implementation of the {{KeyboardEvent}} interface MUST support
 	this set of values for use in the {{KeyboardEvent/code}} attributes,
 	although not all values MAY be available on all platforms or devices.
 
-	This section defines a list of {{KeyboardEvent/code}} values which
-	implementations MUST support.
+	A <dfn>key code attribute value</dfn> is any of the values given in the
+	"<code>KeyboardEvent.code</code>" column of any of the tables in this section of the
+	specification.
 
 	Future versions of this specification MAY include {{KeyboardEvent/code}} values not included
 	here, which have become common since the publication of this specification.
