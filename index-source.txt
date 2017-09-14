@@ -462,8 +462,6 @@ path: stylesheet-extra.include
 										located between the KEYCAP{"} and KEYCAP{Enter} keys on row C of the 102-,
 										104- and 106-key layouts.
 										Labelled KEYCAP{#~} on a UK (102) keyboard.
-					CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}.
-										Labelled KEYCAP{Delete} on Apple keyboards.
 					CODE BracketLeft	KEYCAP{[{} on a US keyboard.
 					CODE BracketRight	KEYCAP{]&rcub;} on a US keyboard.
 					CODE Comma			KEYCAP{,&lt;} on a US keyboard.
@@ -552,6 +550,8 @@ path: stylesheet-extra.include
 					CODE AltLeft		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
 					CODE AltRight		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
 										This is labelled KEYCAP{AltGr} key on many keyboard layouts.
+					CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}.
+										Labelled KEYCAP{Delete} on Apple keyboards.
 					CODE CapsLock		KEYCAP{CapsLock} or KEYCAP{&#8682;}
 					CODE ContextMenu	The application context menu key, which is typically found between the right
 										KEYCAP{Meta} key and the right KEYCAP{Control} key.
