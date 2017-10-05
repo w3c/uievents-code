@@ -307,6 +307,20 @@ path: stylesheet-extra.include
 			often shrunk to make room for the up arrow key and the right
 			KEYCAP{Meta} key is typically removed altogether.
 
+		<h4 id="other-locales">Keyboard Layouts For Other Locales</h4>
+
+			Other locales are not explicitly described in this specification because they
+			start with one of the existing layouts and adapt it by changing the keycaps
+			and the key mappings.
+
+			Because these keyboards do not introduce new physical keys, they do not
+			require explicit documentation.
+			
+			These keyboards are typically based on the "101" (standard or alternate)
+			or "102" layouts.
+			For example, the common Arabic, Cyrillic, Greek, Hindi, Khmer and Thai
+			keyboards are all based on either the "101" or "102" keyboard layouts.
+		
 	<h3 id="keyboard-mobile">Mobile Keypads</h3>
 
 		In the case where a content author wishes to rely on the mechanical
