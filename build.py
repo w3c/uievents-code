@@ -3,6 +3,9 @@ import re
 import subprocess
 import sys
 
+USER_AGENTS = ['Chrome', 'Edge', 'Firefox', 'Safari']
+
+
 def error(msg):
 	print 'Error: %s' % (msg)
 	sys.exit(1)
@@ -13,16 +16,52 @@ class Parser():
 	def __init__(self):
 		self.in_table = False
 
-		self.code = ''
+		self.code = None
 		self.desc = ''
 
+		# Only used for IMPL tables
+		self.in_impl_table = False
+		self.impl_info = {}
+		self.impl_notes = ''
+		self.impl_section = False
+		self.impl_section_name = ''
+
 	def table_row(self):
-		if self.code == '':
+		if self.code == None:
 			return ''
 
 		return (
 			'<tr><td class="code-table-code"><code class="code" id="code-%s">"%s"</code></td>\n'
 			'<td>%s</td></tr>\n') % (self.code, self.code, self.desc)
+
+	def table_row_impl(self):
+		if self.impl_section:
+			return '<tr><td style="background-color: #B9C9FE" colspan="6">%s</td></tr>\n' % self.impl_section_name
+
+		if self.code == None:
+			return ''
+
+		result = '<tr><td class="key-table-key">'
+		result += '<a href="https://w3c.github.io/uievents-code/#code-%s">' % self.code
+		result += '<code class="code">"%s"</code>' % self.code
+		result += '</a>'
+		result += '</td>\n'
+		for ua in USER_AGENTS:
+			value = self.impl_info[ua]
+			data = ''
+			if value == 'Y':
+				data = '<span class="code-impl-yes">Yes</span>'
+			elif value == 'N':
+				data = '<span class="code-impl-no">No</span>'
+			else:
+				data = '<span>?</span>'
+			result += '<td class="code-impl-data">%s</td>' % (data)
+		notes = self.impl_notes
+		if notes == None:
+			notes = ''
+		result += '<td>%s</td>' % notes
+		result += '</tr>\n'
+		return result
 
 	def process_text(self, desc):
 		has_newline = False
@@ -102,7 +141,7 @@ class Parser():
 
 		m = re.match(r'^.*BEGIN_CODE_TABLE ([a-z0-9-]+) \"(.*)\"', line)
 		if m:
-			self.code = ''
+			self.code = None
 			self.in_table = True
 			name = m.group(1)
 			caption = m.group(2)
@@ -114,13 +153,68 @@ class Parser():
 
 		m = re.match(r'^.*END_CODE_TABLE', line)
 		if m:
+			result = self.table_row()
+			self.code = None
 			self.in_table = False
-			return self.table_row() + '</tbody></table>\n'
+			return result + '</tbody></table>\n'
+
+		pattern = r'^\s*CODE_IMPL(?P<nolink>_NOLINK)? (?P<code>[\w-]+)'
+		for ua in USER_AGENTS:
+			pattern += r'\s+(?P<%s>[YN\?\-])' % ua
+		pattern += r'\s*(?P<Notes>\w.*)?$'
+		m = re.match(pattern, line)
+		if m:
+			# Write previous row.
+			result = self.table_row_impl()
+			self.code = m.group('code')
+			self.nolink = m.group('nolink')
+			self.impl_info = {}
+			self.impl_section = False
+			for ua in USER_AGENTS:
+				self.impl_info[ua] = m.group(ua)
+			self.impl_notes = m.group('Notes')
+			return result
+
+		m = re.match(r'^\s*CODE_IMPL_SECTION (.+)$', line)
+		if m:
+			result = self.table_row_impl()
+			self.code = None
+			self.impl_section = True
+			self.impl_section_name = m.group(1)
+			return result
+
+		m = re.match(r'^\s*BEGIN_CODE_IMPL_TABLE ([a-z0-9-]+)', line)
+		if m:
+			self.code = None
+			self.in_impl_table = True
+			name = m.group(1)
+			header = '<thead><tr><th>[=code attribute value=]</th>'
+			for ua in USER_AGENTS:
+				header += '<th class="code-impl-data">%s</th>' % ua
+			header += '<th>Notes</th></tr></thead>\n'
+			return (
+				'<table id="code-table-%s" class="data-table full-width">\n'
+				'%s'
+				'<tbody>\n') % (name, header)
+
+		m = re.match(r'^\s*END_CODE_IMPL_TABLE', line)
+		if m:
+			result = self.table_row_impl()
+			self.code = None
+			self.in_impl_table = False
+			return result + '</tbody></table>\n'
 
 		if self.in_table:
 			self.desc += self.process_text(line)
 			return ''
 
+		if self.in_impl_table:
+			m = re.match(r'^(\s*)(<!--.+-->)?(\s*)$', line)
+			if m:
+				return ''
+			print '*** ERROR *** unrecognized line in IMPL table: ' + line
+			return ''
+			
 		return self.process_text(line)
 
 	def process(self, src, dst):
@@ -144,16 +238,23 @@ class Parser():
 		outfile.close()
 		infile.close()
 
-
 def main():
-	infilename = 'index-source.txt'
-	outfilename = 'index.bs'
-
+	files = [
+		['index-source.txt', 'index.bs'],
+		['impl-report.txt', 'impl-report.bs'],
+	]
+	
 	# Generate the full bikeshed file.
 	parser = Parser()
-	parser.process(infilename, outfilename)
+	for f in files:
+		src = f[0]
+		dst = f[1]
+		
+		print 'Pre-processing %s -> %s' % (src, dst)
+		parser.process(src, dst)
 
-	subprocess.call(["bikeshed"])
+		print 'Bikeshedding %s...' % dst
+		subprocess.call(["bikeshed", "spec", dst])
 
 if __name__ == '__main__':
 	main()

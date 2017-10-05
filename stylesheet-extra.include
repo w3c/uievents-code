@@ -98,4 +98,19 @@ code.glyph {
 	vertical-align: top;
 }
 
+.code-impl-data {
+	vertical-align: top;
+	text-align: center;
+}
+
+.code-impl-yes {
+	color: #0a0;
+	font-weight: bold;
+}
+
+.code-impl-no {
+	color: #f00;
+	font-weight: bold;
+}
+
 </style>
