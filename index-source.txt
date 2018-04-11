@@ -59,7 +59,7 @@ path: stylesheet-extra.include
 <h2 id="introduction">Introduction</h2>
 
 	This document provides an overview of the various keyboard layouts and
-	specifies the {{KeyboardEvent}}.{{KeyboardEvent/code}} values that should be
+	specifies the {{KeyboardEvent/code}} values that should be
 	used for each of the keys. Unlike the {{KeyboardEvent/key}} values described
 	in [[UIEvents-key]], the {{KeyboardEvent/code}} values are based only on the
 	key's physical location on the keyboard and do not vary based on the user's
@@ -83,11 +83,11 @@ path: stylesheet-extra.include
 		* Unicode character encodings are shown as: UNI{U+003d}.
 
 		* Valid [=key attribute values=] (i.e., the value of
-			{{KeyboardEvent}}.{{KeyboardEvent/key}}) are shown as:
+			a {{KeyboardEvent/key}} attribute) are shown as:
 			KEY{ArrowDown}, KEY_NOLINK{=}, KEY_NOLINK{q} or KEY_NOLINK{Q}.
 
 		* Valid [=key code attribute values=] (i.e., the
-			value of {{KeyboardEvent}}.{{KeyboardEvent/code}}) are shown as:
+			value of a {{KeyboardEvent/code}} attribute) are shown as:
 			CODE{ArrowDown}, CODE{Equal} or CODE{KeyQ}.
 
 <h2 id="keyboard-layout">Keyboard Layout</h2>

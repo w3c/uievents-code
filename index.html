@@ -1179,7 +1179,7 @@ Possible extra rowspan handling
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet" type="text/css">
   <meta content="Bikeshed version 9a8bbb3f7fd01695a3aa5431fdbe423bbfee5195" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="b3c465e2c57f020332979f689131497d9e170f5c" name="document-revision">
+  <meta content="b7225ef99652a0d3c1cc771e844714d7ad23dfb9" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -1599,7 +1599,7 @@ identify the physical key being pressed by the user.</p>
   <main>
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
    <p>This document provides an overview of the various keyboard layouts and
-	specifies the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code">code</a></code> values that should be
+	specifies the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code">code</a></code> values that should be
 	used for each of the keys. Unlike the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key">key</a></code> values described
 	in <a data-link-type="biblio" href="#biblio-uievents-key">[UIEvents-key]</a>, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①">code</a></code> values are based only on the
 	key’s physical location on the keyboard and do not vary based on the user’s
@@ -1611,16 +1611,17 @@ identify the physical key being pressed by the user.</p>
     <li data-md="">
      <p>The <em><a data-link-type="dfn" href="http://www.w3.org/TR/uievents/#key-legends" id="ref-for-key-legends">key cap</a></em> or label printed on a key is shown as <code class="keycap">↓</code>, <code class="keycap">=</code> or <code class="keycap">Q</code>. This is used to refer to a
 key from the user’s perspective without regard for the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key①">key</a></code> and <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code> values in the
-generated <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①">KeyboardEvent</a></code>.</p>
+generated <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent">KeyboardEvent</a></code>.</p>
     <li data-md="">
      <p>Glyphs representing character are shown as: <code class="glyph">"𣧂"</code>.</p>
     <li data-md="">
      <p>Unicode character encodings are shown as: <code class="unicode">U+003d</code>.</p>
     <li data-md="">
-     <p>Valid <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#key-value-tables" id="ref-for-key-value-tables">key attribute values</a> (i.e., the value of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent②">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②">key</a></code>) are shown as: <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-ArrowDown">ArrowDown</a>"</code>, <code class="key">"="</code>, <code class="key">"q"</code> or <code class="key">"Q"</code>.</p>
+     <p>Valid <a data-link-type="dfn" href="http://www.w3.org/TR/uievents-key/#key-value-tables" id="ref-for-key-value-tables">key attribute values</a> (i.e., the value of
+a <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key②">key</a></code> attribute) are shown as: <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-ArrowDown">ArrowDown</a>"</code>, <code class="key">"="</code>, <code class="key">"q"</code> or <code class="key">"Q"</code>.</p>
     <li data-md="">
      <p>Valid <a data-link-type="dfn" href="#key-code-attribute-value" id="ref-for-key-code-attribute-value">key code attribute values</a> (i.e., the
-value of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code>) are shown as: <code class="code">"<a href="#code-ArrowDown">ArrowDown</a>"</code>, <code class="code">"<a href="#code-Equal">Equal</a>"</code> or <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code>.</p>
+value of a <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code> attribute) are shown as: <code class="code">"<a href="#code-ArrowDown">ArrowDown</a>"</code>, <code class="code">"<a href="#code-Equal">Equal</a>"</code> or <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code>.</p>
    </ul>
    <h2 class="heading settled" data-level="2" id="keyboard-layout"><span class="secno">2. </span><span class="content">Keyboard Layout</span><a class="self-link" href="#keyboard-layout"></a></h2>
    <p><em>This section is non-normative.</em></p>
@@ -1831,7 +1832,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
    <h2 class="heading settled" data-level="3" id="code-value-tables"><span class="secno">3. </span><span class="content">Keyboard Event <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code> Value Tables</span><a class="self-link" href="#code-value-tables"></a></h2>
    <p>This section defines a list of <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑥">code</a></code> values which
 	implementations MUST support.</p>
-   <p>A conforming implementation of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> interface MUST support
+   <p>A conforming implementation of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①">KeyboardEvent</a></code> interface MUST support
 	this set of values for use in the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑦">code</a></code> attributes,
 	although not all values MAY be available on all platforms or devices.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="key-code-attribute-value">key code attribute value</dfn> is any of the values given in the
@@ -1879,7 +1880,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for writing system keys in the Alphanumeric section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑤">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①②">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent②">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①②">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2052,7 +2053,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for functional keys in the Alphanumeric section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①③">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①③">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2112,7 +2113,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for functional keys found on Japanese and Korean keyboards.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑤">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑤">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2153,7 +2154,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for keys in the ControlPad section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑥">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑤">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑥">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2192,7 +2193,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for keys in the ArrowPad section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑨">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑧">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑧">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2235,7 +2236,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for keys in the Numpad section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⓪">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⓪">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⓪">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2355,7 +2356,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for keys in the Function section.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①①">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②③">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②③">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2435,7 +2436,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for media keys.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①②">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑧">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑨">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑧">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2512,7 +2513,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for legacy modifier keys.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①③">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑨">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⓪">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑨">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2530,7 +2531,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for legacy process control keys.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①④">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⓪">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①①">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⓪">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2548,7 +2549,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for legacy editing keys.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⑤">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③①">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①②">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③①">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2584,7 +2585,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of code values for keys found on international keyboards.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⑥">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③②">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①③">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③②">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
@@ -2603,7 +2604,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <caption>List of special code values.</caption>
     <thead>
      <tr>
-      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⑦">KeyboardEvent</a></code>.<code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⑤">code</a></code>
+      <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①④">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⑤">code</a></code>
       <th style="width:80%">Notes (Non-normative)
     <tbody>
      <tr>
