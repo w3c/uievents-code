@@ -3,7 +3,7 @@
 <pre class="metadata">
 Shortname: uievents-code
 Level:
-Group: webplatform
+Group: webapps
 Status: WD
 TR: http://www.w3.org/TR/uievents-code/
 ED: https://w3c.github.io/uievents-code/
@@ -315,12 +315,12 @@ path: stylesheet-extra.include
 
 			Because these keyboards do not introduce new physical keys, they do not
 			require explicit documentation.
-			
+
 			These keyboards are typically based on the "101" (standard or alternate)
 			or "102" layouts.
 			For example, the common Arabic, Cyrillic, Greek, Hindi, Khmer and Thai
 			keyboards are all based on either the "101" or "102" keyboard layouts.
-		
+
 	<h3 id="keyboard-mobile">Mobile Keypads</h3>
 
 		In the case where a content author wishes to rely on the mechanical
@@ -411,7 +411,7 @@ path: stylesheet-extra.include
 	Future versions of this specification MAY include {{KeyboardEvent/code}} values not included
 	here, which have become common since the publication of this specification.
 
-	<p class="note">	
+	<p class="note">
 	Note: While every attempt has been made to make this list of values as complete as possible,
 	new values will periodically need to be defined as new input devices are introduced.
 	Rather than allowing user agents to define their own [=key code attribute values=]
@@ -455,7 +455,7 @@ path: stylesheet-extra.include
 					generate KEY_NOLINK{2} and KEY_NOLINK{q} when the US locale is
 					active and KEY_NOLINK{é} and KEY_NOLINK{a} when the French locale is active.
 				</div>
-				
+
 				The name shown on each key is the {{KeyboardEvent/code}}
 				assigned to that key. Wherever possible, the
 				{{KeyboardEvent/code}} names are based on the name for the US
