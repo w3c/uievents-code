@@ -28,7 +28,7 @@ path: stylesheet-extra.include
 
 	The following versions of each user agents were tested:
 	* Google Chrome 60.0.3112.113 (OS X 10.12.2, Windows 10, Ubuntu)
-	* Microsoft Edge 40.15063.0.0 (Windows 10)
+	* Microsoft Edge 83.0.478.58 (Windows 10)
 	* Mozilla Firefox 55.0 (OS X 10.12.2, Windows 10, Ubuntu)
 	* Apple Safari 13.1.1 (OS X 10.14.6)
 
@@ -47,9 +47,9 @@ path: stylesheet-extra.include
 <tr>
 	<td>{{KeyboardEvent/code}}</td>
 	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-no">No</span></td>
+	<td class="code-impl-data"><span class="code-impl-no">Yes</span></td>
 	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-no">No</span></td>
+	<td class="code-impl-data"><span class="code-impl-no">Yes</span></td>
 	<td></td>
 </tr>
 </tbody></table>
@@ -65,138 +65,138 @@ path: stylesheet-extra.include
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 
 			CODE_IMPL_SECTION Alphanumeric Section - Writing System Keys
-			CODE_IMPL Backquote					Y		N		Y		Y
-			CODE_IMPL Backslash					Y		N		Y		Y
-			CODE_IMPL BracketLeft				Y		N		Y		Y
-			CODE_IMPL BracketRight				Y		N		Y		Y
-			CODE_IMPL Comma						Y		N		Y		Y
+			CODE_IMPL Backquote					Y		Y		Y		Y
+			CODE_IMPL Backslash					Y		Y		Y		Y
+			CODE_IMPL BracketLeft				Y		Y		Y		Y
+			CODE_IMPL BracketRight				Y		Y		Y		Y
+			CODE_IMPL Comma						Y		Y		Y		Y
 
-			CODE_IMPL Digit0					Y		N		Y		Y
-			CODE_IMPL Digit1					Y		N		Y		Y
-			CODE_IMPL Digit2					Y		N		Y		Y
-			CODE_IMPL Digit3					Y		N		Y		Y
-			CODE_IMPL Digit4					Y		N		Y		Y
-			CODE_IMPL Digit5					Y		N		Y		Y
-			CODE_IMPL Digit6					Y		N		Y		Y
-			CODE_IMPL Digit7					Y		N		Y		Y
-			CODE_IMPL Digit8					Y		N		Y		Y
-			CODE_IMPL Digit9					Y		N		Y		Y
+			CODE_IMPL Digit0					Y		Y		Y		Y
+			CODE_IMPL Digit1					Y		Y		Y		Y
+			CODE_IMPL Digit2					Y		Y		Y		Y
+			CODE_IMPL Digit3					Y		Y		Y		Y
+			CODE_IMPL Digit4					Y		Y		Y		Y
+			CODE_IMPL Digit5					Y		Y		Y		Y
+			CODE_IMPL Digit6					Y		Y		Y		Y
+			CODE_IMPL Digit7					Y		Y		Y		Y
+			CODE_IMPL Digit8					Y		Y		Y		Y
+			CODE_IMPL Digit9					Y		Y		Y		Y
 
-			CODE_IMPL Equal						Y		N		Y		Y
-			CODE_IMPL IntlBackslash				Y		N		Y		?
-			CODE_IMPL IntlRo					Y		N		Y		?
-			CODE_IMPL IntlYen					Y		N		Y		?
+			CODE_IMPL Equal						Y		Y		Y		Y
+			CODE_IMPL IntlBackslash				Y		Y		Y		?
+			CODE_IMPL IntlRo					Y		Y		Y		?
+			CODE_IMPL IntlYen					Y		Y		Y		?
 
-			CODE_IMPL KeyA						Y		N		Y		Y
-			CODE_IMPL KeyB						Y		N		Y		Y
-			CODE_IMPL KeyC						Y		N		Y		Y
-			CODE_IMPL KeyD						Y		N		Y		Y
-			CODE_IMPL KeyE						Y		N		Y		Y
-			CODE_IMPL KeyF						Y		N		Y		Y
-			CODE_IMPL KeyG						Y		N		Y		Y
-			CODE_IMPL KeyH						Y		N		Y		Y
-			CODE_IMPL KeyI						Y		N		Y		Y
-			CODE_IMPL KeyJ						Y		N		Y		Y
-			CODE_IMPL KeyK						Y		N		Y		Y
-			CODE_IMPL KeyL						Y		N		Y		Y
-			CODE_IMPL KeyM						Y		N		Y		Y
-			CODE_IMPL KeyN						Y		N		Y		Y
-			CODE_IMPL KeyO						Y		N		Y		Y
-			CODE_IMPL KeyP						Y		N		Y		Y
-			CODE_IMPL KeyQ						Y		N		Y		Y
-			CODE_IMPL KeyR						Y		N		Y		Y
-			CODE_IMPL KeyS						Y		N		Y		Y
-			CODE_IMPL KeyT						Y		N		Y		Y
-			CODE_IMPL KeyU						Y		N		Y		Y
-			CODE_IMPL KeyV						Y		N		Y		Y
-			CODE_IMPL KeyW						Y		N		Y		Y
-			CODE_IMPL KeyX						Y		N		Y		Y
-			CODE_IMPL KeyY						Y		N		Y		Y
-			CODE_IMPL KeyZ						Y		N		Y		Y
+			CODE_IMPL KeyA						Y		Y		Y		Y
+			CODE_IMPL KeyB						Y		Y		Y		Y
+			CODE_IMPL KeyC						Y		Y		Y		Y
+			CODE_IMPL KeyD						Y		Y		Y		Y
+			CODE_IMPL KeyE						Y		Y		Y		Y
+			CODE_IMPL KeyF						Y		Y		Y		Y
+			CODE_IMPL KeyG						Y		Y		Y		Y
+			CODE_IMPL KeyH						Y		Y		Y		Y
+			CODE_IMPL KeyI						Y		Y		Y		Y
+			CODE_IMPL KeyJ						Y		Y		Y		Y
+			CODE_IMPL KeyK						Y		Y		Y		Y
+			CODE_IMPL KeyL						Y		Y		Y		Y
+			CODE_IMPL KeyM						Y		Y		Y		Y
+			CODE_IMPL KeyN						Y		Y		Y		Y
+			CODE_IMPL KeyO						Y		Y		Y		Y
+			CODE_IMPL KeyP						Y		Y		Y		Y
+			CODE_IMPL KeyQ						Y		Y		Y		Y
+			CODE_IMPL KeyR						Y		Y		Y		Y
+			CODE_IMPL KeyS						Y		Y		Y		Y
+			CODE_IMPL KeyT						Y		Y		Y		Y
+			CODE_IMPL KeyU						Y		Y		Y		Y
+			CODE_IMPL KeyV						Y		Y		Y		Y
+			CODE_IMPL KeyW						Y		Y		Y		Y
+			CODE_IMPL KeyX						Y		Y		Y		Y
+			CODE_IMPL KeyY						Y		Y		Y		Y
+			CODE_IMPL KeyZ						Y		Y		Y		Y
 
-			CODE_IMPL Minus						Y		N		Y		Y
-			CODE_IMPL Period					Y		N		Y		Y
-			CODE_IMPL Quote						Y		N		Y		Y
-			CODE_IMPL Semicolon					Y		N		Y		Y
-			CODE_IMPL Slash						Y		N		Y		Y
+			CODE_IMPL Minus						Y		Y		Y		Y
+			CODE_IMPL Period					Y		Y		Y		Y
+			CODE_IMPL Quote						Y		Y		Y		Y
+			CODE_IMPL Semicolon					Y		Y		Y		Y
+			CODE_IMPL Slash						Y		Y		Y		Y
 
 
 			CODE_IMPL_SECTION Alphanumeric Section - Functional Keys
-			CODE_IMPL AltLeft					Y		N		Y		Y
-			CODE_IMPL AltRight					Y		N		Y		Y
-			CODE_IMPL Backspace					Y		N		Y		Y
-			CODE_IMPL CapsLock					Y		N		Y		Y
-			CODE_IMPL ContextMenu				Y		N		Y		?
-			CODE_IMPL ControlLeft				Y		N		Y		Y
-			CODE_IMPL ControlRight				Y		N		Y		?
-			CODE_IMPL Enter						Y		N		Y		Y
-			CODE_IMPL MetaLeft					Y		N		N		Y		Firefox returns "OSLeft"
-			CODE_IMPL MetaRight					Y		N		N		Y		Firefox returns "OSRight"
-			CODE_IMPL ShiftLeft					Y		N		Y		Y
-			CODE_IMPL ShiftRight				Y		N		Y		Y
-			CODE_IMPL Space						Y		N		Y		Y
-			CODE_IMPL Tab						Y		N		Y		Y
+			CODE_IMPL AltLeft					Y		Y		Y		Y
+			CODE_IMPL AltRight					Y		Y		Y		Y
+			CODE_IMPL Backspace					Y		Y		Y		Y
+			CODE_IMPL CapsLock					Y		Y		Y		Y
+			CODE_IMPL ContextMenu				Y		Y		Y		?
+			CODE_IMPL ControlLeft				Y		Y		Y		Y
+			CODE_IMPL ControlRight				Y		Y		Y		?
+			CODE_IMPL Enter						Y		Y		Y		Y
+			CODE_IMPL MetaLeft					Y		Y		N		Y		Firefox returns "OSLeft"
+			CODE_IMPL MetaRight					Y		Y		N		Y		Firefox returns "OSRight"
+			CODE_IMPL ShiftLeft					Y		Y		Y		Y
+			CODE_IMPL ShiftRight				Y		Y		Y		Y
+			CODE_IMPL Space						Y		Y		Y		Y
+			CODE_IMPL Tab						Y		Y		Y		Y
 
-			CODE_IMPL Convert					Y		N		Y		?
-			CODE_IMPL KanaMode					Y		N		Y		?
-			CODE_IMPL NonConvert				Y		N		Y		?
+			CODE_IMPL Convert					Y		?		Y		?
+			CODE_IMPL KanaMode					Y		?		Y		?
+			CODE_IMPL NonConvert				Y		?		Y		?
 
 
 			CODE_IMPL_SECTION Control Pad Section
-			CODE_IMPL Delete					Y		N		Y		?
-			CODE_IMPL End						Y		N		Y		?
-			CODE_IMPL Help						?		N		?		?
-			CODE_IMPL Home						Y		N		Y		?
-			CODE_IMPL Insert					Y		N		Y		?
-			CODE_IMPL PageDown					Y		N		Y		?
-			CODE_IMPL PageUp					Y		N		Y		?
+			CODE_IMPL Delete					Y		?		Y		?
+			CODE_IMPL End						Y		?		Y		?
+			CODE_IMPL Help						?		?		?		?
+			CODE_IMPL Home						Y		?		Y		?
+			CODE_IMPL Insert					Y		?		Y		?
+			CODE_IMPL PageDown					Y		?		Y		?
+			CODE_IMPL PageUp					Y		?		Y		?
 
 
 			CODE_IMPL_SECTION Arrow Pad Section
-			CODE_IMPL ArrowDown					Y		N		Y		Y
-			CODE_IMPL ArrowLeft					Y		N		Y		Y
-			CODE_IMPL ArrowRight				Y		N		Y		Y
-			CODE_IMPL ArrowUp					Y		N		Y		Y
+			CODE_IMPL ArrowDown					Y		Y		Y		Y
+			CODE_IMPL ArrowLeft					Y		Y		Y		Y
+			CODE_IMPL ArrowRight				Y		Y		Y		Y
+			CODE_IMPL ArrowUp					Y		Y		Y		Y
 
 
 			CODE_IMPL_SECTION Numpad Section
-			CODE_IMPL NumLock					Y		N		Y		?
-			CODE_IMPL Numpad0					Y		N		Y		?
-			CODE_IMPL Numpad1					Y		N		Y		?
-			CODE_IMPL Numpad2					Y		N		Y		?
-			CODE_IMPL Numpad3					Y		N		Y		?
-			CODE_IMPL Numpad4					Y		N		Y		?
-			CODE_IMPL Numpad5					Y		N		Y		?
-			CODE_IMPL Numpad6					Y		N		Y		?
-			CODE_IMPL Numpad7					Y		N		Y		?
-			CODE_IMPL Numpad8					Y		N		Y		?
-			CODE_IMPL Numpad9					Y		N		Y		?
-			CODE_IMPL NumpadAdd					Y		N		Y		?
-			CODE_IMPL NumpadComma				Y		N		Y		?		Tested with Brazilian keyboard.
-			CODE_IMPL NumpadDecimal				Y		N		Y		?
-			CODE_IMPL NumpadDivide				Y		N		Y		?
-			CODE_IMPL NumpadEnter				Y		N		Y		?
-			CODE_IMPL NumpadMultiply			Y		N		Y		?
-			CODE_IMPL NumpadSubtract			Y		N		Y		?
+			CODE_IMPL NumLock					Y		?		Y		?
+			CODE_IMPL Numpad0					Y		?		Y		?
+			CODE_IMPL Numpad1					Y		?		Y		?
+			CODE_IMPL Numpad2					Y		?		Y		?
+			CODE_IMPL Numpad3					Y		?		Y		?
+			CODE_IMPL Numpad4					Y		?		Y		?
+			CODE_IMPL Numpad5					Y		?		Y		?
+			CODE_IMPL Numpad6					Y		?		Y		?
+			CODE_IMPL Numpad7					Y		?		Y		?
+			CODE_IMPL Numpad8					Y		?		Y		?
+			CODE_IMPL Numpad9					Y		?		Y		?
+			CODE_IMPL NumpadAdd					Y		?		Y		?
+			CODE_IMPL NumpadComma				Y		?		Y		?		Tested with Brazilian keyboard.
+			CODE_IMPL NumpadDecimal				Y		?		Y		?
+			CODE_IMPL NumpadDivide				Y		?		Y		?
+			CODE_IMPL NumpadEnter				Y		?		Y		?
+			CODE_IMPL NumpadMultiply			Y		?		Y		?
+			CODE_IMPL NumpadSubtract			Y		?		Y		?
 
 
 			CODE_IMPL_SECTION Function Section
-			CODE_IMPL Escape					Y		N		Y		Y
-			CODE_IMPL F1						Y		N		Y		Y
-			CODE_IMPL F2						Y		N		Y		Y
-			CODE_IMPL F3						Y		N		Y		Y
-			CODE_IMPL F4						Y		N		Y		Y
-			CODE_IMPL F5						Y		N		Y		Y
-			CODE_IMPL F6						Y		N		Y		Y
-			CODE_IMPL F7						Y		N		Y		Y
-			CODE_IMPL F8						Y		N		Y		Y
-			CODE_IMPL F9						Y		N		Y		Y
-			CODE_IMPL F10						Y		N		Y		Y
-			CODE_IMPL F11						Y		N		Y		?		Safari -> fullscreen
-			CODE_IMPL F12						Y		N		Y		Y
-			CODE_IMPL PrintScreen				Y		N		Y		?
-			CODE_IMPL ScrollLock				Y		N		Y		?
-			CODE_IMPL Pause						Y		N		Y		?
+			CODE_IMPL Escape					Y		Y		Y		Y
+			CODE_IMPL F1						Y		Y		Y		Y
+			CODE_IMPL F2						Y		Y		Y		Y
+			CODE_IMPL F3						Y		Y		Y		Y
+			CODE_IMPL F4						Y		Y		Y		Y
+			CODE_IMPL F5						Y		Y		Y		Y
+			CODE_IMPL F6						Y		Y		Y		Y
+			CODE_IMPL F7						Y		Y		Y		Y
+			CODE_IMPL F8						Y		Y		Y		Y
+			CODE_IMPL F9						Y		Y		Y		Y
+			CODE_IMPL F10						Y		Y		Y		Y
+			CODE_IMPL F11						Y		Y		Y		Y
+			CODE_IMPL F12						Y		Y		Y		Y
+			CODE_IMPL PrintScreen				Y		?		Y		?
+			CODE_IMPL ScrollLock				Y		?		Y		?
+			CODE_IMPL Pause						Y		?		Y		?
 
 		END_CODE_IMPL_TABLE
 
