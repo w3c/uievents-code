@@ -83,9 +83,9 @@ path: stylesheet-extra.include
 			CODE_IMPL Digit9					Y		Y		Y		Y
 
 			CODE_IMPL Equal						Y		Y		Y		Y
-			CODE_IMPL IntlBackslash				Y		Y		Y		?
-			CODE_IMPL IntlRo					Y		Y		Y		?
-			CODE_IMPL IntlYen					Y		Y		Y		?
+			CODE_IMPL IntlBackslash				Y		?		Y		?
+			CODE_IMPL IntlRo					Y		?		Y		?
+			CODE_IMPL IntlYen					Y		?		Y		?
 
 			CODE_IMPL KeyA						Y		Y		Y		Y
 			CODE_IMPL KeyB						Y		Y		Y		Y
@@ -214,28 +214,28 @@ path: stylesheet-extra.include
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 
 			CODE_IMPL_SECTION Media Keys
-			CODE_IMPL BrowserBack				Y		N		Y		N
-			CODE_IMPL BrowserFavorites			Y		N		Y		N
-			CODE_IMPL BrowserForward			Y		N		Y		N
-			CODE_IMPL BrowserHome				Y		N		Y		N
-			CODE_IMPL BrowserRefresh			N		N		N		N
-			CODE_IMPL BrowserSearch				N		N		N		N
-			CODE_IMPL BrowserStop				?		N		?		N
-			CODE_IMPL Eject						?		N		?		N
-			CODE_IMPL LaunchApp1				?		N		?		N
-			CODE_IMPL LaunchApp2				?		N		?		N
-			CODE_IMPL LaunchMail				?		N		?		N
-			CODE_IMPL MediaPlayPause			?		N		?		N
-			CODE_IMPL MediaSelect				?		N		?		N
-			CODE_IMPL MediaStop					?		N		?		N
-			CODE_IMPL MediaTrackNext			?		N		?		N
-			CODE_IMPL MediaTrackPrevious		?		N		?		N
-			CODE_IMPL Power						?		N		?		N
-			CODE_IMPL Sleep						?		N		?		N
-			CODE_IMPL AudioVolumeDown			?		N		?		N
-			CODE_IMPL AudioVolumeMute			?		N		?		N
-			CODE_IMPL AudioVolumeUp				?		N		?		N
-			CODE_IMPL WakeUp					?		N		?		N
+			CODE_IMPL BrowserBack				Y		?		Y		?
+			CODE_IMPL BrowserFavorites			Y		?		Y		?
+			CODE_IMPL BrowserForward			Y		?		Y		?
+			CODE_IMPL BrowserHome				Y		?		Y		?
+			CODE_IMPL BrowserRefresh			N		?		N		?
+			CODE_IMPL BrowserSearch				N		?		N		?
+			CODE_IMPL BrowserStop				?		?		?		?
+			CODE_IMPL Eject						?		?		?		?
+			CODE_IMPL LaunchApp1				?		?		?		?
+			CODE_IMPL LaunchApp2				?		?		?		?
+			CODE_IMPL LaunchMail				?		?		?		?
+			CODE_IMPL MediaPlayPause			?		?		?		?
+			CODE_IMPL MediaSelect				?		?		?		?
+			CODE_IMPL MediaStop					?		?		?		?
+			CODE_IMPL MediaTrackNext			?		?		?		?
+			CODE_IMPL MediaTrackPrevious		?		?		?		?
+			CODE_IMPL Power						?		?		?		?
+			CODE_IMPL Sleep						?		?		?		?
+			CODE_IMPL AudioVolumeDown			?		?		?		?
+			CODE_IMPL AudioVolumeMute			?		?		?		?
+			CODE_IMPL AudioVolumeUp				?		?		?		?
+			CODE_IMPL WakeUp					?		?		?		?
 
 		END_CODE_IMPL_TABLE
 
@@ -255,57 +255,57 @@ path: stylesheet-extra.include
 			<!--     Key-name					Chrome	Edge	Firefox	Safari	Notes	-->
 
 			CODE_IMPL_SECTION Alphanumeric Section - Functional Keys
-			CODE_IMPL Lang1						?		N		?		N
-			CODE_IMPL Lang2						?		N		?		N
-			CODE_IMPL Lang3						?		N		?		N
-			CODE_IMPL Lang4						?		N		?		N
-			CODE_IMPL Lang5						?		N		?		N
+			CODE_IMPL Lang1						?		?		?		?
+			CODE_IMPL Lang2						?		?		?		?
+			CODE_IMPL Lang3						?		?		?		?
+			CODE_IMPL Lang4						?		?		?		?
+			CODE_IMPL Lang5						?		?		?		?
 
 
 			CODE_IMPL_SECTION Numpad Section
-			CODE_IMPL NumpadBackspace			N		N		N		N		Chrome/Firefox return "Backspace"
-			CODE_IMPL NumpadClear				?		N		?		N
-			CODE_IMPL NumpadClearEntry			?		N		?		N
-			CODE_IMPL NumpadEqual				Y		N		Y		N
-			CODE_IMPL NumpadHash				?		N		?		N
-			CODE_IMPL NumpadMemoryAdd			?		N		?		N
-			CODE_IMPL NumpadMemoryClear			?		N		?		N
-			CODE_IMPL NumpadMemoryRecall		?		N		?		N
-			CODE_IMPL NumpadMemoryStore			?		N		?		N
-			CODE_IMPL NumpadMemorySubtract		?		N		?		N
-			CODE_IMPL NumpadParenLeft			Y		N		N		N
-			CODE_IMPL NumpadParenRight			Y		N		N		N
-			CODE_IMPL NumpadStar				?		N		?		N
+			CODE_IMPL NumpadBackspace			N		?		N		?		Chrome/Firefox return "Backspace"
+			CODE_IMPL NumpadClear				?		?		?		?
+			CODE_IMPL NumpadClearEntry			?		?		?		?
+			CODE_IMPL NumpadEqual				Y		?		Y		?
+			CODE_IMPL NumpadHash				?		?		?		?
+			CODE_IMPL NumpadMemoryAdd			?		?		?		?
+			CODE_IMPL NumpadMemoryClear			?		?		?		?
+			CODE_IMPL NumpadMemoryRecall		?		?		?		?
+			CODE_IMPL NumpadMemoryStore			?		?		?		?
+			CODE_IMPL NumpadMemorySubtract		?		?		?		?
+			CODE_IMPL NumpadParenLeft			Y		?		N		?
+			CODE_IMPL NumpadParenRight			Y		?		N		?
+			CODE_IMPL NumpadStar				?		?		?		?
 
 
 			CODE_IMPL_SECTION Function Section
-			CODE_IMPL Fn						-		N		-		N
-			CODE_IMPL FnLock					-		N		-		N
+			CODE_IMPL Fn						-		-		-		-
+			CODE_IMPL FnLock					-		-		-		-
 
 
 			CODE_IMPL_SECTION Legacy, Non-Standard and Special Keys
-			CODE_IMPL Hyper						?		N		?		N
-			CODE_IMPL Super						?		N		?		N
-			CODE_IMPL Turbo						?		N		?		N
+			CODE_IMPL Hyper						?		?		?		?
+			CODE_IMPL Super						?		?		?		?
+			CODE_IMPL Turbo						?		?		?		?
 
-			CODE_IMPL Abort						?		N		?		N
-			CODE_IMPL Resume					?		N		?		N
-			CODE_IMPL Suspend					?		N		?		N
+			CODE_IMPL Abort						?		?		?		?
+			CODE_IMPL Resume					?		?		?		?
+			CODE_IMPL Suspend					?		?		?		?
 
-			CODE_IMPL Again						?		N		?		N
-			CODE_IMPL Copy						?		N		?		N
-			CODE_IMPL Cut						?		N		?		N
-			CODE_IMPL Find						?		N		?		N
-			CODE_IMPL Open						?		N		?		N
-			CODE_IMPL Paste						?		N		?		N
-			CODE_IMPL Props						?		N		?		N
-			CODE_IMPL Select 					?		N		?		N
-			CODE_IMPL Undo						?		N		?		N
+			CODE_IMPL Again						?		?		?		?
+			CODE_IMPL Copy						?		?		?		?
+			CODE_IMPL Cut						?		?		?		?
+			CODE_IMPL Find						?		?		?		?
+			CODE_IMPL Open						?		?		?		?
+			CODE_IMPL Paste						?		?		?		?
+			CODE_IMPL Props						?		?		?		?
+			CODE_IMPL Select 					?		?		?		?
+			CODE_IMPL Undo						?		?		?		?
 
-			CODE_IMPL Hiragana					?		N		?		N
-			CODE_IMPL Katakana					?		N		?		N
+			CODE_IMPL Hiragana					?		?		?		?
+			CODE_IMPL Katakana					?		?		?		?
 
-			CODE_IMPL Unidentified				Y		N		Y		N
+			CODE_IMPL Unidentified				Y		?		Y		?
 
 		END_CODE_IMPL_TABLE
 
