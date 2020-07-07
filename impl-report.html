@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet">
   <meta content="Bikeshed version 70ffa934, updated Fri May 1 10:12:04 2020 -0700" name="generator">
   <link href="https://w3c.github.io/uievents-code/impl-report.html" rel="canonical">
-  <meta content="01359df7b751c94b59b24bc762ffe39a27b920b3" name="document-revision">
+  <meta content="54a46e25857b7cdb096a5b8624067628f52d75e5" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -311,7 +311,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Implementation Report</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-06-30">30 June 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-07-06">6 July 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -387,7 +387,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <li data-md>
      <p>Mozilla Firefox 55.0 (OS X 10.12.2, Windows 10, Ubuntu)</p>
     <li data-md>
-     <p>Apple Safari 10.0.2 (OS X 10.12.2)</p>
+     <p>Apple Safari 13.1.1 (OS X 10.14.6)</p>
    </ul>
    <h2 class="heading settled" data-level="2" id="key-attribute"><span class="secno">2. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①">code</a></code> Attribute</span><a class="self-link" href="#key-attribute"></a></h2>
    <table class="data-table full-width" id="key-attribute-impl">
@@ -429,350 +429,350 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Backslash"><code class="code">"Backslash"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BracketLeft"><code class="code">"BracketLeft"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BracketRight"><code class="code">"BracketRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Comma"><code class="code">"Comma"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit0"><code class="code">"Digit0"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit1"><code class="code">"Digit1"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit2"><code class="code">"Digit2"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit3"><code class="code">"Digit3"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit4"><code class="code">"Digit4"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit5"><code class="code">"Digit5"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit6"><code class="code">"Digit6"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit7"><code class="code">"Digit7"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit8"><code class="code">"Digit8"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit9"><code class="code">"Digit9"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Equal"><code class="code">"Equal"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlBackslash"><code class="code">"IntlBackslash"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlRo"><code class="code">"IntlRo"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlYen"><code class="code">"IntlYen"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyA"><code class="code">"KeyA"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyB"><code class="code">"KeyB"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyC"><code class="code">"KeyC"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyD"><code class="code">"KeyD"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyE"><code class="code">"KeyE"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyF"><code class="code">"KeyF"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyG"><code class="code">"KeyG"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyH"><code class="code">"KeyH"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyI"><code class="code">"KeyI"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyJ"><code class="code">"KeyJ"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyK"><code class="code">"KeyK"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyL"><code class="code">"KeyL"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyM"><code class="code">"KeyM"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyN"><code class="code">"KeyN"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyO"><code class="code">"KeyO"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyP"><code class="code">"KeyP"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyQ"><code class="code">"KeyQ"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyR"><code class="code">"KeyR"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyS"><code class="code">"KeyS"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyT"><code class="code">"KeyT"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyU"><code class="code">"KeyU"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyV"><code class="code">"KeyV"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyW"><code class="code">"KeyW"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyX"><code class="code">"KeyX"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyY"><code class="code">"KeyY"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyZ"><code class="code">"KeyZ"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Minus"><code class="code">"Minus"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Period"><code class="code">"Period"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Quote"><code class="code">"Quote"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Semicolon"><code class="code">"Semicolon"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Slash"><code class="code">"Slash"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Alphanumeric Section - Functional Keys
@@ -781,119 +781,119 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AltRight"><code class="code">"AltRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Backspace"><code class="code">"Backspace"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-CapsLock"><code class="code">"CapsLock"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ContextMenu"><code class="code">"ContextMenu"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ControlLeft"><code class="code">"ControlLeft"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ControlRight"><code class="code">"ControlRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Enter"><code class="code">"Enter"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaLeft"><code class="code">"MetaLeft"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>Firefox returns "OSLeft"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaRight"><code class="code">"MetaRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>Firefox returns "OSRight"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ShiftLeft"><code class="code">"ShiftLeft"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ShiftRight"><code class="code">"ShiftRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Space"><code class="code">"Space"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Tab"><code class="code">"Tab"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Convert"><code class="code">"Convert"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KanaMode"><code class="code">"KanaMode"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NonConvert"><code class="code">"NonConvert"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Control Pad Section
@@ -902,49 +902,49 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-End"><code class="code">"End"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Help"><code class="code">"Help"</code></a>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Home"><code class="code">"Home"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Insert"><code class="code">"Insert"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageDown"><code class="code">"PageDown"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageUp"><code class="code">"PageUp"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Arrow Pad Section
@@ -953,28 +953,28 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowLeft"><code class="code">"ArrowLeft"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowRight"><code class="code">"ArrowRight"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowUp"><code class="code">"ArrowUp"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Numpad Section
@@ -983,126 +983,126 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad0"><code class="code">"Numpad0"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad1"><code class="code">"Numpad1"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad2"><code class="code">"Numpad2"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad3"><code class="code">"Numpad3"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad4"><code class="code">"Numpad4"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad5"><code class="code">"Numpad5"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad6"><code class="code">"Numpad6"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad7"><code class="code">"Numpad7"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad8"><code class="code">"Numpad8"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad9"><code class="code">"Numpad9"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadAdd"><code class="code">"NumpadAdd"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>Tested with Brazilian keyboard.
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDecimal"><code class="code">"NumpadDecimal"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDivide"><code class="code">"NumpadDivide"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadEnter"><code class="code">"NumpadEnter"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMultiply"><code class="code">"NumpadMultiply"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadSubtract"><code class="code">"NumpadSubtract"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td colspan="6" style="background-color: #B9C9FE">Function Section
@@ -1111,112 +1111,112 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F1"><code class="code">"F1"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F2"><code class="code">"F2"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F3"><code class="code">"F3"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F4"><code class="code">"F4"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F5"><code class="code">"F5"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F6"><code class="code">"F6"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F7"><code class="code">"F7"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F8"><code class="code">"F8"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F9"><code class="code">"F9"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F10"><code class="code">"F10"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F11"><code class="code">"F11"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td>
+      <td class="code-impl-data"><span>?</span>
+      <td>Safari -> fullscreen
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F12"><code class="code">"F12"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PrintScreen"><code class="code">"PrintScreen"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ScrollLock"><code class="code">"ScrollLock"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Pause"><code class="code">"Pause"</code></a>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span>?</span>
       <td>
    </table>
    <h3 class="heading settled" data-level="3.2" id="media-keys"><span class="secno">3.2. </span><span class="content">Media Keyboard Keys</span><a class="self-link" href="#media-keys"></a></h3>
