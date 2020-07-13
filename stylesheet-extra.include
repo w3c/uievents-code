@@ -103,6 +103,12 @@ code.glyph {
 	text-align: center;
 }
 
+.code-impl-data-dark {
+	background:none repeat scroll 0 0 #d8dDeF !important;
+	vertical-align: top;
+	text-align: center;
+}
+
 .code-impl-yes {
 	color: #0a0;
 	font-weight: bold;

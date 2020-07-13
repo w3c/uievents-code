@@ -3,7 +3,19 @@ import re
 import subprocess
 import sys
 
-USER_AGENTS = ['Chrome', 'Edge', 'Firefox', 'Safari']
+USER_AGENTS = [
+	['Chrome', 'Windows'], ['Firefox', 'Windows'], ['Edge', 'Windows'],
+	['Chrome', 'macOS'], ['Firefox', 'macOS'], ['Safari', 'macOS'],
+	['Chrome', 'Linux'], ['Firefox', 'Linux']
+	]
+OS_LIST = ['Windows', 'macOS', 'Linux']
+OS_UAS = []
+for os_name in OS_LIST:
+	count = 0
+	for ua in USER_AGENTS:
+		if ua[1] == os_name:
+			count += 1
+	OS_UAS.append([os_name, count])
 
 
 def error(msg):
@@ -36,7 +48,7 @@ class Parser():
 
 	def table_row_impl(self):
 		if self.impl_section:
-			return '<tr><td style="background-color: #B9C9FE" colspan="6">%s</td></tr>\n' % self.impl_section_name
+			return '<tr><td style="background-color: #B9C9FE" colspan="%d">%s</td></tr>\n' % (len(USER_AGENTS) + 2, self.impl_section_name)
 
 		if self.code == None:
 			return ''
@@ -47,7 +59,8 @@ class Parser():
 		result += '</a>'
 		result += '</td>\n'
 		for ua in USER_AGENTS:
-			value = self.impl_info[ua]
+			ua_os = ''.join(ua)
+			value = self.impl_info[ua_os]
 			data = ''
 			if value == 'Y':
 				data = '<span class="code-impl-yes">Yes</span>'
@@ -55,7 +68,10 @@ class Parser():
 				data = '<span class="code-impl-no">No</span>'
 			else:
 				data = '<span>?</span>'
-			result += '<td class="code-impl-data">%s</td>' % (data)
+			suffix = ''
+			if ua[1] == 'Windows' or ua[1] == 'Linux':
+				suffix = '-dark'
+			result += '<td class="code-impl-data%s">%s</td>' % (suffix, data)
 		notes = self.impl_notes
 		if notes == None:
 			notes = ''
@@ -160,7 +176,8 @@ class Parser():
 
 		pattern = r'^\s*CODE_IMPL(?P<nolink>_NOLINK)? (?P<code>[\w-]+)'
 		for ua in USER_AGENTS:
-			pattern += r'\s+(?P<%s>[YN\?\-])' % ua
+			ua_os = ''.join(ua)
+			pattern += r'\s+(?P<%s>[YN\?\-])' % ua_os
 		pattern += r'\s*(?P<Notes>\w.*)?$'
 		m = re.match(pattern, line)
 		if m:
@@ -171,7 +188,8 @@ class Parser():
 			self.impl_info = {}
 			self.impl_section = False
 			for ua in USER_AGENTS:
-				self.impl_info[ua] = m.group(ua)
+				ua_os = ''.join(ua)
+				self.impl_info[ua_os] = m.group(ua_os)
 			self.impl_notes = m.group('Notes')
 			return result
 
@@ -188,10 +206,14 @@ class Parser():
 			self.code = None
 			self.in_impl_table = True
 			name = m.group(1)
-			header = '<thead><tr><th>[=code attribute value=]</th>'
+			header = '<thead><tr><th rowspan=2>[=code attribute value=]</th>'
+			for os in OS_UAS:
+				header += '<th class="code-impl-data" colspan=%d>%s</th>' % (os[1], os[0])
+			header += '<th rowspan=2>Notes</th></tr>\n'
+			header += '<tr>'
 			for ua in USER_AGENTS:
-				header += '<th class="code-impl-data">%s</th>' % ua
-			header += '<th>Notes</th></tr></thead>\n'
+				header += '<th class="code-impl-data">%s</th>' % ua[0]
+			header += '</tr></thead>\n'
 			return (
 				'<table id="code-table-%s" class="data-table full-width">\n'
 				'%s'
