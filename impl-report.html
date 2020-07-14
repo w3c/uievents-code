@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet">
   <meta content="Bikeshed version 70ffa934, updated Fri May 1 10:12:04 2020 -0700" name="generator">
   <link href="https://w3c.github.io/uievents-code/impl-report.html" rel="canonical">
-  <meta content="07ee7badba2c0d8b192e47be2f0e1911a3ecd0a4" name="document-revision">
+  <meta content="a6d7317ef22569e6ca68347ff98824f049623e0a" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -317,7 +317,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Implementation Report</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-07-10">10 July 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-07-13">13 July 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -401,7 +401,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <th rowspan="2"><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#keyboardevent" id="ref-for-keyboardevent">KeyboardEvent</a></code> attribute
       <th class="code-impl-data" colspan="3">Windows
-      <th class="code-impl-data" colspan="3">Mac
+      <th class="code-impl-data" colspan="3">macOS
       <th class="code-impl-data" colspan="2">Linux
       <th rowspan="2">Notes
      <tr>
@@ -629,18 +629,18 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlBackslash"><code class="code">"IntlBackslash"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td>Safari swaps IntlBackslash with Backquote
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlRo"><code class="code">"IntlRo"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
@@ -651,7 +651,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlYen"><code class="code">"IntlYen"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
@@ -1051,11 +1051,11 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>Safari returns "Unidentified"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ControlLeft"><code class="code">"ControlLeft"</code></a>
@@ -1093,24 +1093,24 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaLeft"><code class="code">"MetaLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td>Firefox returns "OSLeft"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaRight"><code class="code">"MetaRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td>Firefox returns "OSRight"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ShiftLeft"><code class="code">"ShiftLeft"</code></a>
@@ -1159,7 +1159,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Convert"><code class="code">"Convert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
@@ -1170,7 +1170,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KanaMode"><code class="code">"KanaMode"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
@@ -1181,7 +1181,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NonConvert"><code class="code">"NonConvert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
@@ -1194,79 +1194,68 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Delete"><code class="code">"Delete"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-End"><code class="code">"End"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
-     <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Help"><code class="code">"Help"</code></a>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Home"><code class="code">"Home"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Insert"><code class="code">"Insert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>Safari returns "Help"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageDown"><code class="code">"PageDown"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageUp"><code class="code">"PageUp"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Arrow Pad Section
@@ -1450,15 +1439,15 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
-      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>Tested with Brazilian keyboard.
+      <td>Need to test with Brazilian keyboard.
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDecimal"><code class="code">"NumpadDecimal"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
@@ -1642,56 +1631,69 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>Safari enters fullscreen
+      <td>macOS &amp; Ubuntu enter fullscreen; Chrome requires KeyboardLock
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F12"><code class="code">"F12"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PrintScreen"><code class="code">"PrintScreen"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>Safari returns "F13"
+      <td>macOS returns "F13"; Ubuntu takes screenshot
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ScrollLock"><code class="code">"ScrollLock"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>Safari decreases brightness
+      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td>macOS decreases brightness
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Pause"><code class="code">"Pause"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>Safari increases brightness
+      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td>macOS increases brightness
+     <tr>
+      <td colspan="10" style="background-color: #B9C9FE">Special Values
+     <tr>
+      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Unidentified"><code class="code">"Unidentified"</code></a>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td>
    </table>
    <h3 class="heading settled" data-level="3.2" id="media-keys"><span class="secno">3.2. </span><span class="content">Media Keyboard Keys</span><a class="self-link" href="#media-keys"></a></h3>
    <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code> attributes that
@@ -1723,50 +1725,50 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserBack"><code class="code">"BrowserBack"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserFavorites"><code class="code">"BrowserFavorites"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserForward"><code class="code">"BrowserForward"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserHome"><code class="code">"BrowserHome"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserRefresh"><code class="code">"BrowserRefresh"</code></a>
-      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
@@ -1780,11 +1782,11 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserStop"><code class="code">"BrowserStop"</code></a>
@@ -1813,9 +1815,9 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td>
@@ -1824,9 +1826,9 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td>
@@ -1840,7 +1842,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaPlayPause"><code class="code">"MediaPlayPause"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1851,7 +1853,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaSelect"><code class="code">"MediaSelect"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1901,7 +1903,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1912,7 +1914,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1928,7 +1930,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeMute"><code class="code">"AudioVolumeMute"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1939,7 +1941,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeUp"><code class="code">"AudioVolumeUp"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1950,13 +1952,13 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td>Handled by OS
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-WakeUp"><code class="code">"WakeUp"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1996,22 +1998,22 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td>Safari returns KanaMode
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang2"><code class="code">"Lang2"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span class="code-impl-no">No</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang3"><code class="code">"Lang3"</code></a>
@@ -2051,13 +2053,13 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadBackspace"><code class="code">"NumpadBackspace"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
       <td>Chrome/Firefox/Safari return "Backspace"
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadClear"><code class="code">"NumpadClear"</code></a>
@@ -2089,8 +2091,8 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadHash"><code class="code">"NumpadHash"</code></a>
@@ -2162,23 +2164,23 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadParenLeft"><code class="code">"NumpadParenLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadParenRight"><code class="code">"NumpadParenRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span class="code-impl-no">No</span>
+      <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data"><span class="code-impl-no">No</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
+      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td>
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadStar"><code class="code">"NumpadStar"</code></a>
@@ -2398,17 +2400,6 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>
-     <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Unidentified"><code class="code">"Unidentified"</code></a>
-      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span class="code-impl-yes">Yes</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>
       <td class="code-impl-data"><span>?</span>

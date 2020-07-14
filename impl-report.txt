@@ -96,7 +96,7 @@ path: stylesheet-extra.include
 			CODE_IMPL Digit9					Y		Y		Y			Y		Y		Y			Y		Y
 
 			CODE_IMPL Equal						Y		Y		Y			Y		Y		Y			Y		Y
-			CODE_IMPL IntlBackslash				Y		Y		Y			?		?		?			?		?
+			CODE_IMPL IntlBackslash				Y		Y		Y			Y		Y		N			Y		Y		Safari swaps IntlBackslash with Backquote
 			CODE_IMPL IntlRo					Y		Y		Y			?		?		?			?		?
 			CODE_IMPL IntlYen					Y		Y		Y			?		?		?			?		?
 
@@ -143,7 +143,7 @@ path: stylesheet-extra.include
 			CODE_IMPL ControlLeft				Y		Y		Y			Y		Y		Y			Y		Y
 			CODE_IMPL ControlRight				Y		Y		Y			Y		Y		Y			Y		Y
 			CODE_IMPL Enter						Y		Y		Y			Y		Y		Y			Y		Y
-			CODE_IMPL MetaLeft					Y		N		y			Y		N		Y			Y		N		Firefox returns "OSLeft"
+			CODE_IMPL MetaLeft					Y		N		Y			Y		N		Y			Y		N		Firefox returns "OSLeft"
 			CODE_IMPL MetaRight					Y		N		Y			Y		N		Y			Y		N		Firefox returns "OSRight"
 			CODE_IMPL ShiftLeft					Y		Y		Y			Y		Y		Y			Y		Y
 			CODE_IMPL ShiftRight				Y		Y		Y			Y		Y		Y			Y		Y
@@ -152,17 +152,16 @@ path: stylesheet-extra.include
 
 			CODE_IMPL Convert					Y		Y		Y			?		?		?			?		?
 			CODE_IMPL KanaMode					Y		Y		Y			?		?		?			?		?
-			CODE_IMPL NonConvert				Y		y		Y			?		?		?			?		?
+			CODE_IMPL NonConvert				Y		Y		Y			?		?		?			?		?
 
 
 			CODE_IMPL_SECTION Control Pad Section
-			CODE_IMPL Delete					Y		Y		Y			Y		Y		Y			?		?
-			CODE_IMPL End						Y		Y		Y			Y		Y		Y			?		?
-			CODE_IMPL Help						?		?		?			?		?		?			?		?		Same position as "Insert"
-			CODE_IMPL Home						Y		Y		Y			Y		Y		Y			?		?
-			CODE_IMPL Insert					Y		Y		Y			Y		Y		N			?		?		Safari returns "Help"
-			CODE_IMPL PageDown					Y		Y		Y			Y		Y		Y			?		?
-			CODE_IMPL PageUp					Y		Y		Y			Y		Y		Y			?		?
+			CODE_IMPL Delete					Y		Y		Y			Y		Y		Y			Y		Y
+			CODE_IMPL End						Y		Y		Y			Y		Y		Y			Y		Y
+			CODE_IMPL Home						Y		Y		Y			Y		Y		Y			Y		Y
+			CODE_IMPL Insert					Y		Y		Y			Y		Y		N			Y		Y		Safari returns "Help"
+			CODE_IMPL PageDown					Y		Y		Y			Y		Y		Y			Y		Y
+			CODE_IMPL PageUp					Y		Y		Y			Y		Y		Y			Y		Y
 
 
 			CODE_IMPL_SECTION Arrow Pad Section
@@ -185,7 +184,7 @@ path: stylesheet-extra.include
 			CODE_IMPL Numpad8					Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL Numpad9					Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadAdd					Y		?		Y			Y		Y		Y			Y		Y
-			CODE_IMPL NumpadComma				?		?		?			?		?		?			?		?		Test with Brazilian keyboard.
+			CODE_IMPL NumpadComma				?		?		?			?		?		?			?		?		Need to test with Brazilian keyboard.
 			CODE_IMPL NumpadDecimal				Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadDivide				Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadEnter				Y		?		Y			Y		Y		Y			Y		Y
@@ -205,11 +204,15 @@ path: stylesheet-extra.include
 			CODE_IMPL F8						Y		Y		Y			Y		Y		Y			Y		Y
 			CODE_IMPL F9						Y		Y		Y			Y		Y		Y			Y		Y
 			CODE_IMPL F10						Y		Y		Y			Y		Y		Y			Y		Y
-			CODE_IMPL F11						Y		Y		Y			Y		Y		?			?		?		Safari enters fullscreen
+			CODE_IMPL F11						Y		Y		Y			Y		?		?			Y		?		macOS & Ubuntu enter fullscreen; Chrome requires KeyboardLock
 			CODE_IMPL F12						Y		Y		Y			Y		Y		Y			?		?
-			CODE_IMPL PrintScreen				Y		Y		Y			Y		Y		N			?		?		Safari returns "F13"
-			CODE_IMPL ScrollLock				Y		Y		Y			Y		Y		N			?		?		Safari decreases brightness
-			CODE_IMPL Pause						Y		Y		Y			Y		Y		N			?		?		Safari increases brightness
+			CODE_IMPL PrintScreen				Y		Y		Y			N		N		N			?		?		macOS returns "F13"; Ubuntu takes screenshot
+			CODE_IMPL ScrollLock				Y		Y		Y			?		?		?			Y		Y		macOS decreases brightness
+			CODE_IMPL Pause						Y		Y		Y			?		?		?			Y		Y		macOS increases brightness
+
+
+			CODE_IMPL_SECTION Special Values
+			CODE_IMPL Unidentified				Y		Y		Y			Y		Y		Y			Y		Y
 
 		END_CODE_IMPL_TABLE
 
@@ -228,28 +231,28 @@ path: stylesheet-extra.include
 			<!--								Chrome  Firefox Edge	    Chrome Firefox  Safari      Chrome Firefox     Notes    -->
 
 			CODE_IMPL_SECTION Media Keys
-			CODE_IMPL BrowserBack				Y		?		Y			N		N		N			?		?
-			CODE_IMPL BrowserFavorites			Y		?		Y			N		N		N			?		?
-			CODE_IMPL BrowserForward			Y		?		Y			N		N		N			?		?
-			CODE_IMPL BrowserHome				Y		?		Y			N		N		N			?		?
+			CODE_IMPL BrowserBack				Y		Y		Y			N		N		N			Y		?		Handled by OS (Chrome requires KeyboardLock)
+			CODE_IMPL BrowserFavorites			Y		Y		Y			N		N		N			Y		?		Handled by OS (Chrome requires KeyboardLock)
+			CODE_IMPL BrowserForward			Y		Y		Y			N		N		N			Y		?		Handled by OS (Chrome requires KeyboardLock)
+			CODE_IMPL BrowserHome				Y		?		Y			N		N		N			Y		?		Handled by OS (Chrome requires KeyboardLock)
 			CODE_IMPL BrowserRefresh			?		?		N			?		?		?			?		?
-			CODE_IMPL BrowserSearch				N		?		N			N		N		N			?		?
+			CODE_IMPL BrowserSearch				N		?		N			N		N		N			N		N
 			CODE_IMPL BrowserStop				?		?		?			?		?		?			?		?
 			CODE_IMPL Eject						?		?		?			?		?		?			?		?
 			CODE_IMPL LaunchApp1				?		?		?			N		N		N			?		?
 			CODE_IMPL LaunchApp2				?		?		?			N		N		N			?		?
-			CODE_IMPL LaunchMail				?		?		?			?		?		?			?		?
-			CODE_IMPL MediaPlayPause			?		?		?			N		N		N			?		?
+			CODE_IMPL LaunchMail				-		-		-			-		-		-			-		-		Handled by OS
+			CODE_IMPL MediaPlayPause			-		-		-			-		-		-			-		-		Handled by OS
 			CODE_IMPL MediaSelect				?		?		?			?		?		?			?		?
 			CODE_IMPL MediaStop					?		?		?			?		?		?			?		?
 			CODE_IMPL MediaTrackNext			?		?		?			?		?		?			?		?
 			CODE_IMPL MediaTrackPrevious		?		?		?			?		?		?			?		?
-			CODE_IMPL Power						?		?		?			?		?		?			?		?
-			CODE_IMPL Sleep						?		?		?			?		?		?			?		?
-			CODE_IMPL AudioVolumeDown			?		?		?			N		N		N			?		?
-			CODE_IMPL AudioVolumeMute			?		?		?			N		N		N			?		?
-			CODE_IMPL AudioVolumeUp				?		?		?			N		N		N			?		?
-			CODE_IMPL WakeUp					?		?		?			?		?		?			?		?
+			CODE_IMPL Power						?		?		?			N		?		?			?		?
+			CODE_IMPL Sleep						?		?		?			N		?		?			?		?
+			CODE_IMPL AudioVolumeDown			-		-		-			-		-		-			-		-		Handled by OS
+			CODE_IMPL AudioVolumeMute			-		-		-			-		-		-			-		-		Handled by OS
+			CODE_IMPL AudioVolumeUp				-		-		-			-		-		-			-		-		Handled by OS
+			CODE_IMPL WakeUp					?		?		?			N		?		?			?		?
 
 		END_CODE_IMPL_TABLE
 
@@ -270,26 +273,26 @@ path: stylesheet-extra.include
 			<!--								Chrome  Firefox Edge	    Chrome Firefox  Safari      Chrome Firefox     Notes    -->
 
 			CODE_IMPL_SECTION Alphanumeric Section - Functional Keys
-			CODE_IMPL Lang1						?		?		?			?		?		?			?		?
-			CODE_IMPL Lang2						?		?		?			?		?		?			?		?
+			CODE_IMPL Lang1						?		?		?			N		Y		N			Y		Y		Safari returns KanaMode
+			CODE_IMPL Lang2						?		?		?			N		Y		Y			Y		Y
 			CODE_IMPL Lang3						?		?		?			?		?		?			?		?
 			CODE_IMPL Lang4						?		?		?			?		?		?			?		?
 			CODE_IMPL Lang5						?		?		?			?		?		?			?		?
 
 
 			CODE_IMPL_SECTION Numpad Section
-			CODE_IMPL NumpadBackspace			N		?		N			N		?		?			?		?		Chrome/Firefox/Safari return "Backspace"
+			CODE_IMPL NumpadBackspace			N		N		N			N		?		?			N		N		Chrome/Firefox/Safari return "Backspace"
 			CODE_IMPL NumpadClear				?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadClearEntry			?		?		?			?		?		?			?		?
-			CODE_IMPL NumpadEqual				Y		?		Y			Y		?		?			?		?
+			CODE_IMPL NumpadEqual				Y		?		Y			Y		?		?			Y		Y
 			CODE_IMPL NumpadHash				?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemoryAdd			?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemoryClear			?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemoryRecall		?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemoryStore			?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemorySubtract		?		?		?			?		?		?			?		?
-			CODE_IMPL NumpadParenLeft			Y		?		N			N		?		?			?		?
-			CODE_IMPL NumpadParenRight			Y		?		N			N		?		?			?		?
+			CODE_IMPL NumpadParenLeft			Y		?		?			N		?		?			Y		Y
+			CODE_IMPL NumpadParenRight			Y		?		?			N		?		?			Y		Y
 			CODE_IMPL NumpadStar				?		?		?			?		?		?			?		?
 
 
@@ -319,8 +322,6 @@ path: stylesheet-extra.include
 
 			CODE_IMPL Hiragana					?		?		?			?		?		?			?		?
 			CODE_IMPL Katakana					?		?		?			?		?		?			?		?
-
-			CODE_IMPL Unidentified				Y		?		Y			?		?		?			?		?
 
 		END_CODE_IMPL_TABLE
 
