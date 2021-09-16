@@ -4,9 +4,9 @@
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <title>UI Events KeyboardEvent code Values</title>
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet">
-  <meta content="Bikeshed version 70ffa934, updated Fri May 1 10:12:04 2020 -0700" name="generator">
+  <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="01359df7b751c94b59b24bc762ffe39a27b920b3" name="document-revision">
+  <meta content="4354fb72df0ce4183b902d2033109a99286f999a" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -112,6 +112,12 @@ code.glyph {
 	text-align: center;
 }
 
+.code-impl-data-dark {
+	background:none repeat scroll 0 0 #d8dDeF !important;
+	vertical-align: top;
+	text-align: center;
+}
+
 .code-impl-yes {
 	color: #0a0;
 	font-weight: bold;
@@ -126,7 +132,7 @@ code.glyph {
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
-    color: #005a9c;
+    color: var(--a-normal-text);
     font-size: inherit;
     font-family: inherit;
 }
@@ -216,6 +222,10 @@ figcaption:not(.no-marker)::before {
 }</style>
 <style>/* style-dfn-panel */
 
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
 .dfn-panel {
     position: absolute;
     z-index: 35;
@@ -227,14 +237,14 @@ figcaption:not(.no-marker)::before {
     overflow: auto;
     padding: 0.5em 0.75em;
     font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
-    background: #DDDDDD;
-    color: black;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
     border: outset 0.2em;
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -263,6 +273,11 @@ figcaption:not(.no-marker)::before {
 }</style>
 <style>/* style-selflinks */
 
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
 .heading, .issue, .note, .example, li, dt {
     position: relative;
 }
@@ -292,8 +307,8 @@ dfn > a.self-link {
     opacity: 0;
     width: 1.5em;
     height: 1.5em;
-    background: gray;
-    color: white;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
     font-style: normal;
     transition: opacity .2s, background-color .2s, color .2s;
 }
@@ -301,21 +316,22 @@ dfn:hover > a.self-link {
     opacity: 1;
 }
 dfn > a.self-link:hover {
-    color: black;
+    color: var(--selflink-hover-text);
 }
 
 a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
+dfn > a.self-link::before      { content: "#"; }
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Values</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2020-06-30">30 June 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2020-07-13">13 July 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://www.w3.org/TR/2020/WD-uievents-code-20200630/">https://www.w3.org/TR/2020/WD-uievents-code-20200630/</a>
+     <dd><a class="u-url" href="https://www.w3.org/TR/2020/WD-uievents-code-20200713/">https://www.w3.org/TR/2020/WD-uievents-code-20200713/</a>
      <dt>Latest published version:
      <dd><a href="http://www.w3.org/TR/uievents-code/">http://www.w3.org/TR/uievents-code/</a>
      <dt>Editor's Draft:
@@ -351,8 +367,8 @@ dfn > a.self-link::before      { content: "#"; }</style>
 
     Feedback and comments on this specification are welcome. Please use <a href="https://github.com/w3c/uievents-code/issues">GitHub issues</a> Historical discussions can be found in the <a href="https://lists.w3.org/Archives/Public/public-webapps/">public-webapps@w3.org archives</a>. </p>
    <p> Publication as a Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress. </p>
-   <p> This document was produced by a group operating under the <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>. <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/114929/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>. </p>
-   <p>This document is governed by the <a href="https://www.w3.org/2019/Process-20190301/" id="w3c_process_revision">1 March 2019 W3C Process Document</a>. </p>
+   <p> This document was produced by a group operating under the <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>. <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="https://www.w3.org/2004/01/pp-impl/114929/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="https://www.w3.org/Consortium/Patent-Policy-20200915/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>. </p>
+   <p>This document is governed by the <a href="https://www.w3.org/2020/Process-20200915/" id="w3c_process_revision">15 September 2020 W3C Process Document</a>. </p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1489,17 +1505,17 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#alphanumeric-section">alphanumeric section</a><span>, in §3.1.1</span>
-   <li><a href="#arrow-pad">arrow pad</a><span>, in §3.1.3</span>
-   <li><a href="#control-pad">control pad</a><span>, in §3.1.2</span>
-   <li><a href="#functional-keys">functional keys</a><span>, in §3.1.1.2</span>
-   <li><a href="#function-key">function key</a><span>, in §3.1.5</span>
-   <li><a href="#function-section">function section</a><span>, in §3.1.5</span>
-   <li><a href="#key-code-attribute-value">key code attribute value</a><span>, in §3</span>
-   <li><a href="#keypad">keypad</a><span>, in §3.1.4</span>
-   <li><a href="#media-keys">Media keys</a><span>, in §3.1.6</span>
-   <li><a href="#numpad">numpad</a><span>, in §3.1.4</span>
-   <li><a href="#writing-system-keys">writing system keys</a><span>, in §3.1.1.1</span>
+   <li><a href="#alphanumeric-section">alphanumeric section</a><span>, in § 3.1.1</span>
+   <li><a href="#arrow-pad">arrow pad</a><span>, in § 3.1.3</span>
+   <li><a href="#control-pad">control pad</a><span>, in § 3.1.2</span>
+   <li><a href="#functional-keys">functional keys</a><span>, in § 3.1.1.2</span>
+   <li><a href="#function-key">function key</a><span>, in § 3.1.5</span>
+   <li><a href="#function-section">function section</a><span>, in § 3.1.5</span>
+   <li><a href="#key-code-attribute-value">key code attribute value</a><span>, in § 3</span>
+   <li><a href="#keypad">keypad</a><span>, in § 3.1.4</span>
+   <li><a href="#media-keys">Media keys</a><span>, in § 3.1.6</span>
+   <li><a href="#numpad">numpad</a><span>, in § 3.1.4</span>
+   <li><a href="#writing-system-keys">writing system keys</a><span>, in § 3.1.1.1</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-interface-keyboardevent">
    <a href="http://www.w3.org/TR/uievents/#interface-keyboardevent">http://www.w3.org/TR/uievents/#interface-keyboardevent</a><b>Referenced in:</b>
@@ -1560,35 +1576,35 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
    <li>
     <a data-link-type="biblio">[UIEvents]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-interface-keyboardevent" style="color:initial">KeyboardEvent</span>
-     <li><span class="dfn-paneled" id="term-for-dom-keyboardevent-code" style="color:initial">code</span>
-     <li><span class="dfn-paneled" id="term-for-dom-keyboardevent-key" style="color:initial">key</span>
+     <li><span class="dfn-paneled" id="term-for-interface-keyboardevent">KeyboardEvent</span>
+     <li><span class="dfn-paneled" id="term-for-dom-keyboardevent-code">code</span>
+     <li><span class="dfn-paneled" id="term-for-dom-keyboardevent-key">key</span>
     </ul>
    <li>
     <a data-link-type="biblio">[UIEvents-key]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-key-value-tables" style="color:initial">key attribute value</span>
-     <li><span class="dfn-paneled" id="term-for-key-legends" style="color:initial">key cap</span>
+     <li><span class="dfn-paneled" id="term-for-key-value-tables">key attribute value</span>
+     <li><span class="dfn-paneled" id="term-for-key-legends">key cap</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-rfc2119">[RFC2119]
-   <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+   <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
    <dt id="biblio-uievents">[UIEvents]
-   <dd>Gary Kacmarcik; Travis Leithead; Doug Schepers. <a href="https://www.w3.org/TR/uievents/">UI Events</a>. 30 May 2019. WD. URL: <a href="https://www.w3.org/TR/uievents/">https://www.w3.org/TR/uievents/</a>
+   <dd>Gary Kacmarcik; Travis Leithead; Doug Schepers. <a href="https://www.w3.org/TR/uievents/"><cite>UI Events</cite></a>. 30 May 2019. WD. URL: <a href="https://www.w3.org/TR/uievents/">https://www.w3.org/TR/uievents/</a>
    <dt id="biblio-uievents-key">[UIEvents-key]
-   <dd>Gary Kacmarcik; Travis Leithead. <a href="https://www.w3.org/TR/uievents-key/">UI Events KeyboardEvent key Values</a>. 1 June 2017. CR. URL: <a href="https://www.w3.org/TR/uievents-key/">https://www.w3.org/TR/uievents-key/</a>
+   <dd>Gary Kacmarcik; Travis Leithead. <a href="https://www.w3.org/TR/uievents-key/"><cite>UI Events KeyboardEvent key Values</cite></a>. 1 June 2017. CR. URL: <a href="https://www.w3.org/TR/uievents-key/">https://www.w3.org/TR/uievents-key/</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-iso9995-1">[ISO9995-1]
-   <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645">ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts</a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645</a>
+   <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645"><cite>ISO/IEC 9995-1:2009 Information technology -- Keyboard layouts for text and office systems -- Part 1: General principles governing keyboard layouts</cite></a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51645</a>
    <dt id="biblio-iso9995-8">[ISO9995-8]
-   <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad</a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641</a>
+   <dd><a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641"><cite>ISO/IEC 9995-8:2009 Information technology -- Keyboard layouts for text and office systems -- Part 8: Allocation of letters to the keys of a numeric keypad</cite></a>. URL: <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641">http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=51641</a>
    <dt id="biblio-usb-hid">[USB-HID]
-   <dd><a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">USB HID Usage Tables 1.12</a>. URL: <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">http://www.usb.org/developers/hidpage/Hut1_12v2.pdf</a>
+   <dd><a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf"><cite>USB HID Usage Tables 1.12</cite></a>. URL: <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">http://www.usb.org/developers/hidpage/Hut1_12v2.pdf</a>
   </dl>
   <aside class="dfn-panel" data-for="key-code-attribute-value">
    <b><a href="#key-code-attribute-value">#key-code-attribute-value</a></b><b>Referenced in:</b>

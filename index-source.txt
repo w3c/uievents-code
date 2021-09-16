@@ -901,6 +901,12 @@ path: stylesheet-extra.include
 			Exposing only this value MUST NOT indicate a conforming implementation.
 			</p>
 
+<h2 id="accessibility">Accessibility</h2>
+
+	This specification simply defines a set of values that are valid for use in the
+	{{KeyboardEvent/code}} attribute. Thus, it does not introduce any features that have
+	accessibility concerns.
+
 <h2 id="acknowledgements-contributors">Acknowledgements</h2>
 
 	Considerable thanks are due to the following participants of the WebApps
