@@ -63,7 +63,7 @@ class Parser():
 			value = self.impl_info[ua_os]
 			data = ''
 			if value == 'Y':
-				data = '<span class="code-impl-yes">Yes</span>'
+				data = '<span class="code-impl-yes">Pass</span>'
 			elif value == 'N':
 				data = '<span class="code-impl-no">No</span>'
 			else:

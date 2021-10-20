@@ -54,14 +54,14 @@ path: stylesheet-extra.include
 <tbody>
 <tr>
 	<td>{{KeyboardEvent/code}}</td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Yes</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
 	<td></td>
 </tr>
 </tbody></table>
