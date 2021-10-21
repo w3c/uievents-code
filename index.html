@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet">
   <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="4354fb72df0ce4183b902d2033109a99286f999a" name="document-revision">
+  <meta content="4e1b837a5ea52026b9b6b7ad98cad6b5fae958be" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -108,13 +108,11 @@ code.glyph {
 }
 
 .code-impl-data {
-	vertical-align: top;
 	text-align: center;
 }
 
 .code-impl-data-dark {
 	background:none repeat scroll 0 0 #d8dDeF !important;
-	vertical-align: top;
 	text-align: center;
 }
 
@@ -327,11 +325,11 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Values</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2020-07-13">13 July 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2021-10-21">21 October 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://www.w3.org/TR/2020/WD-uievents-code-20200713/">https://www.w3.org/TR/2020/WD-uievents-code-20200713/</a>
+     <dd><a class="u-url" href="https://www.w3.org/TR/2021/WD-uievents-code-20211021/">https://www.w3.org/TR/2021/WD-uievents-code-20211021/</a>
      <dt>Latest published version:
      <dd><a href="http://www.w3.org/TR/uievents-code/">http://www.w3.org/TR/uievents-code/</a>
      <dt>Editor's Draft:
@@ -347,7 +345,7 @@ dfn > a.self-link::before      { content: "#"; }
     </dl>
    </div>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2020 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
@@ -420,7 +418,8 @@ dfn > a.self-link::before      { content: "#"; }
         <li><a href="#key-legacy"><span class="secno">3.1.7</span> <span class="content">Legacy, Non-Standard and Special Keys</span></a>
        </ol>
      </ol>
-    <li><a href="#acknowledgements-contributors"><span class="secno">4</span> <span class="content">Acknowledgements</span></a>
+    <li><a href="#accessibility"><span class="secno">4</span> <span class="content">Accessibility</span></a>
+    <li><a href="#acknowledgements-contributors"><span class="secno">5</span> <span class="content">Acknowledgements</span></a>
     <li>
      <a href="#conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -1459,7 +1458,10 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
    <p class="warning"> Conforming implementations MUST only use <code class="code">"<a href="#code-Unidentified">Unidentified</a>"</code> as a key code
 			when there is no way for the implementation to determine the key code.
 			Exposing only this value MUST NOT indicate a conforming implementation. </p>
-   <h2 class="heading settled" data-level="4" id="acknowledgements-contributors"><span class="secno">4. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
+   <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
+   <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⑥">code</a></code> attribute. Thus, it does not introduce any features that have
+	accessibility concerns.</p>
+   <h2 class="heading settled" data-level="5" id="acknowledgements-contributors"><span class="secno">5. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements-contributors"></a></h2>
    <p>Considerable thanks are due to the following participants of the WebApps
 	Working Group for providing substantial material contributions in the
 	process of developing this specification.</p>
@@ -1547,6 +1549,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-dom-keyboardevent-code②②">3.1.5. Function Section</a> <a href="#ref-for-dom-keyboardevent-code②③">(2)</a> <a href="#ref-for-dom-keyboardevent-code②④">(3)</a> <a href="#ref-for-dom-keyboardevent-code②⑤">(4)</a>
     <li><a href="#ref-for-dom-keyboardevent-code②⑥">3.1.6. Media Keys</a> <a href="#ref-for-dom-keyboardevent-code②⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-code②⑧">(3)</a>
     <li><a href="#ref-for-dom-keyboardevent-code②⑨">3.1.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-dom-keyboardevent-code③⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code③①">(3)</a> <a href="#ref-for-dom-keyboardevent-code③②">(4)</a> <a href="#ref-for-dom-keyboardevent-code③③">(5)</a> <a href="#ref-for-dom-keyboardevent-code③④">(6)</a> <a href="#ref-for-dom-keyboardevent-code③⑤">(7)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code③⑥">4. Accessibility</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-keyboardevent-key">
