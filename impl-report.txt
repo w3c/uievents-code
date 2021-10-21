@@ -21,14 +21,10 @@ url: http://www.w3.org/TR/uievents-code/#; type: dfn; spec: uievents-code;
 path: stylesheet-extra.include
 </pre>
 
-<h2 id="summary">Summary</h2>
-
-	The UIEvent code specification defines one new attribute {{KeyboardEvent/code}} for
-	{{KeyboardEvent}} and also defines a set of acceptable values for this attribute.
-
-	The new attribute and the required values all have 2 independent implementations.
-
 <h2 id="introduction">Introduction</h2>
+
+	The [[!UIEvents-Code]] specification defines the set of values that are valid for use
+	in the {{KeyboardEvent/code}} attribute.
 
 	This document summarizes the current implementation status of the
 	{{KeyboardEvent/code}} attribute and its values.
@@ -39,73 +35,94 @@ path: stylesheet-extra.include
 	* Microsoft Edge 83.0.478.58 (Windows 10)
 	* Apple Safari 13.1.1 (OS X 10.14.6)
 	
-	For purposes of this report, Chrome, Firefox and Safari are considered independent
-	implementations.
-
 <h2 id="methodology">Methodology</h2>
 
-	Because there is no automated way to test these key press events (expecially considering
-	that international keyboard are often required), these tests were all performed
-	manually.
+	Because there is no automated way to test these key press events (expecially
+	considering that international keyboard are often required), these tests were all
+	performed manually.
 	
 	Manual tests were performed by visiting the
 	<a href="https://domeventviewer.com/key-event-viewer.html">domeeventviewer.com/key-event-viewer.html</a>
-	test page and examining the "code" column after pressing the key being tested.
+	test page and examining the "code" column after pressing the key being tested. To test
+	keys (like "IntlBackslash") that are only present on keyboards for certain locales,
+	this requires using a keyboard that contains the key being tested.
+
+	For purposes of this report, Chrome, Firefox and Safari are considered independent
+	implementations.
+
+<h2 id="results">Results</h2>
 	
-<h2 id="key-attribute">The {{KeyboardEvent/code}} Attribute</h2>
+<h3 id="summary">Summary</h3>
 
-<table id="key-attribute-impl" class="data-table full-width">
-<thead><tr>
-	<th rowspan=2>{{KeyboardEvent}} attribute</th>
-	<th class="code-impl-data" colspan=3>Windows</th>
-	<th class="code-impl-data" colspan=3>macOS</th>
-	<th class="code-impl-data" colspan=2>Linux</th>
-	<th rowspan=2>Notes</th>
-</tr><tr>
-	<th class="code-impl-data">Chrome</th>
-	<th class="code-impl-data">Firefox</th>
-	<th class="code-impl-data">Edge</th>
-	<th class="code-impl-data">Chrome</th>
-	<th class="code-impl-data">Firefox</th>
-	<th class="code-impl-data">Safari</th>
-	<th class="code-impl-data">Chrome</th>
-	<th class="code-impl-data">Firefox</th>
-</tr></thead>
-<tbody>
-<tr>
-	<td>{{KeyboardEvent/code}}</td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
-	<td></td>
-</tr>
-</tbody></table>
+	Manual tests for all 112 required values of the {{KeyboardEvent/code}} attribute
+	<b>Pass</b> in at least 2 independent implementations.
+	
+	The Candidate Recommendation exit criteria are therefore fulfilled.  
+	
+	In addition, the specification describes 60 optional values that may be used to
+	support multimedia or legacy keyboards. Of these, manual tests confirm that 9 of these
+	Pass in at least 2 independent implementations.
 
-<h2 id="code-attribute-values">{{KeyboardEvent/code}} Attribute Values</h2>
+<h3 id="raw-results">Raw Results</h3>
 
-	Entries marked "Pass" generate the expected value when the corresponding key is pressed.
+	The following tables present the result of the manual tests.
+	
+	Entries marked "Pass" generate the expected value when the corresponding key is
+	pressed.
 
 	Entries marked "Fail" generate some value other than the expected value when the
-	corresponding key is pressed. For these cases, a Note is included that provides more
+	corresponding key is pressed. Wherever possible, a Note is included that provides more
 	information about the failure.
 
 	Entries marked with a "?" have not been tested, typically because devices
 	with that key were not available (for example, because keyboards with those keys are
 	not supported on that platform).
 
-	Entries marked with "N/A" are not testable, typically because the devices with
-	that key do not generate separate keyboard events. E.g., FnLock.
+	Entries marked with "N/A" are not currently testable, typically because the devices
+	with that key do not generate separate keyboard events. E.g., FnLock.
 
-	<h3 id="standard-required-keys">Standard Keys</h3>
+	<h4 id="code-attribute">{KeyboardEvent/code}} Attribute</h4>
+		
+		The {{KeyboardEvent/code}} attribute (defined in [[!UIEvents]]) is present in all
+		browsers tested.
 
-		This section lists the basic set of {{KeyboardEvent/code}} attributes that
-		correspond to values generated by a standard keyboard layout. Support for these
-		values is required.
+		<table id="key-attribute-impl" class="data-table full-width">
+		<thead><tr>
+			<th rowspan=2>{{KeyboardEvent}} attribute</th>
+			<th class="code-impl-data" colspan=3>Windows</th>
+			<th class="code-impl-data" colspan=3>macOS</th>
+			<th class="code-impl-data" colspan=2>Linux</th>
+			<th rowspan=2>Notes</th>
+		</tr><tr>
+			<th class="code-impl-data">Chrome</th>
+			<th class="code-impl-data">Firefox</th>
+			<th class="code-impl-data">Edge</th>
+			<th class="code-impl-data">Chrome</th>
+			<th class="code-impl-data">Firefox</th>
+			<th class="code-impl-data">Safari</th>
+			<th class="code-impl-data">Chrome</th>
+			<th class="code-impl-data">Firefox</th>
+		</tr></thead>
+		<tbody>
+		<tr>
+			<td>{{KeyboardEvent/code}}</td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td class="code-impl-data"><span class="code-impl-yes">Pass</span></td>
+			<td></td>
+		</tr>
+		</tbody></table>
+
+
+	<h4 id="required-values">Required Values</h4>
+
+		This section lists the test results for the basic set of {{KeyboardEvent/code}}
+		attribute values that a conforming implementation must support.
 
 		BEGIN_CODE_IMPL_TABLE standard keys
 			<!--     Key-name					Windows                     Mac                         Linux                       -->
@@ -130,7 +147,7 @@ path: stylesheet-extra.include
 			CODE_IMPL Digit9					Y		Y		Y			Y		Y		Y			Y		Y
 
 			CODE_IMPL Equal						Y		Y		Y			Y		Y		Y			Y		Y
-			CODE_IMPL IntlBackslash				Y		Y		Y			Y		Y		F			Y		Y		Safari swaps IntlBackslash with Backquote on these keyboards
+			CODE_IMPL IntlBackslash				Y		Y		Y			Y		Y		F			Y		Y		Safari swaps IntlBackslash with Backquote on keyboards that support IntlBackslash
 			CODE_IMPL IntlRo					Y		Y		Y			?		?		?			?		?
 			CODE_IMPL IntlYen					Y		Y		Y			?		?		?			?		?
 
@@ -218,7 +235,6 @@ path: stylesheet-extra.include
 			CODE_IMPL Numpad8					Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL Numpad9					Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadAdd					Y		?		Y			Y		Y		Y			Y		Y
-			CODE_IMPL NumpadComma				?		?		?			?		?		?			?		?		Need to test with Brazilian keyboard.
 			CODE_IMPL NumpadDecimal				Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadDivide				Y		?		Y			Y		Y		Y			Y		Y
 			CODE_IMPL NumpadEnter				Y		?		Y			Y		Y		Y			Y		Y
@@ -250,17 +266,13 @@ path: stylesheet-extra.include
 
 		END_CODE_IMPL_TABLE
 
-	<h3 id="media-keys">Media Keyboard Keys</h3>
+	<h4 id="optional-values">Optional Values</h4>
 
-		This section lists the basic set of {{KeyboardEvent/code}} attributes that
-		correspond to values generated by keys that are commonly found on special
-		multimedia keyboards.
+		This section lists the test results for the basic set of {{KeyboardEvent/code}}
+		attribute values that a conforming implementation may use to support special
+		keyboards (such as multimedia or legacy keyboards).
 
-		Entries marked with a '?' have not been tested, typically because devices
-		with that key were not available for testing or because the key's function
-		is intercepted and handled by the OS or browser.
-
-		BEGIN_CODE_IMPL_TABLE multimedia keys
+		BEGIN_CODE_IMPL_TABLE optional keys
 			<!--     Key-name					Windows                     Mac                         Linux                       -->
 			<!--								Chrome  Firefox Edge	    Chrome Firefox  Safari      Chrome Firefox     Notes    -->
 
@@ -288,17 +300,6 @@ path: stylesheet-extra.include
 			CODE_IMPL AudioVolumeUp				-		-		-			-		-		-			-		-		Handled by OS
 			CODE_IMPL WakeUp					?		?		?			F		?		?			?		?
 
-		END_CODE_IMPL_TABLE
-
-	<h3 id="optional-keys">Optional Keys</h3>
-
-		This section lists the basic set of {{KeyboardEvent/code}} attributes that
-		correspond to values generated by keys that are not found on the standard
-		keyboard layouts.
-
-		BEGIN_CODE_IMPL_TABLE optional keys
-			<!--     Key-name					Windows                     Mac                         Linux                       -->
-			<!--								Chrome  Firefox Edge	    Chrome Firefox  Safari      Chrome Firefox     Notes    -->
 
 			CODE_IMPL_SECTION Alphanumeric Section - Functional Keys
 			CODE_IMPL Lang1						?		?		?			F		Y		F			Y		Y		Safari returns KanaMode
@@ -312,6 +313,7 @@ path: stylesheet-extra.include
 			CODE_IMPL NumpadBackspace			F		F		F			F		?		?			F		F		Chrome/Firefox/Safari return "Backspace"
 			CODE_IMPL NumpadClear				?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadClearEntry			?		?		?			?		?		?			?		?
+			CODE_IMPL NumpadComma				?		?		?			?		?		?			?		?		Need to test with Brazilian keyboard.
 			CODE_IMPL NumpadEqual				Y		?		Y			Y		?		?			Y		Y
 			CODE_IMPL NumpadHash				?		?		?			?		?		?			?		?
 			CODE_IMPL NumpadMemoryAdd			?		?		?			?		?		?			?		?
@@ -352,4 +354,3 @@ path: stylesheet-extra.include
 			CODE_IMPL Katakana					?		?		?			?		?		?			?		?
 
 		END_CODE_IMPL_TABLE
-

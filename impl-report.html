@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet">
   <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="https://w3c.github.io/uievents-code/impl-report.html" rel="canonical">
-  <meta content="ccf858974c4258a146452dff51dc82456c014ca7" name="document-revision">
+  <meta content="2d1f5f21d2173203ddb2e56eeffbb5367416a8fc" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -600,16 +600,19 @@ dfn > a.self-link::before      { content: "#"; }
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#summary"><span class="secno">1</span> <span class="content">Summary</span></a>
-    <li><a href="#introduction"><span class="secno">2</span> <span class="content">Introduction</span></a>
-    <li><a href="#methodology"><span class="secno">3</span> <span class="content">Methodology</span></a>
-    <li><a href="#key-attribute"><span class="secno">4</span> <span class="content">The <code class="idl"><span>code</span></code> Attribute</span></a>
+    <li><a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
+    <li><a href="#methodology"><span class="secno">2</span> <span class="content">Methodology</span></a>
     <li>
-     <a href="#code-attribute-values"><span class="secno">5</span> <span class="content"><code class="idl"><span>code</span></code> Attribute Values</span></a>
+     <a href="#results"><span class="secno">3</span> <span class="content">Results</span></a>
      <ol class="toc">
-      <li><a href="#standard-required-keys"><span class="secno">5.1</span> <span class="content">Standard Keys</span></a>
-      <li><a href="#media-keys"><span class="secno">5.2</span> <span class="content">Media Keyboard Keys</span></a>
-      <li><a href="#optional-keys"><span class="secno">5.3</span> <span class="content">Optional Keys</span></a>
+      <li><a href="#summary"><span class="secno">3.1</span> <span class="content">Summary</span></a>
+      <li>
+       <a href="#raw-results"><span class="secno">3.2</span> <span class="content">Raw Results</span></a>
+       <ol class="toc">
+        <li><a href="#code-attribute"><span class="secno">3.2.1</span> <span class="content">{KeyboardEvent/code}} Attribute</span></a>
+        <li><a href="#required-values"><span class="secno">3.2.2</span> <span class="content">Required Values</span></a>
+        <li><a href="#optional-values"><span class="secno">3.2.3</span> <span class="content">Optional Values</span></a>
+       </ol>
      </ol>
     <li>
      <a href="#conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
@@ -630,10 +633,9 @@ dfn > a.self-link::before      { content: "#"; }
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="summary"><span class="secno">1. </span><span class="content">Summary</span><a class="self-link" href="#summary"></a></h2>
-   <p>The UIEvent code specification defines one new attribute <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code">code</a></code> for <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#keyboardevent" id="ref-for-keyboardevent">KeyboardEvent</a></code> and also defines a set of acceptable values for this attribute.</p>
-   <p>The new attribute and the required values all have 2 independent implementations.</p>
-   <h2 class="heading settled" data-level="2" id="introduction"><span class="secno">2. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+   <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+   <p>The <a data-link-type="biblio" href="#biblio-uievents-code">[UIEvents-Code]</a> specification defines the set of values that are valid for use
+	in the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code">code</a></code> attribute.</p>
    <p>This document summarizes the current implementation status of the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①">code</a></code> attribute and its values.</p>
    <p>The following versions of each user agents were tested:</p>
    <ul>
@@ -646,18 +648,41 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>Apple Safari 13.1.1 (OS X 10.14.6)</p>
    </ul>
+   <h2 class="heading settled" data-level="2" id="methodology"><span class="secno">2. </span><span class="content">Methodology</span><a class="self-link" href="#methodology"></a></h2>
+   <p>Because there is no automated way to test these key press events (expecially
+	considering that international keyboard are often required), these tests were all
+	performed manually.</p>
+   <p>Manual tests were performed by visiting the <a href="https://domeventviewer.com/key-event-viewer.html">domeeventviewer.com/key-event-viewer.html</a> test page and examining the "code" column after pressing the key being tested. To test
+	keys (like "IntlBackslash") that are only present on keyboards for certain locales,
+	this requires using a keyboard that contains the key being tested.</p>
    <p>For purposes of this report, Chrome, Firefox and Safari are considered independent
 	implementations.</p>
-   <h2 class="heading settled" data-level="3" id="methodology"><span class="secno">3. </span><span class="content">Methodology</span><a class="self-link" href="#methodology"></a></h2>
-   <p>Because there is no automated way to test these key press events (expecially considering
-	that international keyboard are often required), these tests were all performed
-	manually.</p>
-   <p>Manual tests were performed by visiting the <a href="https://domeventviewer.com/key-event-viewer.html">domeeventviewer.com/key-event-viewer.html</a> test page and examining the "code" column after pressing the key being tested.</p>
-   <h2 class="heading settled" data-level="4" id="key-attribute"><span class="secno">4. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> Attribute</span><a class="self-link" href="#key-attribute"></a></h2>
+   <h2 class="heading settled" data-level="3" id="results"><span class="secno">3. </span><span class="content">Results</span><a class="self-link" href="#results"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="summary"><span class="secno">3.1. </span><span class="content">Summary</span><a class="self-link" href="#summary"></a></h3>
+   <p>Manual tests for all 112 required values of the <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②">code</a></code> attribute <b>Pass</b> in at least 2 independent implementations.</p>
+   <p>The Candidate Recommendation exit criteria are therefore fulfilled.</p>
+   <p>In addition, the specification describes 60 optional values that may be used to
+	support multimedia or legacy keyboards. Of these, manual tests confirm that 9 of these
+	Pass in at least 2 independent implementations.</p>
+   <h3 class="heading settled" data-level="3.2" id="raw-results"><span class="secno">3.2. </span><span class="content">Raw Results</span><a class="self-link" href="#raw-results"></a></h3>
+   <p>The following tables present the result of the manual tests.</p>
+   <p>Entries marked "Pass" generate the expected value when the corresponding key is
+	pressed.</p>
+   <p>Entries marked "Fail" generate some value other than the expected value when the
+	corresponding key is pressed. Wherever possible, a Note is included that provides more
+	information about the failure.</p>
+   <p>Entries marked with a "?" have not been tested, typically because devices
+	with that key were not available (for example, because keyboards with those keys are
+	not supported on that platform).</p>
+   <p>Entries marked with "N/A" are not currently testable, typically because the devices
+	with that key do not generate separate keyboard events. E.g., FnLock.</p>
+   <h4 class="heading settled" data-level="3.2.1" id="code-attribute"><span class="secno">3.2.1. </span><span class="content">{KeyboardEvent/code}} Attribute</span><a class="self-link" href="#code-attribute"></a></h4>
+   <p>The <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code> attribute (defined in <a data-link-type="biblio" href="#biblio-uievents">[UIEvents]</a> is present in all
+		browsers tested.</p>
    <table class="data-table full-width" id="key-attribute-impl">
     <thead>
      <tr>
-      <th rowspan="2"><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#keyboardevent" id="ref-for-keyboardevent①">KeyboardEvent</a></code> attribute
+      <th rowspan="2"><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#keyboardevent" id="ref-for-keyboardevent">KeyboardEvent</a></code> attribute
       <th class="code-impl-data" colspan="3">Windows
       <th class="code-impl-data" colspan="3">macOS
       <th class="code-impl-data" colspan="2">Linux
@@ -673,7 +698,7 @@ dfn > a.self-link::before      { content: "#"; }
       <th class="code-impl-data">Firefox
     <tbody>
      <tr>
-      <td><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code>
+      <td><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
@@ -684,20 +709,9 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td>
    </table>
-   <h2 class="heading settled" data-level="5" id="code-attribute-values"><span class="secno">5. </span><span class="content"><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code> Attribute Values</span><a class="self-link" href="#code-attribute-values"></a></h2>
-   <p>Entries marked "Pass" generate the expected value when the corresponding key is pressed.</p>
-   <p>Entries marked "Fail" generate some value other than the expected value when the
-	corresponding key is pressed. For these cases, a Note is included that provides more
-	information about the failure.</p>
-   <p>Entries marked with a "?" have not been tested, typically because devices
-	with that key were not available (for example, because keyboards with those keys are
-	not supported on that platform).</p>
-   <p>Entries marked with "N/A" are not testable, typically because the devices with
-	that key do not generate separate keyboard events. E.g., FnLock.</p>
-   <h3 class="heading settled" data-level="5.1" id="standard-required-keys"><span class="secno">5.1. </span><span class="content">Standard Keys</span><a class="self-link" href="#standard-required-keys"></a></h3>
-   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code> attributes that
-		correspond to values generated by a standard keyboard layout. Support for these
-		values is required.</p>
+   <h4 class="heading settled" data-level="3.2.2" id="required-values"><span class="secno">3.2.2. </span><span class="content">Required Values</span><a class="self-link" href="#required-values"></a></h4>
+   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code> attribute values that
+		a conforming implementation must support.</p>
    <table class="data-table full-width" id="code-table-standard">
     <thead>
      <tr>
@@ -904,7 +918,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
-      <td>Safari swaps IntlBackslash with Backquote on these keyboards
+      <td>Safari swaps IntlBackslash with Backquote on keyboards that support IntlBackslash
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlRo"><code class="code">"IntlRo"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1706,17 +1720,6 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td class="code-impl-data-dark"><span>?</span>
-      <td>Need to test with Brazilian keyboard.
-     <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDecimal"><code class="code">"NumpadDecimal"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -1963,14 +1966,11 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
    </table>
-   <h3 class="heading settled" data-level="5.2" id="media-keys"><span class="secno">5.2. </span><span class="content">Media Keyboard Keys</span><a class="self-link" href="#media-keys"></a></h3>
-   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑥">code</a></code> attributes that
-		correspond to values generated by keys that are commonly found on special
-		multimedia keyboards.</p>
-   <p>Entries marked with a '?' have not been tested, typically because devices
-		with that key were not available for testing or because the key’s function
-		is intercepted and handled by the OS or browser.</p>
-   <table class="data-table full-width" id="code-table-multimedia">
+   <h4 class="heading settled" data-level="3.2.3" id="optional-values"><span class="secno">3.2.3. </span><span class="content">Optional Values</span><a class="self-link" href="#optional-values"></a></h4>
+   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑥">code</a></code> attribute values that
+		a conforming implementation may use to support special keyboards (such as
+		multimedia or legacy keyboards).</p>
+   <table class="data-table full-width" id="code-table-optional">
     <thead>
      <tr>
       <th rowspan="2"><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#" id="termref-for-①">code attribute value</a>
@@ -2232,29 +2232,6 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td>
-   </table>
-   <h3 class="heading settled" data-level="5.3" id="optional-keys"><span class="secno">5.3. </span><span class="content">Optional Keys</span><a class="self-link" href="#optional-keys"></a></h3>
-   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑦">code</a></code> attributes that
-		correspond to values generated by keys that are not found on the standard
-		keyboard layouts.</p>
-   <table class="data-table full-width" id="code-table-optional">
-    <thead>
-     <tr>
-      <th rowspan="2"><a data-link-type="dfn" href="http://www.w3.org/TR/uievents-code/#" id="termref-for-②">code attribute value</a>
-      <th class="code-impl-data" colspan="3">Windows
-      <th class="code-impl-data" colspan="3">macOS
-      <th class="code-impl-data" colspan="2">Linux
-      <th rowspan="2">Notes
-     <tr>
-      <th class="code-impl-data">Chrome
-      <th class="code-impl-data">Firefox
-      <th class="code-impl-data">Edge
-      <th class="code-impl-data">Chrome
-      <th class="code-impl-data">Firefox
-      <th class="code-impl-data">Safari
-      <th class="code-impl-data">Chrome
-      <th class="code-impl-data">Firefox
-    <tbody>
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Alphanumeric Section - Functional Keys
      <tr>
@@ -2347,6 +2324,17 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td>
+     <tr>
+      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data"><span>?</span>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td class="code-impl-data-dark"><span>?</span>
+      <td>Need to test with Brazilian keyboard.
      <tr>
       <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadEqual"><code class="code">"NumpadEqual"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2712,34 +2700,30 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-keyboardevent">
    <a href="https://www.w3.org/TR/uievents/#keyboardevent">https://www.w3.org/TR/uievents/#keyboardevent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-keyboardevent">1. Summary</a>
-    <li><a href="#ref-for-keyboardevent①">4. The code Attribute</a>
+    <li><a href="#ref-for-keyboardevent">3.2.1. {KeyboardEvent/code}} Attribute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-keyboardevent-code">
    <a href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code">https://www.w3.org/TR/uievents/#dom-keyboardevent-code</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-keyboardevent-code">1. Summary</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①">2. Introduction</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②">4. The code Attribute</a> <a href="#ref-for-dom-keyboardevent-code③">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code④">5. code Attribute Values</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑤">5.1. Standard Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑥">5.2. Media Keyboard Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑦">5.3. Optional Keys</a>
+    <li><a href="#ref-for-dom-keyboardevent-code">1. Introduction</a> <a href="#ref-for-dom-keyboardevent-code①">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code②">3.1. Summary</a>
+    <li><a href="#ref-for-dom-keyboardevent-code③">3.2.1. {KeyboardEvent/code}} Attribute</a> <a href="#ref-for-dom-keyboardevent-code④">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code⑤">3.2.2. Required Values</a>
+    <li><a href="#ref-for-dom-keyboardevent-code⑥">3.2.3. Optional Values</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-">
    <a href="http://www.w3.org/TR/uievents-code/#">http://www.w3.org/TR/uievents-code/#</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#termref-for-">5.1. Standard Keys</a>
-    <li><a href="#termref-for-">5.2. Media Keyboard Keys</a>
-    <li><a href="#termref-for-">5.3. Optional Keys</a>
+    <li><a href="#termref-for-">3.2.2. Required Values</a>
+    <li><a href="#termref-for-">3.2.3. Optional Values</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[uievents]</a> defines the following terms:
+    <a data-link-type="biblio">[UIEvents]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-keyboardevent">KeyboardEvent</span>
      <li><span class="dfn-paneled" id="term-for-dom-keyboardevent-code">code</span>
@@ -2755,7 +2739,7 @@ dfn > a.self-link::before      { content: "#"; }
   <dl>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
-   <dt id="biblio-uievents">[UIEVENTS]
+   <dt id="biblio-uievents">[UIEvents]
    <dd>Gary Kacmarcik; Travis Leithead; Doug Schepers. <a href="https://www.w3.org/TR/uievents/"><cite>UI Events</cite></a>. 30 May 2019. WD. URL: <a href="https://www.w3.org/TR/uievents/">https://www.w3.org/TR/uievents/</a>
    <dt id="biblio-uievents-code">[UIEvents-Code]
    <dd>Gary Kacmarcik; Travis Leithead. <a href="https://www.w3.org/TR/uievents-code/"><cite>UI Events KeyboardEvent code Values</cite></a>. 1 June 2017. CR. URL: <a href="https://www.w3.org/TR/uievents-code/">https://www.w3.org/TR/uievents-code/</a>
