@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet">
   <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="4121886f381565d61121a3970ddffcc898102672" name="document-revision">
+  <meta content="c453548526b98bdd87cd5911872adde4ba9bf334" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -405,21 +405,17 @@ dfn > a.self-link::before      { content: "#"; }
      <a href="#code-value-tables"><span class="secno">3</span> <span class="content">Keyboard Event <code class="idl"><span>code</span></code> Value Tables</span></a>
      <ol class="toc">
       <li>
-       <a href="#keyboard-key-codes"><span class="secno">3.1</span> <span class="content">Key Codes for Standard Keyboards</span></a>
+       <a href="#key-alphanumeric-section"><span class="secno">3.1</span> <span class="content">Alphanumeric Section</span></a>
        <ol class="toc">
-        <li>
-         <a href="#key-alphanumeric-section"><span class="secno">3.1.1</span> <span class="content">Alphanumeric Section</span></a>
-         <ol class="toc">
-          <li><a href="#key-alphanumeric-writing-system"><span class="secno">3.1.1.1</span> <span class="content">Writing System Keys</span></a>
-          <li><a href="#key-alphanumeric-functional"><span class="secno">3.1.1.2</span> <span class="content">Functional Keys</span></a>
-         </ol>
-        <li><a href="#key-controlpad-section"><span class="secno">3.1.2</span> <span class="content">Control Pad Section</span></a>
-        <li><a href="#key-arrowpad-section"><span class="secno">3.1.3</span> <span class="content">Arrow Pad Section</span></a>
-        <li><a href="#key-numpad-section"><span class="secno">3.1.4</span> <span class="content">Numpad Section</span></a>
-        <li><a href="#key-function-section"><span class="secno">3.1.5</span> <span class="content">Function Section</span></a>
-        <li><a href="#key-media"><span class="secno">3.1.6</span> <span class="content">Media Keys</span></a>
-        <li><a href="#key-legacy"><span class="secno">3.1.7</span> <span class="content">Legacy, Non-Standard and Special Keys</span></a>
+        <li><a href="#key-alphanumeric-writing-system"><span class="secno">3.1.1</span> <span class="content">Writing System Keys</span></a>
+        <li><a href="#key-alphanumeric-functional"><span class="secno">3.1.2</span> <span class="content">Functional Keys</span></a>
        </ol>
+      <li><a href="#key-controlpad-section"><span class="secno">3.2</span> <span class="content">Control Pad Section</span></a>
+      <li><a href="#key-arrowpad-section"><span class="secno">3.3</span> <span class="content">Arrow Pad Section</span></a>
+      <li><a href="#key-numpad-section"><span class="secno">3.4</span> <span class="content">Numpad Section</span></a>
+      <li><a href="#key-function-section"><span class="secno">3.5</span> <span class="content">Function Section</span></a>
+      <li><a href="#key-media"><span class="secno">3.6</span> <span class="content">Media Keys</span></a>
+      <li><a href="#key-legacy"><span class="secno">3.7</span> <span class="content">Legacy, Non-Standard and Special Keys</span></a>
      </ol>
     <li><a href="#accessibility"><span class="secno">4</span> <span class="content">Accessibility</span></a>
     <li><a href="#acknowledgements-contributors"><span class="secno">5</span> <span class="content">Acknowledgements</span></a>
@@ -508,7 +504,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
 			row "K". These row names are consistent with those given in <a data-link-type="biblio" href="#biblio-iso9995-1">[ISO9995-1]</a>.</p>
    <p>Note that many keyboards (both modern and legacy) have extra keys
 			that do not fit neatly into the above sections. Some of these keys
-			are covered in <a href="#key-media">§ 3.1.6 Media Keys</a>.</p>
+			are covered in <a href="#key-media">§ 3.6 Media Keys</a>.</p>
    <h4 class="heading settled" data-level="2.1.2" id="keyboard-101"><span class="secno">2.1.2. </span><span class="content">Standard "101" Keyboard Layout</span><a class="self-link" href="#keyboard-101"></a></h4>
    <p>The standard "101" keyboard (commonly referred to as the "US
 			layout") is the only layout that has a <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key (labeled <code class="keycap">\|</code>) above a single-row <code class="keycap">Enter</code> key. All the other
@@ -691,41 +687,40 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
 	new values will periodically need to be defined as new input devices are introduced.
 	Rather than allowing user agents to define their own <a data-link-type="dfn" href="#key-code-attribute-value" id="ref-for-key-code-attribute-value①">key code attribute values</a> (which are unlikely to be consistent across multiple user agents), bugs SHOULD be
 	filed so that this specification can be updated. </p>
-   <h3 class="heading settled" data-level="3.1" id="keyboard-key-codes"><span class="secno">3.1. </span><span class="content">Key Codes for Standard Keyboards</span><a class="self-link" href="#keyboard-key-codes"></a></h3>
    <p>This section describes the various keyboard sections in more detail and
-		defines the set of values that are appropriate for use as <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑨">code</a></code> values.</p>
+	defines the set of values that are appropriate for use as <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑨">code</a></code> values.</p>
    <p>In these tables, entries where the "Req" column contains "Yes" are necessary to
-		support standard keyboards and are required for a comforming implementation.
-		Entries with a "No" in this column are optional and may be used by implementations
-		to support special keyboards (such as multimedia or legacy keyboards).</p>
-   <h4 class="heading settled" data-level="3.1.1" id="key-alphanumeric-section"><span class="secno">3.1.1. </span><span class="content">Alphanumeric Section</span><a class="self-link" href="#key-alphanumeric-section"></a></h4>
+	support standard keyboards and are required for a comforming implementation.
+	Entries with a "No" in this column are optional and may be used by implementations
+	to support special keyboards (such as multimedia or legacy keyboards).</p>
+   <h3 class="heading settled" data-level="3.1" id="key-alphanumeric-section"><span class="secno">3.1. </span><span class="content">Alphanumeric Section</span><a class="self-link" href="#key-alphanumeric-section"></a></h3>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="alphanumeric-section">alphanumeric section</dfn> is the main section of the keyboard. It
-			contains keys that fall into two general
-			categories: <a data-link-type="dfn" href="#writing-system-keys" id="ref-for-writing-system-keys①">writing system keys</a> whose meaning
-			changes based on the current keyboard layout, and <a data-link-type="dfn" href="#functional-keys" id="ref-for-functional-keys">functional keys</a> which are (mostly) the same for all
-			layouts.</p>
-   <h5 class="heading settled" data-level="3.1.1.1" id="key-alphanumeric-writing-system"><span class="secno">3.1.1.1. </span><span class="content">Writing System Keys</span><a class="self-link" href="#key-alphanumeric-writing-system"></a></h5>
+		contains keys that fall into two general
+		categories: <a data-link-type="dfn" href="#writing-system-keys" id="ref-for-writing-system-keys①">writing system keys</a> whose meaning
+		changes based on the current keyboard layout, and <a data-link-type="dfn" href="#functional-keys" id="ref-for-functional-keys">functional keys</a> which are (mostly) the same for all
+		layouts.</p>
+   <h4 class="heading settled" data-level="3.1.1" id="key-alphanumeric-writing-system"><span class="secno">3.1.1. </span><span class="content">Writing System Keys</span><a class="self-link" href="#key-alphanumeric-writing-system"></a></h4>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="writing-system-keys">writing system keys</dfn> are those that change
-				meaning (i.e., they produce different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key④">key</a></code> values) based on the current locale and keyboard layout.</p>
+			meaning (i.e., they produce different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key④">key</a></code> values) based on the current locale and keyboard layout.</p>
    <figure id="figure-keyboard-codes-alphanum1">
      <img alt="The writing system keys" height="225" src="images/keyboard-codes-alphanum1.svg" width="653"> 
     <figcaption>The <a data-link-type="dfn" href="#writing-system-keys" id="ref-for-writing-system-keys②">writing system keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section⑧">alphanumeric section</a></figcaption>
    </figure>
    <p>This figure shows a hypothetical keyboard that combines all the <a data-link-type="dfn" href="#writing-system-keys" id="ref-for-writing-system-keys③">writing system keys</a> (shown in blue and green) found on the
-				various keyboards. Blue keys are present on all standard
-				keyboards while green keys are only available on some keyboards.</p>
+			various keyboards. Blue keys are present on all standard
+			keyboards while green keys are only available on some keyboards.</p>
    <div class="example" id="example-9b83bb2c"><a class="self-link" href="#example-9b83bb2c"></a> The <code class="code">"<a href="#code-Digit2">Digit2</a>"</code> and <code class="code">"<a href="#code-KeyQ">KeyQ</a>"</code> keys are <a data-link-type="dfn" href="#writing-system-keys" id="ref-for-writing-system-keys④">writing system keys</a> that
-					generate <code class="key">"2"</code> and <code class="key">"q"</code> when the US locale is
-					active and <code class="key">"é"</code> and <code class="key">"a"</code> when the French locale is active. </div>
+				generate <code class="key">"2"</code> and <code class="key">"q"</code> when the US locale is
+				active and <code class="key">"é"</code> and <code class="key">"a"</code> when the French locale is active. </div>
    <p>The name shown on each key is the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⓪">code</a></code> assigned to that key. Wherever possible, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①①">code</a></code> names are based on the name for the US
-				key in that position (i.e., they are based on the US keyboard
-				layout). For keys that don’t exist on the US keyboard, names
-				from the UK or Japanese layouts are used instead.</p>
+			key in that position (i.e., they are based on the US keyboard
+			layout). For keys that don’t exist on the US keyboard, names
+			from the UK or Japanese layouts are used instead.</p>
    <p>Note that there are two <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> keys in this figure: a
-				large one at the end of Row D on the 101-key layout, and a
-				smaller one between <code class="code">"<a href="#code-Quote">Quote</a>"</code> and <code class="code">"<a href="#code-Enter">Enter</a>"</code> on Row C of the
-				102-, 104- and 106-key layouts. Only one <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key
-				may be present on a keyboard layout.</p>
+			large one at the end of Row D on the 101-key layout, and a
+			smaller one between <code class="code">"<a href="#code-Quote">Quote</a>"</code> and <code class="code">"<a href="#code-Enter">Enter</a>"</code> on Row C of the
+			102-, 104- and 106-key layouts. Only one <code class="code">"<a href="#code-Backslash">Backslash</a>"</code> key
+			may be present on a keyboard layout.</p>
    <table class="data-table full-width" id="table-key-code-alphanumeric-writing-system">
     <caption>List of code values for writing system keys in the Alphanumeric section.</caption>
     <thead>
@@ -741,9 +736,9 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backslash">"Backslash"</code>
       <td class="code-table-required">Yes
-      <td>Used for both the US <code class="keycap">\|</code> (on the 101-key layout) and also for the key										located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row C of the 102-,
-										104- and 106-key layouts.
-										Labelled <code class="keycap">#~</code> on a UK (102) keyboard. 
+      <td>Used for both the US <code class="keycap">\|</code> (on the 101-key layout) and also for the key									located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row C of the 102-,
+									104- and 106-key layouts.
+									Labelled <code class="keycap">#~</code> on a UK (102) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-BracketLeft">"BracketLeft"</code>
       <td class="code-table-required">Yes
@@ -803,20 +798,20 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlBackslash">"IntlBackslash"</code>
       <td class="code-table-required">Yes
-      <td>Located between the left <code class="keycap">Shift</code> and <code class="keycap">Z</code> keys.										Labelled <code class="keycap">\|</code> on a UK keyboard. 
+      <td>Located between the left <code class="keycap">Shift</code> and <code class="keycap">Z</code> keys.									Labelled <code class="keycap">\|</code> on a UK keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlRo">"IntlRo"</code>
       <td class="code-table-required">Yes
-      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys.										Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard. 
+      <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys.									Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlYen">"IntlYen"</code>
       <td class="code-table-required">Yes
-      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys.										Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a
-										Russian keyboard. 
+      <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys.									Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a
+									Russian keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyA">"KeyA"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">a</code> on a US keyboard.										Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard. 
+      <td><code class="keycap">a</code> on a US keyboard.									Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyB">"KeyB"</code>
       <td class="code-table-required">Yes
@@ -880,7 +875,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyQ">"KeyQ"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">q</code> on a US keyboard.										Labelled <code class="keycap">a</code> on an AZERTY (e.g., French) keyboard. 
+      <td><code class="keycap">q</code> on a US keyboard.									Labelled <code class="keycap">a</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyR">"KeyR"</code>
       <td class="code-table-required">Yes
@@ -904,7 +899,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyW">"KeyW"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">w</code> on a US keyboard.										Labelled <code class="keycap">z</code> on an AZERTY (e.g., French) keyboard. 
+      <td><code class="keycap">w</code> on a US keyboard.									Labelled <code class="keycap">z</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyX">"KeyX"</code>
       <td class="code-table-required">Yes
@@ -912,12 +907,12 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyY">"KeyY"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">y</code> on a US keyboard.										Labelled <code class="keycap">z</code> on a QWERTZ (e.g., German) keyboard. 
+      <td><code class="keycap">y</code> on a US keyboard.									Labelled <code class="keycap">z</code> on a QWERTZ (e.g., German) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyZ">"KeyZ"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">z</code> on a US keyboard.										Labelled <code class="keycap">w</code> on an AZERTY (e.g., French) keyboard, and <code class="keycap">y</code> on a
-										QWERTZ (e.g., German) keyboard. 
+      <td><code class="keycap">z</code> on a US keyboard.									Labelled <code class="keycap">w</code> on an AZERTY (e.g., French) keyboard, and <code class="keycap">y</code> on a
+									QWERTZ (e.g., German) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Minus">"Minus"</code>
       <td class="code-table-required">Yes
@@ -939,17 +934,17 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td class="code-table-required">Yes
       <td><code class="keycap">/?</code> on a US keyboard.
    </table>
-   <h5 class="heading settled" data-level="3.1.1.2" id="key-alphanumeric-functional"><span class="secno">3.1.1.2. </span><span class="content">Functional Keys</span><a class="self-link" href="#key-alphanumeric-functional"></a></h5>
+   <h4 class="heading settled" data-level="3.1.2" id="key-alphanumeric-functional"><span class="secno">3.1.2. </span><span class="content">Functional Keys</span><a class="self-link" href="#key-alphanumeric-functional"></a></h4>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="functional-keys">functional keys</dfn> (<em>not to be confused with the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key①">function keys</a> described later</em>) are those keys in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section⑨">alphanumeric section</a> that provide general editing
-				functions that are common to all locales (like <code class="keycap">Shift</code>, <code class="keycap">Tab</code>, <code class="keycap">Enter</code> and <code class="keycap">Backspace</code>). With a few
-				exceptions, these keys do not change meaning based on the
-				current keyboard layout.</p>
+			functions that are common to all locales (like <code class="keycap">Shift</code>, <code class="keycap">Tab</code>, <code class="keycap">Enter</code> and <code class="keycap">Backspace</code>). With a few
+			exceptions, these keys do not change meaning based on the
+			current keyboard layout.</p>
    <figure id="figure-keyboard-codes-alphanum2">
      <img alt="The standard set of functional keys" height="225" src="images/keyboard-codes-alphanum2.svg" width="653"> 
     <figcaption>The standard set of <a data-link-type="dfn" href="#functional-keys" id="ref-for-functional-keys①">functional keys</a> in the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section①⓪">alphanumeric section</a></figcaption>
    </figure>
    <p>The <code class="code">"<a href="#code-AltRight">AltRight</a>"</code> key (highlighted in green) is the only <a data-link-type="dfn" href="#functional-keys" id="ref-for-functional-keys②">functional key</a> that does not generate the same <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-key" id="ref-for-dom-keyboardevent-key⑤">key</a></code> value for every locale. In some locales it
-				produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-Alt">Alt</a>"</code> while in others it produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-AltGraph">AltGraph</a>"</code>.</p>
+			produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-Alt">Alt</a>"</code> while in others it produces <code class="key">"<a href="http://www.w3.org/TR/uievents-key/#key-AltGraph">AltGraph</a>"</code>.</p>
    <table class="data-table full-width" id="table-key-code-alphanumeric-functional-1">
     <caption>List of code values for functional keys in the Alphanumeric section.</caption>
     <thead>
@@ -965,11 +960,11 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-AltRight">"AltRight"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.										This is labelled <code class="keycap">AltGr</code> key on many keyboard layouts. 
+      <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.									This is labelled <code class="keycap">AltGr</code> key on many keyboard layouts. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backspace">"Backspace"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">Backspace</code> or <code class="keycap">⌫</code>.										Labelled <code class="keycap">Delete</code> on Apple keyboards. 
+      <td><code class="keycap">Backspace</code> or <code class="keycap">⌫</code>.									Labelled <code class="keycap">Delete</code> on Apple keyboards. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-CapsLock">"CapsLock"</code>
       <td class="code-table-required">Yes
@@ -1016,11 +1011,11 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td><code class="keycap">Tab</code> or <code class="keycap">⇥</code>
    </table>
    <p>On some keyboards (notably Japanese and Korean) the spacebar is
-				reduced in size to make room for extra keys on the bottom row (Row A).
-				These keys typically allow the users to change the current input
-				mode. Note that even though some of these Japanese and Korean
-				keys occupy the same physical location on the keyboard, they use
-				different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①④">code</a></code> values.</p>
+			reduced in size to make room for extra keys on the bottom row (Row A).
+			These keys typically allow the users to change the current input
+			mode. Note that even though some of these Japanese and Korean
+			keys occupy the same physical location on the keyboard, they use
+			different <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①④">code</a></code> values.</p>
    <figure id="figure-function-row-a">
      <img alt="Comparison of the lower row of functional keys" height="160" src="images/functional-row-a.svg" width="700"> 
     <figcaption>Comparison of the lower row of <a data-link-type="dfn" href="#functional-keys" id="ref-for-functional-keys③">functional keys</a> on different keyboards</figcaption>
@@ -1067,10 +1062,10 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td>Japanese: <code class="keycap">無変換</code> (<span class="unicode">muhenkan</span>)
    </table>
    <p>On Apple keyboards, some keys on the bottom row are omitted and
-				others are arranged in a different order.</p>
-   <h4 class="heading settled" data-level="3.1.2" id="key-controlpad-section"><span class="secno">3.1.2. </span><span class="content">Control Pad Section</span><a class="self-link" href="#key-controlpad-section"></a></h4>
+			others are arranged in a different order.</p>
+   <h3 class="heading settled" data-level="3.2" id="key-controlpad-section"><span class="secno">3.2. </span><span class="content">Control Pad Section</span><a class="self-link" href="#key-controlpad-section"></a></h3>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="control-pad">control pad</dfn> section of the keyboard is the set of (usually 6) keys
-			that perform navigating and editing operations, for example, <code class="keycap">Home</code>, <code class="keycap">PageUp</code> and <code class="keycap">Insert</code>.</p>
+		that perform navigating and editing operations, for example, <code class="keycap">Home</code>, <code class="keycap">PageUp</code> and <code class="keycap">Insert</code>.</p>
    <figure id="figure-control-pad">
      <img alt="Standard Control Pad layouts" height="135" src="images/control-pad.svg" width="495"> 
     <figcaption>Standard <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad⑧">control pad</a> layouts</figcaption>
@@ -1086,8 +1081,8 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Delete">"Delete"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">⌦</code>. The forward delete key.								Note that on Apple keyboards, the key labelled <code class="keycap">Delete</code> on the main part of
-								the keyboard should be encoded as <code class="code">"<a href="#code-Backspace">Backspace</a>"</code>. 
+      <td><code class="keycap">⌦</code>. The forward delete key.							Note that on Apple keyboards, the key labelled <code class="keycap">Delete</code> on the main part of
+							the keyboard should be encoded as <code class="code">"<a href="#code-Backspace">Backspace</a>"</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-End">"End"</code>
       <td class="code-table-required">Yes
@@ -1114,10 +1109,10 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td><code class="keycap">Page Up</code>, <code class="keycap">PgUp</code> or <code class="keycap">⇞</code>
    </table>
    <p class="note" role="note"> The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑦">code</a></code> for the <code class="keycap">Fn</code> key (found on some
-			Apple keyboards) is defined below in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑧">function section</a>. </p>
-   <h4 class="heading settled" data-level="3.1.3" id="key-arrowpad-section"><span class="secno">3.1.3. </span><span class="content">Arrow Pad Section</span><a class="self-link" href="#key-arrowpad-section"></a></h4>
+		Apple keyboards) is defined below in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑧">function section</a>. </p>
+   <h3 class="heading settled" data-level="3.3" id="key-arrowpad-section"><span class="secno">3.3. </span><span class="content">Arrow Pad Section</span><a class="self-link" href="#key-arrowpad-section"></a></h3>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="arrow-pad">arrow pad</dfn> contains the 4 arrow keys. The keys are commonly
-			arranged in an "upside-down T" configuration.</p>
+		arranged in an "upside-down T" configuration.</p>
    <figure id="figure-arrow-pad">
      <img alt="Standard Arrow Pad layout" height="115" src="images/arrow-pad.svg" width="160"> 
     <figcaption>Standard <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad⑧">arrow pad</a> layout</figcaption>
@@ -1147,29 +1142,29 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td class="code-table-required">Yes
       <td><code class="keycap">↑</code>
    </table>
-   <h4 class="heading settled" data-level="3.1.4" id="key-numpad-section"><span class="secno">3.1.4. </span><span class="content">Numpad Section</span><a class="self-link" href="#key-numpad-section"></a></h4>
+   <h3 class="heading settled" data-level="3.4" id="key-numpad-section"><span class="secno">3.4. </span><span class="content">Numpad Section</span><a class="self-link" href="#key-numpad-section"></a></h3>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="numpad">numpad</dfn> section is the set of keys on the keyboard arranged in
-			a grid like a calculator or mobile phone. This section contains numeric and
-			mathematical operator keys. Often this section will contain a <code class="keycap">NumLock</code> key which causes the keys to switch between the standard numeric functions
-			and mimicking the keys of the <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad⑨">control pad</a> and <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad⑨">arrow pad</a>.
-			Laptop computers and compact keyboards will commonly omit these
-			keys to save space.</p>
+		a grid like a calculator or mobile phone. This section contains numeric and
+		mathematical operator keys. Often this section will contain a <code class="keycap">NumLock</code> key which causes the keys to switch between the standard numeric functions
+		and mimicking the keys of the <a data-link-type="dfn" href="#control-pad" id="ref-for-control-pad⑨">control pad</a> and <a data-link-type="dfn" href="#arrow-pad" id="ref-for-arrow-pad⑨">arrow pad</a>.
+		Laptop computers and compact keyboards will commonly omit these
+		keys to save space.</p>
    <p>A <dfn data-dfn-type="dfn" data-noexport id="keypad">keypad<a class="self-link" href="#keypad"></a></dfn> is an alternate term for <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⓪">numpad</a>.</p>
    <figure id="figure-numpad">
      <img alt="Standard Numpad layouts" height="247" src="images/numpad.svg" width="606"> 
     <figcaption>Standard <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①①">numpad</a> Layouts</figcaption>
    </figure>
    <p>The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑨">code</a></code> values in this section should also be
-			used for phone keypads and remote control devices that
-			arrange number keys in a grid.</p>
+		used for phone keypads and remote control devices that
+		arrange number keys in a grid.</p>
    <figure id="figure-numpad-mobile">
      <img alt="Standard mobile keypad layout" height="180" src="images/numpad-mobile.svg" width="135"> 
     <figcaption>Standard Mobile Keypad Layout</figcaption>
    </figure>
    <p>The standard <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①②">numpad</a> is sometimes extended with additional keys for
-			parentheses, operators, hexadecimal symbols, or calculator functions
-			(like <code class="keycap">Backspace</code>). Some of the commonly added keys are listed
-			in the table below.</p>
+		parentheses, operators, hexadecimal symbols, or calculator functions
+		(like <code class="keycap">Backspace</code>). Some of the commonly added keys are listed
+		in the table below.</p>
    <table class="data-table full-width" id="table-key-code-numpad">
     <caption>List of code values for keys in the Numpad section.</caption>
     <thead>
@@ -1189,7 +1184,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad1">"Numpad1"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or											remote control 
+      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or										remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad2">"Numpad2"</code>
       <td class="code-table-required">Yes
@@ -1213,7 +1208,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad7">"Numpad7"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone											or remote control 
+      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone										or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad8">"Numpad8"</code>
       <td class="code-table-required">Yes
@@ -1221,7 +1216,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad9">"Numpad9"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone											or remote control 
+      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone										or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadAdd">"NumpadAdd"</code>
       <td class="code-table-required">Yes
@@ -1234,7 +1229,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td class="code-table-code"><code class="code" id="code-NumpadClear">"NumpadClear"</code>
       <td class="code-table-required">No
       <td><code class="keycap">C</code> or <code class="keycap">AC</code> (All Clear). Also for use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①④">numpads</a> that have a <code class="keycap">Clear</code> key that is separate from the <code class="keycap">NumLock</code> key. On the Mac, the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑤">numpad</a> <code class="keycap">Clear</code> key should always
-											be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>. 
+										be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadClearEntry">"NumpadClearEntry"</code>
       <td class="code-table-required">No
@@ -1242,11 +1237,11 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadComma">"NumpadComma"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator											is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>. 
+      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator										is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDecimal">"NumpadDecimal"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g.,											Brazil), this key may generate a <code class="keycap">,</code>. 
+      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g.,										Brazil), this key may generate a <code class="keycap">,</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDivide">"NumpadDivide"</code>
       <td class="code-table-required">Yes
@@ -1262,7 +1257,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadHash">"NumpadHash"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found											below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key. 
+      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found										below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryAdd">"NumpadMemoryAdd"</code>
       <td class="code-table-required">No
@@ -1286,7 +1281,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMultiply">"NumpadMultiply"</code>
       <td class="code-table-required">Yes
-      <td><code class="keycap">*</code> on a keyboard. For use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑥">numpads</a> that provide mathematical											operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls. 
+      <td><code class="keycap">*</code> on a keyboard. For use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑥">numpads</a> that provide mathematical										operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadParenLeft">"NumpadParenLeft"</code>
       <td class="code-table-required">No
@@ -1298,30 +1293,30 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadStar">"NumpadStar"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">*</code> on a phone or remote control device.											This key is typically found below the <code class="keycap">7</code> key and to the left of
-											the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on
-											numeric keypads. 
+      <td><code class="keycap">*</code> on a phone or remote control device.										This key is typically found below the <code class="keycap">7</code> key and to the left of
+										the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on
+										numeric keypads. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadSubtract">"NumpadSubtract"</code>
       <td class="code-table-required">Yes
       <td><code class="keycap">-</code>
    </table>
    <p>For <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑦">numpads</a> that provide keys not listed here, a <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②①">code</a></code> value string should be created by starting
-			with "Numpad" and appending an appropriate description of the key.</p>
-   <h4 class="heading settled" data-level="3.1.5" id="key-function-section"><span class="secno">3.1.5. </span><span class="content">Function Section</span><a class="self-link" href="#key-function-section"></a></h4>
+		with "Numpad" and appending an appropriate description of the key.</p>
+   <h3 class="heading settled" data-level="3.5" id="key-function-section"><span class="secno">3.5. </span><span class="content">Function Section</span><a class="self-link" href="#key-function-section"></a></h3>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="function-section">function section</dfn> runs along the top of the keyboard (above
-			the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section①①">alphanumeric section</a>) and
-			contains the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key②">function keys</a> and a few additional special keys
-			(for example, <code class="keycap">Esc</code> and <code class="keycap">Print Screen</code>).</p>
+		the <a data-link-type="dfn" href="#alphanumeric-section" id="ref-for-alphanumeric-section①①">alphanumeric section</a>) and
+		contains the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key②">function keys</a> and a few additional special keys
+		(for example, <code class="keycap">Esc</code> and <code class="keycap">Print Screen</code>).</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="function-key">function key</dfn> is any of the keys labelled <code class="keycap">F1</code> ... <code class="keycap">F12</code> that an application or operating system can associate with a custom function
-			or action.</p>
+		or action.</p>
    <p>On some keyboards (especially those found on laptops or other
-			portable computers), the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key③">function keys</a> (<code class="keycap">F1</code> ... <code class="keycap">F12</code>) are defined to have other primary functions (like
-			controlling display brightness or audio volume) and require that a
-			separate <code class="keycap">Fn</code> key be pressed to make them act as function
-			keys. Unfortunately, the primary functions assigned to these keys
-			varies widely from one manufacturer to the next. Because of this,
-			the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②②">code</a></code> is always set to the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key④">function key</a> name.</p>
+		portable computers), the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key③">function keys</a> (<code class="keycap">F1</code> ... <code class="keycap">F12</code>) are defined to have other primary functions (like
+		controlling display brightness or audio volume) and require that a
+		separate <code class="keycap">Fn</code> key be pressed to make them act as function
+		keys. Unfortunately, the primary functions assigned to these keys
+		varies widely from one manufacturer to the next. Because of this,
+		the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②②">code</a></code> is always set to the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key④">function key</a> name.</p>
    <table class="data-table full-width" id="table-key-code-function">
     <caption>List of code values for keys in the Function section.</caption>
     <thead>
@@ -1385,12 +1380,12 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Fn">"Fn"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate									code. Most keyboards do not place this key in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑨">function section</a>, but it is
-									included here to keep it with related keys. 
+      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate								code. Most keyboards do not place this key in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑨">function section</a>, but it is
+								included here to keep it with related keys. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-FnLock">"FnLock"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft									Natural Keyboard. 
+      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft								Natural Keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-PrintScreen">"PrintScreen"</code>
       <td class="code-table-required">Yes
@@ -1405,22 +1400,22 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td><code class="keycap">Pause Break</code>
    </table>
    <p>For keyboards that provide more than 12 <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑤">function keys</a>, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②④">code</a></code> value follows the pattern shown above with
-			"F" followed by the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑥">function key</a> number - <code class="code">"F13"</code>, <code class="code">"F14"</code>, <code class="code">"F15"</code>, and so on.</p>
+		"F" followed by the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑥">function key</a> number - <code class="code">"F13"</code>, <code class="code">"F14"</code>, <code class="code">"F15"</code>, and so on.</p>
    <p class="note" role="note"> Apple keyboards may have <code class="keycap">Eject</code> or <code class="keycap">Power</code> keys in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①⓪">function section</a>. The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑤">code</a></code> values for these
-			keys are defined in <a href="#key-media">§ 3.1.6 Media Keys</a>. </p>
-   <h4 class="heading settled" data-level="3.1.6" id="key-media"><span class="secno">3.1.6. </span><span class="content">Media Keys</span><a class="self-link" href="#key-media"></a></h4>
+		keys are defined in <a href="#key-media">§ 3.6 Media Keys</a>. </p>
+   <h3 class="heading settled" data-level="3.6" id="key-media"><span class="secno">3.6. </span><span class="content">Media Keys</span><a class="self-link" href="#key-media"></a></h3>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="media-keys">Media keys</dfn> are extra keys added to a keyboard that provide <em>media</em> related functionality like play, pause or volume control. These keys do not
-			have a standard location on the keyboard so keyboards from different
-			manufacturers are likely to have a different arrangement of keys or a
-			completely different sets of keys.</p>
+		have a standard location on the keyboard so keyboards from different
+		manufacturers are likely to have a different arrangement of keys or a
+		completely different sets of keys.</p>
    <p><a data-link-type="dfn" href="#media-keys" id="ref-for-media-keys">Media keys</a> are often distinct from
-			normal typing keys in appearance and may be recessed in the
-			keyboard.</p>
+		normal typing keys in appearance and may be recessed in the
+		keyboard.</p>
    <p>On laptop keyboards, these keys are often merged with the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑦">function keys</a>, with the <a data-link-type="dfn" href="#media-keys" id="ref-for-media-keys①">media key</a> interpretation being
-			the primary function of the key and the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑧">function key</a> interpretation requiring the <code class="keycap">Fn</code> key to be pressed at the
-			same time. In this configuration the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑥">code</a></code> should
-			be set to match the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑨">function key</a> (<code class="code">"<a href="#code-F1">F1</a>"</code> ... <code class="code">"<a href="#code-F12">F12</a>"</code>).
-			When the keys are merged in this fashion, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑦">code</a></code> values are taken from the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key①⓪">function key</a> value because the <a data-link-type="dfn" href="#media-keys" id="ref-for-media-keys②">media key</a> value is not consistent across keyboards.</p>
+		the primary function of the key and the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑧">function key</a> interpretation requiring the <code class="keycap">Fn</code> key to be pressed at the
+		same time. In this configuration the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑥">code</a></code> should
+		be set to match the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑨">function key</a> (<code class="code">"<a href="#code-F1">F1</a>"</code> ... <code class="code">"<a href="#code-F12">F12</a>"</code>).
+		When the keys are merged in this fashion, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑦">code</a></code> values are taken from the <a data-link-type="dfn" href="#function-key" id="ref-for-function-key①⓪">function key</a> value because the <a data-link-type="dfn" href="#media-keys" id="ref-for-media-keys②">media key</a> value is not consistent across keyboards.</p>
    <table class="data-table full-width" id="table-key-code-media">
     <caption>List of code values for media keys.</caption>
     <thead>
@@ -1460,7 +1455,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Eject">"Eject"</code>
       <td class="code-table-required">No
-      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①①">function											section</a> on some Apple keyboards. 
+      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①①">function										section</a> on some Apple keyboards. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchApp1">"LaunchApp1"</code>
       <td class="code-table-required">No
@@ -1496,7 +1491,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Power">"Power"</code>
       <td class="code-table-required">No
-      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①②">function section</a> on some Apple keyboards,											replacing the <code class="keycap">Eject</code> key. 
+      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①②">function section</a> on some Apple keyboards,										replacing the <code class="keycap">Eject</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Sleep">"Sleep"</code>
       <td class="code-table-required">No
@@ -1518,9 +1513,9 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td class="code-table-required">No
       <td>
    </table>
-   <h4 class="heading settled" data-level="3.1.7" id="key-legacy"><span class="secno">3.1.7. </span><span class="content">Legacy, Non-Standard and Special Keys</span><a class="self-link" href="#key-legacy"></a></h4>
+   <h3 class="heading settled" data-level="3.7" id="key-legacy"><span class="secno">3.7. </span><span class="content">Legacy, Non-Standard and Special Keys</span><a class="self-link" href="#key-legacy"></a></h3>
    <p>These keys are not found on modern standard keyboards. They are
-			listed here for reference purposes.</p>
+		listed here for reference purposes.</p>
    <table class="data-table full-width" id="table-key-code-legacy-modifier">
     <caption>List of code values for legacy modifier keys.</caption>
     <thead>
@@ -1629,10 +1624,10 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
       <td>Use for dedicated <code class="keycap">カタカナ</code> key found on some Japanese word processing keyboards.
    </table>
    <p>And finally, the following <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③③">code</a></code> value should only
-			be used when the corresponding key does not correspond to any of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③④">code</a></code> values given elsewhere in this specification.
-			This value is appropriate for use with virtual keyboards that do not
-			have their keys arranged in a way that corresponds to those on a
-			physical keyboard.</p>
+		be used when the corresponding key does not correspond to any of the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③④">code</a></code> values given elsewhere in this specification.
+		This value is appropriate for use with virtual keyboards that do not
+		have their keys arranged in a way that corresponds to those on a
+		physical keyboard.</p>
    <table class="data-table full-width" id="table-key-code-special">
     <caption>List of special code values.</caption>
     <thead>
@@ -1644,11 +1639,11 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
      <tr>
       <td class="code-table-code"><code class="code" id="code-Unidentified">"Unidentified"</code>
       <td class="code-table-required">Yes
-      <td>This value code should be used when no other								value given in this specification is appropriate. 
+      <td>This value code should be used when no other							value given in this specification is appropriate. 
    </table>
    <p class="warning"> Conforming implementations MUST only use <code class="code">"<a href="#code-Unidentified">Unidentified</a>"</code> as a key code
-			when there is no way for the implementation to determine the key code.
-			Exposing only this value MUST NOT indicate a conforming implementation. </p>
+		when there is no way for the implementation to determine the key code.
+		Exposing only this value MUST NOT indicate a conforming implementation. </p>
    <h2 class="heading settled" data-level="4" id="accessibility"><span class="secno">4. </span><span class="content">Accessibility</span><a class="self-link" href="#accessibility"></a></h2>
    <p>This specification simply defines a set of values that are valid for use in the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⑥">code</a></code> attribute. Thus, it does not introduce any features that have
 	accessibility concerns.</p>
@@ -1698,31 +1693,31 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#alphanumeric-section">alphanumeric section</a><span>, in § 3.1.1</span>
-   <li><a href="#arrow-pad">arrow pad</a><span>, in § 3.1.3</span>
-   <li><a href="#control-pad">control pad</a><span>, in § 3.1.2</span>
-   <li><a href="#functional-keys">functional keys</a><span>, in § 3.1.1.2</span>
-   <li><a href="#function-key">function key</a><span>, in § 3.1.5</span>
-   <li><a href="#function-section">function section</a><span>, in § 3.1.5</span>
+   <li><a href="#alphanumeric-section">alphanumeric section</a><span>, in § 3.1</span>
+   <li><a href="#arrow-pad">arrow pad</a><span>, in § 3.3</span>
+   <li><a href="#control-pad">control pad</a><span>, in § 3.2</span>
+   <li><a href="#functional-keys">functional keys</a><span>, in § 3.1.2</span>
+   <li><a href="#function-key">function key</a><span>, in § 3.5</span>
+   <li><a href="#function-section">function section</a><span>, in § 3.5</span>
    <li><a href="#key-code-attribute-value">key code attribute value</a><span>, in § 3</span>
-   <li><a href="#keypad">keypad</a><span>, in § 3.1.4</span>
-   <li><a href="#media-keys">Media keys</a><span>, in § 3.1.6</span>
-   <li><a href="#numpad">numpad</a><span>, in § 3.1.4</span>
-   <li><a href="#writing-system-keys">writing system keys</a><span>, in § 3.1.1.1</span>
+   <li><a href="#keypad">keypad</a><span>, in § 3.4</span>
+   <li><a href="#media-keys">Media keys</a><span>, in § 3.6</span>
+   <li><a href="#numpad">numpad</a><span>, in § 3.4</span>
+   <li><a href="#writing-system-keys">writing system keys</a><span>, in § 3.1.1</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-interface-keyboardevent">
    <a href="http://www.w3.org/TR/uievents/#interface-keyboardevent">http://www.w3.org/TR/uievents/#interface-keyboardevent</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-interface-keyboardevent">1.1. Stylistic Conventions</a>
     <li><a href="#ref-for-interface-keyboardevent①">3. Keyboard Event code Value Tables</a>
-    <li><a href="#ref-for-interface-keyboardevent②">3.1.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-interface-keyboardevent③">3.1.1.2. Functional Keys</a> <a href="#ref-for-interface-keyboardevent④">(2)</a>
-    <li><a href="#ref-for-interface-keyboardevent⑤">3.1.2. Control Pad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑥">3.1.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑦">3.1.4. Numpad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑧">3.1.5. Function Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑨">3.1.6. Media Keys</a>
-    <li><a href="#ref-for-interface-keyboardevent①⓪">3.1.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-interface-keyboardevent①①">(2)</a> <a href="#ref-for-interface-keyboardevent①②">(3)</a> <a href="#ref-for-interface-keyboardevent①③">(4)</a> <a href="#ref-for-interface-keyboardevent①④">(5)</a>
+    <li><a href="#ref-for-interface-keyboardevent②">3.1.1. Writing System Keys</a>
+    <li><a href="#ref-for-interface-keyboardevent③">3.1.2. Functional Keys</a> <a href="#ref-for-interface-keyboardevent④">(2)</a>
+    <li><a href="#ref-for-interface-keyboardevent⑤">3.2. Control Pad Section</a>
+    <li><a href="#ref-for-interface-keyboardevent⑥">3.3. Arrow Pad Section</a>
+    <li><a href="#ref-for-interface-keyboardevent⑦">3.4. Numpad Section</a>
+    <li><a href="#ref-for-interface-keyboardevent⑧">3.5. Function Section</a>
+    <li><a href="#ref-for-interface-keyboardevent⑨">3.6. Media Keys</a>
+    <li><a href="#ref-for-interface-keyboardevent①⓪">3.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-interface-keyboardevent①①">(2)</a> <a href="#ref-for-interface-keyboardevent①②">(3)</a> <a href="#ref-for-interface-keyboardevent①③">(4)</a> <a href="#ref-for-interface-keyboardevent①④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-keyboardevent-code">
@@ -1730,16 +1725,15 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
    <ul>
     <li><a href="#ref-for-dom-keyboardevent-code">1. Introduction</a> <a href="#ref-for-dom-keyboardevent-code①">(2)</a> <a href="#ref-for-dom-keyboardevent-code②">(3)</a>
     <li><a href="#ref-for-dom-keyboardevent-code③">1.1. Stylistic Conventions</a> <a href="#ref-for-dom-keyboardevent-code④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑤">3. Keyboard Event code Value Tables</a> <a href="#ref-for-dom-keyboardevent-code⑥">(2)</a> <a href="#ref-for-dom-keyboardevent-code⑦">(3)</a> <a href="#ref-for-dom-keyboardevent-code⑧">(4)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑨">3.1. Key Codes for Standard Keyboards</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⓪">3.1.1.1. Writing System Keys</a> <a href="#ref-for-dom-keyboardevent-code①①">(2)</a> <a href="#ref-for-dom-keyboardevent-code①②">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①③">3.1.1.2. Functional Keys</a> <a href="#ref-for-dom-keyboardevent-code①④">(2)</a> <a href="#ref-for-dom-keyboardevent-code①⑤">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑥">3.1.2. Control Pad Section</a> <a href="#ref-for-dom-keyboardevent-code①⑦">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑧">3.1.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑨">3.1.4. Numpad Section</a> <a href="#ref-for-dom-keyboardevent-code②⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code②①">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②②">3.1.5. Function Section</a> <a href="#ref-for-dom-keyboardevent-code②③">(2)</a> <a href="#ref-for-dom-keyboardevent-code②④">(3)</a> <a href="#ref-for-dom-keyboardevent-code②⑤">(4)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②⑥">3.1.6. Media Keys</a> <a href="#ref-for-dom-keyboardevent-code②⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-code②⑧">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②⑨">3.1.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-dom-keyboardevent-code③⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code③①">(3)</a> <a href="#ref-for-dom-keyboardevent-code③②">(4)</a> <a href="#ref-for-dom-keyboardevent-code③③">(5)</a> <a href="#ref-for-dom-keyboardevent-code③④">(6)</a> <a href="#ref-for-dom-keyboardevent-code③⑤">(7)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code⑤">3. Keyboard Event code Value Tables</a> <a href="#ref-for-dom-keyboardevent-code⑥">(2)</a> <a href="#ref-for-dom-keyboardevent-code⑦">(3)</a> <a href="#ref-for-dom-keyboardevent-code⑧">(4)</a> <a href="#ref-for-dom-keyboardevent-code⑨">(5)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①⓪">3.1.1. Writing System Keys</a> <a href="#ref-for-dom-keyboardevent-code①①">(2)</a> <a href="#ref-for-dom-keyboardevent-code①②">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①③">3.1.2. Functional Keys</a> <a href="#ref-for-dom-keyboardevent-code①④">(2)</a> <a href="#ref-for-dom-keyboardevent-code①⑤">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①⑥">3.2. Control Pad Section</a> <a href="#ref-for-dom-keyboardevent-code①⑦">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①⑧">3.3. Arrow Pad Section</a>
+    <li><a href="#ref-for-dom-keyboardevent-code①⑨">3.4. Numpad Section</a> <a href="#ref-for-dom-keyboardevent-code②⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code②①">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code②②">3.5. Function Section</a> <a href="#ref-for-dom-keyboardevent-code②③">(2)</a> <a href="#ref-for-dom-keyboardevent-code②④">(3)</a> <a href="#ref-for-dom-keyboardevent-code②⑤">(4)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code②⑥">3.6. Media Keys</a> <a href="#ref-for-dom-keyboardevent-code②⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-code②⑧">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code②⑨">3.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-dom-keyboardevent-code③⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code③①">(3)</a> <a href="#ref-for-dom-keyboardevent-code③②">(4)</a> <a href="#ref-for-dom-keyboardevent-code③③">(5)</a> <a href="#ref-for-dom-keyboardevent-code③④">(6)</a> <a href="#ref-for-dom-keyboardevent-code③⑤">(7)</a>
     <li><a href="#ref-for-dom-keyboardevent-code③⑥">4. Accessibility</a>
    </ul>
   </aside>
@@ -1749,8 +1743,8 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-dom-keyboardevent-key">1. Introduction</a>
     <li><a href="#ref-for-dom-keyboardevent-key①">1.1. Stylistic Conventions</a> <a href="#ref-for-dom-keyboardevent-key②">(2)</a>
     <li><a href="#ref-for-dom-keyboardevent-key③">2.4. Virtual Keyboards and Chording Keyboards</a>
-    <li><a href="#ref-for-dom-keyboardevent-key④">3.1.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑤">3.1.1.2. Functional Keys</a>
+    <li><a href="#ref-for-dom-keyboardevent-key④">3.1.1. Writing System Keys</a>
+    <li><a href="#ref-for-dom-keyboardevent-key⑤">3.1.2. Functional Keys</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-key-value-tables">
@@ -1818,24 +1812,24 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-alphanumeric-section⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
     <li><a href="#ref-for-alphanumeric-section⑥">2.1.7. Japanese "106" Keyboard Layout</a>
     <li><a href="#ref-for-alphanumeric-section⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-alphanumeric-section⑧">3.1.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-alphanumeric-section⑨">3.1.1.2. Functional Keys</a> <a href="#ref-for-alphanumeric-section①⓪">(2)</a>
-    <li><a href="#ref-for-alphanumeric-section①①">3.1.5. Function Section</a>
+    <li><a href="#ref-for-alphanumeric-section⑧">3.1.1. Writing System Keys</a>
+    <li><a href="#ref-for-alphanumeric-section⑨">3.1.2. Functional Keys</a> <a href="#ref-for-alphanumeric-section①⓪">(2)</a>
+    <li><a href="#ref-for-alphanumeric-section①①">3.5. Function Section</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="writing-system-keys">
    <b><a href="#writing-system-keys">#writing-system-keys</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-writing-system-keys">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-writing-system-keys①">3.1.1. Alphanumeric Section</a>
-    <li><a href="#ref-for-writing-system-keys②">3.1.1.1. Writing System Keys</a> <a href="#ref-for-writing-system-keys③">(2)</a> <a href="#ref-for-writing-system-keys④">(3)</a>
+    <li><a href="#ref-for-writing-system-keys①">3.1. Alphanumeric Section</a>
+    <li><a href="#ref-for-writing-system-keys②">3.1.1. Writing System Keys</a> <a href="#ref-for-writing-system-keys③">(2)</a> <a href="#ref-for-writing-system-keys④">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="functional-keys">
    <b><a href="#functional-keys">#functional-keys</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-functional-keys">3.1.1. Alphanumeric Section</a>
-    <li><a href="#ref-for-functional-keys①">3.1.1.2. Functional Keys</a> <a href="#ref-for-functional-keys②">(2)</a> <a href="#ref-for-functional-keys③">(3)</a>
+    <li><a href="#ref-for-functional-keys">3.1. Alphanumeric Section</a>
+    <li><a href="#ref-for-functional-keys①">3.1.2. Functional Keys</a> <a href="#ref-for-functional-keys②">(2)</a> <a href="#ref-for-functional-keys③">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="control-pad">
@@ -1849,8 +1843,8 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-control-pad⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
     <li><a href="#ref-for-control-pad⑥">2.1.7. Japanese "106" Keyboard Layout</a>
     <li><a href="#ref-for-control-pad⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-control-pad⑧">3.1.2. Control Pad Section</a>
-    <li><a href="#ref-for-control-pad⑨">3.1.4. Numpad Section</a>
+    <li><a href="#ref-for-control-pad⑧">3.2. Control Pad Section</a>
+    <li><a href="#ref-for-control-pad⑨">3.4. Numpad Section</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="arrow-pad">
@@ -1864,8 +1858,8 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-arrow-pad⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
     <li><a href="#ref-for-arrow-pad⑥">2.1.7. Japanese "106" Keyboard Layout</a>
     <li><a href="#ref-for-arrow-pad⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-arrow-pad⑧">3.1.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-arrow-pad⑨">3.1.4. Numpad Section</a>
+    <li><a href="#ref-for-arrow-pad⑧">3.3. Arrow Pad Section</a>
+    <li><a href="#ref-for-arrow-pad⑨">3.4. Numpad Section</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="numpad">
@@ -1878,7 +1872,7 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-numpad④">2.1.5. Korean "103" Keyboard Layout</a>
     <li><a href="#ref-for-numpad⑤">2.1.6. Brazilian "104" Keyboard Layout</a> <a href="#ref-for-numpad⑥">(2)</a> <a href="#ref-for-numpad⑦">(3)</a> <a href="#ref-for-numpad⑧">(4)</a>
     <li><a href="#ref-for-numpad⑨">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad①⓪">3.1.4. Numpad Section</a> <a href="#ref-for-numpad①①">(2)</a> <a href="#ref-for-numpad①②">(3)</a> <a href="#ref-for-numpad①③">(4)</a> <a href="#ref-for-numpad①④">(5)</a> <a href="#ref-for-numpad①⑤">(6)</a> <a href="#ref-for-numpad①⑥">(7)</a> <a href="#ref-for-numpad①⑦">(8)</a>
+    <li><a href="#ref-for-numpad①⓪">3.4. Numpad Section</a> <a href="#ref-for-numpad①①">(2)</a> <a href="#ref-for-numpad①②">(3)</a> <a href="#ref-for-numpad①③">(4)</a> <a href="#ref-for-numpad①④">(5)</a> <a href="#ref-for-numpad①⑤">(6)</a> <a href="#ref-for-numpad①⑥">(7)</a> <a href="#ref-for-numpad①⑦">(8)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="function-section">
@@ -1891,24 +1885,24 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <li><a href="#ref-for-function-section⑤">2.1.5. Korean "103" Keyboard Layout</a>
     <li><a href="#ref-for-function-section⑥">2.1.6. Brazilian "104" Keyboard Layout</a>
     <li><a href="#ref-for-function-section⑦">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section⑧">3.1.2. Control Pad Section</a>
-    <li><a href="#ref-for-function-section⑨">3.1.5. Function Section</a> <a href="#ref-for-function-section①⓪">(2)</a>
-    <li><a href="#ref-for-function-section①①">3.1.6. Media Keys</a> <a href="#ref-for-function-section①②">(2)</a>
+    <li><a href="#ref-for-function-section⑧">3.2. Control Pad Section</a>
+    <li><a href="#ref-for-function-section⑨">3.5. Function Section</a> <a href="#ref-for-function-section①⓪">(2)</a>
+    <li><a href="#ref-for-function-section①①">3.6. Media Keys</a> <a href="#ref-for-function-section①②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="function-key">
    <b><a href="#function-key">#function-key</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-function-key">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-function-key①">3.1.1.2. Functional Keys</a>
-    <li><a href="#ref-for-function-key②">3.1.5. Function Section</a> <a href="#ref-for-function-key③">(2)</a> <a href="#ref-for-function-key④">(3)</a> <a href="#ref-for-function-key⑤">(4)</a> <a href="#ref-for-function-key⑥">(5)</a>
-    <li><a href="#ref-for-function-key⑦">3.1.6. Media Keys</a> <a href="#ref-for-function-key⑧">(2)</a> <a href="#ref-for-function-key⑨">(3)</a> <a href="#ref-for-function-key①⓪">(4)</a>
+    <li><a href="#ref-for-function-key①">3.1.2. Functional Keys</a>
+    <li><a href="#ref-for-function-key②">3.5. Function Section</a> <a href="#ref-for-function-key③">(2)</a> <a href="#ref-for-function-key④">(3)</a> <a href="#ref-for-function-key⑤">(4)</a> <a href="#ref-for-function-key⑥">(5)</a>
+    <li><a href="#ref-for-function-key⑦">3.6. Media Keys</a> <a href="#ref-for-function-key⑧">(2)</a> <a href="#ref-for-function-key⑨">(3)</a> <a href="#ref-for-function-key①⓪">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="media-keys">
    <b><a href="#media-keys">#media-keys</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-media-keys">3.1.6. Media Keys</a> <a href="#ref-for-media-keys①">(2)</a> <a href="#ref-for-media-keys②">(3)</a>
+    <li><a href="#ref-for-media-keys">3.6. Media Keys</a> <a href="#ref-for-media-keys①">(2)</a> <a href="#ref-for-media-keys②">(3)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */

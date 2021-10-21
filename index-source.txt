@@ -419,492 +419,490 @@ path: stylesheet-extra.include
 	filed so that this specification can be updated.
 	</p>
 
-	<h3 id="keyboard-key-codes">Key Codes for Standard Keyboards</h3>
+	This section describes the various keyboard sections in more detail and
+	defines the set of values that are appropriate for use as {{KeyboardEvent/code}}
+	values.
+	
+	In these tables, entries where the "Req" column contains "Yes" are necessary to
+	support standard keyboards and are required for a comforming implementation.
+	Entries with a "No" in this column are optional and may be used by implementations
+	to support special keyboards (such as multimedia or legacy keyboards).
 
-		This section describes the various keyboard sections in more detail and
-		defines the set of values that are appropriate for use as {{KeyboardEvent/code}}
-		values.
-		
-		In these tables, entries where the "Req" column contains "Yes" are necessary to
-		support standard keyboards and are required for a comforming implementation.
-		Entries with a "No" in this column are optional and may be used by implementations
-		to support special keyboards (such as multimedia or legacy keyboards).
+	<h3 id="key-alphanumeric-section">Alphanumeric Section</h3>
 
-		<h4 id="key-alphanumeric-section">Alphanumeric Section</h4>
+		The <dfn>alphanumeric section</dfn> is the main section of the keyboard. It
+		contains keys that fall into two general
+		categories: [=writing system keys=] whose meaning
+		changes based on the current keyboard layout, and
+		[=functional keys=] which are (mostly) the same for all
+		layouts.
 
-			The <dfn>alphanumeric section</dfn> is the main section of the keyboard. It
-			contains keys that fall into two general
-			categories: [=writing system keys=] whose meaning
-			changes based on the current keyboard layout, and
-			[=functional keys=] which are (mostly) the same for all
-			layouts.
+		<h4 id="key-alphanumeric-writing-system">Writing System Keys</h4>
 
-			<h5 id="key-alphanumeric-writing-system">Writing System Keys</h5>
+			The <dfn>writing system keys</dfn> are those that change
+			meaning (i.e., they produce different {{KeyboardEvent/key}}
+			values) based on the current locale and keyboard layout.
 
-				The <dfn>writing system keys</dfn> are those that change
-				meaning (i.e., they produce different {{KeyboardEvent/key}}
-				values) based on the current locale and keyboard layout.
-
-				<figure id="figure-keyboard-codes-alphanum1">
-					<img src="images/keyboard-codes-alphanum1.svg" width="653" height="225" alt="The writing system keys" />
-					<figcaption>The [=writing system keys=] in the [=alphanumeric section=]</figcaption>
-				</figure>
-
-				This figure shows a hypothetical keyboard that combines all the
-				[=writing system keys=] (shown in blue and green) found on the
-				various keyboards. Blue keys are present on all standard
-				keyboards while green keys are only available on some keyboards.
-
-				<div class="example">
-					The CODE{Digit2} and CODE{KeyQ} keys are [=writing system keys=] that
-					generate KEY_NOLINK{2} and KEY_NOLINK{q} when the US locale is
-					active and KEY_NOLINK{é} and KEY_NOLINK{a} when the French locale is active.
-				</div>
-
-				The name shown on each key is the {{KeyboardEvent/code}}
-				assigned to that key. Wherever possible, the
-				{{KeyboardEvent/code}} names are based on the name for the US
-				key in that position (i.e., they are based on the US keyboard
-				layout). For keys that don't exist on the US keyboard, names
-				from the UK or Japanese layouts are used instead.
-
-				Note that there are two CODE{Backslash} keys in this figure: a
-				large one at the end of Row D on the 101-key layout, and a
-				smaller one between CODE{Quote} and CODE{Enter} on Row C of the
-				102-, 104- and 106-key layouts. Only one CODE{Backslash} key
-				may be present on a keyboard layout.
-
-				BEGIN_CODE_TABLE alphanumeric-writing-system "List of code values for writing system keys in the Alphanumeric section."
-					CODE Backquote		KEYCAP{`~} on a US keyboard. This is the KEYCAP{半角/全角/漢字}
-										(PHONETIC{hankaku/zenkaku/kanji}) key on Japanese keyboards
-					CODE Backslash		Used for both the US KEYCAP{\|} (on the 101-key layout) and also for the key
-										located between the KEYCAP{"} and KEYCAP{Enter} keys on row C of the 102-,
-										104- and 106-key layouts.
-										Labelled KEYCAP{#~} on a UK (102) keyboard.
-					CODE BracketLeft	KEYCAP{[{} on a US keyboard.
-					CODE BracketRight	KEYCAP{]&rcub;} on a US keyboard.
-					CODE Comma			KEYCAP{,&lt;} on a US keyboard.
-
-					CODE Digit0			KEYCAP{0)} on a US keyboard.
-					CODE Digit1			KEYCAP{1!} on a US keyboard.
-					CODE Digit2			KEYCAP{2@} on a US keyboard.
-					CODE Digit3			KEYCAP{3#} on a US keyboard.
-					CODE Digit4			KEYCAP{4$} on a US keyboard.
-					CODE Digit5			KEYCAP{5%} on a US keyboard.
-					CODE Digit6			KEYCAP{6^} on a US keyboard.
-					CODE Digit7			KEYCAP{7&} on a US keyboard.
-					CODE Digit8			KEYCAP{8*} on a US keyboard.
-					CODE Digit9			KEYCAP{9(} on a US keyboard.
-
-					CODE Equal			KEYCAP{=+} on a US keyboard.
-					CODE IntlBackslash	Located between the left KEYCAP{Shift} and KEYCAP{Z} keys.
-										Labelled KEYCAP{\|} on a UK keyboard.
-					CODE IntlRo			Located between the KEYCAP{/} and right KEYCAP{Shift} keys.
-										Labelled KEYCAP{\ろ} (PHONETIC{ro}) on a Japanese keyboard.
-					CODE IntlYen		Located between the KEYCAP{=} and KEYCAP{Backspace} keys.
-										Labelled KEYCAP{¥} (PHONETIC{yen}) on a Japanese keyboard. KEYCAP{\/} on a
-										Russian keyboard.
-
-					CODE KeyA			KEYCAP{a} on a US keyboard.
-										Labelled KEYCAP{q} on an AZERTY (e.g., French) keyboard.
-					CODE KeyB			KEYCAP{b} on a US keyboard.
-					CODE KeyC			KEYCAP{c} on a US keyboard.
-					CODE KeyD			KEYCAP{d} on a US keyboard.
-					CODE KeyE			KEYCAP{e} on a US keyboard.
-					CODE KeyF			KEYCAP{f} on a US keyboard.
-					CODE KeyG			KEYCAP{g} on a US keyboard.
-					CODE KeyH			KEYCAP{h} on a US keyboard.
-					CODE KeyI			KEYCAP{i} on a US keyboard.
-					CODE KeyJ			KEYCAP{j} on a US keyboard.
-					CODE KeyK			KEYCAP{k} on a US keyboard.
-					CODE KeyL			KEYCAP{l} on a US keyboard.
-					CODE KeyM			KEYCAP{m} on a US keyboard.
-					CODE KeyN			KEYCAP{n} on a US keyboard.
-					CODE KeyO			KEYCAP{o} on a US keyboard.
-					CODE KeyP			KEYCAP{p} on a US keyboard.
-					CODE KeyQ			KEYCAP{q} on a US keyboard.
-										Labelled KEYCAP{a} on an AZERTY (e.g., French) keyboard.
-					CODE KeyR			KEYCAP{r} on a US keyboard.
-					CODE KeyS			KEYCAP{s} on a US keyboard.
-					CODE KeyT			KEYCAP{t} on a US keyboard.
-					CODE KeyU			KEYCAP{u} on a US keyboard.
-					CODE KeyV			KEYCAP{v} on a US keyboard.
-					CODE KeyW			KEYCAP{w} on a US keyboard.
-										Labelled KEYCAP{z} on an AZERTY (e.g., French) keyboard.
-					CODE KeyX			KEYCAP{x} on a US keyboard.
-					CODE KeyY			KEYCAP{y} on a US keyboard.
-										Labelled KEYCAP{z} on a QWERTZ (e.g., German) keyboard.
-					CODE KeyZ			KEYCAP{z} on a US keyboard.
-										Labelled KEYCAP{w} on an AZERTY (e.g., French) keyboard, and KEYCAP{y} on a
-										QWERTZ (e.g., German) keyboard.
-
-					CODE Minus			KEYCAP{-_} on a US keyboard.
-					CODE Period			KEYCAP{.&gt;} on a US keyboard.
-					CODE Quote			KEYCAP{'"} on a US keyboard.
-					CODE Semicolon		KEYCAP{;:} on a US keyboard.
-					CODE Slash			KEYCAP{/?} on a US keyboard.
-				END_CODE_TABLE
-
-			<h5 id="key-alphanumeric-functional">Functional Keys</h5>
-
-				The <dfn>functional keys</dfn> (<em>not to be confused with the
-				[=function keys=] described later</em>) are those keys in the
-				[=alphanumeric section=] that provide general editing
-				functions that are common to all locales (like KEYCAP{Shift},
-				KEYCAP{Tab}, KEYCAP{Enter} and KEYCAP{Backspace}). With a few
-				exceptions, these keys do not change meaning based on the
-				current keyboard layout.
-
-				<figure id="figure-keyboard-codes-alphanum2">
-					<img src="images/keyboard-codes-alphanum2.svg" width="653" height="225" alt="The standard set of functional keys" />
-					<figcaption>The standard set of [=functional keys=] in the [=alphanumeric section=]</figcaption>
-				</figure>
-
-				The CODE{AltRight} key (highlighted in green) is the only
-				[=functional key=] that does not generate the same
-				{{KeyboardEvent/key}} value for every locale. In some locales it
-				produces KEY{Alt} while in others it produces KEY{AltGraph}.
-
-				BEGIN_CODE_TABLE alphanumeric-functional-1 "List of code values for functional keys in the Alphanumeric section."
-					CODE AltLeft		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
-					CODE AltRight		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
-										This is labelled KEYCAP{AltGr} key on many keyboard layouts.
-					CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}.
-										Labelled KEYCAP{Delete} on Apple keyboards.
-					CODE CapsLock		KEYCAP{CapsLock} or KEYCAP{&#8682;}
-					CODE ContextMenu	The application context menu key, which is typically found between the right
-										KEYCAP{Meta} key and the right KEYCAP{Control} key.
-					CODE ControlLeft	KEYCAP{Control} or KEYCAP{&#8963;}
-					CODE ControlRight	KEYCAP{Control} or KEYCAP{&#8963;}
-					CODE Enter			KEYCAP{Enter} or KEYCAP{&crarr;}. Labelled KEYCAP{Return} on Apple keyboards.
-					CODE MetaLeft		The Windows, KEYCAP{&#x2318;}, KEYCAP{Command} or other OS symbol key.
-					CODE MetaRight		The Windows, KEYCAP{&#x2318;}, KEYCAP{Command} or other OS symbol key.
-					CODE ShiftLeft		KEYCAP{Shift} or KEYCAP{&#8679;}
-					CODE ShiftRight		KEYCAP{Shift} or KEYCAP{&#8679;}
-					CODE Space			KEYCAP{&nbsp;} (space)
-					CODE Tab			KEYCAP{Tab} or KEYCAP{&#8677;}
-				END_CODE_TABLE
-
-				On some keyboards (notably Japanese and Korean) the spacebar is
-				reduced in size to make room for extra keys on the bottom row (Row A).
-				These keys typically allow the users to change the current input
-				mode. Note that even though some of these Japanese and Korean
-				keys occupy the same physical location on the keyboard, they use
-				different {{KeyboardEvent/code}} values.
-
-				<figure id="figure-function-row-a">
-					<img src="images/functional-row-a.svg" width="700" height="160" alt="Comparison of the lower row of functional keys" />
-					<figcaption>Comparison of the lower row of [=functional keys=] on different keyboards</figcaption>
-				</figure>
-
-				BEGIN_CODE_TABLE alphanumeric-functional-2 "List of code values for functional keys found on Japanese and Korean keyboards."
-					CODE Convert		Japanese: KEYCAP{変換} (PHONETIC{henkan})
-					CODE KanaMode		Japanese: KEYCAP{カタカナ/ひらがな/ローマ字} (PHONETIC{katakana/hiragana/romaji})
-					CODE_OPT Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard):
-										KEYCAP{かな} (PHONETIC{kana})
-					CODE_OPT Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard):
-										KEYCAP{英数} (PHONETIC{eisu})
-					CODE_OPT Lang3		Japanese (word-processing keyboard): Katakana
-					CODE_OPT Lang4		Japanese (word-processing keyboard): Hiragana
-					CODE_OPT Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
-					CODE NonConvert 	Japanese: KEYCAP{無変換} (PHONETIC{muhenkan})
-				END_CODE_TABLE
-
-				On Apple keyboards, some keys on the bottom row are omitted and
-				others are arranged in a different order.
-
-		<h4 id="key-controlpad-section">Control Pad Section</h4>
-
-			The <dfn>control pad</dfn> section of the keyboard is the set of (usually 6) keys
-			that perform navigating and editing operations, for example, KEYCAP{Home},
-			KEYCAP{PageUp} and KEYCAP{Insert}.
-
-			<figure id="figure-control-pad">
-				<img src="images/control-pad.svg" width="495" height="135" alt="Standard Control Pad layouts" />
-				<figcaption>Standard [=control pad=] layouts</figcaption>
+			<figure id="figure-keyboard-codes-alphanum1">
+				<img src="images/keyboard-codes-alphanum1.svg" width="653" height="225" alt="The writing system keys" />
+				<figcaption>The [=writing system keys=] in the [=alphanumeric section=]</figcaption>
 			</figure>
 
-			BEGIN_CODE_TABLE controlpad "List of code values for keys in the ControlPad section."
-				CODE Delete		KEYCAP{&#8998;}. The forward delete key.
-								Note that on Apple keyboards, the key labelled KEYCAP{Delete} on the main part of
-								the keyboard should be encoded as CODE{Backspace}.
-				CODE End		KEYCAP{Page Down}, KEYCAP{End} or KEYCAP{&#8600;}
-				CODE Help		KEYCAP{Help}. Not present on standard PC keyboards.
-				CODE Home		KEYCAP{Home} or KEYCAP{&#8598;}
-				CODE Insert		KEYCAP{Insert} or KEYCAP{Ins}. Not present on Apple keyboards.
-				CODE PageDown	KEYCAP{Page Down}, KEYCAP{PgDn} or KEYCAP{&#8671;}
-				CODE PageUp		KEYCAP{Page Up}, KEYCAP{PgUp} or KEYCAP{&#8670;}
+			This figure shows a hypothetical keyboard that combines all the
+			[=writing system keys=] (shown in blue and green) found on the
+			various keyboards. Blue keys are present on all standard
+			keyboards while green keys are only available on some keyboards.
+
+			<div class="example">
+				The CODE{Digit2} and CODE{KeyQ} keys are [=writing system keys=] that
+				generate KEY_NOLINK{2} and KEY_NOLINK{q} when the US locale is
+				active and KEY_NOLINK{é} and KEY_NOLINK{a} when the French locale is active.
+			</div>
+
+			The name shown on each key is the {{KeyboardEvent/code}}
+			assigned to that key. Wherever possible, the
+			{{KeyboardEvent/code}} names are based on the name for the US
+			key in that position (i.e., they are based on the US keyboard
+			layout). For keys that don't exist on the US keyboard, names
+			from the UK or Japanese layouts are used instead.
+
+			Note that there are two CODE{Backslash} keys in this figure: a
+			large one at the end of Row D on the 101-key layout, and a
+			smaller one between CODE{Quote} and CODE{Enter} on Row C of the
+			102-, 104- and 106-key layouts. Only one CODE{Backslash} key
+			may be present on a keyboard layout.
+
+			BEGIN_CODE_TABLE alphanumeric-writing-system "List of code values for writing system keys in the Alphanumeric section."
+				CODE Backquote		KEYCAP{`~} on a US keyboard. This is the KEYCAP{半角/全角/漢字}
+									(PHONETIC{hankaku/zenkaku/kanji}) key on Japanese keyboards
+				CODE Backslash		Used for both the US KEYCAP{\|} (on the 101-key layout) and also for the key
+									located between the KEYCAP{"} and KEYCAP{Enter} keys on row C of the 102-,
+									104- and 106-key layouts.
+									Labelled KEYCAP{#~} on a UK (102) keyboard.
+				CODE BracketLeft	KEYCAP{[{} on a US keyboard.
+				CODE BracketRight	KEYCAP{]&rcub;} on a US keyboard.
+				CODE Comma			KEYCAP{,&lt;} on a US keyboard.
+
+				CODE Digit0			KEYCAP{0)} on a US keyboard.
+				CODE Digit1			KEYCAP{1!} on a US keyboard.
+				CODE Digit2			KEYCAP{2@} on a US keyboard.
+				CODE Digit3			KEYCAP{3#} on a US keyboard.
+				CODE Digit4			KEYCAP{4$} on a US keyboard.
+				CODE Digit5			KEYCAP{5%} on a US keyboard.
+				CODE Digit6			KEYCAP{6^} on a US keyboard.
+				CODE Digit7			KEYCAP{7&} on a US keyboard.
+				CODE Digit8			KEYCAP{8*} on a US keyboard.
+				CODE Digit9			KEYCAP{9(} on a US keyboard.
+
+				CODE Equal			KEYCAP{=+} on a US keyboard.
+				CODE IntlBackslash	Located between the left KEYCAP{Shift} and KEYCAP{Z} keys.
+									Labelled KEYCAP{\|} on a UK keyboard.
+				CODE IntlRo			Located between the KEYCAP{/} and right KEYCAP{Shift} keys.
+									Labelled KEYCAP{\ろ} (PHONETIC{ro}) on a Japanese keyboard.
+				CODE IntlYen		Located between the KEYCAP{=} and KEYCAP{Backspace} keys.
+									Labelled KEYCAP{¥} (PHONETIC{yen}) on a Japanese keyboard. KEYCAP{\/} on a
+									Russian keyboard.
+
+				CODE KeyA			KEYCAP{a} on a US keyboard.
+									Labelled KEYCAP{q} on an AZERTY (e.g., French) keyboard.
+				CODE KeyB			KEYCAP{b} on a US keyboard.
+				CODE KeyC			KEYCAP{c} on a US keyboard.
+				CODE KeyD			KEYCAP{d} on a US keyboard.
+				CODE KeyE			KEYCAP{e} on a US keyboard.
+				CODE KeyF			KEYCAP{f} on a US keyboard.
+				CODE KeyG			KEYCAP{g} on a US keyboard.
+				CODE KeyH			KEYCAP{h} on a US keyboard.
+				CODE KeyI			KEYCAP{i} on a US keyboard.
+				CODE KeyJ			KEYCAP{j} on a US keyboard.
+				CODE KeyK			KEYCAP{k} on a US keyboard.
+				CODE KeyL			KEYCAP{l} on a US keyboard.
+				CODE KeyM			KEYCAP{m} on a US keyboard.
+				CODE KeyN			KEYCAP{n} on a US keyboard.
+				CODE KeyO			KEYCAP{o} on a US keyboard.
+				CODE KeyP			KEYCAP{p} on a US keyboard.
+				CODE KeyQ			KEYCAP{q} on a US keyboard.
+									Labelled KEYCAP{a} on an AZERTY (e.g., French) keyboard.
+				CODE KeyR			KEYCAP{r} on a US keyboard.
+				CODE KeyS			KEYCAP{s} on a US keyboard.
+				CODE KeyT			KEYCAP{t} on a US keyboard.
+				CODE KeyU			KEYCAP{u} on a US keyboard.
+				CODE KeyV			KEYCAP{v} on a US keyboard.
+				CODE KeyW			KEYCAP{w} on a US keyboard.
+									Labelled KEYCAP{z} on an AZERTY (e.g., French) keyboard.
+				CODE KeyX			KEYCAP{x} on a US keyboard.
+				CODE KeyY			KEYCAP{y} on a US keyboard.
+									Labelled KEYCAP{z} on a QWERTZ (e.g., German) keyboard.
+				CODE KeyZ			KEYCAP{z} on a US keyboard.
+									Labelled KEYCAP{w} on an AZERTY (e.g., French) keyboard, and KEYCAP{y} on a
+									QWERTZ (e.g., German) keyboard.
+
+				CODE Minus			KEYCAP{-_} on a US keyboard.
+				CODE Period			KEYCAP{.&gt;} on a US keyboard.
+				CODE Quote			KEYCAP{'"} on a US keyboard.
+				CODE Semicolon		KEYCAP{;:} on a US keyboard.
+				CODE Slash			KEYCAP{/?} on a US keyboard.
 			END_CODE_TABLE
 
-			<p class="note">
-			The {{KeyboardEvent/code}} for the KEYCAP{Fn} key (found on some
-			Apple keyboards) is defined below in the [=function section=].
-			</p>
+		<h4 id="key-alphanumeric-functional">Functional Keys</h4>
 
-		<h4 id="key-arrowpad-section">Arrow Pad Section</h4>
+			The <dfn>functional keys</dfn> (<em>not to be confused with the
+			[=function keys=] described later</em>) are those keys in the
+			[=alphanumeric section=] that provide general editing
+			functions that are common to all locales (like KEYCAP{Shift},
+			KEYCAP{Tab}, KEYCAP{Enter} and KEYCAP{Backspace}). With a few
+			exceptions, these keys do not change meaning based on the
+			current keyboard layout.
 
-			The <dfn>arrow pad</dfn> contains the 4 arrow keys. The keys are commonly
-			arranged in an "upside-down T" configuration.
-
-
-			<figure id="figure-arrow-pad">
-				<img src="images/arrow-pad.svg" width="160" height="115" alt="Standard Arrow Pad layout" />
-				<figcaption>Standard [=arrow pad=] layout</figcaption>
+			<figure id="figure-keyboard-codes-alphanum2">
+				<img src="images/keyboard-codes-alphanum2.svg" width="653" height="225" alt="The standard set of functional keys" />
+				<figcaption>The standard set of [=functional keys=] in the [=alphanumeric section=]</figcaption>
 			</figure>
 
-			BEGIN_CODE_TABLE arrowpad "List of code values for keys in the ArrowPad section."
-				CODE ArrowDown	KEYCAP{&darr;}
-				CODE ArrowLeft	KEYCAP{&larr;}
-				CODE ArrowRight KEYCAP{&rarr;}
-				CODE ArrowUp	KEYCAP{&uarr;}
+			The CODE{AltRight} key (highlighted in green) is the only
+			[=functional key=] that does not generate the same
+			{{KeyboardEvent/key}} value for every locale. In some locales it
+			produces KEY{Alt} while in others it produces KEY{AltGraph}.
+
+			BEGIN_CODE_TABLE alphanumeric-functional-1 "List of code values for functional keys in the Alphanumeric section."
+				CODE AltLeft		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
+				CODE AltRight		KEYCAP{Alt}, KEYCAP{Option} or KEYCAP{&#8997;}.
+									This is labelled KEYCAP{AltGr} key on many keyboard layouts.
+				CODE Backspace		KEYCAP{Backspace} or KEYCAP{&#9003;}.
+									Labelled KEYCAP{Delete} on Apple keyboards.
+				CODE CapsLock		KEYCAP{CapsLock} or KEYCAP{&#8682;}
+				CODE ContextMenu	The application context menu key, which is typically found between the right
+									KEYCAP{Meta} key and the right KEYCAP{Control} key.
+				CODE ControlLeft	KEYCAP{Control} or KEYCAP{&#8963;}
+				CODE ControlRight	KEYCAP{Control} or KEYCAP{&#8963;}
+				CODE Enter			KEYCAP{Enter} or KEYCAP{&crarr;}. Labelled KEYCAP{Return} on Apple keyboards.
+				CODE MetaLeft		The Windows, KEYCAP{&#x2318;}, KEYCAP{Command} or other OS symbol key.
+				CODE MetaRight		The Windows, KEYCAP{&#x2318;}, KEYCAP{Command} or other OS symbol key.
+				CODE ShiftLeft		KEYCAP{Shift} or KEYCAP{&#8679;}
+				CODE ShiftRight		KEYCAP{Shift} or KEYCAP{&#8679;}
+				CODE Space			KEYCAP{&nbsp;} (space)
+				CODE Tab			KEYCAP{Tab} or KEYCAP{&#8677;}
 			END_CODE_TABLE
 
-		<h4 id="key-numpad-section">Numpad Section</h4>
+			On some keyboards (notably Japanese and Korean) the spacebar is
+			reduced in size to make room for extra keys on the bottom row (Row A).
+			These keys typically allow the users to change the current input
+			mode. Note that even though some of these Japanese and Korean
+			keys occupy the same physical location on the keyboard, they use
+			different {{KeyboardEvent/code}} values.
 
-			The <dfn>numpad</dfn> section is the set of keys on the keyboard arranged in
-			a grid like a calculator or mobile phone. This section contains numeric and
-			mathematical operator keys. Often this section will contain a KEYCAP{NumLock}
-			key which causes the keys to switch between the standard numeric functions
-			and mimicking the keys of the [=control pad=] and [=arrow pad=].
-			Laptop computers and compact keyboards will commonly omit these
-			keys to save space.
-
-			A <dfn>keypad</dfn> is an alternate term for [=numpad=].
-
-			<figure id="figure-numpad">
-				<img src="images/numpad.svg" width="606" height="247" alt="Standard Numpad layouts" />
-				<figcaption>Standard [=numpad=] Layouts</figcaption>
+			<figure id="figure-function-row-a">
+				<img src="images/functional-row-a.svg" width="700" height="160" alt="Comparison of the lower row of functional keys" />
+				<figcaption>Comparison of the lower row of [=functional keys=] on different keyboards</figcaption>
 			</figure>
 
-			The {{KeyboardEvent/code}} values in this section should also be
-			used for phone keypads and remote control devices that
-			arrange number keys in a grid.
-
-			<figure id="figure-numpad-mobile">
-				<img src="images/numpad-mobile.svg" width="135" height="180" alt="Standard mobile keypad layout" />
-				<figcaption>Standard Mobile Keypad Layout</figcaption>
-			</figure>
-
-			The standard [=numpad=] is sometimes extended with additional keys for
-			parentheses, operators, hexadecimal symbols, or calculator functions
-			(like KEYCAP{Backspace}). Some of the commonly added keys are listed
-			in the table below.
-
-			BEGIN_CODE_TABLE numpad "List of code values for keys in the Numpad section."
-				CODE NumLock				On the Mac, the CODE{NumLock} code should be used for the [=numpad=]
-											KEYCAP{Clear} key.
-				CODE Numpad0				KEYCAP{0 Ins} on a keyboard<br/>KEYCAP{0} on a phone or remote control
-				CODE Numpad1				KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or
-											remote control
-				CODE Numpad2				KEYCAP{2 &darr;} on a keyboard<br/>KEYCAP{2 ABC} on a phone or remote control
-				CODE Numpad3				KEYCAP{3 PgDn} on a keyboard<br/>KEYCAP{3 DEF} on a phone or remote control
-				CODE Numpad4				KEYCAP{4 &larr;} on a keyboard<br/>KEYCAP{4 GHI} on a phone or remote control
-				CODE Numpad5				KEYCAP{5} on a keyboard<br/>KEYCAP{5 JKL} on a phone or remote control
-				CODE Numpad6				KEYCAP{6 &rarr;} on a keyboard<br/>KEYCAP{6 MNO} on a phone or remote control
-				CODE Numpad7				KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone
-											or remote control
-				CODE Numpad8				KEYCAP{8 &uarr;} on a keyboard<br/>KEYCAP{8 TUV} on a phone or remote control
-				CODE Numpad9				KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone
-											or remote control
-				CODE NumpadAdd				KEYCAP{+}
-				CODE_OPT NumpadBackspace	Found on the Microsoft Natural Keyboard.
-				CODE_OPT NumpadClear		KEYCAP{C} or KEYCAP{AC} (All Clear). Also for use with [=numpads=] that have a
-											KEYCAP{Clear} key that is separate from the
-											KEYCAP{NumLock} key. On the Mac, the [=numpad=] KEYCAP{Clear} key should always
-											be encoded as CODE{NumLock}.
-				CODE_OPT NumpadClearEntry	KEYCAP{CE} (Clear Entry)
-				CODE_OPT NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
-											is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
-				CODE NumpadDecimal			KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
-											Brazil), this key may generate a KEYCAP{,}.
-				CODE NumpadDivide			KEYCAP{/}
-				CODE NumpadEnter
-				CODE_OPT NumpadEqual		KEYCAP{=}
-				CODE_OPT NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
-											below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
-				CODE_OPT NumpadMemoryAdd	KEYCAP{M+} Add current entry to the value stored in memory.
-				CODE_OPT NumpadMemoryClear	KEYCAP{MC} Clear the value stored in memory.
-				CODE_OPT NumpadMemoryRecall	KEYCAP{MR} Replace the current entry with the value stored in memory.
-				CODE_OPT NumpadMemoryStore	KEYCAP{MS} Replace the value stored in memory with the current entry.
-				CODE_OPT NumpadMemorySubtract	KEYCAP{M-} Subtract current entry from the value stored in memory.
-				CODE NumpadMultiply			KEYCAP{*} on a keyboard. For use with [=numpads=] that provide mathematical
-											operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
-											CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
-				CODE_OPT NumpadParenLeft	KEYCAP{(} Found on the Microsoft Natural Keyboard.
-				CODE_OPT NumpadParenRight	KEYCAP{)} Found on the Microsoft Natural Keyboard.
-				CODE_OPT NumpadStar			KEYCAP{*} on a phone or remote control device.
-											This key is typically found below the KEYCAP{7} key and to the left of
-											the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on
-											numeric keypads.
-				CODE NumpadSubtract			KEYCAP{-}
+			BEGIN_CODE_TABLE alphanumeric-functional-2 "List of code values for functional keys found on Japanese and Korean keyboards."
+				CODE Convert		Japanese: KEYCAP{変換} (PHONETIC{henkan})
+				CODE KanaMode		Japanese: KEYCAP{カタカナ/ひらがな/ローマ字} (PHONETIC{katakana/hiragana/romaji})
+				CODE_OPT Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard):
+									KEYCAP{かな} (PHONETIC{kana})
+				CODE_OPT Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard):
+									KEYCAP{英数} (PHONETIC{eisu})
+				CODE_OPT Lang3		Japanese (word-processing keyboard): Katakana
+				CODE_OPT Lang4		Japanese (word-processing keyboard): Hiragana
+				CODE_OPT Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
+				CODE NonConvert 	Japanese: KEYCAP{無変換} (PHONETIC{muhenkan})
 			END_CODE_TABLE
 
-			For [=numpads=] that provide keys not listed here, a
-			{{KeyboardEvent/code}} value string should be created by starting
-			with "Numpad" and appending an appropriate description of the key.
+			On Apple keyboards, some keys on the bottom row are omitted and
+			others are arranged in a different order.
 
-		<h4 id="key-function-section">Function Section</h4>
+	<h3 id="key-controlpad-section">Control Pad Section</h3>
 
-			The <dfn>function section</dfn> runs along the top of the keyboard (above
-			the [=alphanumeric section=]) and
-			contains the [=function keys=] and a few additional special keys
-			(for example, KEYCAP{Esc} and KEYCAP{Print Screen}).
+		The <dfn>control pad</dfn> section of the keyboard is the set of (usually 6) keys
+		that perform navigating and editing operations, for example, KEYCAP{Home},
+		KEYCAP{PageUp} and KEYCAP{Insert}.
 
-			A <dfn>function key</dfn> is any of the keys labelled KEYCAP{F1} ... KEYCAP{F12}
-			that an application or operating system can associate with a custom function
-			or action.
+		<figure id="figure-control-pad">
+			<img src="images/control-pad.svg" width="495" height="135" alt="Standard Control Pad layouts" />
+			<figcaption>Standard [=control pad=] layouts</figcaption>
+		</figure>
 
-			On some keyboards (especially those found on laptops or other
-			portable computers), the [=function keys=] (KEYCAP{F1} ...
-			KEYCAP{F12}) are defined to have other primary functions (like
-			controlling display brightness or audio volume) and require that a
-			separate KEYCAP{Fn} key be pressed to make them act as function
-			keys. Unfortunately, the primary functions assigned to these keys
-			varies widely from one manufacturer to the next. Because of this,
-			the {{KeyboardEvent/code}} is always set to the [=function key=]
-			name.
+		BEGIN_CODE_TABLE controlpad "List of code values for keys in the ControlPad section."
+			CODE Delete		KEYCAP{&#8998;}. The forward delete key.
+							Note that on Apple keyboards, the key labelled KEYCAP{Delete} on the main part of
+							the keyboard should be encoded as CODE{Backspace}.
+			CODE End		KEYCAP{Page Down}, KEYCAP{End} or KEYCAP{&#8600;}
+			CODE Help		KEYCAP{Help}. Not present on standard PC keyboards.
+			CODE Home		KEYCAP{Home} or KEYCAP{&#8598;}
+			CODE Insert		KEYCAP{Insert} or KEYCAP{Ins}. Not present on Apple keyboards.
+			CODE PageDown	KEYCAP{Page Down}, KEYCAP{PgDn} or KEYCAP{&#8671;}
+			CODE PageUp		KEYCAP{Page Up}, KEYCAP{PgUp} or KEYCAP{&#8670;}
+		END_CODE_TABLE
 
-			BEGIN_CODE_TABLE function "List of code values for keys in the Function section."
-				CODE Escape			KEYCAP{Esc} or KEYCAP{⎋}
-				CODE F1				KEYCAP{F1}
-				CODE F2				KEYCAP{F2}
-				CODE F3				KEYCAP{F3}
-				CODE F4				KEYCAP{F4}
-				CODE F5				KEYCAP{F5}
-				CODE F6				KEYCAP{F6}
-				CODE F7				KEYCAP{F7}
-				CODE F8				KEYCAP{F8}
-				CODE F9				KEYCAP{F9}
-				CODE F10			KEYCAP{F10}
-				CODE F11			KEYCAP{F11}
-				CODE F12			KEYCAP{F12}
-				CODE_OPT Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate
-									code. Most keyboards do not place this key in the [=function section=], but it is
-									included here to keep it with related keys.
-				CODE_OPT FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft
-									Natural Keyboard.
-				CODE PrintScreen	KEYCAP{PrtScr SysRq} or KEYCAP{Print Screen}
-				CODE ScrollLock		KEYCAP{Scroll Lock}
-				CODE Pause			KEYCAP{Pause Break}
-			END_CODE_TABLE
+		<p class="note">
+		The {{KeyboardEvent/code}} for the KEYCAP{Fn} key (found on some
+		Apple keyboards) is defined below in the [=function section=].
+		</p>
 
-			For keyboards that provide more than 12 [=function keys=], the
-			{{KeyboardEvent/code}} value follows the pattern shown above with
-			"F" followed by the [=function key=] number - CODE_NOLINK{F13},
-			CODE_NOLINK{F14}, CODE_NOLINK{F15}, and so on.
+	<h3 id="key-arrowpad-section">Arrow Pad Section</h3>
 
-			<p class="note">
-			Apple keyboards may have KEYCAP{Eject} or KEYCAP{Power} keys in the
-			[=function section=]. The {{KeyboardEvent/code}} values for these
-			keys are defined in [[#key-media]].
-			</p>
+		The <dfn>arrow pad</dfn> contains the 4 arrow keys. The keys are commonly
+		arranged in an "upside-down T" configuration.
 
-		<h4 id="key-media">Media Keys</h4>
 
-			<dfn>Media keys</dfn> are extra keys added to a keyboard that provide <em>media</em>
-			related functionality like play, pause or volume control. These keys do not
-			have a standard location on the keyboard so keyboards from different
-			manufacturers are likely to have a different arrangement of keys or a
-			completely different sets of keys.
+		<figure id="figure-arrow-pad">
+			<img src="images/arrow-pad.svg" width="160" height="115" alt="Standard Arrow Pad layout" />
+			<figcaption>Standard [=arrow pad=] layout</figcaption>
+		</figure>
 
-			[=Media keys=] are often distinct from
-			normal typing keys in appearance and may be recessed in the
-			keyboard.
+		BEGIN_CODE_TABLE arrowpad "List of code values for keys in the ArrowPad section."
+			CODE ArrowDown	KEYCAP{&darr;}
+			CODE ArrowLeft	KEYCAP{&larr;}
+			CODE ArrowRight KEYCAP{&rarr;}
+			CODE ArrowUp	KEYCAP{&uarr;}
+		END_CODE_TABLE
 
-			On laptop keyboards, these keys are often merged with the
-			[=function keys=], with the [=media key=] interpretation being
-			the primary function of the key and the [=function key=]
-			interpretation requiring the KEYCAP{Fn} key to be pressed at the
-			same time. In this configuration the {{KeyboardEvent/code}} should
-			be set to match the [=function key=] (CODE{F1} ... CODE{F12}).
-			When the keys are merged in this fashion, the {{KeyboardEvent/code}}
-			values are taken from the [=function key=] value because the
-			[=media key=] value is not consistent across keyboards.
+	<h3 id="key-numpad-section">Numpad Section</h3>
 
-			BEGIN_CODE_TABLE media "List of code values for media keys."
-				CODE_OPT BrowserBack		Some laptops place this key to the left of the KEYCAP{&uarr;} key.
-				CODE_OPT BrowserFavorites
-				CODE_OPT BrowserForward		Some laptops place this key to the right of the KEYCAP{&uarr;} key.
-				CODE_OPT BrowserHome
-				CODE_OPT BrowserRefresh
-				CODE_OPT BrowserSearch
-				CODE_OPT BrowserStop
-				CODE_OPT Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the [=function
-											section=] on some Apple keyboards.
-				CODE_OPT LaunchApp1			Sometimes labelled KEYCAP{My Computer} on the keyboard
-				CODE_OPT LaunchApp2			Sometimes labelled KEYCAP{Calculator} on the keyboard
-				CODE_OPT LaunchMail
-				CODE_OPT MediaPlayPause
-				CODE_OPT MediaSelect
-				CODE_OPT MediaStop
-				CODE_OPT MediaTrackNext
-				CODE_OPT MediaTrackPrevious
-				CODE_OPT Power				This key is placed in the [=function section=] on some Apple keyboards,
-											replacing the KEYCAP{Eject} key.
-				CODE_OPT Sleep
-				CODE_OPT AudioVolumeDown
-				CODE_OPT AudioVolumeMute
-				CODE_OPT AudioVolumeUp
-				CODE_OPT WakeUp
-			END_CODE_TABLE
+		The <dfn>numpad</dfn> section is the set of keys on the keyboard arranged in
+		a grid like a calculator or mobile phone. This section contains numeric and
+		mathematical operator keys. Often this section will contain a KEYCAP{NumLock}
+		key which causes the keys to switch between the standard numeric functions
+		and mimicking the keys of the [=control pad=] and [=arrow pad=].
+		Laptop computers and compact keyboards will commonly omit these
+		keys to save space.
 
-		<h4 id="key-legacy">Legacy, Non-Standard and Special Keys</h4>
+		A <dfn>keypad</dfn> is an alternate term for [=numpad=].
 
-			These keys are not found on modern standard keyboards. They are
-			listed here for reference purposes.
+		<figure id="figure-numpad">
+			<img src="images/numpad.svg" width="606" height="247" alt="Standard Numpad layouts" />
+			<figcaption>Standard [=numpad=] Layouts</figcaption>
+		</figure>
 
-			BEGIN_CODE_TABLE legacy-modifier "List of code values for legacy modifier keys."
-				CODE_OPT Hyper
-				CODE_OPT Super
-				CODE_OPT Turbo
-			END_CODE_TABLE
+		The {{KeyboardEvent/code}} values in this section should also be
+		used for phone keypads and remote control devices that
+		arrange number keys in a grid.
 
-			&nbsp;
+		<figure id="figure-numpad-mobile">
+			<img src="images/numpad-mobile.svg" width="135" height="180" alt="Standard mobile keypad layout" />
+			<figcaption>Standard Mobile Keypad Layout</figcaption>
+		</figure>
 
-			BEGIN_CODE_TABLE legacy-process "List of code values for legacy process control keys."
-				CODE_OPT Abort
-				CODE_OPT Resume
-				CODE_OPT Suspend
-			END_CODE_TABLE
+		The standard [=numpad=] is sometimes extended with additional keys for
+		parentheses, operators, hexadecimal symbols, or calculator functions
+		(like KEYCAP{Backspace}). Some of the commonly added keys are listed
+		in the table below.
 
-			&nbsp;
+		BEGIN_CODE_TABLE numpad "List of code values for keys in the Numpad section."
+			CODE NumLock				On the Mac, the CODE{NumLock} code should be used for the [=numpad=]
+										KEYCAP{Clear} key.
+			CODE Numpad0				KEYCAP{0 Ins} on a keyboard<br/>KEYCAP{0} on a phone or remote control
+			CODE Numpad1				KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or
+										remote control
+			CODE Numpad2				KEYCAP{2 &darr;} on a keyboard<br/>KEYCAP{2 ABC} on a phone or remote control
+			CODE Numpad3				KEYCAP{3 PgDn} on a keyboard<br/>KEYCAP{3 DEF} on a phone or remote control
+			CODE Numpad4				KEYCAP{4 &larr;} on a keyboard<br/>KEYCAP{4 GHI} on a phone or remote control
+			CODE Numpad5				KEYCAP{5} on a keyboard<br/>KEYCAP{5 JKL} on a phone or remote control
+			CODE Numpad6				KEYCAP{6 &rarr;} on a keyboard<br/>KEYCAP{6 MNO} on a phone or remote control
+			CODE Numpad7				KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone
+										or remote control
+			CODE Numpad8				KEYCAP{8 &uarr;} on a keyboard<br/>KEYCAP{8 TUV} on a phone or remote control
+			CODE Numpad9				KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone
+										or remote control
+			CODE NumpadAdd				KEYCAP{+}
+			CODE_OPT NumpadBackspace	Found on the Microsoft Natural Keyboard.
+			CODE_OPT NumpadClear		KEYCAP{C} or KEYCAP{AC} (All Clear). Also for use with [=numpads=] that have a
+										KEYCAP{Clear} key that is separate from the
+										KEYCAP{NumLock} key. On the Mac, the [=numpad=] KEYCAP{Clear} key should always
+										be encoded as CODE{NumLock}.
+			CODE_OPT NumpadClearEntry	KEYCAP{CE} (Clear Entry)
+			CODE_OPT NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
+										is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
+			CODE NumpadDecimal			KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
+										Brazil), this key may generate a KEYCAP{,}.
+			CODE NumpadDivide			KEYCAP{/}
+			CODE NumpadEnter
+			CODE_OPT NumpadEqual		KEYCAP{=}
+			CODE_OPT NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
+										below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
+			CODE_OPT NumpadMemoryAdd	KEYCAP{M+} Add current entry to the value stored in memory.
+			CODE_OPT NumpadMemoryClear	KEYCAP{MC} Clear the value stored in memory.
+			CODE_OPT NumpadMemoryRecall	KEYCAP{MR} Replace the current entry with the value stored in memory.
+			CODE_OPT NumpadMemoryStore	KEYCAP{MS} Replace the value stored in memory with the current entry.
+			CODE_OPT NumpadMemorySubtract	KEYCAP{M-} Subtract current entry from the value stored in memory.
+			CODE NumpadMultiply			KEYCAP{*} on a keyboard. For use with [=numpads=] that provide mathematical
+										operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
+										CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
+			CODE_OPT NumpadParenLeft	KEYCAP{(} Found on the Microsoft Natural Keyboard.
+			CODE_OPT NumpadParenRight	KEYCAP{)} Found on the Microsoft Natural Keyboard.
+			CODE_OPT NumpadStar			KEYCAP{*} on a phone or remote control device.
+										This key is typically found below the KEYCAP{7} key and to the left of
+										the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on
+										numeric keypads.
+			CODE NumpadSubtract			KEYCAP{-}
+		END_CODE_TABLE
 
-			BEGIN_CODE_TABLE legacy-editing "List of code values for legacy editing keys."
-				CODE_OPT Again	Found on Sun's USB keyboard.
-				CODE_OPT Copy	Found on Sun's USB keyboard.
-				CODE_OPT Cut	Found on Sun's USB keyboard.
-				CODE_OPT Find	Found on Sun's USB keyboard.
-				CODE_OPT Open	Found on Sun's USB keyboard.
-				CODE_OPT Paste	Found on Sun's USB keyboard.
-				CODE_OPT Props	Found on Sun's USB keyboard.
-				CODE_OPT Select Found on Sun's USB keyboard.
-				CODE_OPT Undo	Found on Sun's USB keyboard.
-			END_CODE_TABLE
+		For [=numpads=] that provide keys not listed here, a
+		{{KeyboardEvent/code}} value string should be created by starting
+		with "Numpad" and appending an appropriate description of the key.
 
-			The following keys may be found on non-standard international keyboards.
+	<h3 id="key-function-section">Function Section</h3>
 
-			BEGIN_CODE_TABLE international "List of code values for keys found on international keyboards."
-				CODE_OPT Hiragana	Use for dedicated KEYCAP{ひらがな} key found on some Japanese word processing keyboards.
-				CODE_OPT Katakana	Use for dedicated KEYCAP{カタカナ} key found on some Japanese word processing keyboards.
-			END_CODE_TABLE
+		The <dfn>function section</dfn> runs along the top of the keyboard (above
+		the [=alphanumeric section=]) and
+		contains the [=function keys=] and a few additional special keys
+		(for example, KEYCAP{Esc} and KEYCAP{Print Screen}).
 
-			And finally, the following {{KeyboardEvent/code}} value should only
-			be used when the corresponding key does not correspond to any of the
-			{{KeyboardEvent/code}} values given elsewhere in this specification.
-			This value is appropriate for use with virtual keyboards that do not
-			have their keys arranged in a way that corresponds to those on a
-			physical keyboard.
+		A <dfn>function key</dfn> is any of the keys labelled KEYCAP{F1} ... KEYCAP{F12}
+		that an application or operating system can associate with a custom function
+		or action.
 
-			BEGIN_CODE_TABLE special "List of special code values."
-			CODE Unidentified	This value code should be used when no other
-								value given in this specification is appropriate.
-			END_CODE_TABLE
+		On some keyboards (especially those found on laptops or other
+		portable computers), the [=function keys=] (KEYCAP{F1} ...
+		KEYCAP{F12}) are defined to have other primary functions (like
+		controlling display brightness or audio volume) and require that a
+		separate KEYCAP{Fn} key be pressed to make them act as function
+		keys. Unfortunately, the primary functions assigned to these keys
+		varies widely from one manufacturer to the next. Because of this,
+		the {{KeyboardEvent/code}} is always set to the [=function key=]
+		name.
 
-			<p class="warning">
-			Conforming implementations MUST only use CODE{Unidentified} as a key code
-			when there is no way for the implementation to determine the key code.
-			Exposing only this value MUST NOT indicate a conforming implementation.
-			</p>
+		BEGIN_CODE_TABLE function "List of code values for keys in the Function section."
+			CODE Escape			KEYCAP{Esc} or KEYCAP{⎋}
+			CODE F1				KEYCAP{F1}
+			CODE F2				KEYCAP{F2}
+			CODE F3				KEYCAP{F3}
+			CODE F4				KEYCAP{F4}
+			CODE F5				KEYCAP{F5}
+			CODE F6				KEYCAP{F6}
+			CODE F7				KEYCAP{F7}
+			CODE F8				KEYCAP{F8}
+			CODE F9				KEYCAP{F9}
+			CODE F10			KEYCAP{F10}
+			CODE F11			KEYCAP{F11}
+			CODE F12			KEYCAP{F12}
+			CODE_OPT Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate
+								code. Most keyboards do not place this key in the [=function section=], but it is
+								included here to keep it with related keys.
+			CODE_OPT FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft
+								Natural Keyboard.
+			CODE PrintScreen	KEYCAP{PrtScr SysRq} or KEYCAP{Print Screen}
+			CODE ScrollLock		KEYCAP{Scroll Lock}
+			CODE Pause			KEYCAP{Pause Break}
+		END_CODE_TABLE
+
+		For keyboards that provide more than 12 [=function keys=], the
+		{{KeyboardEvent/code}} value follows the pattern shown above with
+		"F" followed by the [=function key=] number - CODE_NOLINK{F13},
+		CODE_NOLINK{F14}, CODE_NOLINK{F15}, and so on.
+
+		<p class="note">
+		Apple keyboards may have KEYCAP{Eject} or KEYCAP{Power} keys in the
+		[=function section=]. The {{KeyboardEvent/code}} values for these
+		keys are defined in [[#key-media]].
+		</p>
+
+	<h3 id="key-media">Media Keys</h3>
+
+		<dfn>Media keys</dfn> are extra keys added to a keyboard that provide <em>media</em>
+		related functionality like play, pause or volume control. These keys do not
+		have a standard location on the keyboard so keyboards from different
+		manufacturers are likely to have a different arrangement of keys or a
+		completely different sets of keys.
+
+		[=Media keys=] are often distinct from
+		normal typing keys in appearance and may be recessed in the
+		keyboard.
+
+		On laptop keyboards, these keys are often merged with the
+		[=function keys=], with the [=media key=] interpretation being
+		the primary function of the key and the [=function key=]
+		interpretation requiring the KEYCAP{Fn} key to be pressed at the
+		same time. In this configuration the {{KeyboardEvent/code}} should
+		be set to match the [=function key=] (CODE{F1} ... CODE{F12}).
+		When the keys are merged in this fashion, the {{KeyboardEvent/code}}
+		values are taken from the [=function key=] value because the
+		[=media key=] value is not consistent across keyboards.
+
+		BEGIN_CODE_TABLE media "List of code values for media keys."
+			CODE_OPT BrowserBack		Some laptops place this key to the left of the KEYCAP{&uarr;} key.
+			CODE_OPT BrowserFavorites
+			CODE_OPT BrowserForward		Some laptops place this key to the right of the KEYCAP{&uarr;} key.
+			CODE_OPT BrowserHome
+			CODE_OPT BrowserRefresh
+			CODE_OPT BrowserSearch
+			CODE_OPT BrowserStop
+			CODE_OPT Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the [=function
+										section=] on some Apple keyboards.
+			CODE_OPT LaunchApp1			Sometimes labelled KEYCAP{My Computer} on the keyboard
+			CODE_OPT LaunchApp2			Sometimes labelled KEYCAP{Calculator} on the keyboard
+			CODE_OPT LaunchMail
+			CODE_OPT MediaPlayPause
+			CODE_OPT MediaSelect
+			CODE_OPT MediaStop
+			CODE_OPT MediaTrackNext
+			CODE_OPT MediaTrackPrevious
+			CODE_OPT Power				This key is placed in the [=function section=] on some Apple keyboards,
+										replacing the KEYCAP{Eject} key.
+			CODE_OPT Sleep
+			CODE_OPT AudioVolumeDown
+			CODE_OPT AudioVolumeMute
+			CODE_OPT AudioVolumeUp
+			CODE_OPT WakeUp
+		END_CODE_TABLE
+
+	<h3 id="key-legacy">Legacy, Non-Standard and Special Keys</h3>
+
+		These keys are not found on modern standard keyboards. They are
+		listed here for reference purposes.
+
+		BEGIN_CODE_TABLE legacy-modifier "List of code values for legacy modifier keys."
+			CODE_OPT Hyper
+			CODE_OPT Super
+			CODE_OPT Turbo
+		END_CODE_TABLE
+
+		&nbsp;
+
+		BEGIN_CODE_TABLE legacy-process "List of code values for legacy process control keys."
+			CODE_OPT Abort
+			CODE_OPT Resume
+			CODE_OPT Suspend
+		END_CODE_TABLE
+
+		&nbsp;
+
+		BEGIN_CODE_TABLE legacy-editing "List of code values for legacy editing keys."
+			CODE_OPT Again	Found on Sun's USB keyboard.
+			CODE_OPT Copy	Found on Sun's USB keyboard.
+			CODE_OPT Cut	Found on Sun's USB keyboard.
+			CODE_OPT Find	Found on Sun's USB keyboard.
+			CODE_OPT Open	Found on Sun's USB keyboard.
+			CODE_OPT Paste	Found on Sun's USB keyboard.
+			CODE_OPT Props	Found on Sun's USB keyboard.
+			CODE_OPT Select Found on Sun's USB keyboard.
+			CODE_OPT Undo	Found on Sun's USB keyboard.
+		END_CODE_TABLE
+
+		The following keys may be found on non-standard international keyboards.
+
+		BEGIN_CODE_TABLE international "List of code values for keys found on international keyboards."
+			CODE_OPT Hiragana	Use for dedicated KEYCAP{ひらがな} key found on some Japanese word processing keyboards.
+			CODE_OPT Katakana	Use for dedicated KEYCAP{カタカナ} key found on some Japanese word processing keyboards.
+		END_CODE_TABLE
+
+		And finally, the following {{KeyboardEvent/code}} value should only
+		be used when the corresponding key does not correspond to any of the
+		{{KeyboardEvent/code}} values given elsewhere in this specification.
+		This value is appropriate for use with virtual keyboards that do not
+		have their keys arranged in a way that corresponds to those on a
+		physical keyboard.
+
+		BEGIN_CODE_TABLE special "List of special code values."
+		CODE Unidentified	This value code should be used when no other
+							value given in this specification is appropriate.
+		END_CODE_TABLE
+
+		<p class="warning">
+		Conforming implementations MUST only use CODE{Unidentified} as a key code
+		when there is no way for the implementation to determine the key code.
+		Exposing only this value MUST NOT indicate a conforming implementation.
+		</p>
 
 <h2 id="accessibility">Accessibility</h2>
 
