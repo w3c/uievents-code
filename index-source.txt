@@ -397,20 +397,28 @@ path: stylesheet-extra.include
 
 <h2 id="code-value-tables">Keyboard Event {{KeyboardEvent/code}} Value Tables</h2>
 
-	This section defines a list of {{KeyboardEvent/code}} values which
-	implementations MUST support.
-
-	A conforming implementation of the {{KeyboardEvent}} interface MUST support
-	this set of values for use in the {{KeyboardEvent/code}} attributes,
-	although not all values MAY be available on all platforms or devices.
+	This section defines a list of values which are appropriate for use as
+	{{KeyboardEvent/code}} values.
 
 	A <dfn>key code attribute value</dfn> is any of the values given in the
 	"<code>KeyboardEvent.code</code>" column of any of the tables in this section of the
 	specification.
 
-	Future versions of this specification MAY include {{KeyboardEvent/code}} values not included
-	here, which have become common since the publication of this specification.
+	Each table in this section has a "Required" column which indicates whether or not the
+	value is required for a conforming implementation. Entries where the "Required" column
+	is "No" are optional and may be used by implementations to support special keyboards
+	(such as multimedia or legacy keyboards).
+	
+	<p class="note">
+	Note: Some values listed in this specification as "Required" may not be available on
+	all platforms or devices. For example, Mac keyboards do not have an KEYCAP{Insert} key
+	whereas standard PC keyboards do not have a KEYCAP{Help} key.
+	</p>
 
+	For every key listed as "Required" in this specification, a conforming implementation
+	of the {{KeyboardEvent}} interface MUST return the correct value as long as that key
+	is available on that platform.
+	
 	<p class="note">
 	Note: While every attempt has been made to make this list of values as complete as possible,
 	new values will periodically need to be defined as new input devices are introduced.
@@ -418,15 +426,6 @@ path: stylesheet-extra.include
 	(which are unlikely to be consistent across multiple user agents), bugs SHOULD be
 	filed so that this specification can be updated.
 	</p>
-
-	This section describes the various keyboard sections in more detail and
-	defines the set of values that are appropriate for use as {{KeyboardEvent/code}}
-	values.
-	
-	In these tables, entries where the "Req" column contains "Yes" are necessary to
-	support standard keyboards and are required for a comforming implementation.
-	Entries with a "No" in this column are optional and may be used by implementations
-	to support special keyboards (such as multimedia or legacy keyboards).
 
 	<h3 id="key-alphanumeric-section">Alphanumeric Section</h3>
 
