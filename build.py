@@ -64,9 +64,14 @@ class Parser():
 			data = ''
 			if value == 'Y':
 				data = '<span class="code-impl-yes">Pass</span>'
-			elif value == 'N':
-				data = '<span class="code-impl-no">No</span>'
+			elif value == 'F':
+				data = '<span class="code-impl-no">Fail</span>'
+			elif value == '?':
+				data = '<span>?</span>'
+			elif value == '-':
+				data = '<span>N/A</span>'
 			else:
+				print("ERROR processing impl table:", value)
 				data = '<span>?</span>'
 			suffix = ''
 			if ua[1] == 'Windows' or ua[1] == 'Linux':
@@ -177,7 +182,7 @@ class Parser():
 		pattern = r'^\s*CODE_IMPL(?P<nolink>_NOLINK)? (?P<code>[\w-]+)'
 		for ua in USER_AGENTS:
 			ua_os = ''.join(ua)
-			pattern += r'\s+(?P<%s>[YN\?\-])' % ua_os
+			pattern += r'\s+(?P<%s>[YF\?\-])' % ua_os
 		pattern += r'\s*(?P<Notes>\w.*)?$'
 		m = re.match(pattern, line)
 		if m:
