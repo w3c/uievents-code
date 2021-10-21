@@ -422,8 +422,13 @@ path: stylesheet-extra.include
 	<h3 id="keyboard-key-codes">Key Codes for Standard Keyboards</h3>
 
 		This section describes the various keyboard sections in more detail and
-		defines the {{KeyboardEvent/code}} values that should be used for each
-		key.
+		defines the set of values that are appropriate for use as {{KeyboardEvent/code}}
+		values.
+		
+		In these tables, entries where the "Req" column contains "Yes" are necessary to
+		support standard keyboards and are required for a comforming implementation.
+		Entries with a "No" in this column are optional and may be used by implementations
+		to support special keyboards (such as multimedia or legacy keyboards).
 
 		<h4 id="key-alphanumeric-section">Alphanumeric Section</h4>
 
@@ -593,16 +598,16 @@ path: stylesheet-extra.include
 				</figure>
 
 				BEGIN_CODE_TABLE alphanumeric-functional-2 "List of code values for functional keys found on Japanese and Korean keyboards."
-					CODE Convert	Japanese: KEYCAP{変換} (PHONETIC{henkan})
-					CODE KanaMode	Japanese: KEYCAP{カタカナ/ひらがな/ローマ字} (PHONETIC{katakana/hiragana/romaji})
-					CODE Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard):
-									KEYCAP{かな} (PHONETIC{kana})
-					CODE Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard):
-									KEYCAP{英数} (PHONETIC{eisu})
-					CODE Lang3		Japanese (word-processing keyboard): Katakana
-					CODE Lang4		Japanese (word-processing keyboard): Hiragana
-					CODE Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
-					CODE NonConvert Japanese: KEYCAP{無変換} (PHONETIC{muhenkan})
+					CODE Convert		Japanese: KEYCAP{変換} (PHONETIC{henkan})
+					CODE KanaMode		Japanese: KEYCAP{カタカナ/ひらがな/ローマ字} (PHONETIC{katakana/hiragana/romaji})
+					CODE_OPT Lang1		Korean: HangulMode KEYCAP{한/영} (PHONETIC{han/yeong})<br/>Japanese (Mac keyboard):
+										KEYCAP{かな} (PHONETIC{kana})
+					CODE_OPT Lang2		Korean: Hanja KEYCAP{한자} (PHONETIC{hanja})<br/>Japanese (Mac keyboard):
+										KEYCAP{英数} (PHONETIC{eisu})
+					CODE_OPT Lang3		Japanese (word-processing keyboard): Katakana
+					CODE_OPT Lang4		Japanese (word-processing keyboard): Hiragana
+					CODE_OPT Lang5		Japanese (word-processing keyboard): Zenkaku/Hankaku
+					CODE NonConvert 	Japanese: KEYCAP{無変換} (PHONETIC{muhenkan})
 				END_CODE_TABLE
 
 				On Apple keyboards, some keys on the bottom row are omitted and
@@ -686,52 +691,52 @@ path: stylesheet-extra.include
 			in the table below.
 
 			BEGIN_CODE_TABLE numpad "List of code values for keys in the Numpad section."
-				CODE NumLock			On the Mac, the CODE{NumLock} code should be used for the [=numpad=]
-										KEYCAP{Clear} key.
-				CODE Numpad0			KEYCAP{0 Ins} on a keyboard<br/>KEYCAP{0} on a phone or remote control
-				CODE Numpad1			KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or
-										remote control
-				CODE Numpad2			KEYCAP{2 &darr;} on a keyboard<br/>KEYCAP{2 ABC} on a phone or remote control
-				CODE Numpad3			KEYCAP{3 PgDn} on a keyboard<br/>KEYCAP{3 DEF} on a phone or remote control
-				CODE Numpad4			KEYCAP{4 &larr;} on a keyboard<br/>KEYCAP{4 GHI} on a phone or remote control
-				CODE Numpad5			KEYCAP{5} on a keyboard<br/>KEYCAP{5 JKL} on a phone or remote control
-				CODE Numpad6			KEYCAP{6 &rarr;} on a keyboard<br/>KEYCAP{6 MNO} on a phone or remote control
-				CODE Numpad7			KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone
-										or remote control
-				CODE Numpad8			KEYCAP{8 &uarr;} on a keyboard<br/>KEYCAP{8 TUV} on a phone or remote control
-				CODE Numpad9			KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone
-										or remote control
-				CODE NumpadAdd			KEYCAP{+}
-				CODE NumpadBackspace	Found on the Microsoft Natural Keyboard.
-				CODE NumpadClear		KEYCAP{C} or KEYCAP{AC} (All Clear). Also for use with [=numpads=] that have a
-										KEYCAP{Clear} key that is separate from the
-										KEYCAP{NumLock} key. On the Mac, the [=numpad=] KEYCAP{Clear} key should always
-										be encoded as CODE{NumLock}.
-				CODE NumpadClearEntry	KEYCAP{CE} (Clear Entry)
-				CODE NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
-										is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
-				CODE NumpadDecimal		KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
-										Brazil), this key may generate a KEYCAP{,}.
-				CODE NumpadDivide		KEYCAP{/}
+				CODE NumLock				On the Mac, the CODE{NumLock} code should be used for the [=numpad=]
+											KEYCAP{Clear} key.
+				CODE Numpad0				KEYCAP{0 Ins} on a keyboard<br/>KEYCAP{0} on a phone or remote control
+				CODE Numpad1				KEYCAP{1 End} on a keyboard<br/>KEYCAP{1} or KEYCAP{1 QZ} on a phone or
+											remote control
+				CODE Numpad2				KEYCAP{2 &darr;} on a keyboard<br/>KEYCAP{2 ABC} on a phone or remote control
+				CODE Numpad3				KEYCAP{3 PgDn} on a keyboard<br/>KEYCAP{3 DEF} on a phone or remote control
+				CODE Numpad4				KEYCAP{4 &larr;} on a keyboard<br/>KEYCAP{4 GHI} on a phone or remote control
+				CODE Numpad5				KEYCAP{5} on a keyboard<br/>KEYCAP{5 JKL} on a phone or remote control
+				CODE Numpad6				KEYCAP{6 &rarr;} on a keyboard<br/>KEYCAP{6 MNO} on a phone or remote control
+				CODE Numpad7				KEYCAP{7 Home} on a keyboard<br/>KEYCAP{7 PQRS} or KEYCAP{7 PRS} on a phone
+											or remote control
+				CODE Numpad8				KEYCAP{8 &uarr;} on a keyboard<br/>KEYCAP{8 TUV} on a phone or remote control
+				CODE Numpad9				KEYCAP{9 PgUp} on a keyboard<br/>KEYCAP{9 WXYZ} or KEYCAP{9 WXY} on a phone
+											or remote control
+				CODE NumpadAdd				KEYCAP{+}
+				CODE_OPT NumpadBackspace	Found on the Microsoft Natural Keyboard.
+				CODE_OPT NumpadClear		KEYCAP{C} or KEYCAP{AC} (All Clear). Also for use with [=numpads=] that have a
+											KEYCAP{Clear} key that is separate from the
+											KEYCAP{NumLock} key. On the Mac, the [=numpad=] KEYCAP{Clear} key should always
+											be encoded as CODE{NumLock}.
+				CODE_OPT NumpadClearEntry	KEYCAP{CE} (Clear Entry)
+				CODE_OPT NumpadComma		KEYCAP{,} (thousands separator). For locales where the thousands separator
+											is a "." (e.g., Brazil), this key may generate a KEYCAP{.}.
+				CODE NumpadDecimal			KEYCAP{. Del}. For locales where the decimal separator is "," (e.g.,
+											Brazil), this key may generate a KEYCAP{,}.
+				CODE NumpadDivide			KEYCAP{/}
 				CODE NumpadEnter
-				CODE NumpadEqual		KEYCAP{=}
-				CODE NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
-										below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
-				CODE NumpadMemoryAdd	KEYCAP{M+} Add current entry to the value stored in memory.
-				CODE NumpadMemoryClear	KEYCAP{MC} Clear the value stored in memory.
-				CODE NumpadMemoryRecall	KEYCAP{MR} Replace the current entry with the value stored in memory.
-				CODE NumpadMemoryStore	KEYCAP{MS} Replace the value stored in memory with the current entry.
-				CODE NumpadMemorySubtract	KEYCAP{M-} Subtract current entry from the value stored in memory.
-				CODE NumpadMultiply		KEYCAP{*} on a keyboard. For use with [=numpads=] that provide mathematical
-										operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
-										CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
-				CODE NumpadParenLeft	KEYCAP{(} Found on the Microsoft Natural Keyboard.
-				CODE NumpadParenRight	KEYCAP{)} Found on the Microsoft Natural Keyboard.
-				CODE NumpadStar			KEYCAP{*} on a phone or remote control device.
-										This key is typically found below the KEYCAP{7} key and to the left of
-										the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on
-										numeric keypads.
-				CODE NumpadSubtract		KEYCAP{-}
+				CODE_OPT NumpadEqual		KEYCAP{=}
+				CODE_OPT NumpadHash			KEYCAP{#} on a phone or remote control device. This key is typically found
+											below the KEYCAP{9} key and to the right of the KEYCAP{0} key.
+				CODE_OPT NumpadMemoryAdd	KEYCAP{M+} Add current entry to the value stored in memory.
+				CODE_OPT NumpadMemoryClear	KEYCAP{MC} Clear the value stored in memory.
+				CODE_OPT NumpadMemoryRecall	KEYCAP{MR} Replace the current entry with the value stored in memory.
+				CODE_OPT NumpadMemoryStore	KEYCAP{MS} Replace the value stored in memory with the current entry.
+				CODE_OPT NumpadMemorySubtract	KEYCAP{M-} Subtract current entry from the value stored in memory.
+				CODE NumpadMultiply			KEYCAP{*} on a keyboard. For use with [=numpads=] that provide mathematical
+											operations (KEYCAP{+}, KEYCAP{-}, KEYCAP{*} and KEYCAP{/}).<br/>Use
+											CODE{NumpadStar} for the KEYCAP{*} key on phones and remote controls.
+				CODE_OPT NumpadParenLeft	KEYCAP{(} Found on the Microsoft Natural Keyboard.
+				CODE_OPT NumpadParenRight	KEYCAP{)} Found on the Microsoft Natural Keyboard.
+				CODE_OPT NumpadStar			KEYCAP{*} on a phone or remote control device.
+											This key is typically found below the KEYCAP{7} key and to the left of
+											the KEYCAP{0} key.<br/>Use CODE{NumpadMultiply} for the KEYCAP{*} key on
+											numeric keypads.
+				CODE NumpadSubtract			KEYCAP{-}
 			END_CODE_TABLE
 
 			For [=numpads=] that provide keys not listed here, a
@@ -760,27 +765,27 @@ path: stylesheet-extra.include
 			name.
 
 			BEGIN_CODE_TABLE function "List of code values for keys in the Function section."
-				CODE Escape		KEYCAP{Esc} or KEYCAP{⎋}
-				CODE F1			KEYCAP{F1}
-				CODE F2			KEYCAP{F2}
-				CODE F3			KEYCAP{F3}
-				CODE F4			KEYCAP{F4}
-				CODE F5			KEYCAP{F5}
-				CODE F6			KEYCAP{F6}
-				CODE F7			KEYCAP{F7}
-				CODE F8			KEYCAP{F8}
-				CODE F9			KEYCAP{F9}
-				CODE F10		KEYCAP{F10}
-				CODE F11		KEYCAP{F11}
-				CODE F12		KEYCAP{F12}
-				CODE Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate
-								code. Most keyboards do not place this key in the [=function section=], but it is
-								included here to keep it with related keys.
-				CODE FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft
-								Natural Keyboard.
+				CODE Escape			KEYCAP{Esc} or KEYCAP{⎋}
+				CODE F1				KEYCAP{F1}
+				CODE F2				KEYCAP{F2}
+				CODE F3				KEYCAP{F3}
+				CODE F4				KEYCAP{F4}
+				CODE F5				KEYCAP{F5}
+				CODE F6				KEYCAP{F6}
+				CODE F7				KEYCAP{F7}
+				CODE F8				KEYCAP{F8}
+				CODE F9				KEYCAP{F9}
+				CODE F10			KEYCAP{F10}
+				CODE F11			KEYCAP{F11}
+				CODE F12			KEYCAP{F12}
+				CODE_OPT Fn			KEYCAP{Fn} This is typically a hardware key that does not generate a separate
+									code. Most keyboards do not place this key in the [=function section=], but it is
+									included here to keep it with related keys.
+				CODE_OPT FnLock		KEYCAP{FLock} or KEYCAP{FnLock}. Function Lock key. Found on the Microsoft
+									Natural Keyboard.
 				CODE PrintScreen	KEYCAP{PrtScr SysRq} or KEYCAP{Print Screen}
 				CODE ScrollLock		KEYCAP{Scroll Lock}
-				CODE Pause		KEYCAP{Pause Break}
+				CODE Pause			KEYCAP{Pause Break}
 			END_CODE_TABLE
 
 			For keyboards that provide more than 12 [=function keys=], the
@@ -817,30 +822,30 @@ path: stylesheet-extra.include
 			[=media key=] value is not consistent across keyboards.
 
 			BEGIN_CODE_TABLE media "List of code values for media keys."
-				CODE BrowserBack		Some laptops place this key to the left of the KEYCAP{&uarr;} key.
-				CODE BrowserFavorites
-				CODE BrowserForward		Some laptops place this key to the right of the KEYCAP{&uarr;} key.
-				CODE BrowserHome
-				CODE BrowserRefresh
-				CODE BrowserSearch
-				CODE BrowserStop
-				CODE Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the [=function
-										section=] on some Apple keyboards.
-				CODE LaunchApp1			Sometimes labelled KEYCAP{My Computer} on the keyboard
-				CODE LaunchApp2			Sometimes labelled KEYCAP{Calculator} on the keyboard
-				CODE LaunchMail
-				CODE MediaPlayPause
-				CODE MediaSelect
-				CODE MediaStop
-				CODE MediaTrackNext
-				CODE MediaTrackPrevious
-				CODE Power				This key is placed in the [=function section=] on some Apple keyboards,
-										replacing the KEYCAP{Eject} key.
-				CODE Sleep
-				CODE AudioVolumeDown
-				CODE AudioVolumeMute
-				CODE AudioVolumeUp
-				CODE WakeUp
+				CODE_OPT BrowserBack		Some laptops place this key to the left of the KEYCAP{&uarr;} key.
+				CODE_OPT BrowserFavorites
+				CODE_OPT BrowserForward		Some laptops place this key to the right of the KEYCAP{&uarr;} key.
+				CODE_OPT BrowserHome
+				CODE_OPT BrowserRefresh
+				CODE_OPT BrowserSearch
+				CODE_OPT BrowserStop
+				CODE_OPT Eject				KEYCAP{Eject} or KEYCAP{&#9167;}. This key is placed in the [=function
+											section=] on some Apple keyboards.
+				CODE_OPT LaunchApp1			Sometimes labelled KEYCAP{My Computer} on the keyboard
+				CODE_OPT LaunchApp2			Sometimes labelled KEYCAP{Calculator} on the keyboard
+				CODE_OPT LaunchMail
+				CODE_OPT MediaPlayPause
+				CODE_OPT MediaSelect
+				CODE_OPT MediaStop
+				CODE_OPT MediaTrackNext
+				CODE_OPT MediaTrackPrevious
+				CODE_OPT Power				This key is placed in the [=function section=] on some Apple keyboards,
+											replacing the KEYCAP{Eject} key.
+				CODE_OPT Sleep
+				CODE_OPT AudioVolumeDown
+				CODE_OPT AudioVolumeMute
+				CODE_OPT AudioVolumeUp
+				CODE_OPT WakeUp
 			END_CODE_TABLE
 
 		<h4 id="key-legacy">Legacy, Non-Standard and Special Keys</h4>
@@ -849,38 +854,38 @@ path: stylesheet-extra.include
 			listed here for reference purposes.
 
 			BEGIN_CODE_TABLE legacy-modifier "List of code values for legacy modifier keys."
-				CODE Hyper
-				CODE Super
-				CODE Turbo
+				CODE_OPT Hyper
+				CODE_OPT Super
+				CODE_OPT Turbo
 			END_CODE_TABLE
 
 			&nbsp;
 
 			BEGIN_CODE_TABLE legacy-process "List of code values for legacy process control keys."
-				CODE Abort
-				CODE Resume
-				CODE Suspend
+				CODE_OPT Abort
+				CODE_OPT Resume
+				CODE_OPT Suspend
 			END_CODE_TABLE
 
 			&nbsp;
 
 			BEGIN_CODE_TABLE legacy-editing "List of code values for legacy editing keys."
-				CODE Again	Found on Sun's USB keyboard.
-				CODE Copy	Found on Sun's USB keyboard.
-				CODE Cut	Found on Sun's USB keyboard.
-				CODE Find	Found on Sun's USB keyboard.
-				CODE Open	Found on Sun's USB keyboard.
-				CODE Paste	Found on Sun's USB keyboard.
-				CODE Props	Found on Sun's USB keyboard.
-				CODE Select Found on Sun's USB keyboard.
-				CODE Undo	Found on Sun's USB keyboard.
+				CODE_OPT Again	Found on Sun's USB keyboard.
+				CODE_OPT Copy	Found on Sun's USB keyboard.
+				CODE_OPT Cut	Found on Sun's USB keyboard.
+				CODE_OPT Find	Found on Sun's USB keyboard.
+				CODE_OPT Open	Found on Sun's USB keyboard.
+				CODE_OPT Paste	Found on Sun's USB keyboard.
+				CODE_OPT Props	Found on Sun's USB keyboard.
+				CODE_OPT Select Found on Sun's USB keyboard.
+				CODE_OPT Undo	Found on Sun's USB keyboard.
 			END_CODE_TABLE
 
 			The following keys may be found on non-standard international keyboards.
 
 			BEGIN_CODE_TABLE international "List of code values for keys found on international keyboards."
-				CODE Hiragana	Use for dedicated KEYCAP{ひらがな} key found on some Japanese word processing keyboards.
-				CODE Katakana	Use for dedicated KEYCAP{カタカナ} key found on some Japanese word processing keyboards.
+				CODE_OPT Hiragana	Use for dedicated KEYCAP{ひらがな} key found on some Japanese word processing keyboards.
+				CODE_OPT Katakana	Use for dedicated KEYCAP{カタカナ} key found on some Japanese word processing keyboards.
 			END_CODE_TABLE
 
 			And finally, the following {{KeyboardEvent/code}} value should only

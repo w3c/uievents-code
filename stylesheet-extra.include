@@ -95,7 +95,10 @@ code.glyph {
 
 /* The cell in a code table that contains the code value. */
 .code-table-code {
-	vertical-align: top;
+}
+
+.code-table-required {
+	text-align: center;
 }
 
 .code-impl-data {

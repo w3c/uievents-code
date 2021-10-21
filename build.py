@@ -29,6 +29,7 @@ class Parser():
 		self.in_table = False
 
 		self.code = None
+		self.opt = ''
 		self.desc = ''
 
 		# Only used for IMPL tables
@@ -42,10 +43,17 @@ class Parser():
 		if self.code == None:
 			return ''
 
+		req = "Yes"
+		if self.opt:
+			req = "No"
 		return (
-			'<tr><td class="code-table-code"><code class="code" id="code-%s">"%s"</code></td>\n'
-			'<td>%s</td></tr>\n') % (self.code, self.code, self.desc)
+			'<tr>'
+			'<td class="code-table-code"><code class="code" id="code-%s">"%s"</code></td>\n'
+			'<td class="code-table-required">%s</td>'
+			'<td>%s</td>'
+			'</tr>\n') % (self.code, self.code, req, self.desc)
 
+    # Handle a table row for the implementation report.
 	def table_row_impl(self):
 		if self.impl_section:
 			return '<tr><td style="background-color: #B9C9FE" colspan="%d">%s</td></tr>\n' % (len(USER_AGENTS) + 2, self.impl_section_name)
@@ -152,12 +160,13 @@ class Parser():
 		return desc
 
 	def process_line(self, line):
-		m = re.match(r'^.*CODE (\w+)\s*(.*)$', line)
+		m = re.match(r'^.*CODE(_OPT)? (\w+)\s*(.*)$', line)
 		if m:
 			# Write out previous code.
 			result = self.table_row()
-			self.code = m.group(1)
-			self.desc = self.process_text(m.group(2))
+			self.opt = m.group(1)
+			self.code = m.group(2)
+			self.desc = self.process_text(m.group(3))
 			return result
 
 		m = re.match(r'^.*BEGIN_CODE_TABLE ([a-z0-9-]+) \"(.*)\"', line)
@@ -169,7 +178,11 @@ class Parser():
 			return (
 				'<table id="table-key-code-%s" class="data-table full-width">\n'
 				'<caption>%s</caption>\n'
-				'<thead><tr><th style="width:20%%">{{KeyboardEvent}} {{KeyboardEvent/code}}</th><th style="width:80%%">Notes (Non-normative)</th></tr></thead>\n'
+				'<thead><tr>'
+				'<th style="width:20%%">{{KeyboardEvent}} {{KeyboardEvent/code}}</th>'
+				'<th style="width:10%%">Required</th>'
+				'<th style="width:70%%">Notes (Non-normative)</th>'
+				'</tr></thead>\n'
 				'<tbody>\n') % (name, caption)
 
 		m = re.match(r'^.*END_CODE_TABLE', line)

@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD" rel="stylesheet">
   <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="4e1b837a5ea52026b9b6b7ad98cad6b5fae958be" name="document-revision">
+  <meta content="4121886f381565d61121a3970ddffcc898102672" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -104,7 +104,10 @@ code.glyph {
 
 /* The cell in a code table that contains the code value. */
 .code-table-code {
-	vertical-align: top;
+}
+
+.code-table-required {
+	text-align: center;
 }
 
 .code-impl-data {
@@ -690,8 +693,11 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
 	filed so that this specification can be updated. </p>
    <h3 class="heading settled" data-level="3.1" id="keyboard-key-codes"><span class="secno">3.1. </span><span class="content">Key Codes for Standard Keyboards</span><a class="self-link" href="#keyboard-key-codes"></a></h3>
    <p>This section describes the various keyboard sections in more detail and
-		defines the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑨">code</a></code> values that should be used for each
-		key.</p>
+		defines the set of values that are appropriate for use as <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑨">code</a></code> values.</p>
+   <p>In these tables, entries where the "Req" column contains "Yes" are necessary to
+		support standard keyboards and are required for a comforming implementation.
+		Entries with a "No" in this column are optional and may be used by implementations
+		to support special keyboards (such as multimedia or legacy keyboards).</p>
    <h4 class="heading settled" data-level="3.1.1" id="key-alphanumeric-section"><span class="secno">3.1.1. </span><span class="content">Alphanumeric Section</span><a class="self-link" href="#key-alphanumeric-section"></a></h4>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="alphanumeric-section">alphanumeric section</dfn> is the main section of the keyboard. It
 			contains keys that fall into two general
@@ -725,161 +731,212 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent②">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①②">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backquote">"Backquote"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">`~</code> on a US keyboard. This is the <code class="keycap">半角/全角/漢字</code> (<span class="unicode">hankaku/zenkaku/kanji</span>) key on Japanese keyboards 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backslash">"Backslash"</code>
+      <td class="code-table-required">Yes
       <td>Used for both the US <code class="keycap">\|</code> (on the 101-key layout) and also for the key										located between the <code class="keycap">"</code> and <code class="keycap">Enter</code> keys on row C of the 102-,
 										104- and 106-key layouts.
 										Labelled <code class="keycap">#~</code> on a UK (102) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-BracketLeft">"BracketLeft"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">[{</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-BracketRight">"BracketRight"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">]}</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Comma">"Comma"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">,&lt;</code> on a US keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit0">"Digit0"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">0)</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit1">"Digit1"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">1!</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit2">"Digit2"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">2@</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit3">"Digit3"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">3#</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit4">"Digit4"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">4$</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit5">"Digit5"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">5%</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit6">"Digit6"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">6^</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit7">"Digit7"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">7&amp;</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit8">"Digit8"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">8*</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Digit9">"Digit9"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">9(</code> on a US keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Equal">"Equal"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">=+</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlBackslash">"IntlBackslash"</code>
+      <td class="code-table-required">Yes
       <td>Located between the left <code class="keycap">Shift</code> and <code class="keycap">Z</code> keys.										Labelled <code class="keycap">\|</code> on a UK keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlRo">"IntlRo"</code>
+      <td class="code-table-required">Yes
       <td>Located between the <code class="keycap">/</code> and right <code class="keycap">Shift</code> keys.										Labelled <code class="keycap">\ろ</code> (<span class="unicode">ro</span>) on a Japanese keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-IntlYen">"IntlYen"</code>
+      <td class="code-table-required">Yes
       <td>Located between the <code class="keycap">=</code> and <code class="keycap">Backspace</code> keys.										Labelled <code class="keycap">¥</code> (<span class="unicode">yen</span>) on a Japanese keyboard. <code class="keycap">\/</code> on a
 										Russian keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyA">"KeyA"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">a</code> on a US keyboard.										Labelled <code class="keycap">q</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyB">"KeyB"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">b</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyC">"KeyC"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">c</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyD">"KeyD"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">d</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyE">"KeyE"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">e</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyF">"KeyF"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">f</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyG">"KeyG"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">g</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyH">"KeyH"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">h</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyI">"KeyI"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">i</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyJ">"KeyJ"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">j</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyK">"KeyK"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">k</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyL">"KeyL"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">l</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyM">"KeyM"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">m</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyN">"KeyN"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">n</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyO">"KeyO"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">o</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyP">"KeyP"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">p</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyQ">"KeyQ"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">q</code> on a US keyboard.										Labelled <code class="keycap">a</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyR">"KeyR"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">r</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyS">"KeyS"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">s</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyT">"KeyT"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">t</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyU">"KeyU"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">u</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyV">"KeyV"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">v</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyW">"KeyW"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">w</code> on a US keyboard.										Labelled <code class="keycap">z</code> on an AZERTY (e.g., French) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyX">"KeyX"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">x</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyY">"KeyY"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">y</code> on a US keyboard.										Labelled <code class="keycap">z</code> on a QWERTZ (e.g., German) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-KeyZ">"KeyZ"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">z</code> on a US keyboard.										Labelled <code class="keycap">w</code> on an AZERTY (e.g., French) keyboard, and <code class="keycap">y</code> on a
 										QWERTZ (e.g., German) keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Minus">"Minus"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">-_</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Period">"Period"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">.></code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Quote">"Quote"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">'"</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Semicolon">"Semicolon"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">;:</code> on a US keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Slash">"Slash"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">/?</code> on a US keyboard.
    </table>
    <h5 class="heading settled" data-level="3.1.1.2" id="key-alphanumeric-functional"><span class="secno">3.1.1.2. </span><span class="content">Functional Keys</span><a class="self-link" href="#key-alphanumeric-functional"></a></h5>
@@ -898,49 +955,64 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent③">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①③">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-AltLeft">"AltLeft"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.
      <tr>
       <td class="code-table-code"><code class="code" id="code-AltRight">"AltRight"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Alt</code>, <code class="keycap">Option</code> or <code class="keycap">⌥</code>.										This is labelled <code class="keycap">AltGr</code> key on many keyboard layouts. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Backspace">"Backspace"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Backspace</code> or <code class="keycap">⌫</code>.										Labelled <code class="keycap">Delete</code> on Apple keyboards. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-CapsLock">"CapsLock"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">CapsLock</code> or <code class="keycap">⇪</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ContextMenu">"ContextMenu"</code>
+      <td class="code-table-required">Yes
       <td>The application context menu key, which is typically found between the right <code class="keycap">Meta</code> key and the right <code class="keycap">Control</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-ControlLeft">"ControlLeft"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Control</code> or <code class="keycap">⌃</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ControlRight">"ControlRight"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Control</code> or <code class="keycap">⌃</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Enter">"Enter"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Enter</code> or <code class="keycap">↵</code>. Labelled <code class="keycap">Return</code> on Apple keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-MetaLeft">"MetaLeft"</code>
+      <td class="code-table-required">Yes
       <td>The Windows, <code class="keycap">⌘</code>, <code class="keycap">Command</code> or other OS symbol key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-MetaRight">"MetaRight"</code>
+      <td class="code-table-required">Yes
       <td>The Windows, <code class="keycap">⌘</code>, <code class="keycap">Command</code> or other OS symbol key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-ShiftLeft">"ShiftLeft"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Shift</code> or <code class="keycap">⇧</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ShiftRight">"ShiftRight"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Shift</code> or <code class="keycap">⇧</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Space">"Space"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap"> </code> (space)
      <tr>
       <td class="code-table-code"><code class="code" id="code-Tab">"Tab"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Tab</code> or <code class="keycap">⇥</code>
    </table>
    <p>On some keyboards (notably Japanese and Korean) the spacebar is
@@ -958,31 +1030,40 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent④">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑤">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Convert">"Convert"</code>
+      <td class="code-table-required">Yes
       <td>Japanese: <code class="keycap">変換</code> (<span class="unicode">henkan</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-KanaMode">"KanaMode"</code>
+      <td class="code-table-required">Yes
       <td>Japanese: <code class="keycap">カタカナ/ひらがな/ローマ字</code> (<span class="unicode">katakana/hiragana/romaji</span>)
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang1">"Lang1"</code>
+      <td class="code-table-required">No
       <td>Korean: HangulMode <code class="keycap">한/영</code> (<span class="unicode">han/yeong</span>)<br>Japanese (Mac keyboard): <code class="keycap">かな</code> (<span class="unicode">kana</span>) 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang2">"Lang2"</code>
+      <td class="code-table-required">No
       <td>Korean: Hanja <code class="keycap">한자</code> (<span class="unicode">hanja</span>)<br>Japanese (Mac keyboard): <code class="keycap">英数</code> (<span class="unicode">eisu</span>) 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang3">"Lang3"</code>
+      <td class="code-table-required">No
       <td>Japanese (word-processing keyboard): Katakana
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang4">"Lang4"</code>
+      <td class="code-table-required">No
       <td>Japanese (word-processing keyboard): Hiragana
      <tr>
       <td class="code-table-code"><code class="code" id="code-Lang5">"Lang5"</code>
+      <td class="code-table-required">No
       <td>Japanese (word-processing keyboard): Zenkaku/Hankaku
      <tr>
       <td class="code-table-code"><code class="code" id="code-NonConvert">"NonConvert"</code>
+      <td class="code-table-required">Yes
       <td>Japanese: <code class="keycap">無変換</code> (<span class="unicode">muhenkan</span>)
    </table>
    <p>On Apple keyboards, some keys on the bottom row are omitted and
@@ -999,29 +1080,37 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑤">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑥">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Delete">"Delete"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">⌦</code>. The forward delete key.								Note that on Apple keyboards, the key labelled <code class="keycap">Delete</code> on the main part of
 								the keyboard should be encoded as <code class="code">"<a href="#code-Backspace">Backspace</a>"</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-End">"End"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Page Down</code>, <code class="keycap">End</code> or <code class="keycap">↘</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Help">"Help"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Help</code>. Not present on standard PC keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Home">"Home"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Home</code> or <code class="keycap">↖</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Insert">"Insert"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Insert</code> or <code class="keycap">Ins</code>. Not present on Apple keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-PageDown">"PageDown"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Page Down</code>, <code class="keycap">PgDn</code> or <code class="keycap">⇟</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-PageUp">"PageUp"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Page Up</code>, <code class="keycap">PgUp</code> or <code class="keycap">⇞</code>
    </table>
    <p class="note" role="note"> The <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑦">code</a></code> for the <code class="keycap">Fn</code> key (found on some
@@ -1038,19 +1127,24 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑥">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code①⑧">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ArrowDown">"ArrowDown"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">↓</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ArrowLeft">"ArrowLeft"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">←</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ArrowRight">"ArrowRight"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">→</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ArrowUp">"ArrowUp"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">↑</code>
    </table>
    <h4 class="heading settled" data-level="3.1.4" id="key-numpad-section"><span class="secno">3.1.4. </span><span class="content">Numpad Section</span><a class="self-link" href="#key-numpad-section"></a></h4>
@@ -1081,103 +1175,135 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑦">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⓪">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumLock">"NumLock"</code>
+      <td class="code-table-required">Yes
       <td>On the Mac, the <code class="code">"<a href="#code-NumLock">NumLock</a>"</code> code should be used for the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①③">numpad</a> <code class="keycap">Clear</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad0">"Numpad0"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">0 Ins</code> on a keyboard<br><code class="keycap">0</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad1">"Numpad1"</code>
-      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or										remote control 
+      <td class="code-table-required">Yes
+      <td><code class="keycap">1 End</code> on a keyboard<br><code class="keycap">1</code> or <code class="keycap">1 QZ</code> on a phone or											remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad2">"Numpad2"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">2 ↓</code> on a keyboard<br><code class="keycap">2 ABC</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad3">"Numpad3"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">3 PgDn</code> on a keyboard<br><code class="keycap">3 DEF</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad4">"Numpad4"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">4 ←</code> on a keyboard<br><code class="keycap">4 GHI</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad5">"Numpad5"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">5</code> on a keyboard<br><code class="keycap">5 JKL</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad6">"Numpad6"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">6 →</code> on a keyboard<br><code class="keycap">6 MNO</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad7">"Numpad7"</code>
-      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone										or remote control 
+      <td class="code-table-required">Yes
+      <td><code class="keycap">7 Home</code> on a keyboard<br><code class="keycap">7 PQRS</code> or <code class="keycap">7 PRS</code> on a phone											or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad8">"Numpad8"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">8 ↑</code> on a keyboard<br><code class="keycap">8 TUV</code> on a phone or remote control
      <tr>
       <td class="code-table-code"><code class="code" id="code-Numpad9">"Numpad9"</code>
-      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone										or remote control 
+      <td class="code-table-required">Yes
+      <td><code class="keycap">9 PgUp</code> on a keyboard<br><code class="keycap">9 WXYZ</code> or <code class="keycap">9 WXY</code> on a phone											or remote control 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadAdd">"NumpadAdd"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">+</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadBackspace">"NumpadBackspace"</code>
+      <td class="code-table-required">No
       <td>Found on the Microsoft Natural Keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadClear">"NumpadClear"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">C</code> or <code class="keycap">AC</code> (All Clear). Also for use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①④">numpads</a> that have a <code class="keycap">Clear</code> key that is separate from the <code class="keycap">NumLock</code> key. On the Mac, the <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑤">numpad</a> <code class="keycap">Clear</code> key should always
-										be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>. 
+											be encoded as <code class="code">"<a href="#code-NumLock">NumLock</a>"</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadClearEntry">"NumpadClearEntry"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">CE</code> (Clear Entry)
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadComma">"NumpadComma"</code>
-      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator										is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>. 
+      <td class="code-table-required">No
+      <td><code class="keycap">,</code> (thousands separator). For locales where the thousands separator											is a "." (e.g., Brazil), this key may generate a <code class="keycap">.</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDecimal">"NumpadDecimal"</code>
-      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g.,										Brazil), this key may generate a <code class="keycap">,</code>. 
+      <td class="code-table-required">Yes
+      <td><code class="keycap">. Del</code>. For locales where the decimal separator is "," (e.g.,											Brazil), this key may generate a <code class="keycap">,</code>. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadDivide">"NumpadDivide"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">/</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadEnter">"NumpadEnter"</code>
+      <td class="code-table-required">Yes
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadEqual">"NumpadEqual"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">=</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadHash">"NumpadHash"</code>
-      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found										below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key. 
+      <td class="code-table-required">No
+      <td><code class="keycap">#</code> on a phone or remote control device. This key is typically found											below the <code class="keycap">9</code> key and to the right of the <code class="keycap">0</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryAdd">"NumpadMemoryAdd"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">M+</code> Add current entry to the value stored in memory.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryClear">"NumpadMemoryClear"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">MC</code> Clear the value stored in memory.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryRecall">"NumpadMemoryRecall"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">MR</code> Replace the current entry with the value stored in memory.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemoryStore">"NumpadMemoryStore"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">MS</code> Replace the value stored in memory with the current entry.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMemorySubtract">"NumpadMemorySubtract"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">M-</code> Subtract current entry from the value stored in memory.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadMultiply">"NumpadMultiply"</code>
-      <td><code class="keycap">*</code> on a keyboard. For use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑥">numpads</a> that provide mathematical										operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls. 
+      <td class="code-table-required">Yes
+      <td><code class="keycap">*</code> on a keyboard. For use with <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑥">numpads</a> that provide mathematical											operations (<code class="keycap">+</code>, <code class="keycap">-</code>, <code class="keycap">*</code> and <code class="keycap">/</code>).<br>Use <code class="code">"<a href="#code-NumpadStar">NumpadStar</a>"</code> for the <code class="keycap">*</code> key on phones and remote controls. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadParenLeft">"NumpadParenLeft"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">(</code> Found on the Microsoft Natural Keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadParenRight">"NumpadParenRight"</code>
+      <td class="code-table-required">No
       <td><code class="keycap">)</code> Found on the Microsoft Natural Keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadStar">"NumpadStar"</code>
-      <td><code class="keycap">*</code> on a phone or remote control device.										This key is typically found below the <code class="keycap">7</code> key and to the left of
-										the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on
-										numeric keypads. 
+      <td class="code-table-required">No
+      <td><code class="keycap">*</code> on a phone or remote control device.											This key is typically found below the <code class="keycap">7</code> key and to the left of
+											the <code class="keycap">0</code> key.<br>Use <code class="code">"<a href="#code-NumpadMultiply">NumpadMultiply</a>"</code> for the <code class="keycap">*</code> key on
+											numeric keypads. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-NumpadSubtract">"NumpadSubtract"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">-</code>
    </table>
    <p>For <a data-link-type="dfn" href="#numpad" id="ref-for-numpad①⑦">numpads</a> that provide keys not listed here, a <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②①">code</a></code> value string should be created by starting
@@ -1201,62 +1327,81 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑧">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②③">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Escape">"Escape"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Esc</code> or <code class="keycap">⎋</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F1">"F1"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F1</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F2">"F2"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F2</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F3">"F3"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F3</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F4">"F4"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F4</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F5">"F5"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F5</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F6">"F6"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F6</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F7">"F7"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F7</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F8">"F8"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F8</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F9">"F9"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F9</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F10">"F10"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F10</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F11">"F11"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F11</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-F12">"F12"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">F12</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Fn">"Fn"</code>
-      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate								code. Most keyboards do not place this key in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑨">function section</a>, but it is
-								included here to keep it with related keys. 
+      <td class="code-table-required">No
+      <td><code class="keycap">Fn</code> This is typically a hardware key that does not generate a separate									code. Most keyboards do not place this key in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section⑨">function section</a>, but it is
+									included here to keep it with related keys. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-FnLock">"FnLock"</code>
-      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft								Natural Keyboard. 
+      <td class="code-table-required">No
+      <td><code class="keycap">FLock</code> or <code class="keycap">FnLock</code>. Function Lock key. Found on the Microsoft									Natural Keyboard. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-PrintScreen">"PrintScreen"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">PrtScr SysRq</code> or <code class="keycap">Print Screen</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-ScrollLock">"ScrollLock"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Scroll Lock</code>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Pause">"Pause"</code>
+      <td class="code-table-required">Yes
       <td><code class="keycap">Pause Break</code>
    </table>
    <p>For keyboards that provide more than 12 <a data-link-type="dfn" href="#function-key" id="ref-for-function-key⑤">function keys</a>, the <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②④">code</a></code> value follows the pattern shown above with
@@ -1281,73 +1426,96 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent⑨">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑧">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserBack">"BrowserBack"</code>
+      <td class="code-table-required">No
       <td>Some laptops place this key to the left of the <code class="keycap">↑</code> key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserFavorites">"BrowserFavorites"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserForward">"BrowserForward"</code>
+      <td class="code-table-required">No
       <td>Some laptops place this key to the right of the <code class="keycap">↑</code> key.
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserHome">"BrowserHome"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserRefresh">"BrowserRefresh"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserSearch">"BrowserSearch"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-BrowserStop">"BrowserStop"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Eject">"Eject"</code>
-      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①①">function										section</a> on some Apple keyboards. 
+      <td class="code-table-required">No
+      <td><code class="keycap">Eject</code> or <code class="keycap">⏏</code>. This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①①">function											section</a> on some Apple keyboards. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchApp1">"LaunchApp1"</code>
+      <td class="code-table-required">No
       <td>Sometimes labelled <code class="keycap">My Computer</code> on the keyboard
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchApp2">"LaunchApp2"</code>
+      <td class="code-table-required">No
       <td>Sometimes labelled <code class="keycap">Calculator</code> on the keyboard
      <tr>
       <td class="code-table-code"><code class="code" id="code-LaunchMail">"LaunchMail"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-MediaPlayPause">"MediaPlayPause"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-MediaSelect">"MediaSelect"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-MediaStop">"MediaStop"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-MediaTrackNext">"MediaTrackNext"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-MediaTrackPrevious">"MediaTrackPrevious"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Power">"Power"</code>
-      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①②">function section</a> on some Apple keyboards,										replacing the <code class="keycap">Eject</code> key. 
+      <td class="code-table-required">No
+      <td>This key is placed in the <a data-link-type="dfn" href="#function-section" id="ref-for-function-section①②">function section</a> on some Apple keyboards,											replacing the <code class="keycap">Eject</code> key. 
      <tr>
       <td class="code-table-code"><code class="code" id="code-Sleep">"Sleep"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-AudioVolumeDown">"AudioVolumeDown"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-AudioVolumeMute">"AudioVolumeMute"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-AudioVolumeUp">"AudioVolumeUp"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-WakeUp">"WakeUp"</code>
+      <td class="code-table-required">No
       <td>
    </table>
    <h4 class="heading settled" data-level="3.1.7" id="key-legacy"><span class="secno">3.1.7. </span><span class="content">Legacy, Non-Standard and Special Keys</span><a class="self-link" href="#key-legacy"></a></h4>
@@ -1358,16 +1526,20 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①⓪">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code②⑨">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Hyper">"Hyper"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Super">"Super"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Turbo">"Turbo"</code>
+      <td class="code-table-required">No
       <td>
    </table>
    <p></p>
@@ -1376,16 +1548,20 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①①">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⓪">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Abort">"Abort"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Resume">"Resume"</code>
+      <td class="code-table-required">No
       <td>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Suspend">"Suspend"</code>
+      <td class="code-table-required">No
       <td>
    </table>
    <p></p>
@@ -1394,34 +1570,44 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①②">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③①">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Again">"Again"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Copy">"Copy"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Cut">"Cut"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Find">"Find"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Open">"Open"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Paste">"Paste"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Props">"Props"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Select">"Select"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Undo">"Undo"</code>
+      <td class="code-table-required">No
       <td>Found on Sun’s USB keyboard.
    </table>
    <p>The following keys may be found on non-standard international keyboards.</p>
@@ -1430,13 +1616,16 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①③">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③②">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Hiragana">"Hiragana"</code>
+      <td class="code-table-required">No
       <td>Use for dedicated <code class="keycap">ひらがな</code> key found on some Japanese word processing keyboards.
      <tr>
       <td class="code-table-code"><code class="code" id="code-Katakana">"Katakana"</code>
+      <td class="code-table-required">No
       <td>Use for dedicated <code class="keycap">カタカナ</code> key found on some Japanese word processing keyboards.
    </table>
    <p>And finally, the following <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③③">code</a></code> value should only
@@ -1449,10 +1638,12 @@ miscellaneous <a data-link-type="dfn" href="#function-key" id="ref-for-function-
     <thead>
      <tr>
       <th style="width:20%"><code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#interface-keyboardevent" id="ref-for-interface-keyboardevent①④">KeyboardEvent</a></code> <code class="idl"><a data-link-type="idl" href="http://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③⑤">code</a></code>
-      <th style="width:80%">Notes (Non-normative)
+      <th style="width:10%">Required
+      <th style="width:70%">Notes (Non-normative)
     <tbody>
      <tr>
       <td class="code-table-code"><code class="code" id="code-Unidentified">"Unidentified"</code>
+      <td class="code-table-required">Yes
       <td>This value code should be used when no other								value given in this specification is appropriate. 
    </table>
    <p class="warning"> Conforming implementations MUST only use <code class="code">"<a href="#code-Unidentified">Unidentified</a>"</code> as a key code
