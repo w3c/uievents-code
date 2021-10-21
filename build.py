@@ -53,7 +53,7 @@ class Parser():
 		if self.code == None:
 			return ''
 
-		result = '<tr><td class="key-table-key">'
+		result = '<tr><td>'
 		result += '<a href="https://w3c.github.io/uievents-code/#code-%s">' % self.code
 		result += '<code class="code">"%s"</code>' % self.code
 		result += '</a>'

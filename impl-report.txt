@@ -81,7 +81,7 @@ path: stylesheet-extra.include
 	Entries marked with "N/A" are not currently testable, typically because the devices
 	with that key do not generate separate keyboard events. E.g., FnLock.
 
-	<h4 id="code-attribute">{KeyboardEvent/code}} Attribute</h4>
+	<h4 id="code-attribute">{{KeyboardEvent/code}} Attribute</h4>
 		
 		The {{KeyboardEvent/code}} attribute (defined in [[!UIEvents]]) is present in all
 		browsers tested.
@@ -119,7 +119,7 @@ path: stylesheet-extra.include
 		</tbody></table>
 
 
-	<h4 id="required-values">Required Values</h4>
+	<h4 id="required-values">Required {{KeyboardEvent/code}} Values</h4>
 
 		This section lists the test results for the basic set of {{KeyboardEvent/code}}
 		attribute values that a conforming implementation must support.
@@ -266,9 +266,9 @@ path: stylesheet-extra.include
 
 		END_CODE_IMPL_TABLE
 
-	<h4 id="optional-values">Optional Values</h4>
+	<h4 id="optional-values">Optional {{KeyboardEvent/code}} Values</h4>
 
-		This section lists the test results for the basic set of {{KeyboardEvent/code}}
+		This section lists the test results for the set of {{KeyboardEvent/code}}
 		attribute values that a conforming implementation may use to support special
 		keyboards (such as multimedia or legacy keyboards).
 

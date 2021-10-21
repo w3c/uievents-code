@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet">
   <meta content="Bikeshed version e8cbf4ed2, updated Fri Sep 10 10:21:28 2021 -0700" name="generator">
   <link href="https://w3c.github.io/uievents-code/impl-report.html" rel="canonical">
-  <meta content="2d1f5f21d2173203ddb2e56eeffbb5367416a8fc" name="document-revision">
+  <meta content="deee8f5d3107b6cae0101a1b842112e06ad3cbd5" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -108,13 +108,11 @@ code.glyph {
 }
 
 .code-impl-data {
-	vertical-align: top;
 	text-align: center;
 }
 
 .code-impl-data-dark {
 	background:none repeat scroll 0 0 #d8dDeF !important;
-	vertical-align: top;
 	text-align: center;
 }
 
@@ -609,9 +607,9 @@ dfn > a.self-link::before      { content: "#"; }
       <li>
        <a href="#raw-results"><span class="secno">3.2</span> <span class="content">Raw Results</span></a>
        <ol class="toc">
-        <li><a href="#code-attribute"><span class="secno">3.2.1</span> <span class="content">{KeyboardEvent/code}} Attribute</span></a>
-        <li><a href="#required-values"><span class="secno">3.2.2</span> <span class="content">Required Values</span></a>
-        <li><a href="#optional-values"><span class="secno">3.2.3</span> <span class="content">Optional Values</span></a>
+        <li><a href="#code-attribute"><span class="secno">3.2.1</span> <span class="content"><code class="idl"><span>code</span></code> Attribute</span></a>
+        <li><a href="#required-values"><span class="secno">3.2.2</span> <span class="content">Required <code class="idl"><span>code</span></code> Values</span></a>
+        <li><a href="#optional-values"><span class="secno">3.2.3</span> <span class="content">Optional <code class="idl"><span>code</span></code> Values</span></a>
        </ol>
      </ol>
     <li>
@@ -676,8 +674,8 @@ dfn > a.self-link::before      { content: "#"; }
 	not supported on that platform).</p>
    <p>Entries marked with "N/A" are not currently testable, typically because the devices
 	with that key do not generate separate keyboard events. E.g., FnLock.</p>
-   <h4 class="heading settled" data-level="3.2.1" id="code-attribute"><span class="secno">3.2.1. </span><span class="content">{KeyboardEvent/code}} Attribute</span><a class="self-link" href="#code-attribute"></a></h4>
-   <p>The <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code> attribute (defined in <a data-link-type="biblio" href="#biblio-uievents">[UIEvents]</a> is present in all
+   <h4 class="heading settled" data-level="3.2.1" id="code-attribute"><span class="secno">3.2.1. </span><span class="content"><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code③">code</a></code> Attribute</span><a class="self-link" href="#code-attribute"></a></h4>
+   <p>The <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code> attribute (defined in <a data-link-type="biblio" href="#biblio-uievents">[UIEvents]</a>) is present in all
 		browsers tested.</p>
    <table class="data-table full-width" id="key-attribute-impl">
     <thead>
@@ -698,7 +696,7 @@ dfn > a.self-link::before      { content: "#"; }
       <th class="code-impl-data">Firefox
     <tbody>
      <tr>
-      <td><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code④">code</a></code>
+      <td><code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
@@ -709,9 +707,8 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data"><span class="code-impl-yes">Pass</span>
       <td>
    </table>
-   <h4 class="heading settled" data-level="3.2.2" id="required-values"><span class="secno">3.2.2. </span><span class="content">Required Values</span><a class="self-link" href="#required-values"></a></h4>
-   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑤">code</a></code> attribute values that
-		a conforming implementation must support.</p>
+   <h4 class="heading settled" data-level="3.2.2" id="required-values"><span class="secno">3.2.2. </span><span class="content">Required <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑥">code</a></code> Values</span><a class="self-link" href="#required-values"></a></h4>
+   <p>This section lists the test results for the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑦">code</a></code> attribute values that a conforming implementation must support.</p>
    <table class="data-table full-width" id="code-table-standard">
     <thead>
      <tr>
@@ -733,7 +730,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Alphanumeric Section - Writing System Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Backquote"><code class="code">"Backquote"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Backquote"><code class="code">"Backquote"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -744,7 +741,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Backslash"><code class="code">"Backslash"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Backslash"><code class="code">"Backslash"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -755,7 +752,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BracketLeft"><code class="code">"BracketLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BracketLeft"><code class="code">"BracketLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -766,7 +763,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BracketRight"><code class="code">"BracketRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BracketRight"><code class="code">"BracketRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -777,7 +774,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Comma"><code class="code">"Comma"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Comma"><code class="code">"Comma"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -788,7 +785,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit0"><code class="code">"Digit0"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit0"><code class="code">"Digit0"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -799,7 +796,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit1"><code class="code">"Digit1"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit1"><code class="code">"Digit1"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -810,7 +807,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit2"><code class="code">"Digit2"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit2"><code class="code">"Digit2"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -821,7 +818,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit3"><code class="code">"Digit3"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit3"><code class="code">"Digit3"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -832,7 +829,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit4"><code class="code">"Digit4"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit4"><code class="code">"Digit4"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -843,7 +840,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit5"><code class="code">"Digit5"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit5"><code class="code">"Digit5"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -854,7 +851,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit6"><code class="code">"Digit6"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit6"><code class="code">"Digit6"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -865,7 +862,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit7"><code class="code">"Digit7"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit7"><code class="code">"Digit7"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -876,7 +873,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit8"><code class="code">"Digit8"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit8"><code class="code">"Digit8"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -887,7 +884,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Digit9"><code class="code">"Digit9"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Digit9"><code class="code">"Digit9"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -898,7 +895,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Equal"><code class="code">"Equal"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Equal"><code class="code">"Equal"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -909,7 +906,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlBackslash"><code class="code">"IntlBackslash"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-IntlBackslash"><code class="code">"IntlBackslash"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -920,7 +917,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>Safari swaps IntlBackslash with Backquote on keyboards that support IntlBackslash
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlRo"><code class="code">"IntlRo"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-IntlRo"><code class="code">"IntlRo"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -931,7 +928,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-IntlYen"><code class="code">"IntlYen"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-IntlYen"><code class="code">"IntlYen"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -942,7 +939,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyA"><code class="code">"KeyA"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyA"><code class="code">"KeyA"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -953,7 +950,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyB"><code class="code">"KeyB"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyB"><code class="code">"KeyB"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -964,7 +961,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyC"><code class="code">"KeyC"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyC"><code class="code">"KeyC"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -975,7 +972,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyD"><code class="code">"KeyD"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyD"><code class="code">"KeyD"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -986,7 +983,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyE"><code class="code">"KeyE"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyE"><code class="code">"KeyE"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -997,7 +994,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyF"><code class="code">"KeyF"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyF"><code class="code">"KeyF"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1008,7 +1005,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyG"><code class="code">"KeyG"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyG"><code class="code">"KeyG"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1019,7 +1016,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyH"><code class="code">"KeyH"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyH"><code class="code">"KeyH"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1030,7 +1027,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyI"><code class="code">"KeyI"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyI"><code class="code">"KeyI"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1041,7 +1038,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyJ"><code class="code">"KeyJ"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyJ"><code class="code">"KeyJ"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1052,7 +1049,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyK"><code class="code">"KeyK"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyK"><code class="code">"KeyK"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1063,7 +1060,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyL"><code class="code">"KeyL"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyL"><code class="code">"KeyL"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1074,7 +1071,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyM"><code class="code">"KeyM"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyM"><code class="code">"KeyM"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1085,7 +1082,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyN"><code class="code">"KeyN"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyN"><code class="code">"KeyN"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1096,7 +1093,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyO"><code class="code">"KeyO"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyO"><code class="code">"KeyO"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1107,7 +1104,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyP"><code class="code">"KeyP"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyP"><code class="code">"KeyP"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1118,7 +1115,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyQ"><code class="code">"KeyQ"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyQ"><code class="code">"KeyQ"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1129,7 +1126,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyR"><code class="code">"KeyR"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyR"><code class="code">"KeyR"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1140,7 +1137,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyS"><code class="code">"KeyS"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyS"><code class="code">"KeyS"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1151,7 +1148,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyT"><code class="code">"KeyT"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyT"><code class="code">"KeyT"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1162,7 +1159,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyU"><code class="code">"KeyU"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyU"><code class="code">"KeyU"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1173,7 +1170,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyV"><code class="code">"KeyV"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyV"><code class="code">"KeyV"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1184,7 +1181,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyW"><code class="code">"KeyW"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyW"><code class="code">"KeyW"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1195,7 +1192,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyX"><code class="code">"KeyX"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyX"><code class="code">"KeyX"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1206,7 +1203,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyY"><code class="code">"KeyY"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyY"><code class="code">"KeyY"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1217,7 +1214,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KeyZ"><code class="code">"KeyZ"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KeyZ"><code class="code">"KeyZ"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1228,7 +1225,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Minus"><code class="code">"Minus"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Minus"><code class="code">"Minus"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1239,7 +1236,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Period"><code class="code">"Period"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Period"><code class="code">"Period"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1250,7 +1247,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Quote"><code class="code">"Quote"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Quote"><code class="code">"Quote"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1261,7 +1258,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Semicolon"><code class="code">"Semicolon"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Semicolon"><code class="code">"Semicolon"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1272,7 +1269,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Slash"><code class="code">"Slash"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Slash"><code class="code">"Slash"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1285,7 +1282,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Alphanumeric Section - Functional Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AltLeft"><code class="code">"AltLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-AltLeft"><code class="code">"AltLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1296,7 +1293,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AltRight"><code class="code">"AltRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-AltRight"><code class="code">"AltRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1307,7 +1304,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Backspace"><code class="code">"Backspace"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Backspace"><code class="code">"Backspace"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1318,7 +1315,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-CapsLock"><code class="code">"CapsLock"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-CapsLock"><code class="code">"CapsLock"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1329,7 +1326,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ContextMenu"><code class="code">"ContextMenu"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ContextMenu"><code class="code">"ContextMenu"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1340,7 +1337,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>Safari returns "Unidentified"
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ControlLeft"><code class="code">"ControlLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ControlLeft"><code class="code">"ControlLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1351,7 +1348,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ControlRight"><code class="code">"ControlRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ControlRight"><code class="code">"ControlRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1362,7 +1359,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Enter"><code class="code">"Enter"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Enter"><code class="code">"Enter"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1373,7 +1370,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaLeft"><code class="code">"MetaLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MetaLeft"><code class="code">"MetaLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1384,7 +1381,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td>Firefox returns "OSLeft"
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MetaRight"><code class="code">"MetaRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MetaRight"><code class="code">"MetaRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1395,7 +1392,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td>Firefox returns "OSRight"
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ShiftLeft"><code class="code">"ShiftLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ShiftLeft"><code class="code">"ShiftLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1406,7 +1403,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ShiftRight"><code class="code">"ShiftRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ShiftRight"><code class="code">"ShiftRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1417,7 +1414,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Space"><code class="code">"Space"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Space"><code class="code">"Space"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1428,7 +1425,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Tab"><code class="code">"Tab"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Tab"><code class="code">"Tab"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1439,7 +1436,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Convert"><code class="code">"Convert"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Convert"><code class="code">"Convert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1450,7 +1447,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-KanaMode"><code class="code">"KanaMode"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-KanaMode"><code class="code">"KanaMode"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1461,7 +1458,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NonConvert"><code class="code">"NonConvert"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NonConvert"><code class="code">"NonConvert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1474,7 +1471,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Control Pad Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Delete"><code class="code">"Delete"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Delete"><code class="code">"Delete"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1485,7 +1482,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-End"><code class="code">"End"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-End"><code class="code">"End"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1496,7 +1493,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Home"><code class="code">"Home"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Home"><code class="code">"Home"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1507,7 +1504,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Insert"><code class="code">"Insert"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Insert"><code class="code">"Insert"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1518,7 +1515,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>Safari returns "Help"
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageDown"><code class="code">"PageDown"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-PageDown"><code class="code">"PageDown"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1529,7 +1526,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PageUp"><code class="code">"PageUp"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-PageUp"><code class="code">"PageUp"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1542,7 +1539,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Arrow Pad Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowDown"><code class="code">"ArrowDown"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ArrowDown"><code class="code">"ArrowDown"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1553,7 +1550,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowLeft"><code class="code">"ArrowLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ArrowLeft"><code class="code">"ArrowLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1564,7 +1561,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowRight"><code class="code">"ArrowRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ArrowRight"><code class="code">"ArrowRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1575,7 +1572,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ArrowUp"><code class="code">"ArrowUp"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ArrowUp"><code class="code">"ArrowUp"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1588,7 +1585,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Numpad Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumLock"><code class="code">"NumLock"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumLock"><code class="code">"NumLock"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1599,7 +1596,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad0"><code class="code">"Numpad0"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad0"><code class="code">"Numpad0"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1610,7 +1607,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad1"><code class="code">"Numpad1"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad1"><code class="code">"Numpad1"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1621,7 +1618,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad2"><code class="code">"Numpad2"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad2"><code class="code">"Numpad2"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1632,7 +1629,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad3"><code class="code">"Numpad3"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad3"><code class="code">"Numpad3"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1643,7 +1640,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad4"><code class="code">"Numpad4"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad4"><code class="code">"Numpad4"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1654,7 +1651,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad5"><code class="code">"Numpad5"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad5"><code class="code">"Numpad5"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1665,7 +1662,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad6"><code class="code">"Numpad6"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad6"><code class="code">"Numpad6"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1676,7 +1673,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad7"><code class="code">"Numpad7"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad7"><code class="code">"Numpad7"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1687,7 +1684,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad8"><code class="code">"Numpad8"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad8"><code class="code">"Numpad8"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1698,7 +1695,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Numpad9"><code class="code">"Numpad9"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Numpad9"><code class="code">"Numpad9"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1709,7 +1706,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadAdd"><code class="code">"NumpadAdd"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadAdd"><code class="code">"NumpadAdd"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1720,7 +1717,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDecimal"><code class="code">"NumpadDecimal"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadDecimal"><code class="code">"NumpadDecimal"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1731,7 +1728,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadDivide"><code class="code">"NumpadDivide"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadDivide"><code class="code">"NumpadDivide"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1742,7 +1739,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadEnter"><code class="code">"NumpadEnter"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadEnter"><code class="code">"NumpadEnter"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1753,7 +1750,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMultiply"><code class="code">"NumpadMultiply"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMultiply"><code class="code">"NumpadMultiply"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1764,7 +1761,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadSubtract"><code class="code">"NumpadSubtract"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadSubtract"><code class="code">"NumpadSubtract"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1777,7 +1774,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Function Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Escape"><code class="code">"Escape"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Escape"><code class="code">"Escape"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1788,7 +1785,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F1"><code class="code">"F1"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F1"><code class="code">"F1"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1799,7 +1796,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F2"><code class="code">"F2"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F2"><code class="code">"F2"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1810,7 +1807,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F3"><code class="code">"F3"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F3"><code class="code">"F3"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1821,7 +1818,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F4"><code class="code">"F4"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F4"><code class="code">"F4"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1832,7 +1829,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F5"><code class="code">"F5"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F5"><code class="code">"F5"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1843,7 +1840,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F6"><code class="code">"F6"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F6"><code class="code">"F6"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1854,7 +1851,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F7"><code class="code">"F7"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F7"><code class="code">"F7"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1865,7 +1862,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F8"><code class="code">"F8"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F8"><code class="code">"F8"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1876,7 +1873,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F9"><code class="code">"F9"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F9"><code class="code">"F9"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1887,7 +1884,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F10"><code class="code">"F10"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F10"><code class="code">"F10"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1898,7 +1895,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F11"><code class="code">"F11"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F11"><code class="code">"F11"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1909,7 +1906,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>macOS &amp; Ubuntu enter fullscreen; Chrome requires KeyboardLock
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-F12"><code class="code">"F12"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-F12"><code class="code">"F12"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1920,7 +1917,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-PrintScreen"><code class="code">"PrintScreen"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-PrintScreen"><code class="code">"PrintScreen"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1931,7 +1928,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>macOS returns "F13"; Ubuntu takes screenshot
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-ScrollLock"><code class="code">"ScrollLock"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-ScrollLock"><code class="code">"ScrollLock"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1942,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>macOS decreases brightness
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Pause"><code class="code">"Pause"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Pause"><code class="code">"Pause"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1955,7 +1952,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Special Values
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Unidentified"><code class="code">"Unidentified"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Unidentified"><code class="code">"Unidentified"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -1966,10 +1963,9 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
    </table>
-   <h4 class="heading settled" data-level="3.2.3" id="optional-values"><span class="secno">3.2.3. </span><span class="content">Optional Values</span><a class="self-link" href="#optional-values"></a></h4>
-   <p>This section lists the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑥">code</a></code> attribute values that
-		a conforming implementation may use to support special keyboards (such as
-		multimedia or legacy keyboards).</p>
+   <h4 class="heading settled" data-level="3.2.3" id="optional-values"><span class="secno">3.2.3. </span><span class="content">Optional <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑧">code</a></code> Values</span><a class="self-link" href="#optional-values"></a></h4>
+   <p>This section lists the test results for the basic set of <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code" id="ref-for-dom-keyboardevent-code⑨">code</a></code> attribute values that a conforming implementation may use to support special
+		keyboards (such as multimedia or legacy keyboards).</p>
    <table class="data-table full-width" id="code-table-optional">
     <thead>
      <tr>
@@ -1991,7 +1987,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Media Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserBack"><code class="code">"BrowserBack"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserBack"><code class="code">"BrowserBack"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2002,7 +1998,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserFavorites"><code class="code">"BrowserFavorites"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserFavorites"><code class="code">"BrowserFavorites"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2013,7 +2009,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserForward"><code class="code">"BrowserForward"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserForward"><code class="code">"BrowserForward"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2024,7 +2020,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserHome"><code class="code">"BrowserHome"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserHome"><code class="code">"BrowserHome"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2035,7 +2031,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>Handled by OS (Chrome requires KeyboardLock)
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserRefresh"><code class="code">"BrowserRefresh"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserRefresh"><code class="code">"BrowserRefresh"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
@@ -2046,7 +2042,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserSearch"><code class="code">"BrowserSearch"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserSearch"><code class="code">"BrowserSearch"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
@@ -2057,7 +2053,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-BrowserStop"><code class="code">"BrowserStop"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-BrowserStop"><code class="code">"BrowserStop"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2068,7 +2064,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Eject"><code class="code">"Eject"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Eject"><code class="code">"Eject"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2079,7 +2075,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-LaunchApp1"><code class="code">"LaunchApp1"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-LaunchApp1"><code class="code">"LaunchApp1"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2090,7 +2086,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-LaunchApp2"><code class="code">"LaunchApp2"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-LaunchApp2"><code class="code">"LaunchApp2"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2101,7 +2097,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-LaunchMail"><code class="code">"LaunchMail"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-LaunchMail"><code class="code">"LaunchMail"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2112,7 +2108,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>Handled by OS
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaPlayPause"><code class="code">"MediaPlayPause"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MediaPlayPause"><code class="code">"MediaPlayPause"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2123,7 +2119,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>Handled by OS
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaSelect"><code class="code">"MediaSelect"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MediaSelect"><code class="code">"MediaSelect"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2134,7 +2130,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaStop"><code class="code">"MediaStop"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MediaStop"><code class="code">"MediaStop"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2145,7 +2141,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaTrackNext"><code class="code">"MediaTrackNext"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MediaTrackNext"><code class="code">"MediaTrackNext"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2156,7 +2152,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-MediaTrackPrevious"><code class="code">"MediaTrackPrevious"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-MediaTrackPrevious"><code class="code">"MediaTrackPrevious"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2167,7 +2163,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Power"><code class="code">"Power"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Power"><code class="code">"Power"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2178,7 +2174,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Sleep"><code class="code">"Sleep"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Sleep"><code class="code">"Sleep"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2189,7 +2185,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeDown"><code class="code">"AudioVolumeDown"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeDown"><code class="code">"AudioVolumeDown"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2200,7 +2196,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>Handled by OS
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeMute"><code class="code">"AudioVolumeMute"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeMute"><code class="code">"AudioVolumeMute"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2211,7 +2207,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>Handled by OS
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeUp"><code class="code">"AudioVolumeUp"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-AudioVolumeUp"><code class="code">"AudioVolumeUp"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2222,7 +2218,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>Handled by OS
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-WakeUp"><code class="code">"WakeUp"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-WakeUp"><code class="code">"WakeUp"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2235,7 +2231,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Alphanumeric Section - Functional Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang1"><code class="code">"Lang1"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Lang1"><code class="code">"Lang1"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2246,7 +2242,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>Safari returns KanaMode
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang2"><code class="code">"Lang2"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Lang2"><code class="code">"Lang2"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2257,7 +2253,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang3"><code class="code">"Lang3"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Lang3"><code class="code">"Lang3"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2268,7 +2264,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang4"><code class="code">"Lang4"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Lang4"><code class="code">"Lang4"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2279,7 +2275,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Lang5"><code class="code">"Lang5"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Lang5"><code class="code">"Lang5"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2292,7 +2288,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Numpad Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadBackspace"><code class="code">"NumpadBackspace"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadBackspace"><code class="code">"NumpadBackspace"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
@@ -2303,7 +2299,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-no">Fail</span>
       <td>Chrome/Firefox/Safari return "Backspace"
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadClear"><code class="code">"NumpadClear"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadClear"><code class="code">"NumpadClear"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2314,7 +2310,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadClearEntry"><code class="code">"NumpadClearEntry"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadClearEntry"><code class="code">"NumpadClearEntry"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2325,7 +2321,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadComma"><code class="code">"NumpadComma"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2336,7 +2332,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>Need to test with Brazilian keyboard.
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadEqual"><code class="code">"NumpadEqual"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadEqual"><code class="code">"NumpadEqual"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
@@ -2347,7 +2343,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadHash"><code class="code">"NumpadHash"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadHash"><code class="code">"NumpadHash"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2358,7 +2354,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryAdd"><code class="code">"NumpadMemoryAdd"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryAdd"><code class="code">"NumpadMemoryAdd"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2369,7 +2365,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryClear"><code class="code">"NumpadMemoryClear"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryClear"><code class="code">"NumpadMemoryClear"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2380,7 +2376,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryRecall"><code class="code">"NumpadMemoryRecall"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryRecall"><code class="code">"NumpadMemoryRecall"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2391,7 +2387,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryStore"><code class="code">"NumpadMemoryStore"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMemoryStore"><code class="code">"NumpadMemoryStore"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2402,7 +2398,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadMemorySubtract"><code class="code">"NumpadMemorySubtract"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadMemorySubtract"><code class="code">"NumpadMemorySubtract"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2413,7 +2409,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadParenLeft"><code class="code">"NumpadParenLeft"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadParenLeft"><code class="code">"NumpadParenLeft"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2424,7 +2420,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadParenRight"><code class="code">"NumpadParenRight"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadParenRight"><code class="code">"NumpadParenRight"</code></a>
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2435,7 +2431,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span class="code-impl-yes">Pass</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-NumpadStar"><code class="code">"NumpadStar"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-NumpadStar"><code class="code">"NumpadStar"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2448,7 +2444,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Function Section
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Fn"><code class="code">"Fn"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Fn"><code class="code">"Fn"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2459,7 +2455,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>N/A</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-FnLock"><code class="code">"FnLock"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-FnLock"><code class="code">"FnLock"</code></a>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
       <td class="code-impl-data-dark"><span>N/A</span>
@@ -2472,7 +2468,7 @@ dfn > a.self-link::before      { content: "#"; }
      <tr>
       <td colspan="10" style="background-color: #B9C9FE">Legacy, Non-Standard and Special Keys
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Hyper"><code class="code">"Hyper"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Hyper"><code class="code">"Hyper"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2483,7 +2479,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Super"><code class="code">"Super"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Super"><code class="code">"Super"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2494,7 +2490,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Turbo"><code class="code">"Turbo"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Turbo"><code class="code">"Turbo"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2505,7 +2501,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Abort"><code class="code">"Abort"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Abort"><code class="code">"Abort"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2516,7 +2512,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Resume"><code class="code">"Resume"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Resume"><code class="code">"Resume"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2527,7 +2523,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Suspend"><code class="code">"Suspend"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Suspend"><code class="code">"Suspend"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2538,7 +2534,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Again"><code class="code">"Again"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Again"><code class="code">"Again"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2549,7 +2545,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Copy"><code class="code">"Copy"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Copy"><code class="code">"Copy"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2560,7 +2556,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Cut"><code class="code">"Cut"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Cut"><code class="code">"Cut"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2571,7 +2567,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Find"><code class="code">"Find"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Find"><code class="code">"Find"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2582,7 +2578,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Open"><code class="code">"Open"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Open"><code class="code">"Open"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2593,7 +2589,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Paste"><code class="code">"Paste"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Paste"><code class="code">"Paste"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2604,7 +2600,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Props"><code class="code">"Props"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Props"><code class="code">"Props"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2615,7 +2611,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Select"><code class="code">"Select"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Select"><code class="code">"Select"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2626,7 +2622,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Undo"><code class="code">"Undo"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Undo"><code class="code">"Undo"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2637,7 +2633,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Hiragana"><code class="code">"Hiragana"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Hiragana"><code class="code">"Hiragana"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2648,7 +2644,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="code-impl-data-dark"><span>?</span>
       <td>
      <tr>
-      <td class="key-table-key"><a href="https://w3c.github.io/uievents-code/#code-Katakana"><code class="code">"Katakana"</code></a>
+      <td><a href="https://w3c.github.io/uievents-code/#code-Katakana"><code class="code">"Katakana"</code></a>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
       <td class="code-impl-data-dark"><span>?</span>
@@ -2700,7 +2696,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-keyboardevent">
    <a href="https://www.w3.org/TR/uievents/#keyboardevent">https://www.w3.org/TR/uievents/#keyboardevent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-keyboardevent">3.2.1. {KeyboardEvent/code}} Attribute</a>
+    <li><a href="#ref-for-keyboardevent">3.2.1. code Attribute</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-dom-keyboardevent-code">
@@ -2708,16 +2704,16 @@ dfn > a.self-link::before      { content: "#"; }
    <ul>
     <li><a href="#ref-for-dom-keyboardevent-code">1. Introduction</a> <a href="#ref-for-dom-keyboardevent-code①">(2)</a>
     <li><a href="#ref-for-dom-keyboardevent-code②">3.1. Summary</a>
-    <li><a href="#ref-for-dom-keyboardevent-code③">3.2.1. {KeyboardEvent/code}} Attribute</a> <a href="#ref-for-dom-keyboardevent-code④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑤">3.2.2. Required Values</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑥">3.2.3. Optional Values</a>
+    <li><a href="#ref-for-dom-keyboardevent-code③">3.2.1. code Attribute</a> <a href="#ref-for-dom-keyboardevent-code④">(2)</a> <a href="#ref-for-dom-keyboardevent-code⑤">(3)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code⑥">3.2.2. Required code Values</a> <a href="#ref-for-dom-keyboardevent-code⑦">(2)</a>
+    <li><a href="#ref-for-dom-keyboardevent-code⑧">3.2.3. Optional code Values</a> <a href="#ref-for-dom-keyboardevent-code⑨">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-">
    <a href="http://www.w3.org/TR/uievents-code/#">http://www.w3.org/TR/uievents-code/#</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#termref-for-">3.2.2. Required Values</a>
-    <li><a href="#termref-for-">3.2.3. Optional Values</a>
+    <li><a href="#termref-for-">3.2.2. Required code Values</a>
+    <li><a href="#termref-for-">3.2.3. Optional code Values</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
