@@ -122,7 +122,7 @@ path: stylesheet-extra.include
 				sections that are most affected.
 			*	The [=control pad=] and [=arrow pad=]
 				sections contain the arrow keys and other editing keys.
-			*	The [=numpad=] (also known as the "numeric keypad"
+			*	The [=numpad=] (also known as the "numeric [=keypad=]"
 				or "number pad") contains number and math keys to make it easier
 				to enter numeric data.
 			*	And finally, the [=function section=] contains
