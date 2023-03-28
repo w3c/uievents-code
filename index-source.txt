@@ -80,7 +80,7 @@ path: stylesheet-extra.include
 
 		* Glyphs representing character are shown as: GLYPH{&#x239C2;}.
 
-		* Unicode code points are shown as: UNI{U+003D}.
+		* Unicode [=code points=] are shown as: UNI{U+003D}.
 
 		* Valid [=key attribute values=] (i.e., the value of
 			a {{KeyboardEvent/key}} attribute) are shown as:
