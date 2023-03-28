@@ -40,15 +40,15 @@ Abstract:
 </pre>
 
 <pre class="anchors">
-urlPrefix: http://www.w3.org/TR/uievents/#interface-; type: interface; spec: uievents;
+urlPrefix: https://www.w3.org/TR/uievents/#interface-; type: interface; spec: uievents;
 	text: KeyboardEvent
-urlPrefix: http://www.w3.org/TR/uievents/#dom-keyboardevent-; type: attribute; for: KeyboardEvent; spec: uievents;
+urlPrefix: https://www.w3.org/TR/uievents/#dom-keyboardevent-; type: attribute; for: KeyboardEvent; spec: uievents;
 	text: key
 	text: code
 	text: location
-url: http://www.w3.org/TR/uievents/#key-legends; type: dfn; spec: uievents-key;
+url: https://www.w3.org/TR/uievents/#key-legends; type: dfn; spec: uievents-key;
 	text: key cap
-url: http://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uievents-key;
+url: https://www.w3.org/TR/uievents-key/#key-value-tables; type: dfn; spec: uievents-key;
 	text: key attribute value
 </pre>
 
@@ -80,7 +80,7 @@ path: stylesheet-extra.include
 
 		* Glyphs representing character are shown as: GLYPH{&#x239C2;}.
 
-		* Unicode character encodings are shown as: UNI{U+003d}.
+		* Unicode code points are shown as: UNI{U+003D}.
 
 		* Valid [=key attribute values=] (i.e., the value of
 			a {{KeyboardEvent/key}} attribute) are shown as:
