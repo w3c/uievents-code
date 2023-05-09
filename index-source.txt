@@ -34,7 +34,7 @@ Abstract:
 		"publisher": "ISO"
 	},
 	"USB-HID": {
-		"href": "http://www.usb.org/developers/hidpage/Hut1_12v2.pdf",
+		"href": "https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf",
 		"title": "USB HID Usage Tables 1.12",
 		"publisher": "USB Implementers' Forum"
 	}
