@@ -628,7 +628,7 @@ path: stylesheet-extra.include
 			CODE Delete		KEYCAP{&#8998;}. The forward delete key.
 							Note that on Apple keyboards, the key labelled KEYCAP{Delete} on the main part of
 							the keyboard should be encoded as CODE{Backspace}.
-			CODE End		KEYCAP{Page Down}, KEYCAP{End} or KEYCAP{&#8600;}
+			CODE End		KEYCAP{End} or KEYCAP{&#8600;}
 			CODE Help		KEYCAP{Help}. Not present on standard PC keyboards.
 			CODE Home		KEYCAP{Home} or KEYCAP{&#8598;}
 			CODE Insert		KEYCAP{Insert} or KEYCAP{Ins}. Not present on Apple keyboards.
