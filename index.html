@@ -6,9 +6,9 @@
   <meta content="WD" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-WD" rel="stylesheet">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="http://www.w3.org/TR/uievents-code/" rel="canonical">
-  <meta content="2ad344b478e8d88df428e61a83a2a83a180f168f" name="document-revision">
+  <meta content="3817a062dfaa5ff843eceea4784d5be1e1355e59" name="document-revision">
 <style>
 
 /* Used when spelling out words or symbols phonetically. */
@@ -232,8 +232,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -250,8 +249,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -262,7 +268,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -347,13 +353,13 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1>UI Events KeyboardEvent code Values</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#WD">W3C Working Draft</a>, <time class="dt-updated" datetime="2023-03-28">28 March 2023</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#WD">W3C Working Draft</a>, <time class="dt-updated" datetime="2023-05-09">9 May 2023</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
      <dl>
       <dt>This version:
-      <dd><a class="u-url" href="https://www.w3.org/TR/2023/WD-uievents-code-20230328/">https://www.w3.org/TR/2023/WD-uievents-code-20230328/</a>
+      <dd><a class="u-url" href="https://www.w3.org/TR/2023/WD-uievents-code-20230509/">https://www.w3.org/TR/2023/WD-uievents-code-20230509/</a>
       <dt>Latest published version:
       <dd><a href="http://www.w3.org/TR/uievents-code/">http://www.w3.org/TR/uievents-code/</a>
       <dt>Editor's Draft:
@@ -367,7 +373,7 @@ dfn > a.self-link::before      { content: "#"; }
       <dd><a href="https://github.com/w3c/uievents-code/issues/">GitHub</a>
       <dt class="editor">Editors:
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:garykac@google.com">Gary Kacmarcik</a> (<span class="p-org org">Google</span>)
-      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:travil@microsoft.com">Travis Leithead</a> (<span class="p-org org">Microsoft</span>)
+      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:travisleithead@hotmail.com">Travis Leithead</a> (<span class="p-org org">Invited Expert</span>)
      </dl>
     </div>
    </details>
@@ -1755,20 +1761,22 @@ something specific to the values defined in this document</p>
     with <code>class="note"</code>,
     like this: </p>
    <p class="note" role="note">Note, this is an informative note.</p>
-   <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
-   <p>Requirements phrased in the imperative as part of algorithms
+   <section>
+    <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
+    <p>Requirements phrased in the imperative as part of algorithms
     (such as "strip any leading space characters"
     or "return false and abort these steps")
     are to be interpreted with the meaning of the key word
     ("must", "should", "may", etc)
     used in introducing the algorithm. </p>
-   <p>Conformance requirements phrased as algorithms or specific steps
+    <p>Conformance requirements phrased as algorithms or specific steps
     can be implemented in any manner,
     so long as the end result is equivalent.
     In particular, the algorithms defined in this specification
     are intended to be easy to understand
     and are not intended to be performant.
     Implementers are encouraged to optimize. </p>
+   </section>
   </div>
 <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -1786,88 +1794,25 @@ something specific to the values defined in this document</p>
    <li><a href="#numpad">numpad</a><span>, in § 3.4</span>
    <li><a href="#writing-system-keys">writing system keys</a><span>, in § 3.1.1</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-4103741029595e9e13c67dab91d1e3bd" class="dfn-panel" data-for="4103741029595e9e13c67dab91d1e3bd" id="infopanel-for-4103741029595e9e13c67dab91d1e3bd">
-   <span id="infopaneltitle-for-4103741029595e9e13c67dab91d1e3bd" style="display:none">Info about the 'code point' external reference.</span><a href="https://infra.spec.whatwg.org/#code-point">https://infra.spec.whatwg.org/#code-point</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-code-point">1.1. Stylistic Conventions</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-16015a3adb23f6b5bcd1da9550190b1a" class="dfn-panel" data-for="16015a3adb23f6b5bcd1da9550190b1a" id="infopanel-for-16015a3adb23f6b5bcd1da9550190b1a">
-   <span id="infopaneltitle-for-16015a3adb23f6b5bcd1da9550190b1a" style="display:none">Info about the 'KeyboardEvent' external reference.</span><a href="https://www.w3.org/TR/uievents/#interface-keyboardevent">https://www.w3.org/TR/uievents/#interface-keyboardevent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-interface-keyboardevent">1.1. Stylistic Conventions</a>
-    <li><a href="#ref-for-interface-keyboardevent①">3. Keyboard Event code Value Tables</a>
-    <li><a href="#ref-for-interface-keyboardevent②">3.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-interface-keyboardevent③">3.1.2. Functional Keys</a> <a href="#ref-for-interface-keyboardevent④">(2)</a>
-    <li><a href="#ref-for-interface-keyboardevent⑤">3.2. Control Pad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑥">3.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑦">3.4. Numpad Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑧">3.5. Function Section</a>
-    <li><a href="#ref-for-interface-keyboardevent⑨">3.6. Media Keys</a>
-    <li><a href="#ref-for-interface-keyboardevent①⓪">3.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-interface-keyboardevent①①">(2)</a> <a href="#ref-for-interface-keyboardevent①②">(3)</a> <a href="#ref-for-interface-keyboardevent①③">(4)</a> <a href="#ref-for-interface-keyboardevent①④">(5)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e604a5849fdf8059e0f5a8fb9b7ba547" class="dfn-panel" data-for="e604a5849fdf8059e0f5a8fb9b7ba547" id="infopanel-for-e604a5849fdf8059e0f5a8fb9b7ba547">
-   <span id="infopaneltitle-for-e604a5849fdf8059e0f5a8fb9b7ba547" style="display:none">Info about the 'code' external reference.</span><a href="https://www.w3.org/TR/uievents/#dom-keyboardevent-code">https://www.w3.org/TR/uievents/#dom-keyboardevent-code</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-keyboardevent-code">1. Introduction</a> <a href="#ref-for-dom-keyboardevent-code①">(2)</a> <a href="#ref-for-dom-keyboardevent-code②">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code③">1.1. Stylistic Conventions</a> <a href="#ref-for-dom-keyboardevent-code④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑤">3. Keyboard Event code Value Tables</a> <a href="#ref-for-dom-keyboardevent-code⑥">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code⑦">3.1.1. Writing System Keys</a> <a href="#ref-for-dom-keyboardevent-code⑧">(2)</a> <a href="#ref-for-dom-keyboardevent-code⑨">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⓪">3.1.2. Functional Keys</a> <a href="#ref-for-dom-keyboardevent-code①①">(2)</a> <a href="#ref-for-dom-keyboardevent-code①②">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①③">3.2. Control Pad Section</a> <a href="#ref-for-dom-keyboardevent-code①④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑤">3.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑥">3.4. Numpad Section</a> <a href="#ref-for-dom-keyboardevent-code①⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-code①⑧">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code①⑨">3.5. Function Section</a> <a href="#ref-for-dom-keyboardevent-code②⓪">(2)</a> <a href="#ref-for-dom-keyboardevent-code②①">(3)</a> <a href="#ref-for-dom-keyboardevent-code②②">(4)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②③">3.6. Media Keys</a> <a href="#ref-for-dom-keyboardevent-code②④">(2)</a> <a href="#ref-for-dom-keyboardevent-code②⑤">(3)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code②⑥">3.7. Legacy, Non-Standard and Special Keys</a> <a href="#ref-for-dom-keyboardevent-code②⑦">(2)</a> <a href="#ref-for-dom-keyboardevent-code②⑧">(3)</a> <a href="#ref-for-dom-keyboardevent-code②⑨">(4)</a> <a href="#ref-for-dom-keyboardevent-code③⓪">(5)</a> <a href="#ref-for-dom-keyboardevent-code③①">(6)</a> <a href="#ref-for-dom-keyboardevent-code③②">(7)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code③③">4. Accessibility</a> <a href="#ref-for-dom-keyboardevent-code③④">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code③⑤">6. Security Considerations</a> <a href="#ref-for-dom-keyboardevent-code③⑥">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-code③⑦">7. Privacy Considerations</a> <a href="#ref-for-dom-keyboardevent-code③⑧">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0e3150549665e2be6e0eb7354b4500e8" class="dfn-panel" data-for="0e3150549665e2be6e0eb7354b4500e8" id="infopanel-for-0e3150549665e2be6e0eb7354b4500e8">
-   <span id="infopaneltitle-for-0e3150549665e2be6e0eb7354b4500e8" style="display:none">Info about the 'key' external reference.</span><a href="https://www.w3.org/TR/uievents/#dom-keyboardevent-key">https://www.w3.org/TR/uievents/#dom-keyboardevent-key</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-keyboardevent-key">1. Introduction</a>
-    <li><a href="#ref-for-dom-keyboardevent-key①">1.1. Stylistic Conventions</a> <a href="#ref-for-dom-keyboardevent-key②">(2)</a>
-    <li><a href="#ref-for-dom-keyboardevent-key③">2.4. Virtual Keyboards and Chording Keyboards</a>
-    <li><a href="#ref-for-dom-keyboardevent-key④">3.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑤">3.1.2. Functional Keys</a>
-    <li><a href="#ref-for-dom-keyboardevent-key⑥">7. Privacy Considerations</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9488999faf064558c7e4b3eadc67f3c4" class="dfn-panel" data-for="9488999faf064558c7e4b3eadc67f3c4" id="infopanel-for-9488999faf064558c7e4b3eadc67f3c4">
-   <span id="infopaneltitle-for-9488999faf064558c7e4b3eadc67f3c4" style="display:none">Info about the 'key attribute value' external reference.</span><a href="https://www.w3.org/TR/uievents-key/#key-value-tables">https://www.w3.org/TR/uievents-key/#key-value-tables</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-key-value-tables">1.1. Stylistic Conventions</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e412f119fdd0a9f2319e8d3718690802" class="dfn-panel" data-for="e412f119fdd0a9f2319e8d3718690802" id="infopanel-for-e412f119fdd0a9f2319e8d3718690802">
-   <span id="infopaneltitle-for-e412f119fdd0a9f2319e8d3718690802" style="display:none">Info about the 'key cap' external reference.</span><a href="https://www.w3.org/TR/uievents/#key-legends">https://www.w3.org/TR/uievents/#key-legends</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-key-legends">1.1. Stylistic Conventions</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[INFRA]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="4103741029595e9e13c67dab91d1e3bd">code point</span>
+     <li><span class="dfn-paneled" id="915aff5e">code point</span>
     </ul>
    <li>
     <a data-link-type="biblio">[UIEvents]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="16015a3adb23f6b5bcd1da9550190b1a">KeyboardEvent</span>
-     <li><span class="dfn-paneled" id="e604a5849fdf8059e0f5a8fb9b7ba547">code</span>
-     <li><span class="dfn-paneled" id="0e3150549665e2be6e0eb7354b4500e8">key</span>
+     <li><span class="dfn-paneled" id="4031d31b">KeyboardEvent</span>
+     <li><span class="dfn-paneled" id="1e6c87f4">code</span>
+     <li><span class="dfn-paneled" id="dd357ae7">key</span>
     </ul>
    <li>
     <a data-link-type="biblio">[UIEvents-key]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="9488999faf064558c7e4b3eadc67f3c4">key attribute value</span>
-     <li><span class="dfn-paneled" id="e412f119fdd0a9f2319e8d3718690802">key cap</span>
+     <li><span class="dfn-paneled" id="81bff183">key attribute value</span>
+     <li><span class="dfn-paneled" id="d6f5a4cc">key cap</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
@@ -1891,138 +1836,68 @@ something specific to the values defined in this document</p>
    <dt id="biblio-usb-hid">[USB-HID]
    <dd><a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf"><cite>USB HID Usage Tables 1.12</cite></a>. URL: <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">http://www.usb.org/developers/hidpage/Hut1_12v2.pdf</a>
   </dl>
-  <aside aria-labelledby="infopaneltitle-for-key-code-attribute-value" class="dfn-panel" data-for="key-code-attribute-value" id="infopanel-for-key-code-attribute-value">
-   <span id="infopaneltitle-for-key-code-attribute-value" style="display:none">Info about the 'key code attribute value' definition.</span><b><a href="#key-code-attribute-value">#key-code-attribute-value</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-key-code-attribute-value">1.1. Stylistic Conventions</a>
-    <li><a href="#ref-for-key-code-attribute-value①">3. Keyboard Event code Value Tables</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-alphanumeric-section" class="dfn-panel" data-for="alphanumeric-section" id="infopanel-for-alphanumeric-section">
-   <span id="infopaneltitle-for-alphanumeric-section" style="display:none">Info about the 'alphanumeric section' definition.</span><b><a href="#alphanumeric-section">#alphanumeric-section</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-alphanumeric-section">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-alphanumeric-section①">2.1.2. Standard "101" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section②">2.1.3. Alternate "101" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section③">2.1.4. Standard "102" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section④">2.1.5. Korean "103" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section⑥">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-alphanumeric-section⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-alphanumeric-section⑧">3.1.1. Writing System Keys</a>
-    <li><a href="#ref-for-alphanumeric-section⑨">3.1.2. Functional Keys</a> <a href="#ref-for-alphanumeric-section①⓪">(2)</a>
-    <li><a href="#ref-for-alphanumeric-section①①">3.5. Function Section</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-writing-system-keys" class="dfn-panel" data-for="writing-system-keys" id="infopanel-for-writing-system-keys">
-   <span id="infopaneltitle-for-writing-system-keys" style="display:none">Info about the 'writing system keys' definition.</span><b><a href="#writing-system-keys">#writing-system-keys</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-writing-system-keys">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-writing-system-keys①">3.1. Alphanumeric Section</a>
-    <li><a href="#ref-for-writing-system-keys②">3.1.1. Writing System Keys</a> <a href="#ref-for-writing-system-keys③">(2)</a> <a href="#ref-for-writing-system-keys④">(3)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-functional-keys" class="dfn-panel" data-for="functional-keys" id="infopanel-for-functional-keys">
-   <span id="infopaneltitle-for-functional-keys" style="display:none">Info about the 'functional keys' definition.</span><b><a href="#functional-keys">#functional-keys</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-functional-keys">3.1. Alphanumeric Section</a>
-    <li><a href="#ref-for-functional-keys①">3.1.2. Functional Keys</a> <a href="#ref-for-functional-keys②">(2)</a> <a href="#ref-for-functional-keys③">(3)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-control-pad" class="dfn-panel" data-for="control-pad" id="infopanel-for-control-pad">
-   <span id="infopaneltitle-for-control-pad" style="display:none">Info about the 'control pad' definition.</span><b><a href="#control-pad">#control-pad</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-control-pad">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-control-pad①">2.1.2. Standard "101" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad②">2.1.3. Alternate "101" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad③">2.1.4. Standard "102" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad④">2.1.5. Korean "103" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad⑥">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-control-pad⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-control-pad⑧">3.2. Control Pad Section</a>
-    <li><a href="#ref-for-control-pad⑨">3.4. Numpad Section</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-arrow-pad" class="dfn-panel" data-for="arrow-pad" id="infopanel-for-arrow-pad">
-   <span id="infopaneltitle-for-arrow-pad" style="display:none">Info about the 'arrow pad' definition.</span><b><a href="#arrow-pad">#arrow-pad</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-arrow-pad">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-arrow-pad①">2.1.2. Standard "101" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad②">2.1.3. Alternate "101" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad③">2.1.4. Standard "102" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad④">2.1.5. Korean "103" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad⑤">2.1.6. Brazilian "104" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad⑥">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-arrow-pad⑦">2.1.9. Laptop Keyboard Layouts</a>
-    <li><a href="#ref-for-arrow-pad⑧">3.3. Arrow Pad Section</a>
-    <li><a href="#ref-for-arrow-pad⑨">3.4. Numpad Section</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-numpad" class="dfn-panel" data-for="numpad" id="infopanel-for-numpad">
-   <span id="infopaneltitle-for-numpad" style="display:none">Info about the 'numpad' definition.</span><b><a href="#numpad">#numpad</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-numpad">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-numpad①">2.1.2. Standard "101" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad②">2.1.3. Alternate "101" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad③">2.1.4. Standard "102" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad④">2.1.5. Korean "103" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad⑤">2.1.6. Brazilian "104" Keyboard Layout</a> <a href="#ref-for-numpad⑥">(2)</a> <a href="#ref-for-numpad⑦">(3)</a> <a href="#ref-for-numpad⑧">(4)</a>
-    <li><a href="#ref-for-numpad⑨">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-numpad①⓪">3.4. Numpad Section</a> <a href="#ref-for-numpad①①">(2)</a> <a href="#ref-for-numpad①②">(3)</a> <a href="#ref-for-numpad①③">(4)</a> <a href="#ref-for-numpad①④">(5)</a> <a href="#ref-for-numpad①⑤">(6)</a> <a href="#ref-for-numpad①⑥">(7)</a> <a href="#ref-for-numpad①⑦">(8)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-keypad" class="dfn-panel" data-for="keypad" id="infopanel-for-keypad">
-   <span id="infopaneltitle-for-keypad" style="display:none">Info about the 'keypad' definition.</span><b><a href="#keypad">#keypad</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-keypad">2.1.1. Keyboard Sections</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-function-section" class="dfn-panel" data-for="function-section" id="infopanel-for-function-section">
-   <span id="infopaneltitle-for-function-section" style="display:none">Info about the 'function section' definition.</span><b><a href="#function-section">#function-section</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function-section">2.1.1. Keyboard Sections</a> <a href="#ref-for-function-section①">(2)</a>
-    <li><a href="#ref-for-function-section②">2.1.2. Standard "101" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section③">2.1.3. Alternate "101" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section④">2.1.4. Standard "102" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section⑤">2.1.5. Korean "103" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section⑥">2.1.6. Brazilian "104" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section⑦">2.1.7. Japanese "106" Keyboard Layout</a>
-    <li><a href="#ref-for-function-section⑧">3.2. Control Pad Section</a>
-    <li><a href="#ref-for-function-section⑨">3.5. Function Section</a> <a href="#ref-for-function-section①⓪">(2)</a>
-    <li><a href="#ref-for-function-section①①">3.6. Media Keys</a> <a href="#ref-for-function-section①②">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-function-key" class="dfn-panel" data-for="function-key" id="infopanel-for-function-key">
-   <span id="infopaneltitle-for-function-key" style="display:none">Info about the 'function key' definition.</span><b><a href="#function-key">#function-key</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function-key">2.1.1. Keyboard Sections</a>
-    <li><a href="#ref-for-function-key①">3.1.2. Functional Keys</a>
-    <li><a href="#ref-for-function-key②">3.5. Function Section</a> <a href="#ref-for-function-key③">(2)</a> <a href="#ref-for-function-key④">(3)</a> <a href="#ref-for-function-key⑤">(4)</a> <a href="#ref-for-function-key⑥">(5)</a>
-    <li><a href="#ref-for-function-key⑦">3.6. Media Keys</a> <a href="#ref-for-function-key⑧">(2)</a> <a href="#ref-for-function-key⑨">(3)</a> <a href="#ref-for-function-key①⓪">(4)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-media-keys" class="dfn-panel" data-for="media-keys" id="infopanel-for-media-keys">
-   <span id="infopaneltitle-for-media-keys" style="display:none">Info about the 'Media keys' definition.</span><b><a href="#media-keys">#media-keys</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-media-keys">3.6. Media Keys</a> <a href="#ref-for-media-keys①">(2)</a> <a href="#ref-for-media-keys②">(3)</a>
-   </ul>
-  </aside>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2072,49 +1947,259 @@ something specific to the values defined in this document</p>
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['915aff5e'] = {"dfnID": "915aff5e", "url": "https://infra.spec.whatwg.org/#code-point", "dfnText": "code point", "refSections": [{"refs": [{"id": "ref-for-code-point"}], "title": "1.1. Stylistic Conventions"}], "external": true};
+window.dfnpanelData['4031d31b'] = {"dfnID": "4031d31b", "url": "https://www.w3.org/TR/uievents/#interface-keyboardevent", "dfnText": "KeyboardEvent", "refSections": [{"refs": [{"id": "ref-for-interface-keyboardevent"}], "title": "1.1. Stylistic Conventions"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2460"}], "title": "3. Keyboard Event code Value Tables"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2461"}], "title": "3.1.1. Writing System Keys"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2462"}, {"id": "ref-for-interface-keyboardevent\u2463"}], "title": "3.1.2. Functional Keys"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2464"}], "title": "3.2. Control Pad Section"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2465"}], "title": "3.3. Arrow Pad Section"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2466"}], "title": "3.4. Numpad Section"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2467"}], "title": "3.5. Function Section"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2468"}], "title": "3.6. Media Keys"}, {"refs": [{"id": "ref-for-interface-keyboardevent\u2460\u24ea"}, {"id": "ref-for-interface-keyboardevent\u2460\u2460"}, {"id": "ref-for-interface-keyboardevent\u2460\u2461"}, {"id": "ref-for-interface-keyboardevent\u2460\u2462"}, {"id": "ref-for-interface-keyboardevent\u2460\u2463"}], "title": "3.7. Legacy, Non-Standard and Special Keys"}], "external": true};
+window.dfnpanelData['1e6c87f4'] = {"dfnID": "1e6c87f4", "url": "https://www.w3.org/TR/uievents/#dom-keyboardevent-code", "dfnText": "code", "refSections": [{"refs": [{"id": "ref-for-dom-keyboardevent-code"}, {"id": "ref-for-dom-keyboardevent-code\u2460"}, {"id": "ref-for-dom-keyboardevent-code\u2461"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2462"}, {"id": "ref-for-dom-keyboardevent-code\u2463"}], "title": "1.1. Stylistic Conventions"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2464"}, {"id": "ref-for-dom-keyboardevent-code\u2465"}], "title": "3. Keyboard Event code Value Tables"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2466"}, {"id": "ref-for-dom-keyboardevent-code\u2467"}, {"id": "ref-for-dom-keyboardevent-code\u2468"}], "title": "3.1.1. Writing System Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2460\u24ea"}, {"id": "ref-for-dom-keyboardevent-code\u2460\u2460"}, {"id": "ref-for-dom-keyboardevent-code\u2460\u2461"}], "title": "3.1.2. Functional Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2460\u2462"}, {"id": "ref-for-dom-keyboardevent-code\u2460\u2463"}], "title": "3.2. Control Pad Section"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2460\u2464"}], "title": "3.3. Arrow Pad Section"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2460\u2465"}, {"id": "ref-for-dom-keyboardevent-code\u2460\u2466"}, {"id": "ref-for-dom-keyboardevent-code\u2460\u2467"}], "title": "3.4. Numpad Section"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2460\u2468"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u24ea"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2460"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2461"}], "title": "3.5. Function Section"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2461\u2462"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2463"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2464"}], "title": "3.6. Media Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2461\u2465"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2466"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2467"}, {"id": "ref-for-dom-keyboardevent-code\u2461\u2468"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u24ea"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u2460"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u2461"}], "title": "3.7. Legacy, Non-Standard and Special Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2462\u2462"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u2463"}], "title": "4. Accessibility"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2462\u2464"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u2465"}], "title": "6. Security Considerations"}, {"refs": [{"id": "ref-for-dom-keyboardevent-code\u2462\u2466"}, {"id": "ref-for-dom-keyboardevent-code\u2462\u2467"}], "title": "7. Privacy Considerations"}], "external": true};
+window.dfnpanelData['dd357ae7'] = {"dfnID": "dd357ae7", "url": "https://www.w3.org/TR/uievents/#dom-keyboardevent-key", "dfnText": "key", "refSections": [{"refs": [{"id": "ref-for-dom-keyboardevent-key"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2460"}, {"id": "ref-for-dom-keyboardevent-key\u2461"}], "title": "1.1. Stylistic Conventions"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2462"}], "title": "2.4. Virtual Keyboards and Chording Keyboards"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2463"}], "title": "3.1.1. Writing System Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2464"}], "title": "3.1.2. Functional Keys"}, {"refs": [{"id": "ref-for-dom-keyboardevent-key\u2465"}], "title": "7. Privacy Considerations"}], "external": true};
+window.dfnpanelData['81bff183'] = {"dfnID": "81bff183", "url": "https://www.w3.org/TR/uievents-key/#key-value-tables", "dfnText": "key attribute value", "refSections": [{"refs": [{"id": "ref-for-key-value-tables"}], "title": "1.1. Stylistic Conventions"}], "external": true};
+window.dfnpanelData['d6f5a4cc'] = {"dfnID": "d6f5a4cc", "url": "https://www.w3.org/TR/uievents/#key-legends", "dfnText": "key cap", "refSections": [{"refs": [{"id": "ref-for-key-legends"}], "title": "1.1. Stylistic Conventions"}], "external": true};
+window.dfnpanelData['key-code-attribute-value'] = {"dfnID": "key-code-attribute-value", "url": "#key-code-attribute-value", "dfnText": "key code attribute value", "refSections": [{"refs": [{"id": "ref-for-key-code-attribute-value"}], "title": "1.1. Stylistic Conventions"}, {"refs": [{"id": "ref-for-key-code-attribute-value\u2460"}], "title": "3. Keyboard Event code Value Tables"}], "external": false};
+window.dfnpanelData['alphanumeric-section'] = {"dfnID": "alphanumeric-section", "url": "#alphanumeric-section", "dfnText": "alphanumeric section", "refSections": [{"refs": [{"id": "ref-for-alphanumeric-section"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2460"}], "title": "2.1.2. Standard \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2461"}], "title": "2.1.3. Alternate \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2462"}], "title": "2.1.4. Standard \"102\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2463"}], "title": "2.1.5. Korean \"103\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2464"}], "title": "2.1.6. Brazilian \"104\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2465"}], "title": "2.1.7. Japanese \"106\" Keyboard Layout"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2466"}], "title": "2.1.9. Laptop Keyboard Layouts"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2467"}], "title": "3.1.1. Writing System Keys"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2468"}, {"id": "ref-for-alphanumeric-section\u2460\u24ea"}], "title": "3.1.2. Functional Keys"}, {"refs": [{"id": "ref-for-alphanumeric-section\u2460\u2460"}], "title": "3.5. Function Section"}], "external": false};
+window.dfnpanelData['writing-system-keys'] = {"dfnID": "writing-system-keys", "url": "#writing-system-keys", "dfnText": "writing system keys", "refSections": [{"refs": [{"id": "ref-for-writing-system-keys"}], "title": "2.1.9. Laptop Keyboard Layouts"}, {"refs": [{"id": "ref-for-writing-system-keys\u2460"}], "title": "3.1. Alphanumeric Section"}, {"refs": [{"id": "ref-for-writing-system-keys\u2461"}, {"id": "ref-for-writing-system-keys\u2462"}, {"id": "ref-for-writing-system-keys\u2463"}], "title": "3.1.1. Writing System Keys"}], "external": false};
+window.dfnpanelData['functional-keys'] = {"dfnID": "functional-keys", "url": "#functional-keys", "dfnText": "functional keys", "refSections": [{"refs": [{"id": "ref-for-functional-keys"}], "title": "3.1. Alphanumeric Section"}, {"refs": [{"id": "ref-for-functional-keys\u2460"}, {"id": "ref-for-functional-keys\u2461"}, {"id": "ref-for-functional-keys\u2462"}], "title": "3.1.2. Functional Keys"}], "external": false};
+window.dfnpanelData['control-pad'] = {"dfnID": "control-pad", "url": "#control-pad", "dfnText": "control pad", "refSections": [{"refs": [{"id": "ref-for-control-pad"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-control-pad\u2460"}], "title": "2.1.2. Standard \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2461"}], "title": "2.1.3. Alternate \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2462"}], "title": "2.1.4. Standard \"102\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2463"}], "title": "2.1.5. Korean \"103\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2464"}], "title": "2.1.6. Brazilian \"104\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2465"}], "title": "2.1.7. Japanese \"106\" Keyboard Layout"}, {"refs": [{"id": "ref-for-control-pad\u2466"}], "title": "2.1.9. Laptop Keyboard Layouts"}, {"refs": [{"id": "ref-for-control-pad\u2467"}], "title": "3.2. Control Pad Section"}, {"refs": [{"id": "ref-for-control-pad\u2468"}], "title": "3.4. Numpad Section"}], "external": false};
+window.dfnpanelData['arrow-pad'] = {"dfnID": "arrow-pad", "url": "#arrow-pad", "dfnText": "arrow pad", "refSections": [{"refs": [{"id": "ref-for-arrow-pad"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-arrow-pad\u2460"}], "title": "2.1.2. Standard \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2461"}], "title": "2.1.3. Alternate \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2462"}], "title": "2.1.4. Standard \"102\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2463"}], "title": "2.1.5. Korean \"103\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2464"}], "title": "2.1.6. Brazilian \"104\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2465"}], "title": "2.1.7. Japanese \"106\" Keyboard Layout"}, {"refs": [{"id": "ref-for-arrow-pad\u2466"}], "title": "2.1.9. Laptop Keyboard Layouts"}, {"refs": [{"id": "ref-for-arrow-pad\u2467"}], "title": "3.3. Arrow Pad Section"}, {"refs": [{"id": "ref-for-arrow-pad\u2468"}], "title": "3.4. Numpad Section"}], "external": false};
+window.dfnpanelData['numpad'] = {"dfnID": "numpad", "url": "#numpad", "dfnText": "numpad", "refSections": [{"refs": [{"id": "ref-for-numpad"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-numpad\u2460"}], "title": "2.1.2. Standard \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2461"}], "title": "2.1.3. Alternate \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2462"}], "title": "2.1.4. Standard \"102\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2463"}], "title": "2.1.5. Korean \"103\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2464"}, {"id": "ref-for-numpad\u2465"}, {"id": "ref-for-numpad\u2466"}, {"id": "ref-for-numpad\u2467"}], "title": "2.1.6. Brazilian \"104\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2468"}], "title": "2.1.7. Japanese \"106\" Keyboard Layout"}, {"refs": [{"id": "ref-for-numpad\u2460\u24ea"}, {"id": "ref-for-numpad\u2460\u2460"}, {"id": "ref-for-numpad\u2460\u2461"}, {"id": "ref-for-numpad\u2460\u2462"}, {"id": "ref-for-numpad\u2460\u2463"}, {"id": "ref-for-numpad\u2460\u2464"}, {"id": "ref-for-numpad\u2460\u2465"}, {"id": "ref-for-numpad\u2460\u2466"}], "title": "3.4. Numpad Section"}], "external": false};
+window.dfnpanelData['keypad'] = {"dfnID": "keypad", "url": "#keypad", "dfnText": "keypad", "refSections": [{"refs": [{"id": "ref-for-keypad"}], "title": "2.1.1. Keyboard Sections"}], "external": false};
+window.dfnpanelData['function-section'] = {"dfnID": "function-section", "url": "#function-section", "dfnText": "function section", "refSections": [{"refs": [{"id": "ref-for-function-section"}, {"id": "ref-for-function-section\u2460"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-function-section\u2461"}], "title": "2.1.2. Standard \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2462"}], "title": "2.1.3. Alternate \"101\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2463"}], "title": "2.1.4. Standard \"102\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2464"}], "title": "2.1.5. Korean \"103\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2465"}], "title": "2.1.6. Brazilian \"104\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2466"}], "title": "2.1.7. Japanese \"106\" Keyboard Layout"}, {"refs": [{"id": "ref-for-function-section\u2467"}], "title": "3.2. Control Pad Section"}, {"refs": [{"id": "ref-for-function-section\u2468"}, {"id": "ref-for-function-section\u2460\u24ea"}], "title": "3.5. Function Section"}, {"refs": [{"id": "ref-for-function-section\u2460\u2460"}, {"id": "ref-for-function-section\u2460\u2461"}], "title": "3.6. Media Keys"}], "external": false};
+window.dfnpanelData['function-key'] = {"dfnID": "function-key", "url": "#function-key", "dfnText": "function key", "refSections": [{"refs": [{"id": "ref-for-function-key"}], "title": "2.1.1. Keyboard Sections"}, {"refs": [{"id": "ref-for-function-key\u2460"}], "title": "3.1.2. Functional Keys"}, {"refs": [{"id": "ref-for-function-key\u2461"}, {"id": "ref-for-function-key\u2462"}, {"id": "ref-for-function-key\u2463"}, {"id": "ref-for-function-key\u2464"}, {"id": "ref-for-function-key\u2465"}], "title": "3.5. Function Section"}, {"refs": [{"id": "ref-for-function-key\u2466"}, {"id": "ref-for-function-key\u2467"}, {"id": "ref-for-function-key\u2468"}, {"id": "ref-for-function-key\u2460\u24ea"}], "title": "3.6. Media Keys"}], "external": false};
+window.dfnpanelData['media-keys'] = {"dfnID": "media-keys", "url": "#media-keys", "dfnText": "Media keys", "refSections": [{"refs": [{"id": "ref-for-media-keys"}, {"id": "ref-for-media-keys\u2460"}, {"id": "ref-for-media-keys\u2461"}], "title": "3.6. Media Keys"}], "external": false};</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>
