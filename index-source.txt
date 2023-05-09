@@ -464,8 +464,9 @@ path: stylesheet-extra.include
 			assigned to that key. Wherever possible, the
 			{{KeyboardEvent/code}} names are based on the name for the US
 			key in that position (i.e., they are based on the US keyboard
-			layout). For keys that don't exist on the US keyboard, names
-			from the UK or Japanese layouts are used instead.
+			layout), which follows the naming convention found in [[USB-HID]].
+			For keys that don't exist on the US keyboard, names from the UK or Japanese
+			layouts are used instead.
 
 			Note that there are two CODE{Backslash} keys in this figure: a
 			large one at the end of Row D on the 101-key layout, and a
